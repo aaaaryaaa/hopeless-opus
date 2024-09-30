@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import BaseUrl from "./BaseUrl";
 
 const StoryGame = () => {
   const [story, setStory] = useState(null);
@@ -7,7 +8,8 @@ const StoryGame = () => {
   const fetchStory = async (storyId) => {
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:5000/api/story/0001`);
+      const response = await fetch(`${BaseUrl}/api/story/0001`);
+      console.log(`${BaseUrl}`);
       const data = await response.json();
       setStory(data);
     } catch (error) {
