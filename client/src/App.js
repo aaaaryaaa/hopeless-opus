@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import StoryGame from './StoryGame';
 
 function App() {
   const [data, setData] = useState('');
@@ -12,8 +13,7 @@ function App() {
 
   return (
     <div>
-      <h1>MERN App</h1>
-      <p>{data}</p>
+      <StoryGame />
     </div>
   );
 }
