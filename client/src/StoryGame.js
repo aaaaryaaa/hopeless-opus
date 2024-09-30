@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import BaseUrl from "./BaseUrl";
+import Nav from "./Component/Nav.jsx";
 
 const StoryGame = () => {
   const [story, setStory] = useState(null);
@@ -30,6 +31,8 @@ const StoryGame = () => {
 
   return (
     <div>
+      <Nav />
+      <br></br>
       {!story && (
         <div>
           <h1>Welcome to the Story Game</h1>
