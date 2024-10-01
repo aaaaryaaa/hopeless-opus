@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 text-center">
         <div className="mb-4">
           <a href="/" className="text-white text-lg font-bold">
-            Your Brand
+            ACUMEN
           </a>
         </div>
         <div className="flex justify-center space-x-4 mb-4">
@@ -16,7 +16,7 @@ const Footer = () => {
           <a href="/contact" className="text-gray-400 hover:text-white">Contact</a>
         </div>
         <div className="text-gray-400 text-sm">
-          © {new Date().getFullYear()} Your Brand. All rights reserved.
+          © {new Date().getFullYear()} Your Personal Pookie. All rights reserved.
         </div>
       </div>
     </footer>

@@ -33,13 +33,13 @@ const StoryGame = () => {
 
   return (
     <div>
-      {!story && (
-        <div>
-          <h1>Welcome to the Story Game</h1>
-          <button onClick={startGame}>Start Game</button>
-        </div>
-      )}
-      {loading && <p>Loading...</p>}
+      {/* {!story && (
+        // <div>
+        //   <h1>Welcome to the Story Game</h1>
+        //   <button onClick={startGame}>Start Game</button>
+        // </div>
+      )} */}
+      {/* {loading && <p>Loading...</p>}
       {story && !loading && (
         <div>
           <p>{story.snippet}</p>
@@ -49,7 +49,7 @@ const StoryGame = () => {
             </button>
           ))}
         </div>
-      )}
+      )} */}
     <Dashboard/>
     <Hero/>
     <Footer/>
