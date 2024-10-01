@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import BaseUrl from "./BaseUrl";
 
+
 const StoryGame = () => {
   const [story, setStory] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -30,6 +31,7 @@ const StoryGame = () => {
 
   return (
     <div>
+      
       {!story && (
         <div>
           <h1>Welcome to the Story Game</h1>
@@ -46,8 +48,11 @@ const StoryGame = () => {
             </button>
           ))}
         </div>
-      )}
+      )} 
+  
+    
     </div>
+
   );
 };
 
