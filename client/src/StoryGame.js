@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import BaseUrl from "./BaseUrl";
 import Dashboard from "./components/Dashboard";
 import Footer from "./components/Footer";
+import Hero from "./components/Hero";
 
 const StoryGame = () => {
   const [story, setStory] = useState(null);
@@ -49,8 +50,8 @@ const StoryGame = () => {
           ))}
         </div>
       )}
-
     <Dashboard/>
+    <Hero/>
     <Footer/>
     </div>
 
