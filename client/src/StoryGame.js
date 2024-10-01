@@ -50,7 +50,7 @@ const StoryGame = () => {
             </button>
           ))}
         </div>
-      )} */}
+      )} 
     <Dashboard/>
     <Hero/>
     <Footer/>
