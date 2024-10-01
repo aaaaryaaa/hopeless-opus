@@ -1,0 +1,196 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #2C3E50;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1000;
+}
+
+/* Logo and Title */
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo img {
+  width: 2.5em;  /* Adjust the size of the logo (40px / 16px = 2.5em) */
+  height: auto;
+  margin-right: 0.625em; /* Add space between the logo and the title (10px / 16px = 0.625em) */
+}
+
+.nav-logo a {
+  color: #ECF0F1;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  position: absolute;
+  left: 50%;                 /* Centering */
+  transform: translateX(-50%);/* Aligning to center */
+}
+
+.nav-links li button {
+  color: #ECF0F1;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  border-radius: 25px;
+  background-color: transparent;
+  border: hidden;
+}
+
+.nav-links li button:hover {
+  background-color: #3498DB;
+  color: white;
+  box-shadow: 0px 4px 12px rgba(52, 152, 219, 0.5);
+}
+
+.nav-links li button.active {
+  background-color: #2980B9;
+}
+
+/* Dashboard button */
+.nav-dash {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-dash li a {
+  color: #ECF0F1;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  border-radius: 25px;
+  background-color: transparent;
+}
+
+.nav-dash li :hover {
+  background-color: #3498DB;
+  color: white;
+  box-shadow: 0px 4px 12px rgba(52, 152, 219, 0.5);
+}
+
+.nav-dash li a.active {
+  background-color: #2980B9;
+}
+
+/* Mobile Menu Icon */
+.mobile-menu-icon {
+  display: none;
+  font-size: 2.5rem;
+  color: #ECF0F1;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background-color: #34495E;
+    transition: all 0.5s ease-in-out;
+    padding: 1rem 0;
+    transform: none; /* Remove center alignment for mobile */
+    left: 0;         /* Full width in mobile view */
+  }
+
+  .nav-links.nav-links-mobile {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+  .nav-links li a {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    width: 100%;
+    display: block;
+    transition: background-color 0.3s ease;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  .istelogo{
+    display:none;
+  }
+}
+
+/* When the menu is open, hide logo and dashboard */
+.menu-open .nav-logo,
+.menu-open .nav-dash,
+.menu-open .istelogo {
+  display: none;
+}
+
+/* Animation for Links */
+.nav-links li button {
+  opacity: 0;
+  animation: fadeInLinks 0.5s forwards;
+}
+
+@keyframes fadeInLinks {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.nav-links li:nth-child(1) a {
+  animation-delay: 0.1s;
+}
+
+.nav-links li:nth-child(2) a {
+  animation-delay: 0.2s;
+}
+
+.nav-links li:nth-child(3) a {
+  animation-delay: 0.3s;
+}
+
+.nav-links li:nth-child(4) a {
+  animation-delay: 0.4s;
+}
