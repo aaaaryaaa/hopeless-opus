@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from "react-route
 import Play from './Pages/Play.js';
 import HomePage from './Pages/HomePage.js';
 import NotFoundPage from './components/NotFound.js';
+import Footer from './components/Footer.js';
 
 function App() {
   const [data, setData] = useState('');
@@ -28,7 +29,7 @@ function App() {
         </Routes>
       </Router>
 
-      
+    <Footer/>
     </div>
   );
 }
