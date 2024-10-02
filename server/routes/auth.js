@@ -72,7 +72,7 @@ router.post("/login", authMiddleware, (req, res) => {
         jwt.sign(
           payload,
           process.env.SECRET, // Use the secret from your .env file
-          { expiresIn: "1h" }, // Token expires in 1 hour
+          { expiresIn: "6h" }, // Token expires in 1 hour
           (err, token) => {
             if (err) throw err;
             res.json({

@@ -30,8 +30,8 @@ mongoose
   .catch((err) => console.error("MongoDB connection error:", err));
 
 // Use routes
-app.use("/api", storyRoutes); // Story routes
-app.use("/api/auth", authRoutes); // Authentication routes
+app.use("/api/", storyRoutes); // Story routes
+app.use("/api/auth/", authRoutes); // Authentication routes
 
 // Test route
 app.get("/", (req, res) => {
