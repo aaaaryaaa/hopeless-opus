@@ -1,6 +1,5 @@
-import React from 'react';
-import './Play.css';
-
+import React from "react";
+import "./Play.css";
 
 const Play = () => {
   return (
@@ -9,10 +8,10 @@ const Play = () => {
       <div className="absolute top-5 right-10 flex gap-10">
         {/* <a href="#home" className="text-white font-bold text-lg hover:underline">Home</a>
         <a href="#play" className="text-white font-bold text-lg hover:underline">Play</a> */}
-        
-      {/* Drawer Component */}
-       
-      {/* <div className="drawer drawer-end">
+
+        {/* Drawer Component */}
+
+        {/* <div className="drawer drawer-end">
         <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
    
@@ -39,8 +38,10 @@ const Play = () => {
       </div>
 
       {/* Blurred Box */}
-      <div className="flex items-center justify-center blurred-box mt-10 w-6/12 h-72 bg-gray-800 bg-opacity-50 rounded-lg shadow-lg" >
-      <h1 className="text-white text-3xl font-mono ">Follow the Rule!! Or get Fucked.</h1>
+      <div className="flex items-center justify-center blurred-box mt-10 w-6/12 h-72 bg-gray-800 bg-opacity-50 rounded-lg shadow-lg">
+        <h1 className="text-white text-3xl font-mono ">
+          Follow the Rule!! Or get Fucked.
+        </h1>
       </div>
     </div>
   );

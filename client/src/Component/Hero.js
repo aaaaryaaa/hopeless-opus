@@ -30,7 +30,7 @@ const openPlay = () => {
       {/* Add the image with w-full to stretch it */}
       <img 
         src={yourImage} 
-        alt="Description of image" 
+        alt="The Svg file"
         className="w-full h-auto" 
       />
       

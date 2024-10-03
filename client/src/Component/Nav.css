@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Squada One', sans-serif;
+  font-family: "Squada One", sans-serif;
   font-weight: 1000;
 }
 
@@ -17,7 +17,6 @@ a {
 ul {
   list-style: none;
 }
-
 
 .navbar {
   display: flex;
@@ -44,7 +43,7 @@ ul {
 }
 
 .nav-logo a {
-  color: #ECF0F1;
+  color: #ecf0f1;
   font-size: 1.8rem;
   font-weight: bold;
   letter-spacing: 2px;
@@ -64,10 +63,8 @@ ul {
   transition: all 0.3s ease-in-out;
 }
 
-
-
 .nav-links li button {
-  color: #ECF0F1;
+  color: #ecf0f1;
   font-size: 1rem;
   padding: 0.5rem 1rem;
   transition: all 0.3s ease;
@@ -84,7 +81,7 @@ ul {
 }
 
 .nav-links li button.active {
-  background-color: #2980B9;
+  background-color: #2980b9;
 }
 
 .nav-dash {
@@ -94,7 +91,7 @@ ul {
 }
 
 .nav-dash li a {
-  color: #ECF0F1;
+  color: #ecf0f1;
   font-size: 1rem;
   padding: 0.5rem 1rem;
   transition: all 0.3s ease;
@@ -103,26 +100,24 @@ ul {
 }
 
 .nav-dash li a:hover {
-  background-color: #3498DB;
+  background-color: #3498db;
   color: white;
   box-shadow: 0px 4px 12px rgba(52, 152, 219, 0.5);
 }
 
 .nav-dash li a.active {
-  background-color: #2980B9;
+  background-color: #2980b9;
 }
 
 .mobile-menu-icon {
   display: none;
   font-size: 2.5rem;
-  color: #ECF0F1;
+  color: #ecf0f1;
   cursor: pointer;
   z-index: 1001;
 }
 
-
 @media (max-width: 768px) {
-
   .nav-links {
     display: none;
     flex-direction: column;
@@ -164,8 +159,8 @@ ul {
     backdrop-filter: blur(20px);
     z-index: -1;
   }
- 
-  .nav-links ul{
+
+  .nav-links ul {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -176,7 +171,6 @@ ul {
     margin: 0 1em;
     transition: all 0.5s ease-in-out;
   }
-
 
   .nav-links-mobile li {
     display: flex;
@@ -193,7 +187,6 @@ ul {
     z-index: 1001;
   }
 
-  
   .nav-links-mobile li button {
     font-size: 1rem;
     padding: 0.75rem 2rem;
@@ -202,7 +195,6 @@ ul {
     background-color: transparent;
     transition: all 0.5s ease-in-out;
   }
-
 
   .istelogo {
     display: none;
@@ -226,7 +218,6 @@ ul {
   }
 }
 
-  
 @keyframes fadeInLinks {
   from {
     opacity: 0;
@@ -238,7 +229,6 @@ ul {
     transform: translateX(0);
   }
 }
-
 
 .nav-links li:nth-child(1) button {
   animation-delay: 0.1s;
