@@ -7,16 +7,15 @@ const Play = () => {
     <div className="play-container h-screen w-screen flex flex-col items-center justify-center bg-black">
       {/* Navigation */}
       <div className="absolute top-5 right-10 flex gap-10">
-        <a href="#home" className="text-white font-bold text-lg hover:underline">Home</a>
-        <a href="#play" className="text-white font-bold text-lg hover:underline">Play</a>
+        {/* <a href="#home" className="text-white font-bold text-lg hover:underline">Home</a>
+        <a href="#play" className="text-white font-bold text-lg hover:underline">Play</a> */}
         
       {/* Drawer Component */}
        
-      <div className="drawer drawer-end">
+      {/* <div className="drawer drawer-end">
         <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
-        {/* Drawer toggle */}
-    {/* Page content here */}
+   
       <label  htmlFor="my-drawer-4" className="rounded-full w-10 h-10 bg-purple-500 flex items-center justify-center">
           <span className="text-white">👤</span>
       </label>
@@ -24,12 +23,12 @@ const Play = () => {
           <div className="drawer-side">
             <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
             <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
-              {/* Sidebar content here */}
+         
               <li><a>Sidebar Item 1</a></li>
               <li><a>Sidebar Item 2</a></li>
             </ul>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Start Button */}
