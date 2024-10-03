@@ -4,8 +4,12 @@ import Nav from "./Component/Nav.js";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Play from './Pages/Play.js';
 import HomePage from './Pages/HomePage.js';
-import NotFoundPage from './components/NotFound.js';
-import Footer from './components/Footer.js';
+import NotFoundPage from './Component/NotFound.js';
+import Footer from './Component/Footer.js';
+import Contact from './Pages/Contact.js';
+import About from './Pages/About.js';
+import Login from './Pages/Login.js';
+import Signup from './Pages/Signup.js';
 
 function App() {
   const [data, setData] = useState('');
@@ -25,7 +29,12 @@ function App() {
         <Routes>
           <Route path="/" element= {<HomePage />}/>
           <Route path="/play" element= {<Play />}/>
+          <Route path="/about" element= {<About />}/>
+          <Route path="/contact" element= {<Contact />}/>
+          <Route path="/signup" element= {<Signup />}/>
+          <Route path="/login" element= {<Login />}/>
           <Route path="*" element={<NotFoundPage/>}/>
+          
         </Routes>
       </Router>
 

@@ -1,5 +1,8 @@
 import React from "react";
 import yourImage from '../Resources/image_2.svg'; // Update with your actual image path
+import { useNavigate } from 'react-router-dom';
+
+
 
 const globalStyles = {
   body: {
@@ -12,7 +15,14 @@ const globalStyles = {
 };
 
 function Hero() {
+
+  const navigate = useNavigate();
+const openPlay = () => {
+  navigate('/play');
+};
   return (
+
+    
     <div 
       style={globalStyles} 
       className="min-h-screen w-screen flex flex-col gap-10 items-center justify-center text-center text-gray-100 shadow-inner overflow-hidden"
@@ -39,7 +49,7 @@ function Hero() {
       {/* Play Now Button */}
       <button
         className="px-6 sm:px-8 py-3 sm:py-4 rounded-lg border-2 border-[#7F1F8F] text-white cursor-pointer transition-all ease-in-out duration-300"
-        style={{ backgroundColor: '#7F1F8F', fontFamily: 'Rationale, sans-serif' }}
+        style={{ backgroundColor: '#7F1F8F', fontFamily: 'Rationale, sans-serif' } }onClick = {openPlay}
       >
         Play Now
       </button>
