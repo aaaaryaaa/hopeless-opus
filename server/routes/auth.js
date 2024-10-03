@@ -78,6 +78,7 @@ router.post("/login", authMiddleware, (req, res) => {
             res.json({
               success: true,
               token: "Bearer " + token, // Send the token back to the client
+              storyId: user.currentStoryId,
             });
           }
         );
