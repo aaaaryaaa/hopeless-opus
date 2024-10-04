@@ -25,6 +25,7 @@ export default function Login() {
       })
       .then((response) => {
         console.log(response.data);
+        console.log(`${BaseUrl}/api/auth/login`);
         localStorage.setItem("token", response.data.token); // Store the token
         navigate("/play"); // Navigate to /play on success
       })
