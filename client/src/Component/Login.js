@@ -3,43 +3,25 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-  const [email, setEmail] = useState("");
+  const [teamLeader_email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  // const handleLogin = (e) => {
-  //   e.preventDefault();
-
-  //   // Validate email
-  //   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  //   if (!emailPattern.test(email)) {
-  //     alert("Please enter a valid email address.");
-  //     return;
-  //   }
-
-  //   axios
-  //     .post("http://localhost:5000/api/auth/login", { email, password })
-  //     .then((response) => {
-  //       console.log(response.data);
-  //       navigate("/play"); // Navigate to /play on success
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //       // Handle error (e.g., show error message)
-  //     });
-  // };
   const handleLogin = (e) => {
     e.preventDefault();
-  
+
     // Validate email
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email)) {
+    if (!emailPattern.test(teamLeader_email)) {
       alert("Please enter a valid email address.");
       return;
     }
-  
+
     axios
-      .post("http://localhost:5000/api/auth/login", { email, password })
+      .post("http://localhost:5000/api/auth/login", {
+        teamLeader_email,
+        password,
+      })
       .then((response) => {
         console.log(response.data);
         localStorage.setItem("token", response.data.token); // Store the token
@@ -58,11 +40,11 @@ export default function Login() {
         <form onSubmit={handleLogin} className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700">
-              Email:
+              Team Leader Email:
             </label>
             <input
               type="email"
-              value={email}
+              value={teamLeader_email}
               onChange={(e) => setEmail(e.target.value)}
               required
               className="mt-1 p-2 w-full border rounded-md focus:ring-indigo-500 focus:border-indigo-500 bg-white text-black"
