@@ -1,22 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
+import StoryGame from "./StoryGame";
 import Nav from "./Component/Nav.js";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Play from './Pages/Play.js';
-import HomePage from './Pages/HomePage.js';
-import NotFoundPage from './components/NotFound.js';
-import Footer from './components/Footer.js';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import Play from "./Pages/Play.js";
+import HomePage from "./Pages/HomePage.js";
+import NotFoundPage from "./Component/NotFound.js";
+import Footer from "./Component/Footer.js";
+import Contact from "./Pages/Contact.js";
+import About from "./Pages/About.js";
+import Login from "./Pages/Login.js";
+import Signup from "./Pages/Signup.js";
 
 import Register from './Component/Register.js';
 import Login from './Component/Login.js';
 function App() {
-  const [data, setData] = useState('');
+  const [data, setData] = useState("");
 
-  
   useEffect(() => {
-    fetch('/')
-      .then(res => res.text())
-      .then(data => setData(data))
-      .catch(err => console.error(err));
+    fetch("/")
+      .then((res) => res.text())
+      .then((data) => setData(data))
+      .catch((err) => console.error(err));
   }, []);
 
   return (
@@ -26,12 +35,15 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/play" element={<Play />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="*" element={<NotFoundPage/>}/>          <Route path="/login" element={<Login />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/register" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>
 
-    <Footer/>
+      <Footer />
     </div>
   );
 }
