@@ -27,6 +27,10 @@ const UserSchema = new Schema({
     type: String,
     default: "0001",
   },
+  points: {
+    type: Number,
+    default: 0,
+  },
   sessionId: {
     type: String,
     default: "",
