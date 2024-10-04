@@ -27,7 +27,8 @@ const StoryGame = () => {
       const userDetails = await response.json();
       console.log(userDetails); // Use user details as needed
       setStoryId(userDetails.currentStoryId);
-      setPoints(userDetails.currentPoints); // Assume you store points in the backend
+      setPoints(userDetails.points); // Assume you store points in the backend
+      console.log(userDetails.points);
       fetchStory(userDetails.currentStoryId);
     } catch (error) {
       console.error("Error fetching user details:", error.message);
@@ -106,6 +107,7 @@ const StoryGame = () => {
       
       // Check if moving to the next story is allowed
       if (firstTwoDigits1 < firstTwoDigits2) {
+        if(points===null) setPoints(0);
         const updatedPoints = points + optionPoints; // Add option points to current points
         console.log(updatedPoints, points, optionPoints);
         setPoints(updatedPoints); // Update the UI with new points
