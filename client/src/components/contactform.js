@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import Globe from "../Resources/globe";
+import Globe from "";
 
 const ContactForm = () => {
 const [formData, setFormData] = useState({
@@ -30,7 +30,9 @@ const handleSubmit = (e) => {
 };
 
 return (
-    
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-800 relative p-4">
+        <image src={Globe} alt="Globe" className="absolute top-0 right-0 w-32 h-32 mt-12 mr-12" />
+        
     <div className="max-w-lg w-full p-8 bg-gradient-to-br from-gray-700 to-gray-900 shadow-lg rounded-lg">
         <h2 className="text-4xl font-bold text-white mb-4">
         Get In <span className="text-sky-400">Touch</span>
@@ -86,6 +88,7 @@ return (
         </button>
 
         </form>
+    </div>
     </div>
 
 );
