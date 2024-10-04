@@ -9,101 +9,101 @@ const uuid = require("uuid");
 const router = express.Router();
 
 // Register new user
-router.post("/register", authMiddleware, (req, res) => {
+router.post("/register", authMiddleware, async (req, res) => {
   if (req.user) {
     return res.status(403).json({ message: "User already authenticated" });
   }
 
-  const { name, phone, email, password, confirmPassword } = req.body; // Add fields here
-
+  const {
+    teamLeader_name,
+    teamLeader_phone,
+    teamLeader_email,
+    player2_name,
+    password,
+    confirmPassword,
+  } = req.body;
+  console.log(req.body);
   // Check if passwords match
   if (password !== confirmPassword) {
-    return res.status(400).json({ message: "Passwords do not match" });
+    return res.status(400).json({ message: "check password dumass" });
   }
 
-  // Check if the user already exists
-  User.findOne({ email }).then((user) => {
-    if (user) {
+  try {
+    // Check if the user already exists
+    const existingUser = await User.findOne({ teamLeader_email });
+    if (existingUser) {
       return res.status(400).json({ message: "User already exists" });
     }
 
     // Create a new user object
-    const newUser = new User({ name, phone, email, password });
+    const newUser = new User({
+      teamLeader_name,
+      teamLeader_phone,
+      teamLeader_email,
+      player2_name,
+      password,
+    
+    });
 
     // Hash the password before saving the user
-    bcrypt.genSalt(10, (err, salt) => {
-      bcrypt.hash(newUser.password, salt, (err, hash) => {
-        if (err) throw err;
-        newUser.password = hash; // Set hashed password
+    newUser.password = await bcrypt.hash(password, 10);
 
-        // Save the new user
-        newUser
-          .save()
-          .then((user) => res.json({ message: "User registered successfully" }))
-          .catch((err) => res.status(500).json({ error: err.message }));
-      });
-    });
-  });
+    // Save the new user
+    await newUser.save();
+    res.json({ message: "User registered successfully" });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+  console.log(req.body); // Log incoming request body
+ 
 });
 
 // Login user and return JWT token
-router.post("/login", authMiddleware, (req, res) => {
+router.post("/login", authMiddleware, async (req, res) => {
   if (req.user) {
     return res.status(403).json({ message: "User already authenticated" });
   }
 
-  const { email, password } = req.body;
+  const { teamLeader_email, password } = req.body;
 
-  // Find user by email
-  User.findOne({ email })
-    .then((user) => {
-      if (!user) {
-        return res.status(400).json({ message: "User not found" });
-      }
+  try {
+    // Find user by email
+    const user = await User.findOne({ teamLeader_email });
+    if (!user) {
+      return res.status(400).json({ message: "User not found" });
+    }
 
-      // Check password
-      bcrypt.compare(password, user.password).then((isMatch) => {
-        if (!isMatch) {
-          return res.status(400).json({ message: "Invalid credentials" });
-        }
-        const sessionId = uuid.v4();
+    // Check password
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.status(400).json({ message: "Invalid credentials" });
+    }
 
-        // Save sessionId to user in the database
-        user.sessionId = sessionId;
-        // Generate token
-        user.save().then(() => {
-          // Generate token with sessionId
-          const payload = {
-            id: user.id,
-            name: user.name,
-            sessionId: sessionId,
-          };
-          jwt.sign(
-            payload,
-            process.env.SECRET,
-            { expiresIn: "6h" }, // Token expiration
-            (err, token) => {
-              if (err) throw err;
-              res.json({
-                success: true,
-                token: "Bearer " + token,
-                storyId: user.currentStoryId,
-              });
-            }
-          );
-        });
-      });
-    })
-    .catch((err) => res.status(500).json({ error: err.message }));
+    const sessionId = uuid.v4();
+    user.sessionId = sessionId; // Save sessionId to user in the database
+    await user.save(); // Save user with updated sessionId
+
+    // Generate token
+    const payload = {
+      id: user.id,
+      name: user.teamLeader_name,
+      sessionId: sessionId,
+    };
+    console.log(payload);
+    const token = jwt.sign(payload, process.env.SECRET, { expiresIn: "6h" });
+    res.json({
+      success: true,
+      token: "Bearer " + token,
+      storyId: user.currentStoryId,
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 // Protected route
-router.get(
-  "/profile",
-  passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    res.json({ user: req.user });
-  }
-);
+router.get("/profile", authMiddleware, (req, res) => {
+  res.json({ user: req.user });
+});
 
 module.exports = router;

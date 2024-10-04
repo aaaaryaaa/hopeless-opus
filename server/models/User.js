@@ -2,15 +2,19 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-  name: {
+  teamLeader_name: {
     type: String,
     required: true,
   },
-  phone: {
+  player2_name: {
+    type: String,
+    required: false,
+  },
+  teamLeader_phone: {
     type: String,
     required: true,
   },
-  email: {
+  teamLeader_email: {
     type: String,
     required: true,
     unique: true,
@@ -23,10 +27,10 @@ const UserSchema = new Schema({
     type: String,
     default: "0001",
   },
-  sessionId:{
-    type:String,
-    default:""  
-  }
+  sessionId: {
+    type: String,
+    default: "",
+  },
 });
 
 module.exports = mongoose.model("User", UserSchema);
