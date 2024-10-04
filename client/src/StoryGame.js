@@ -4,25 +4,25 @@ import BaseUrl from "./BaseUrl";
 const StoryGame = () => {
   const [story, setStory] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [storyId, setStoryId] = useState('0000');
+  const [storyId, setStoryId] = useState("0000");
 
   // Fetch user details only when the component mounts
   async function fetchUserDetails() {
     const token = localStorage.getItem("token"); // Get the token from localStorage
-  
+
     try {
       const response = await fetch(`${BaseUrl}/api/user/getuser`, {
         method: "GET",
         headers: {
-          "Authorization": `${token}`, // Include the token in the Authorization header
+          Authorization: `${token}`, // Include the token in the Authorization header
           "Content-Type": "application/json",
         },
       });
-  
+
       if (!response.ok) {
         throw new Error("Failed to fetch user details");
       }
-  
+
       const userDetails = await response.json();
       console.log(userDetails); // Use user details as needed
       setStoryId(userDetails.currentStoryId);
@@ -31,6 +31,7 @@ const StoryGame = () => {
       console.error("Error fetching user details:", error.message);
     }
   }
+
   useEffect(() => {
     // Call the function to fetch user details
     fetchUserDetails();
@@ -57,7 +58,7 @@ const StoryGame = () => {
       const response = await fetch(`${BaseUrl}/api/user/updatestory`, {
         method: "PUT",
         headers: {
-          "Authorization": `${token}`,
+          Authorization: `${token}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
@@ -79,20 +80,20 @@ const StoryGame = () => {
 
   const handleOptionClick = async (nextStoryId) => {
     const token = localStorage.getItem("token"); // Get the token from localStorage
-  
+
     try {
       const response = await fetch(`${BaseUrl}/api/user/getuser`, {
         method: "GET",
         headers: {
-          "Authorization": `${token}`, // Include the token in the Authorization header
+          Authorization: `${token}`, // Include the token in the Authorization header
           "Content-Type": "application/json",
         },
       });
-  
+
       if (!response.ok) {
         throw new Error("Failed to fetch user details");
       }
-  
+
       const userDetails = await response.json();
       console.log(userDetails); // Use user details as needed
       setStoryId(userDetails.currentStoryId);
@@ -100,7 +101,7 @@ const StoryGame = () => {
       const firstTwoDigits1 = userDetails.currentStoryId.slice(0, 2);
       const firstTwoDigits2 = nextStoryId.slice(0, 2);
       console.log(firstTwoDigits1 + " - " + firstTwoDigits2);
-      if(firstTwoDigits1<firstTwoDigits2){
+      if (firstTwoDigits1 < firstTwoDigits2) {
         fetchStory(nextStoryId);
         updateCurrentStoryId(nextStoryId); // Update the user's current story ID in the backend
       }
@@ -111,26 +112,26 @@ const StoryGame = () => {
 
   return (
     <div>
-      {/* {!story && (
-        // <div>
-        //   <h1>Welcome to the Story Game</h1>
-        //   <button onClick={startGame}>Start Game</button>
-        // </div>
-      )} */}
-      {/* {loading && <p>Loading...</p>}
-      {story && !loading && (
-        <div>
-          <p>{story.snippet}</p>
-          {story.options.map((option, index) => (
-            <button key={index} onClick={() => handleOptionClick(option.nextStoryId)}>
-              {option.optionText}
-            </button>
-          ))}
-        </div>
-      )} */}
-    <Dashboard/>
-    <Hero/>
-    <Footer/>
+      {storyId === "0000" ? (
+        <p>Loading....</p>
+      ) : (
+        <>
+          {loading && <p>Loading...</p>}
+          {story && (
+            <div>
+              <p>{story.snippet}</p>
+              {story.options.map((option, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleOptionClick(option.nextStoryId)}
+                >
+                  {option.optionText}
+                </button>
+              ))}
+            </div>
+          )}
+        </>
+      )}
     </div>
   );
 };
