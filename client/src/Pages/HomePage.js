@@ -1,14 +1,14 @@
-import React from 'react'
-import StoryGame from '../StoryGame'
-import Footer from "../components/Footer";
-import Hero from "../components/Hero";
-import Gradient from '../Resources/Gradient.svg';
-import ContactForm from "../components/contactform";
-import Countdown from "../components/Countdown.js";
-import CardSlider from "../components/CardSlider.js";
-
-import FAQ from '../components/FAQ';
-
+import React from "react";
+import StoryGame from "../StoryGame";
+import Footer from "../Component/Footer.js";
+import Hero from "../Component/Hero";
+import Gradient from "../Resources/Gradient.svg";
+import ContactForm from "../Component/contactform";
+import Countdown from "../Component/Countdown.js";
+import CardSlider from "../Component/CardSlider.js";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import FAQ from "../Component/FAQ";
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -23,11 +23,11 @@ export default function HomePage() {
     <div
       className="min-h-screen w-screen flex flex-col gap-10 items-center justify-center text-center p-4 bg-black text-gray-100 shadow-inner overflow-hidden"
       style={{
-        backgroundColor: '', // Use imported image
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        zIndex: '-1',
+        backgroundColor: "", // Use imported image
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        zIndex: "-1",
       }}
     >
       <Countdown></Countdown>

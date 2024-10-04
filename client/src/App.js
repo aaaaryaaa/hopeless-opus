@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import StoryGame from "./StoryGame";
+import StoryGame from "./StoryGame.js";
 import Nav from "./Component/Nav.js";
 import {
   BrowserRouter as Router,
