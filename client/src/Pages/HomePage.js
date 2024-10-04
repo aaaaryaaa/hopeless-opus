@@ -3,6 +3,8 @@ import StoryGame from '../StoryGame'
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Gradient from '../Resources/Gradient.svg';
+import ContactForm from "../components/contactform";
+
 
 import FAQ from '../components/FAQ';
 
