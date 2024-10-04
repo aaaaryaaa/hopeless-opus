@@ -6,8 +6,8 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Squada One', sans-serif;
+  font-weight: 1000;
 }
 
 a {
@@ -25,10 +25,12 @@ ul {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #2C3E50;
+  background-color: transparent;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  position: relative;
+  position: fixed;
   z-index: 1000;
+  width: 100%;
+  backdrop-filter: blur(10px);
 }
 
 /* Logo and Title */
@@ -38,9 +40,9 @@ ul {
 }
 
 .nav-logo img {
-  width: 2.5em;  /* Adjust the size of the logo (40px / 16px = 2.5em) */
+  width: 2.5em;
   height: auto;
-  margin-right: 0.625em; /* Add space between the logo and the title (10px / 16px = 0.625em) */
+  margin-right: 0.625em;
 }
 
 .nav-logo a {
@@ -55,9 +57,12 @@ ul {
 .nav-links {
   display: flex;
   gap: 2rem;
-  position: absolute;
-  left: 50%;                 /* Centering */
-  transform: translateX(-50%);/* Aligning to center */
+  padding-left: 17%;
+  flex: 1;
+}
+
+.nav-links li {
+  text-align: center;
 }
 
 .nav-links li button {
@@ -71,9 +76,9 @@ ul {
 }
 
 .nav-links li button:hover {
-  background-color: #3498DB;
+  background-color: #8639f0;
   color: white;
-  box-shadow: 0px 4px 12px rgba(52, 152, 219, 0.5);
+  box-shadow: 0px 4px 12px rgba(83, 70, 153, 0.5);
 }
 
 .nav-links li button.active {
@@ -84,6 +89,7 @@ ul {
 .nav-dash {
   display: flex;
   gap: 2rem;
+  z-index: 1002;
 }
 
 .nav-dash li a {
@@ -95,7 +101,7 @@ ul {
   background-color: transparent;
 }
 
-.nav-dash li :hover {
+.nav-dash li a:hover {
   background-color: #3498DB;
   color: white;
   box-shadow: 0px 4px 12px rgba(52, 152, 219, 0.5);
@@ -111,26 +117,54 @@ ul {
   font-size: 2.5rem;
   color: #ECF0F1;
   cursor: pointer;
+  z-index: 1001;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+
   .nav-links {
     display: none;
     flex-direction: column;
+    justify-content: left;
     width: 100%;
     position: absolute;
     top: 70px;
     left: 0;
-    background-color: #34495E;
-    transition: all 0.5s ease-in-out;
+    background-color: transparent;
     padding: 1rem 0;
-    transform: none; /* Remove center alignment for mobile */
-    left: 0;         /* Full width in mobile view */
+    backdrop-filter: blur(10px);
+    z-index: 1000;
   }
 
-  .nav-links.nav-links-mobile {
+  .nav-links-mobile {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1001;
+    color: #ffffff;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .nav-links-mobile::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Semi-transparent black background */
+    backdrop-filter: blur(20px);
+    /* Strong blur */
+    z-index: -1;
+    /* Place it behind the nav links */
   }
 
   .nav-links li {
@@ -138,46 +172,63 @@ ul {
     margin: 1rem 0;
   }
 
-  .nav-links li a {
-    font-size: 1.2rem;
-    padding: 1rem 2rem;
-    width: 100%;
+  .nav-links-mobile li {
     display: block;
-    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
   }
 
   .mobile-menu-icon {
     display: block;
+    z-index: 1001;
   }
 
-  .istelogo{
-    display:none;
+  /* Center buttons */
+  .nav-links-mobile li button {
+    font-size: 1.5rem;
+    padding: 0.75rem 2rem;
+    width: auto;
+    text-align: center;
+    background-color: transparent;
+  }
+
+  .istelogo {
+    display: none;
+  }
+
+  .nav-dash-mobile .mobile-menu-icon {
+    display: none;
+  }
+
+  .menu-open .nav-links-mobile li {
+    justify-content: center;
+  }
+
+  .menu-open .nav-links-mobile li button:hover {
+    background-color: #8639f0;
+  }
+
+  /* When the menu is open, hide logo and dashboard */
+  .menu-open .nav-logo,
+  .menu-open .nav-dash {
+    display: none;
   }
 }
 
-/* When the menu is open, hide logo and dashboard */
-.menu-open .nav-logo,
-.menu-open .nav-dash,
-.menu-open .istelogo {
-  display: none;
-}
-
-/* Animation for Links */
-.nav-links li button {
-  opacity: 0;
-  animation: fadeInLinks 0.5s forwards;
-}
-
+/* Fade-in animation for links */
 @keyframes fadeInLinks {
   from {
     opacity: 0;
     transform: translateX(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
+
 
 .nav-links li:nth-child(1) a {
   animation-delay: 0.1s;

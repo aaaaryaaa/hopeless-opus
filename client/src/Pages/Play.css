@@ -1,0 +1,37 @@
+/* Play.css */
+
+/* Lightning background */
+
+@import url('https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap');
+
+.font-stalinist {
+  font-family: 'Stalinist One', cursive;
+}
+
+
+
+.play-container {
+    background-image: url('../Resources/lightning.svg'); /* Ensure you have this image */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  /* Start Button neon glow effect */
+  .start-button {
+    background-color: #7c3aed;
+    box-shadow: 0 0 20px #988dac, 0 0 10px #9a8eae, 0 0 20px #968ca9;
+    transition: all 0.3s ease;
+  }
+  
+  .start-button:hover {
+    box-shadow: 0 0 40px #7c3aed, 0 0 80px #7c3aed, 0 0 100px #7c3aed;
+  }
+  
+  /* Blurred box effect */
+  .blurred-box {
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+  }
+  

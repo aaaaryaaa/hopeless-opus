@@ -3,6 +3,9 @@ import Nav from "./Component/Nav.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Play from './Pages/Play.js';
 import HomePage from './Pages/HomePage.js';
+import NotFoundPage from './components/NotFound.js';
+import Footer from './components/Footer.js';
+
 import Register from './Component/Register.js';
 import Login from './Component/Login.js';
 function App() {
@@ -24,9 +27,11 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/play" element={<Play />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="*" element={<NotFoundPage/>}/>          <Route path="/login" element={<Login />} />
         </Routes>
       </Router>
+
+    <Footer/>
     </div>
   );
 }
