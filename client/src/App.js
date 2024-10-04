@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import StoryGame from './StoryGame';
 import Nav from "./Component/Nav.js";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Play from './Pages/Play.js';
 import HomePage from './Pages/HomePage.js';
 import Register from './Component/Register.js';

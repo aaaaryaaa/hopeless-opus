@@ -10,10 +10,19 @@ const storySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  bgimg: {
+    type: String, // Cloudinary link
+    required: false, 
+  },
   options: [
     {
       optionText: String,
       nextStoryId: String,
+      points: {
+        type: Number,
+        required: true,
+        default: 0,
+      },
     },
   ],
   previousStoryId: {

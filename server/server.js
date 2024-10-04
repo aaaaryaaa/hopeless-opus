@@ -8,6 +8,7 @@ const passport = require("passport");
 // Import routes
 const storyRoutes = require("./routes/storyRoutes"); // Your story routes
 const authRoutes = require("./routes/auth"); // New authentication routes
+const userRoutes = require("./routes/userRoutes"); //User with story ka routes
 require("./config/passport")(passport); // Passport config
 
 const app = express();
@@ -32,6 +33,7 @@ mongoose
 // Use routes
 app.use("/api/", storyRoutes); // Story routes
 app.use("/api/auth/", authRoutes); // Authentication routes
+app.use("/api/user/", userRoutes);
 
 // Test route
 app.get("/", (req, res) => {
