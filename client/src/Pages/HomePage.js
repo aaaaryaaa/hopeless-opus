@@ -23,6 +23,7 @@ export default function HomePage() {
 >
       
       <FAQ/>
+      <ContactForm/>
       {/* <Hero/> */}
       {/* <Footer/> */}
     </div>

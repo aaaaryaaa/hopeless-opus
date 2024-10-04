@@ -30,8 +30,8 @@ const handleSubmit = (e) => {
 };
 
 return (
-    <div className="min-h-screen flex items-center justify-end bg-gray-800">
-    <div className="max-w-lg w-full p-8 bg-gradient-to-br from-gray-800 to-gray-900 shadow-lg mr-40 rounded-lg">
+    
+    <div className="max-w-lg w-full p-8 bg-gradient-to-br from-gray-700 to-gray-900 shadow-lg rounded-lg">
         <h2 className="text-4xl font-bold text-white mb-4">
         Get In <span className="text-sky-400">Touch</span>
         </h2>
@@ -87,7 +87,7 @@ return (
 
         </form>
     </div>
-    </div>
+
 );
 };
 
