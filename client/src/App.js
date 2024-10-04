@@ -13,11 +13,9 @@ import NotFoundPage from "./Component/NotFound.js";
 import Footer from "./Component/Footer.js";
 import Contact from "./Pages/Contact.js";
 import About from "./Pages/About.js";
-import Login from "./Pages/Login.js";
-import Signup from "./Pages/Signup.js";
 
-import Register from './Component/Register.js';
-import Login from './Component/Login.js';
+import Register from "./Component/Register.js";
+import Login from "./Component/Login.js";
 function App() {
   const [data, setData] = useState("");
 
@@ -37,7 +35,7 @@ function App() {
           <Route path="/play" element={<Play />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/register" element={<Signup />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
