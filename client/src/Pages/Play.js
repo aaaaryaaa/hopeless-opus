@@ -1,5 +1,6 @@
 import React from 'react';
 import './Play.css';
+import Animate from '../Component/Animate';
 
 
 const Play = () => {
@@ -30,6 +31,7 @@ const Play = () => {
           </div>
         </div> */}
       </div>
+      <Animate/>
 
       {/* Start Button */}
       <div className="flex flex-col items-center">
