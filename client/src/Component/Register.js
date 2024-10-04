@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import BaseUrl from "../BaseUrl";
 
 export default function Register() {
   const [teamLeader_name, setName] = useState("");
@@ -39,7 +40,7 @@ export default function Register() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        `${BaseUrl}/api/auth/register`,
         {
           teamLeader_name,
           teamLeader_email,
