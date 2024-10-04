@@ -1,0 +1,60 @@
+.countdown-timer {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    /* background: linear-gradient(to right, #4e54c8, #8f94fb); */
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.timer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.timer {
+    text-align: center;
+    margin: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.timer-time {
+    font-size: 100px;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    letter-spacing: 3px;
+    /* background: rgba(0, 0, 0, 0.2); */
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.timer-label {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #ddd;
+}
+
+@media (max-width: 768px) {
+    .timer-time {
+        font-size: 60px;
+    }
+
+    .timer-label {
+        font-size: 16px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
