@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const passport = require("passport");
 const User = require("../models/User");
 const authMiddleware = require("../middleware/authMiddleware"); // Import the auth middleware
-
+const uuid = require("uuid");
 const router = express.Router();
 
 // Register new user
@@ -66,22 +66,32 @@ router.post("/login", authMiddleware, (req, res) => {
         if (!isMatch) {
           return res.status(400).json({ message: "Invalid credentials" });
         }
+        const sessionId = uuid.v4();
 
+        // Save sessionId to user in the database
+        user.sessionId = sessionId;
         // Generate token
-        const payload = { id: user.id, name: user.name }; // Include user details in the payload
-        jwt.sign(
-          payload,
-          process.env.SECRET, // Use the secret from your .env file
-          { expiresIn: "6h" }, // Token expires in 1 hour
-          (err, token) => {
-            if (err) throw err;
-            res.json({
-              success: true,
-              token: "Bearer " + token, // Send the token back to the client
-              storyId: user.currentStoryId,
-            });
-          }
-        );
+        user.save().then(() => {
+          // Generate token with sessionId
+          const payload = {
+            id: user.id,
+            name: user.name,
+            sessionId: sessionId,
+          };
+          jwt.sign(
+            payload,
+            process.env.SECRET,
+            { expiresIn: "6h" }, // Token expiration
+            (err, token) => {
+              if (err) throw err;
+              res.json({
+                success: true,
+                token: "Bearer " + token,
+                storyId: user.currentStoryId,
+              });
+            }
+          );
+        });
       });
     })
     .catch((err) => res.status(500).json({ error: err.message }));

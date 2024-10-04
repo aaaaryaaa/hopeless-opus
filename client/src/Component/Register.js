@@ -116,6 +116,7 @@ export default function Register() {
             Register
           </button>
         </form>
+        <p class="text-sm text-center">Already have an account? <a href="/login" class="text-indigo-600">Login</a></p>
       </div>
     </div>
   );

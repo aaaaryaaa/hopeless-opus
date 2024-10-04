@@ -23,6 +23,10 @@ const UserSchema = new Schema({
     type: String,
     default: "0001",
   },
+  sessionId:{
+    type:String,
+    default:""  
+  }
 });
 
 module.exports = mongoose.model("User", UserSchema);
