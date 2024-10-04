@@ -111,22 +111,26 @@ const StoryGame = () => {
 
   return (
     <div>
-      {storyId === '0000' ? (
-        <p>Loading....</p>
-      ) : (
-        <>
-          {story && (
-            <div>
-              <p>{story.snippet}</p>
-              {story.options.map((option, index) => (
-                <button key={index} onClick={() => handleOptionClick(option.nextStoryId)}>
-                  {option.optionText}
-                </button>
-              ))}
-            </div>
-          )}
-        </>
-      )}
+      {/* {!story && (
+        // <div>
+        //   <h1>Welcome to the Story Game</h1>
+        //   <button onClick={startGame}>Start Game</button>
+        // </div>
+      )} */}
+      {/* {loading && <p>Loading...</p>}
+      {story && !loading && (
+        <div>
+          <p>{story.snippet}</p>
+          {story.options.map((option, index) => (
+            <button key={index} onClick={() => handleOptionClick(option.nextStoryId)}>
+              {option.optionText}
+            </button>
+          ))}
+        </div>
+      )} */}
+    <Dashboard/>
+    <Hero/>
+    <Footer/>
     </div>
   );
 };

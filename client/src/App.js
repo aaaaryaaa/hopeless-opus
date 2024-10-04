@@ -1,21 +1,16 @@
 import React, { useEffect, useState } from "react";
 import StoryGame from "./StoryGame.js";
 import Nav from "./Component/Nav.js";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Play from "./Pages/Play.js";
 import HomePage from "./Pages/HomePage.js";
 import NotFoundPage from "./Component/NotFound.js";
 import Footer from "./Component/Footer.js";
 import Contact from "./Pages/Contact.js";
 import About from "./Pages/About.js";
-
 import Register from "./Component/Register.js";
 import Login from "./Component/Login.js";
+
 function App() {
   const [data, setData] = useState("");
 
@@ -40,8 +35,9 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>
-
       <Footer />
+      {/* Uncomment this line to include StoryGame conditionally */}
+      {/* <StoryGame /> */}
     </div>
   );
 }
