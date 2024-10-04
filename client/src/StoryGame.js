@@ -7,32 +7,31 @@ const StoryGame = () => {
   const [storyId, setStoryId] = useState('0000');
 
   // Fetch user details only when the component mounts
-  useEffect(() => {
-    async function fetchUserDetails() {
-      const token = localStorage.getItem("token"); // Get the token from localStorage
-    
-      try {
-        const response = await fetch(`${BaseUrl}/api/user/getuser`, {
-          method: "GET",
-          headers: {
-            "Authorization": `${token}`, // Include the token in the Authorization header
-            "Content-Type": "application/json",
-          },
-        });
-    
-        if (!response.ok) {
-          throw new Error("Failed to fetch user details");
-        }
-    
-        const userDetails = await response.json();
-        console.log(userDetails); // Use user details as needed
-        setStoryId(userDetails.currentStoryId);
-        fetchStory(userDetails.currentStoryId);
-      } catch (error) {
-        console.error("Error fetching user details:", error.message);
+  async function fetchUserDetails() {
+    const token = localStorage.getItem("token"); // Get the token from localStorage
+  
+    try {
+      const response = await fetch(`${BaseUrl}/api/user/getuser`, {
+        method: "GET",
+        headers: {
+          "Authorization": `${token}`, // Include the token in the Authorization header
+          "Content-Type": "application/json",
+        },
+      });
+  
+      if (!response.ok) {
+        throw new Error("Failed to fetch user details");
       }
+  
+      const userDetails = await response.json();
+      console.log(userDetails); // Use user details as needed
+      setStoryId(userDetails.currentStoryId);
+      fetchStory(userDetails.currentStoryId);
+    } catch (error) {
+      console.error("Error fetching user details:", error.message);
     }
-
+  }
+  useEffect(() => {
     // Call the function to fetch user details
     fetchUserDetails();
   }, []); // Empty dependency array ensures it runs only once when the component mounts
@@ -78,9 +77,36 @@ const StoryGame = () => {
     }
   };
 
-  const handleOptionClick = (nextStoryId) => {
-    fetchStory(nextStoryId);
-    updateCurrentStoryId(nextStoryId); // Update the user's current story ID in the backend
+  const handleOptionClick = async (nextStoryId) => {
+    const token = localStorage.getItem("token"); // Get the token from localStorage
+  
+    try {
+      const response = await fetch(`${BaseUrl}/api/user/getuser`, {
+        method: "GET",
+        headers: {
+          "Authorization": `${token}`, // Include the token in the Authorization header
+          "Content-Type": "application/json",
+        },
+      });
+  
+      if (!response.ok) {
+        throw new Error("Failed to fetch user details");
+      }
+  
+      const userDetails = await response.json();
+      console.log(userDetails); // Use user details as needed
+      setStoryId(userDetails.currentStoryId);
+      console.log(userDetails.currentStoryId);
+      const firstTwoDigits1 = userDetails.currentStoryId.slice(0, 2);
+      const firstTwoDigits2 = nextStoryId.slice(0, 2);
+      console.log(firstTwoDigits1 + " - " + firstTwoDigits2);
+      if(firstTwoDigits1<firstTwoDigits2){
+        fetchStory(nextStoryId);
+        updateCurrentStoryId(nextStoryId); // Update the user's current story ID in the backend
+      }
+    } catch (error) {
+      console.error("Error fetching user details:", error.message);
+    }
   };
 
   return (
