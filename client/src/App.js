@@ -11,7 +11,7 @@ import About from "./Pages/About.js";
 import Register from "./Component/Register.js";
 import Login from "./Component/Login.js";
 import Info from "./Component/Info.js";
-
+import StoryError from './Component/StoryError.js';
 function App() {
   const [data, setData] = useState("");
 
@@ -34,6 +34,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFoundPage />} />
+          <Route path='/storyerror' element={<StoryError />} />
         </Routes>
       </Router>
       <Footer />

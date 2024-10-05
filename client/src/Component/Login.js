@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import BaseUrl from '../BaseUrl';
 
 export default function Login() {
   const [teamLeader_email, setEmail] = useState("");
@@ -18,12 +19,13 @@ export default function Login() {
     }
 
     axios
-      .post("http://localhost:5000/api/auth/login", {
+      .post(`${BaseUrl}/api/auth/login`, {
         teamLeader_email,
         password,
       })
       .then((response) => {
         console.log(response.data);
+        console.log(`${BaseUrl}/api/auth/login`);
         localStorage.setItem("token", response.data.token); // Store the token
         navigate("/play"); // Navigate to /play on success
       })

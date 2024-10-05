@@ -34,18 +34,22 @@ router.get("/getuser", authMiddleware, (req, res) => {
     .catch((err) => res.status(500).json({ error: err.message }));
 });
 
-// PUT Route to update currentStoryId
+// PUT Route to update currentStoryId and points
 router.put("/updatestory", authMiddleware, (req, res) => {
-  const { currentStoryId } = req.body;
+  const { currentStoryId, points } = req.body;
 
   if (!currentStoryId) {
     return res.status(400).json({ message: "currentStoryId is required" });
   }
 
-  // Find the user by req.userId and update the currentStoryId
+  if (points === undefined) {
+    return res.status(400).json({ message: "points are required" });
+  }
+
+  // Find the user by req.userId and update currentStoryId and points
   User.findByIdAndUpdate(
     req.userId,
-    { currentStoryId },
+    { currentStoryId, points }, // Update both currentStoryId and points
     { new: true, useFindAndModify: false } // Return the updated user and avoid deprecation warning
   )
     .select("-password") // Exclude password from the response
@@ -53,7 +57,7 @@ router.put("/updatestory", authMiddleware, (req, res) => {
       if (!user) {
         return res.status(404).json({ message: "User not found" });
       }
-      res.json({ message: "Story updated successfully", user });
+      res.json({ message: "Story and points updated successfully", user });
     })
     .catch((err) => res.status(500).json({ error: err.message }));
 });

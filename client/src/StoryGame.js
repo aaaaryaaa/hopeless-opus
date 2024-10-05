@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import BaseUrl from "./BaseUrl";
+import {useNavigate} from 'react-router-dom'
 
 const StoryGame = () => {
+  const nav = useNavigate();
   const [story, setStory] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [storyId, setStoryId] = useState("0000");
+  const [storyId, setStoryId] = useState('0000');
+  const [points, setPoints] = useState(0); // Initialize points to 0
 
   // Fetch user details only when the component mounts
   async function fetchUserDetails() {
@@ -26,9 +29,12 @@ const StoryGame = () => {
       const userDetails = await response.json();
       console.log(userDetails); // Use user details as needed
       setStoryId(userDetails.currentStoryId);
+      setPoints(userDetails.points); // Assume you store points in the backend
+      console.log(userDetails.points);
       fetchStory(userDetails.currentStoryId);
     } catch (error) {
       console.error("Error fetching user details:", error.message);
+      nav('/storyerror'); 
     }
   }
 
@@ -50,7 +56,7 @@ const StoryGame = () => {
     }
   };
 
-  const updateCurrentStoryId = async (newStoryId) => {
+  const updateCurrentStoryIdAndPoints = async (newStoryId, newPoints) => {
     const token = localStorage.getItem("token"); // Get the token from localStorage
     const userId = localStorage.getItem("userId"); // Store user ID in localStorage when user logs in
 
@@ -64,23 +70,23 @@ const StoryGame = () => {
         body: JSON.stringify({
           userId: userId,
           currentStoryId: newStoryId,
+          points: newPoints, // Send updated points to the backend
         }),
       });
 
       if (!response.ok) {
-        throw new Error("Failed to update current story ID");
+        throw new Error("Failed to update current story ID and points");
       }
 
       const data = await response.json();
-      console.log("Story updated successfully:", data);
+      console.log("Story and points updated successfully:", data);
     } catch (error) {
-      console.error("Error updating story:", error);
+      console.error("Error updating story and points:", error);
     }
   };
 
-  const handleOptionClick = async (nextStoryId) => {
+  const handleOptionClick = async (nextStoryId, optionPoints) => {
     const token = localStorage.getItem("token"); // Get the token from localStorage
-
     try {
       const response = await fetch(`${BaseUrl}/api/user/getuser`, {
         method: "GET",
@@ -97,13 +103,19 @@ const StoryGame = () => {
       const userDetails = await response.json();
       console.log(userDetails); // Use user details as needed
       setStoryId(userDetails.currentStoryId);
-      console.log(userDetails.currentStoryId);
+      // console.log(userDetails.currentStoryId);
       const firstTwoDigits1 = userDetails.currentStoryId.slice(0, 2);
       const firstTwoDigits2 = nextStoryId.slice(0, 2);
-      console.log(firstTwoDigits1 + " - " + firstTwoDigits2);
+      // console.log(firstTwoDigits1 + " - " + firstTwoDigits2);
+      
+      // Check if moving to the next story is allowed
       if (firstTwoDigits1 < firstTwoDigits2) {
-        fetchStory(nextStoryId);
-        updateCurrentStoryId(nextStoryId); // Update the user's current story ID in the backend
+        if(points===null) setPoints(0);
+        const updatedPoints = points + optionPoints; // Add option points to current points
+        console.log(updatedPoints, points, optionPoints);
+        setPoints(updatedPoints); // Update the UI with new points
+        fetchStory(nextStoryId); // Fetch the new story
+        updateCurrentStoryIdAndPoints(nextStoryId, updatedPoints); // Update the story ID and points in the backend
       }
     } catch (error) {
       console.error("Error fetching user details:", error.message);
@@ -120,10 +132,11 @@ const StoryGame = () => {
           {story && (
             <div>
               <p>{story.snippet}</p>
+              <p>Points: {points}</p> {/* Display current points */}
               {story.options.map((option, index) => (
                 <button
                   key={index}
-                  onClick={() => handleOptionClick(option.nextStoryId)}
+                  onClick={() => handleOptionClick(option.nextStoryId, option.points)} // Pass the option's points
                 >
                   {option.optionText}
                 </button>
