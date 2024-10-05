@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import BaseUrl from "./BaseUrl";
+import {useNavigate} from 'react-router-dom'
 
 const StoryGame = () => {
+  const nav = useNavigate();
   const [story, setStory] = useState(null);
   const [loading, setLoading] = useState(false);
   const [storyId, setStoryId] = useState('0000');
@@ -32,6 +34,7 @@ const StoryGame = () => {
       fetchStory(userDetails.currentStoryId);
     } catch (error) {
       console.error("Error fetching user details:", error.message);
+      nav('/storyerror'); 
     }
   }
   useEffect(() => {

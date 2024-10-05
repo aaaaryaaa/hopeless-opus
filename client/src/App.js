@@ -5,6 +5,7 @@ import Play from './Pages/Play.js';
 import HomePage from './Pages/HomePage.js';
 import Register from './Component/Register.js';
 import Login from './Component/Login.js';
+import StoryError from './Component/StoryError.js';
 function App() {
   const [data, setData] = useState('');
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/play" element={<Play />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path='/storyerror' element={<StoryError />} />
         </Routes>
       </Router>
     </div>
