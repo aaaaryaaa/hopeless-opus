@@ -50,9 +50,9 @@ const ContactForm = () => {
             <div className="flex max-w-5xl w-full -space-x-36 gap-16">
                 <img src={image} alt="Globe" className="w-[40%] h-full object-cover rounded-l-lg mr-40 my-auto" />
 
-                <div className="max-w-xl mx-10 p-8 bg-gradient-to-br from-gray-700 to-gray-900 shadow-lg rounded-lg">
+                <div className="max-w-xl mx-10 p-8 bg-black shadow-lg rounded-lg">
                     <h2 className="text-4xl font-bold text-white mb-4 text-left">
-                        Get In <span className="text-sky-400">Touch</span>
+                        Get In <span className="text-red-800">Touch</span>
                     </h2>
                     <p className="text-gray-400 mb-8 text-left">
                         Have any questions or issues that you want to bring to our attention? Feel free to drop us a message here, and we'll get back to you ASAP.
@@ -68,7 +68,7 @@ const ContactForm = () => {
                                 placeholder="Your Email"
                                 value={formData.from_email}
                                 onChange={handleInputChange}
-                                className="w-full p-3 bg-gray-800 text-white rounded-lg border border-gray-700 placeholder-gray-500"
+                                className="w-full p-3 bg-gray-1000 text-white rounded-lg border border-gray-700 placeholder-gray-500"
                                 required
                             />
                         </div>
@@ -80,7 +80,7 @@ const ContactForm = () => {
                                 placeholder="Name"
                                 value={formData.from_name}
                                 onChange={handleInputChange}
-                                className="w-full p-3 bg-gray-800 text-white rounded-lg border border-gray-700 placeholder-gray-500"
+                                className="w-full p-3 bg-gray-1000 text-white rounded-lg border border-gray-700 placeholder-gray-500"
                                 required
                             />
                         </div>
@@ -91,7 +91,7 @@ const ContactForm = () => {
                                 placeholder="Message"
                                 value={formData.message}
                                 onChange={handleInputChange}
-                                className="w-full p-3 bg-gray-800 text-white rounded-lg border border-gray-700 placeholder-gray-500"
+                                className="w-full p-3 bg-gray-1000 text-white rounded-lg border border-gray-700 placeholder-gray-500"
                                 rows="4"
                                 required
                             />
@@ -99,7 +99,7 @@ const ContactForm = () => {
 
                         <button
                             type="submit"
-                            className="w-full py-4 font-bold rounded-lg border-2 border-sky-400 bg-white/10 text-gray-100 cursor-pointer transition-all ease-in-out duration-300 backdrop-blur-md hover:bg-sky-400 hover:text-gray-900 hover:shadow-[0_0_25px_rgba(56,189,248,0.7)] hover:scale-105"
+                            className="w-full py-4 font-bold rounded-lg border-2 border-gray-700 bg-white/10 text-gray-100 cursor-pointer transition-all ease-in-out duration-300 backdrop-blur-md hover:bg-sky-400 hover:text-gray-900 hover:shadow-[0_0_25px_rgba(56,189,248,0.7)] hover:scale-105"
                         >
                             Get in Touch
                         </button>

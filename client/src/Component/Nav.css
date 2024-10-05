@@ -31,6 +31,9 @@ ul {
   backdrop-filter: blur(10px);
 }
 
+.hopeless {
+  font-family: "Monoton";
+}
 .nav-logo {
   display: flex;
   align-items: center;
@@ -61,11 +64,12 @@ ul {
 .nav-links li {
   text-align: center;
   transition: all 0.3s ease-in-out;
+  font-family: "Archivo";
 }
 
 .nav-links li button {
   color: #ecf0f1;
-  font-size: 1rem;
+  font-size: 1.5rem;
   padding: 0.5rem 1rem;
   transition: all 0.3s ease;
   border-radius: 25px;
@@ -74,9 +78,9 @@ ul {
 }
 
 .nav-links li button:hover {
-  background-color: #8639f0;
-  color: white;
-  box-shadow: 0px 4px 12px rgba(83, 70, 153, 0.5);
+  background-color: transparent;
+  color: #50daef;
+  /* box-shadow: 0px 4px 12px rgba(83, 70, 153, 0.5); */
   transition: all 0.5s ease-in-out;
 }
 
@@ -117,7 +121,7 @@ ul {
   z-index: 1001;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1070px) {
   .nav-links {
     display: none;
     flex-direction: column;
@@ -146,6 +150,8 @@ ul {
     color: #ffffff;
     transition: all 0.5s ease-in-out;
     background-color: rgba(0, 0, 0, 0.588);
+    font-family: "Archivo";
+    font-size: 1em;
   }
 
   .nav-links-mobile::before {
@@ -209,7 +215,8 @@ ul {
   }
 
   .menu-open .nav-links-mobile li button:hover {
-    background-color: #8639f0;
+    background-color: transparent;
+    color: #50daef;
   }
 
   .menu-open .nav-logo,

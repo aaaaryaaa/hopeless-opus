@@ -18,7 +18,7 @@ export default function HomePage() {
 
   return (
     <div
-      className="min-h-screen w-screen flex flex-col gap-10 items-center justify-center text-center p-4 bg-black text-gray-100 shadow-inner overflow-hidden"
+      className="min-h-screen w-full flex flex-col gap-10 items-center justify-center text-center p-4 bg-black text-gray-100 shadow-inner overflow-hidden"
       style={{
         backgroundSize: "cover",
         backgroundPosition: "center",

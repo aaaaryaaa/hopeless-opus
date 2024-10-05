@@ -23,7 +23,7 @@ const Info = () => {
 
   return (
     <div className="meet-the-devs-container">
-      <h1><span>Meet The </span><span className="core-team">Core Team</span></h1>
+      <h1><span className='meet-the'>Meet The </span><span className="core-team"> Core Team</span></h1>
       <div className="dev-grid">
         {devs.map((dev, index) => (
           <div key={index} className="dev-card">

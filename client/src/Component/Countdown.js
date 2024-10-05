@@ -3,7 +3,7 @@ import './countdown.css';
 
 const CountdownTimer = () => {
     const [time, setTime] = useState(0); // initial time in milliseconds
-    const [targetDate, setTargetDate] = useState(new Date('2024-10-10T12:00:00.000Z')); // set target date and time
+    const [targetDate, setTargetDate] = useState(new Date('2024-10-17T12:00:00.000Z')); // set target date and time
 
     useEffect(() => {
         const updateTimer = () => {

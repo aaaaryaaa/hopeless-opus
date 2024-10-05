@@ -26,6 +26,7 @@ function App() {
     <div>
       <Router>
         <Nav />
+        <div className="h-32 bg-black"></div>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/play" element={<Play />} />
