@@ -4,6 +4,7 @@ import Countdown from "../Component/Countdown.js";
 import CardSlider from "../Component/CardSlider.js";
 import FAQ from "../Component/FAQ";
 import ContactForm from "../Component/contactform";
+import GallerySection from "../GallerySection.js";
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -27,6 +28,7 @@ export default function HomePage() {
       <Countdown />
       <CardSlider />
       <FAQ />
+      <GallerySection />
       <ContactForm />
       {/* Hero and Footer can be added here if needed */}
     </div>
