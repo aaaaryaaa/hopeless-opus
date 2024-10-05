@@ -10,6 +10,7 @@ import Contact from "./Pages/Contact.js";
 import About from "./Pages/About.js";
 import Register from "./Component/Register.js";
 import Login from "./Component/Login.js";
+import Info from "./Component/Info.js";
 
 function App() {
   const [data, setData] = useState("");
@@ -28,7 +29,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/play" element={<Play />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<Info />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />

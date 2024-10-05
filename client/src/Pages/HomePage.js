@@ -5,6 +5,7 @@ import CardSlider from "../Component/CardSlider.js";
 import FAQ from "../Component/FAQ";
 import ContactForm from "../Component/contactform";
 import GallerySection from "../GallerySection.js";
+import Scroll from "../Component/Scrollcirc.js";
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -26,6 +27,7 @@ export default function HomePage() {
       }}
     >
       <Countdown />
+      <Scroll />
       <CardSlider />
       <FAQ />
       <GallerySection />
