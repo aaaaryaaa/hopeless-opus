@@ -1,23 +1,22 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-// import image1 from "./images.jpg";
-// import image2 from "./Untitled.jpg";
-// import image3 from "./image2.jpg";
+import image1 from "./Resources/imposter.jpg";
+import image2 from "./Resources/image.png";
 const getGalleryImages = () => {
     return [
         {
             id: 1,
-            image: `${}`,
+            image: `${image1}`,
             alt: "Image 1",
         },
         {
             id: 2,
-            image: `${}`,
+            image:`${image2}` ,
             alt: "Image 2",
         },
         {
             id: 3,
-            image: `${}`,
+            image: `${image2}`,
             alt: "Image 3",
         },
         // Add more images here...
