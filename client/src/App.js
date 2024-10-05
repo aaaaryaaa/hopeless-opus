@@ -1,20 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
+import StoryGame from "./StoryGame.js";
 import Nav from "./Component/Nav.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Play from './Pages/Play.js';
-import HomePage from './Pages/HomePage.js';
-import Register from './Component/Register.js';
-import Login from './Component/Login.js';
+import Play from "./Pages/Play.js";
+import HomePage from "./Pages/HomePage.js";
+import NotFoundPage from "./Component/NotFound.js";
+import Footer from "./Component/Footer.js";
+import Contact from "./Pages/Contact.js";
+import About from "./Pages/About.js";
+import Register from "./Component/Register.js";
+import Login from "./Component/Login.js";
+import Info from "./Component/Info.js";
 import StoryError from './Component/StoryError.js';
 function App() {
-  const [data, setData] = useState('');
+  const [data, setData] = useState("");
 
-  
   useEffect(() => {
-    fetch('/')
-      .then(res => res.text())
-      .then(data => setData(data))
-      .catch(err => console.error(err));
+    fetch("/")
+      .then((res) => res.text())
+      .then((data) => setData(data))
+      .catch((err) => console.error(err));
   }, []);
 
   return (
@@ -24,11 +29,17 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/play" element={<Play />} />
+          <Route path="/about" element={<Info />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="*" element={<NotFoundPage />} />
           <Route path='/storyerror' element={<StoryError />} />
         </Routes>
       </Router>
+      <Footer />
+      {/* Uncomment this line to include StoryGame conditionally */}
+      {/* <StoryGame /> */}
     </div>
   );
 }

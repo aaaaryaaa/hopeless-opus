@@ -17,7 +17,7 @@ const StoryGame = () => {
       const response = await fetch(`${BaseUrl}/api/user/getuser`, {
         method: "GET",
         headers: {
-          "Authorization": `${token}`, // Include the token in the Authorization header
+          Authorization: `${token}`, // Include the token in the Authorization header
           "Content-Type": "application/json",
         },
       });
@@ -37,6 +37,7 @@ const StoryGame = () => {
       nav('/storyerror'); 
     }
   }
+
   useEffect(() => {
     // Call the function to fetch user details
     fetchUserDetails();
@@ -63,7 +64,7 @@ const StoryGame = () => {
       const response = await fetch(`${BaseUrl}/api/user/updatestory`, {
         method: "PUT",
         headers: {
-          "Authorization": `${token}`,
+          Authorization: `${token}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
@@ -86,12 +87,11 @@ const StoryGame = () => {
 
   const handleOptionClick = async (nextStoryId, optionPoints) => {
     const token = localStorage.getItem("token"); // Get the token from localStorage
-    console.log(optionPoints);
     try {
       const response = await fetch(`${BaseUrl}/api/user/getuser`, {
         method: "GET",
         headers: {
-          "Authorization": `${token}`, // Include the token in the Authorization header
+          Authorization: `${token}`, // Include the token in the Authorization header
           "Content-Type": "application/json",
         },
       });
@@ -124,10 +124,11 @@ const StoryGame = () => {
 
   return (
     <div>
-      {storyId === '0000' ? (
+      {storyId === "0000" ? (
         <p>Loading....</p>
       ) : (
         <>
+          {loading && <p>Loading...</p>}
           {story && (
             <div>
               <p>{story.snippet}</p>

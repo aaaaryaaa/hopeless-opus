@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Hero from "../components/Hero";
-import Footer from "../components/Footer";
+import Countdown from "../Component/Countdown.js";
+import CardSlider from "../Component/CardSlider.js";
+import FAQ from "../Component/FAQ";
+import ContactForm from "../Component/contactform";
+import GallerySection from "../GallerySection.js";
+import Scroll from "../Component/Scrollcirc.js";
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -10,14 +14,25 @@ export default function HomePage() {
   const handleLogout = () => {
     localStorage.removeItem("token");
     setUser(null);
-  }
+  };
 
   return (
-    <div>
-      { user===null ? (<button onClick={() => navigate("/login")}>Login</button>) : (<button onClick={handleLogout}>Logout</button>)}
-      <button onClick={() => navigate("/register")}>Sign Up</button>
-      <Hero />
-      <Footer />
+    <div
+      className="min-h-screen w-screen flex flex-col gap-10 items-center justify-center text-center p-4 bg-black text-gray-100 shadow-inner overflow-hidden"
+      style={{
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        zIndex: "-1",
+      }}
+    >
+      <Countdown />
+      <Scroll />
+      <CardSlider />
+      <FAQ />
+      <GallerySection />
+      <ContactForm />
+      {/* Hero and Footer can be added here if needed */}
     </div>
   );
 }
