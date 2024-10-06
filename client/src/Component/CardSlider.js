@@ -31,13 +31,13 @@ const Div = styled.div`
   justify-content: center;
   gap: 5rem;
 
-  @media (max-width: 760px) {
-    margin-left: 0;
+  @media (max-width:760px) {
+    margin-left: 3em;
     width: 100%;
-    padding: 0 1.8rem;
+    padding: 0 1.0rem;
     flex-direction: column;
     justify-content: center;
-    gap: 10rem;
+    gap: 5rem;
     height: fit-content;
     overflow: hidden;
   }
@@ -59,9 +59,10 @@ const DivEventCard = styled.div`
   border-radius: 1rem;
   border: 1px solid rgba(170, 170, 170, 0.6);
   @media (max-width: 760px) {
-    width: 100%;
-    height: 48rem;
-    padding: 2rem 2rem 0 2rem;
+    width: 80%;
+    height: 50rem;
+    padding: 1rem 2rem 0 2rem;
+
   }
   padding: 3rem 3rem 0 3rem;
   backdrop-filter: blur(2px);
@@ -72,7 +73,7 @@ const EventCardTitle = styled.div`
   font-weight: 700;
   color: white;
   @media (max-width: 760px) {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -83,10 +84,12 @@ const EventCardBody = styled.div`
   word-wrap: wrap;
   color: white;
   @media (max-width: 760px) {
-    font-size: 2.4rem;
+    font-size: 1.5rem;
     line-height: 1.4;
   }
-  margin-top: 1.4rem;
+  margin-top: 1rem;
+  border-top: solid 0.2rem rgba(255, 255, 255, 0.2);
+  padding-top: 1.5rem;
 `;
 
 const DivEventCardBottom = styled.div`
@@ -96,6 +99,7 @@ const DivEventCardBottom = styled.div`
 const EventCardLine = styled.div`
   border-bottom: solid 0.2rem rgba(255, 255, 255, 0.2);
   font-size: 1.5rem;
+  // padding-top: 2rem;
   padding-bottom: 1.4rem;
   label {
     color: #9882f8;
@@ -106,14 +110,16 @@ const EventCardLine = styled.div`
 `;
 
 const EventDate = styled.div`
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 375;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  
   @media (max-width: 760px) {
-    font-size: 2.6rem;
+    font-size: 1rem;
+    padding: 1rem 0.5rem;
   }
 `;
 
@@ -154,6 +160,7 @@ const ExpandEventButton = styled.button`
   @media (max-width: 760px) {
     font-size: 2.6rem;
     width: 6rem;
+    // padding-bottom: 2rem;
   }
 `;
 
