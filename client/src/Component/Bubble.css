@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  @font-face {
+    font-family: 'Spokeysman';
+    src: url('../Resources/Spookyman.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  .no-select::selection {
+    background: transparent;
+    color: inherit;
+  }
+  .no-select {
+    user-select: none; /* Disable selection in most modern browsers */
+    -webkit-user-select: none; /* Disable selection for Safari */
+    -moz-user-select: none; /* Disable selection for Firefox */
+    -ms-user-select: none; /* Disable selection for Internet Explorer */
+  }
+  @keyframes pulsate {
+    0% { transform: scale(2); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(2); }
+  }
+  
+  .pulsate {
+    animation: pulsate 5s infinite ease-in-out;
+  }
