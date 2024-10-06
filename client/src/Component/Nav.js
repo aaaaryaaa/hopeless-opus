@@ -61,7 +61,7 @@ const Nav = () => {
           <div className="istelogo">
             <img src={image1} alt="ISTE Logo" />
           </div>
-          <a href="/" className='hopeless'>Hopeless Opus</a>
+          <a href="/" className='hopeless-name'>Hopeless Opus</a>
         </div>
 
           <ul className={`nav-links ${isMobileMenuOpen? 'nav-links-mobile' : ''}`}>
