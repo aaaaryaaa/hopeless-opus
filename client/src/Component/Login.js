@@ -8,6 +8,10 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+  const openSignup = () => {
+    navigate('/register');
+  };
+
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -73,9 +77,9 @@ export default function Login() {
           <p className="text-sm text-center">
             {" "}
             Don't have an account?{" "}
-            <a href="/register" className="text-indigo-600">
+            <button className="text-indigo-600" onClick={openSignup}>
               Register
-            </a>
+            </button>
           </p>
         </form>
       </div>
