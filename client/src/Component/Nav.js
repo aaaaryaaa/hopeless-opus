@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './Nav.css';
 import { useNavigate } from 'react-router-dom';
-import image1 from "../Resources/ISTE.jpeg";
-import dash from '../Resources/dash.jpeg';
+import image1 from "../Resources/hopelesslogo.svg";
+import dash from '../Resources/dash.svg';
 
 const Nav = () => {
   const navigate = useNavigate();
@@ -61,7 +61,7 @@ const Nav = () => {
           <div className="istelogo">
             <img src={image1} alt="ISTE Logo" />
           </div>
-          <a href="/">Hopeless Opus</a>
+          <a href="/" className='hopeless'>Hopeless Opus</a>
         </div>
 
           <ul className={`nav-links ${isMobileMenuOpen? 'nav-links-mobile' : ''}`}>
@@ -82,19 +82,20 @@ const Nav = () => {
                 <img
                   src={dash}
                   alt="Dashboard"
-                  className="w-20 h-20 transition-opacity duration-200 hover:opacity-80 rounded-full"
+                  className="w-12 h-12 transition-opacity duration-200 hover:opacity-60 rounded-full"
                 />
               </label>
             </div>
             <div className="drawer-side">
-              <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
-              <ul className="menu bg-black text-base-content min-h-full w-80 p-4">
-                 <li>Names :</li>
-                 <li>Class :  </li>
-                <li>Team Number : </li>
-                <li>Progress : </li>
-              </ul>
-            </div>
+  <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
+  <ul className="menu bg-black text-white min-h-full w-80 p-6 space-y-4">
+    <li className="text-lg font-semibold border-b border-blue-600 pb-2">Names:</li>
+    <li className="text-lg font-semibold border-b border-blue-600 pb-2">Class:</li>
+    <li className="text-lg font-semibold border-b border-blue-600 pb-2">Team Number:</li>
+    <li className="text-lg font-semibold">Progress:</li>
+  </ul>
+</div>
+
           </div>
         </ul>
 
