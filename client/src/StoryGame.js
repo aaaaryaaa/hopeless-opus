@@ -138,7 +138,7 @@ const StoryGame = () => {
           {loading && <p>Loading...</p>}
           {story && (
             <div>
-              <p>{story.snippet[snippetIndex].text}</p> {/* Display current snippet */}
+              <p style={{ whiteSpace: "pre-line" }}>{story.snippet[snippetIndex].text}</p> {/* Display current snippet */}
               <p>Points: {points}</p> {/* Display current points */}
               {snippetIndex < story.snippet.length - 1 && (
                 <button onClick={handleNextSnippet}>Next</button> 
