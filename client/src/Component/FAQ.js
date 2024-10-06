@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { RiFontSansSerif } from "react-icons/ri";
-
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -11,11 +9,14 @@ const FAQ = () => {
 
   return (
     <div style={styles.container}>
-    <div style={styles.heading}>
-      <h1 style={styles.title}>
-      <span style={styles.under}>Frequently Asked</span> <span style={styles.highlight}>Questions</span>
-      </h1>
-      <p style={styles.subtitle}>You need to come at least once in your life</p>
+      <div style={styles.heading}>
+        <h1 style={styles.title}>
+          <span style={styles.under}>Frequently Asked</span>{" "}
+          <span style={styles.highlight}>Questions</span>
+        </h1>
+        <p style={styles.subtitle}>
+          You need to come at least once in your life
+        </p>
       </div>
       {faqData.map((faq, index) => (
         <div key={index} style={styles.faqItem}>
@@ -23,14 +24,23 @@ const FAQ = () => {
             style={styles.questionContainer}
             onClick={() => toggleFAQ(index)}
           >
-            <div style={styles.number}>{index + 1 < 10 ? `0${index + 1}` : index + 1}</div>
+            <div style={styles.number}>
+              {index + 1 < 10 ? `0${index + 1}` : index + 1}
+            </div>
             <div style={styles.question}>{faq.question}</div>
             <div style={styles.icon}>{openIndex === index ? "-" : "+"}</div>
           </div>
 
-          {openIndex === index && (
-            <div style={styles.answer}>{faq.answer}</div>
-          )}
+          <div
+            style={{
+              ...styles.answer,
+              maxHeight: openIndex === index ? "1000px" : "0px",
+              opacity: openIndex === index ? 1 : 0,
+              padding: openIndex === index ? "12px" : "0px 12px",
+            }}
+          >
+            {faq.answer}
+          </div>
         </div>
       ))}
     </div>
@@ -66,10 +76,9 @@ const faqData = [
 ];
 
 const styles = {
-
-    heading:{
-    marginBottom:"100px",
-    },   
+  heading: {
+    marginBottom: "100px",
+  },
 
   container: {
     maxWidth: "1100px",
@@ -83,19 +92,19 @@ const styles = {
     textAlign: "center",
     marginBottom: "10px",
     color: "#FFFFFF",
-    fontFamily:"'Manrope' sans-serif",
+    fontFamily: "'Manrope' sans-serif",
   },
-  under:{
+  under: {
     borderBottom: "3px solid #36454F",
   },
   highlight: {
     color: "#520000",
   },
   subtitle: {
-    textAlign: "center", 
+    textAlign: "center",
     marginBottom: "40px",
-    color:"#737373",
-    fontSize:"30px",
+    color: "#737373",
+    fontSize: "30px",
   },
   faqItem: {
     marginBottom: "10px",
@@ -103,6 +112,7 @@ const styles = {
     borderRadius: "8px",
     overflow: "hidden",
     background: "linear-gradient(90deg, #000101 30%, #011517 70%)",
+    transition: "all 0.3s ease",
   },
   questionContainer: {
     display: "flex",
@@ -127,19 +137,22 @@ const styles = {
     fontSize: "18px",
   },
   answer: {
-    padding: "12px",
+    maxHeight: "0px", // Initially closed
+    overflow: "hidden", // Prevent content overflow
+    transition: "all 0.3s ease", // Smooth transition for height and opacity
+    opacity: 0,
+    padding: "0px 12px", // Initially no padding
     background: "#333",
     fontFamily: "'Manrope', sans-serif",
-    fontSize:"18.03px",
+    fontSize: "18.03px",
   },
 };
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
-</style>
-
-
-
+  @import
+  url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+  @import
+  url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+</style>;
 
 export default FAQ;
