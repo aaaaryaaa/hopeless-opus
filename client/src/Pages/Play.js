@@ -32,21 +32,21 @@ const Play = () => {
       <Animate />
 
       {/* Start Button */}
-      <div className="flex flex-col items-center">
+      {/* <div className="flex flex-col items-center">
         <button className="font-stalinist start-button text-4xl font-stalinist-one font-bold text-white py-4 px-10 rounded-full shadow-lg">
           START
         </button>
-      </div>
+      </div> */}
 
       {/* Blurred Box */}
-      <div className="flex items-center justify-center blurred-box mt-10 w-6/12 h-72 bg-gray-800 bg-opacity-50 rounded-lg shadow-lg">
+      {/* <div className="flex items-center justify-center blurred-box mt-10 w-6/12 h-72 bg-gray-800 bg-opacity-50 rounded-lg shadow-lg">
         <h1 className="text-white text-3xl font-mono">
           Follow the Rule!! Or get Fucked.
         </h1>
-      </div>
+      </div> */}
 
       {/* Story Game Component */}
-      <div className="mt-8">
+      <div className="m-8">
         <StoryGame />
       </div>
     </div>

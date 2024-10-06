@@ -28,10 +28,35 @@ router.get("/story/:storyId", async (req, res) => {
 });
 
 // Add a new story snippet
+// router.post("/story", async (req, res) => {
+//   const { storyId, snippet, options, previousStoryId } = req.body;
+//   try {
+//     const newStory = new Story({ storyId, snippet, options, previousStoryId });
+//     await newStory.save();
+//     res.status(201).json(newStory);
+//   } catch (err) {
+//     console.error(err);
+//     res.status(400).json({ error: "Error adding new story", details: err.message });
+//   }
+// });
 router.post("/story", async (req, res) => {
-  const { storyId, snippet, options, previousStoryId } = req.body;
+  const { storyId, snippet, options, previousStoryId, bgimg, minigame } = req.body; // Include bgimg and minigame
+
+  // Check if all required fields are present
+  if (!storyId || !snippet || !options || !previousStoryId || !bgimg || minigame === undefined) {
+    return res.status(400).json({ error: "All fields are required" });
+  }
+
   try {
-    const newStory = new Story({ storyId, snippet, options, previousStoryId });
+    const newStory = new Story({
+      storyId,
+      snippet,
+      options,
+      previousStoryId,
+      bgimg,     // Add bgimg here
+      minigame,  // Add minigame here
+    });
+
     await newStory.save();
     res.status(201).json(newStory);
   } catch (err) {
@@ -39,5 +64,6 @@ router.post("/story", async (req, res) => {
     res.status(400).json({ error: "Error adding new story", details: err.message });
   }
 });
+
 
 module.exports = router;

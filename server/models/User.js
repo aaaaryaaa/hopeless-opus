@@ -35,6 +35,12 @@ const UserSchema = new Schema({
     type: String,
     default: "",
   },
+  inventory: {
+    key:{
+      type: Boolean,
+      default: false
+    }
+  }
 });
 
 module.exports = mongoose.model("User", UserSchema);

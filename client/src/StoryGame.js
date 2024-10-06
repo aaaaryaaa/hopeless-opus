@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import BaseUrl from "./BaseUrl";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 const StoryGame = () => {
   const nav = useNavigate();
   const [story, setStory] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [storyId, setStoryId] = useState('0000');
+  const [storyId, setStoryId] = useState("0000");
   const [points, setPoints] = useState(0); // Initialize points to 0
+  const [snippetIndex, setSnippetIndex] = useState(0); // State for snippet index
 
   // Fetch user details only when the component mounts
   async function fetchUserDetails() {
@@ -34,7 +35,7 @@ const StoryGame = () => {
       fetchStory(userDetails.currentStoryId);
     } catch (error) {
       console.error("Error fetching user details:", error.message);
-      nav('/storyerror'); 
+      nav("/storyerror");
     }
   }
 
@@ -49,6 +50,7 @@ const StoryGame = () => {
       const response = await fetch(`${BaseUrl}/api/story/${storyId}`);
       const data = await response.json();
       setStory(data);
+      setSnippetIndex(0); // Reset the snippet index to 0 when a new story is fetched
     } catch (error) {
       console.error("Error fetching story:", error);
     } finally {
@@ -103,14 +105,13 @@ const StoryGame = () => {
       const userDetails = await response.json();
       console.log(userDetails); // Use user details as needed
       setStoryId(userDetails.currentStoryId);
-      // console.log(userDetails.currentStoryId);
+
       const firstTwoDigits1 = userDetails.currentStoryId.slice(0, 2);
       const firstTwoDigits2 = nextStoryId.slice(0, 2);
-      // console.log(firstTwoDigits1 + " - " + firstTwoDigits2);
-      
+
       // Check if moving to the next story is allowed
       if (firstTwoDigits1 < firstTwoDigits2) {
-        if(points===null) setPoints(0);
+        if (points === null) setPoints(0);
         const updatedPoints = points + optionPoints; // Add option points to current points
         console.log(updatedPoints, points, optionPoints);
         setPoints(updatedPoints); // Update the UI with new points
@@ -122,8 +123,14 @@ const StoryGame = () => {
     }
   };
 
+  const handleNextSnippet = () => {
+    if (snippetIndex < story.snippet.length - 1) {
+      setSnippetIndex(snippetIndex + 1); // Move to the next snippet
+    }
+  };
+
   return (
-    <div>
+    <div className='p-10 '>
       {storyId === "0000" ? (
         <p>Loading....</p>
       ) : (
@@ -131,16 +138,23 @@ const StoryGame = () => {
           {loading && <p>Loading...</p>}
           {story && (
             <div>
-              <p>{story.snippet}</p>
+              <p>{story.snippet[snippetIndex].text}</p> {/* Display current snippet */}
               <p>Points: {points}</p> {/* Display current points */}
-              {story.options.map((option, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleOptionClick(option.nextStoryId, option.points)} // Pass the option's points
-                >
-                  {option.optionText}
-                </button>
-              ))}
+              {snippetIndex < story.snippet.length - 1 && (
+                <button onClick={handleNextSnippet}>Next</button> 
+              )}
+              {snippetIndex === story.snippet.length - 1 && (
+                <div>
+                  {story.options.map((option, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handleOptionClick(option.nextStoryId, option.points)} // Pass the option's points
+                    >
+                      {option.optionText}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           )}
         </>

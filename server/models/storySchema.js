@@ -6,13 +6,14 @@ const storySchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  snippet: {
-    type: String,
-    required: true,
-  },
+  snippet: [
+    {
+      text: String,
+    }
+  ],
   bgimg: {
     type: String, // Cloudinary link
-    required: false, 
+    required: true, 
   },
   options: [
     {
@@ -27,8 +28,12 @@ const storySchema = new mongoose.Schema({
   ],
   previousStoryId: {
     type: String,
-    default: null, // For the first story snippet
+    required: false,
   },
+  minigame: {
+    type: Number,
+    required: true,
+  }
 });
 
 const Story = mongoose.model("Story", storySchema);
