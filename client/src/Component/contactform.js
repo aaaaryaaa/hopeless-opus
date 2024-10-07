@@ -46,7 +46,7 @@ const ContactForm = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center relative p-4">
+        <div className="min-h-screen flex items-center justify-center relative p-4 bg-black">
             <div className="flex max-w-5xl w-full -space-x-36 gap-16">
                 <img src={image} alt="Globe" className="w-[40%] h-full object-cover rounded-l-lg mr-40 my-auto" />
 
