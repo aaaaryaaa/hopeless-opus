@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        spookyman: ['Spookyman','sans-serif'],
+      },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
