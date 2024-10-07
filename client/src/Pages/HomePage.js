@@ -6,6 +6,7 @@ import FAQ from "../Component/FAQ";
 import ContactForm from "../Component/contactform";
 import GallerySection from "../GallerySection.js";
 import Scroll from "../Component/Scrollcirc.js";
+import BubbleRevealText from "../Component/BubbleRevealText.js";
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -26,6 +27,7 @@ export default function HomePage() {
         zIndex: "-1",
       }}
     >
+      <BubbleRevealText />
       <Countdown />
       <Scroll />
       <CardSlider />

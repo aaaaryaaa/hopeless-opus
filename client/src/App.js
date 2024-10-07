@@ -6,12 +6,12 @@ import Play from "./Pages/Play.js";
 import HomePage from "./Pages/HomePage.js";
 import NotFoundPage from "./Component/NotFound.js";
 import Footer from "./Component/Footer.js";
-import Contact from "./Pages/Contact.js";
-import About from "./Pages/About.js";
 import Register from "./Component/Register.js";
 import Login from "./Component/Login.js";
 import Info from "./Component/Info.js";
 import StoryError from './Component/StoryError.js';
+import Contact from "./Component/contactform.js"
+
 function App() {
   const [data, setData] = useState("");
 
@@ -26,7 +26,7 @@ function App() {
     <div>
       <Router>
         <Nav />
-        <div className="h-32 bg-black"></div>
+        <div className="h-28 bg-black"></div>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/play" element={<Play />} />
@@ -37,8 +37,9 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
           <Route path='/storyerror' element={<StoryError />} />
         </Routes>
+        <Footer />
       </Router>
-      <Footer />
+      
       {/* Uncomment this line to include StoryGame conditionally */}
       {/* <StoryGame /> */}
     </div>

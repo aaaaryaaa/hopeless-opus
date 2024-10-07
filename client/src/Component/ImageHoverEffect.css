@@ -1,0 +1,36 @@
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .image-container img {
+    pointer-events: none; /* Prevents the image from blocking hover events */
+    transition: transform 0.1s ease-out;
+    width: 150%;
+    height: auto;
+    cursor: url('../Resources/Basic_red_dot.png') 16 16, auto; /* Custom red dot cursor */
+  }
+  
+  /* Fade-in animation for the image */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .image-fade-in {
+    animation: fadeIn 5s ease-in-out; /* Slow fade-in effect */
+    opacity: 1;
+    width: 150%;
+    height: auto;
+  }
+  

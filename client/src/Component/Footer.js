@@ -1,31 +1,45 @@
 // src/components/Footer.js
 import React from "react";
+import { useNavigate } from 'react-router-dom';
+
+
 
 const Footer = () => {
+
+  const navigate = useNavigate();
+  const openHome = () => {
+    navigate('/');
+  };
+  const openPlay = () => {
+    navigate('/about');
+  };
+  const openContact = () => {
+    navigate('/contact');
+  };
   return (
     <footer className="bg-black text-white py-6">
       <div className="container mx-auto px-4 text-center">
         <div className="mb-4">
-          <a href="/" className="text-white text-lg font-bold">
+          <button className="text-white text-lg font-bold">
             ACUMEN
-          </a>
+          </button>
         </div>
         <div className="flex justify-center space-x-4 mb-4">
-          <a href="/" className="text-gray-400 hover:text-white">
+          <button className="text-gray-400 hover:text-white" onClick={openHome}>
             Home
-          </a>
-          <a href="/about" className="text-gray-400 hover:text-white">
+          </button>
+          <button className="text-gray-400 hover:text-white" onClick={openPlay}>
             About
-          </a>
-          <a href="/contact" className="text-gray-400 hover:text-white">
+          </button>
+          <button className="text-gray-400 hover:text-white" onClick={openContact}>
             Contact
-          </a>
-          <a href="/events" className="text-gray-400 hover:text-white">
+          </button>
+          <button className="text-gray-400 hover:text-white" onClick={openHome}>
             Events
-          </a>
+          </button>
         </div>
         <div className="text-gray-400 text-sm">
-          © {new Date().getFullYear()} Your Personal Pookie. All rights
+          © {new Date().getFullYear()} ACUMEN. All rights
           reserved.
         </div>
       </div>

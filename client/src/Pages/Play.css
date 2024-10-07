@@ -9,10 +9,11 @@
 }
 
 .play-container {
-  background-image: url("../Resources/lightning.svg"); /* Ensure you have this image */
+  /* background-image: url("../Resources/lightning.svg");  */
   background-size: cover;
   background-position: center;
   position: relative;
+  margin-top: 0.1%;
 }
 
 /* Start Button neon glow effect */
