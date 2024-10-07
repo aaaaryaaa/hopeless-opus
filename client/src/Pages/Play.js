@@ -2,6 +2,7 @@ import React from "react";
 import "./Play.css";
 import Animate from "../Component/Animate";
 import StoryGame from "../StoryGame";
+import ImageHoverEffect from "../Component/ImageHoverEffect";
 
 const Play = () => {
   return (
@@ -29,7 +30,9 @@ const Play = () => {
       </div>
 
       {/* Animation Component */}
-      <Animate />
+      {/* <Animate /> */}
+      <ImageHoverEffect/>
+      {/* <Animate/> */}
 
       {/* Start Button */}
       {/* <div className="flex flex-col items-center">
