@@ -69,7 +69,7 @@ const Nav = () => {
           <li><button onClick={openPlay}>Play</button></li>
           <li><button onClick={openAbout}>About</button></li>
           <li><button onClick={openContact}>Contact</button></li>
-          <li><button onClick={openSignup}>Signup</button></li>
+          <li><button onClick={openSignup}>Register</button></li>
           <li><button onClick={openLogin}>Login</button></li>
 
         </ul>
