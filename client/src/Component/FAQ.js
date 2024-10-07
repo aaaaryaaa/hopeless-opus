@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { RiFontSansSerif } from "react-icons/ri";
-
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -10,27 +8,50 @@ const FAQ = () => {
   };
 
   return (
-    <div style={styles.container}>
-    <div style={styles.heading}>
-      <h1 style={styles.title}>
-      <span style={styles.under}>Frequently Asked</span> <span style={styles.highlight}>Questions</span>
-      </h1>
-      <p style={styles.subtitle}>You need to come at least once in your life</p>
+    <div className="max-w-4xl mx-auto p-10 text-white">
+      <div className="mb-20 text-center">
+        <h1 className="text-5xl font-bold mb-4">
+          <span className="border-b-4 border-gray-700">Frequently Asked</span>{" "}
+          <span className="text-red-900">Questions</span>
+        </h1>
+        <p className="text-2xl text-gray-400">
+          You need to come at least once in your life
+        </p>
       </div>
+
       {faqData.map((faq, index) => (
-        <div key={index} style={styles.faqItem}>
+        <div
+          key={index}
+          className="mb-6 bg-gradient-to-r from-black via-gray-900 to-blue-950 rounded-lg transition-transform transform hover:scale-105"
+        >
           <div
-            style={styles.questionContainer}
+            className="flex justify-between items-center p-5 cursor-pointer border-b border-gray-600"
             onClick={() => toggleFAQ(index)}
           >
-            <div style={styles.number}>{index + 1 < 10 ? `0${index + 1}` : index + 1}</div>
-            <div style={styles.question}>{faq.question}</div>
-            <div style={styles.icon}>{openIndex === index ? "-" : "+"}</div>
+            <div className="text-4xl font-extrabold">
+              {index + 1 < 10 ? `0${index + 1}` : index + 1}
+            </div>
+            <div
+              className={`ml-4 flex-grow text-xl transition-all ${
+                openIndex === index ? "text-gray-300" : ""
+              } font-semibold sm:font-semibold font-normal`}
+            >
+              {faq.question}
+            </div>
+            <div className="text-xl font-bold">
+              {openIndex === index ? "-" : "+"}
+            </div>
           </div>
 
-          {openIndex === index && (
-            <div style={styles.answer}>{faq.answer}</div>
-          )}
+          <div
+            className={`overflow-hidden transition-all duration-300 ease-in-out ${
+              openIndex === index
+                ? "max-h-screen opacity-100 p-4"
+                : "max-h-0 opacity-0"
+            }`}
+          >
+            <p className="text-base sm:text-lg font-normal">{faq.answer}</p>
+          </div>
         </div>
       ))}
     </div>
@@ -64,82 +85,5 @@ const faqData = [
     answer: "Details about the working hours and expected response times.",
   },
 ];
-
-const styles = {
-
-    heading:{
-    marginBottom:"100px",
-    },   
-
-  container: {
-    maxWidth: "1100px",
-    margin: "0 auto",
-    padding: "50px",
-    fontFamily: "Arial, sans-serif",
-    color: "#fff",
-  },
-  title: {
-    fontSize: "60px",
-    textAlign: "center",
-    marginBottom: "10px",
-    color: "#FFFFFF",
-    fontFamily:"'Manrope' sans-serif",
-  },
-  under:{
-    borderBottom: "3px solid #36454F",
-  },
-  highlight: {
-    color: "#520000",
-  },
-  subtitle: {
-    textAlign: "center", 
-    marginBottom: "40px",
-    color:"#737373",
-    fontSize:"30px",
-  },
-  faqItem: {
-    marginBottom: "10px",
-    background: "#1a1a1a",
-    borderRadius: "8px",
-    overflow: "hidden",
-    background: "linear-gradient(90deg, #000101 30%, #011517 70%)",
-  },
-  questionContainer: {
-    display: "flex",
-    justifyContent: "space-between",
-    padding: "20px",
-    cursor: "pointer",
-    borderBottom: "1px solid #333",
-  },
-  number: {
-    fontWeight: "extrabold",
-    fontFamily: "'Manrope', sans-serif",
-    fontSize: "46.66px",
-  },
-  question: {
-    flexGrow: 1,
-    marginLeft: "10px",
-    fontSize: "22.9px",
-    fontFamily: " 'Urbanist' , sans-serif",
-  },
-  icon: {
-    fontWeight: "bold",
-    fontSize: "18px",
-  },
-  answer: {
-    padding: "12px",
-    background: "#333",
-    fontFamily: "'Manrope', sans-serif",
-    fontSize:"18.03px",
-  },
-};
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
-</style>
-
-
-
 
 export default FAQ;
