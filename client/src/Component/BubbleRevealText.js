@@ -49,7 +49,7 @@ export default function BubbleRevealText() {
   const head2 = `OPUS`;
 
   return (
-    <div>
+    <div className="w-full">
         <div
           ref={textContainerRef}
           onMouseMove={handleMouseMove}

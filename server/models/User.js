@@ -31,14 +31,52 @@ const UserSchema = new Schema({
     type: Number,
     default: 100,
   },
+  money: {
+    type: Number,
+    default: 100,
+  },
+  health: {
+    type: Number,
+    default: 100,
+  },
+  rf: {
+    type: Number,
+    default: 100,
+  },
   sessionId: {
     type: String,
     default: "",
   },
   inventory: {
     key:{
-      type: Boolean,
-      default: false
+      value: {
+        type: Boolean,
+        default: false
+      },
+      description: {
+        type: String,
+        default: ""
+      }
+    },
+    umbrella:{
+      value: {
+        type: Boolean,
+        default: false
+      },
+      description: {
+        type: String,
+        default: ""
+      }
+    },
+    journal:{
+      value: {
+        type: Boolean,
+        default: false
+      },
+      description: {
+        type: String,
+        default: ""
+      }
     }
   }
 });

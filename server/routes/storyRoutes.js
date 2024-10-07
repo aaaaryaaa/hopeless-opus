@@ -40,10 +40,10 @@ router.get("/story/:storyId", async (req, res) => {
 //   }
 // });
 router.post("/story", async (req, res) => {
-  const { storyId, snippet, options, previousStoryId, bgimg, minigame } = req.body; // Include bgimg and minigame
+  const { storyId, snippet, options, bgimg, minigame } = req.body; // Include bgimg and minigame
 
   // Check if all required fields are present
-  if (!storyId || !snippet || !options || !previousStoryId || !bgimg || minigame === undefined) {
+  if (!storyId || !snippet || !options || !bgimg || minigame === undefined) {
     return res.status(400).json({ error: "All fields are required" });
   }
 
@@ -52,7 +52,6 @@ router.post("/story", async (req, res) => {
       storyId,
       snippet,
       options,
-      previousStoryId,
       bgimg,     // Add bgimg here
       minigame,  // Add minigame here
     });
