@@ -26,8 +26,18 @@ export default function HomePage() {
         backgroundRepeat: "no-repeat",
         zIndex: "-1",
       }}
-    >
+    > <div  className="w-full h-screen items-center justify-center bg-[#1C2E2F]">
       <BubbleRevealText />
+      <div className="flex items-center">
+      <p className="pb-80 pr-40 pl-40 pt-20">
+      A good design is not only aesthetically pleasing, but also functional.
+          It should solve the problem. A good design is not only aesthetically
+          pleasing, but also functional. It should solve the problem.
+          A good design is not only aesthetically
+          pleasing, but also functional. It should solve the problem.
+      </p>
+      </div>
+      </div>
       <Countdown />
       <Scroll />
       <CardSlider />
