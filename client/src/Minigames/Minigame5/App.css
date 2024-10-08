@@ -1,0 +1,57 @@
+.game-container {
+  text-align: center;
+  margin: 20px;
+}
+
+.score-board {
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+}
+
+.hole {
+  width: 60px;
+  height: 60px;
+  margin: 5px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgreen;
+  cursor: pointer;
+}
+
+.hole:hover {
+  background-color: green;
+}
+
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: lightblue;
+}
+
+.wolf {
+  width: 80px;
+  /* Adjust this value as necessary */
+  height: auto;
+  /* Maintain aspect ratio */
+  cursor: pointer;
+  /* Changes cursor to pointer on hover */
+  width: 100%;
+  height: 100%;
+}
