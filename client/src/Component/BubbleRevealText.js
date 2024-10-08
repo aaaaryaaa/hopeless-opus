@@ -7,7 +7,7 @@ export default function BubbleRevealText() {
   const [containerPosition, setContainerPosition] = useState({ x: 0, y: 0 });
   const requestRef = useRef(null);
   const currentMousePosition = useRef({ x: 0, y: 0 });
-  const [bubbleSize, setBubbleSize] = useState(150); // Initial bubble size
+  const [bubbleSize, setBubbleSize] = useState(300); // Initial bubble size
 
   useEffect(() => {
     if (textContainerRef.current) {
@@ -38,22 +38,23 @@ export default function BubbleRevealText() {
   };
 
   const handleMouseEnter = () => {
-    setBubbleSize(150); // Increase bubble size on text hover
+    setBubbleSize(300); // Increase bubble size on text hover
   };
 
   const handleMouseLeave = () => {
-    setBubbleSize(150); // Reset bubble size when not hovering over text
+    setBubbleSize(300); // Reset bubble size when not hovering over text
   };
 
   const head1 = `HOPELESS `;
-  const head2 = `OPUS`;
+  const head3=`   `
+  const head2 = ` OPUS`;
 
   return (
-    <div className='w-full h-1/2 overflow-hidden'>
+    <div className='w-full h-screen overflow-hidden'>
         <div
           ref={textContainerRef}
           onMouseMove={handleMouseMove}
-          className="relative h-screen cursor-default overflow-hidden rounded-lg bg-[#1C2E2F]"
+          className="relative h-screen cursor-default overflow-hidden rounded-lg"
         >
             {/* Visible layer with radial gradient mask */}
             <div
@@ -62,24 +63,25 @@ export default function BubbleRevealText() {
                 WebkitMaskImage: `radial-gradient(circle ${bubbleSize}px at ${mousePosition.x}px ${mousePosition.y}px, black 20%, transparent 80%)`,
                 maskImage: `radial-gradient(circle ${bubbleSize}px at ${mousePosition.x}px ${mousePosition.y}px, black 20%, transparent 80%)`,
                 backdropFilter: 'blur(10px) saturate(70%)',
-                transition: 'mask-position 150s ease-out', // Smooth transition effect
+                transition: 'mask-position 300s ease-out', // Smooth transition effect
                 backgroundColor: 'rgba(255, 255, 255, 1)',
               }}
             >
                 {/* Text Elements with Hover Handlers */}
-                  <div className="flex items-center justify-center no-select text-center tracking-widest pulsate leading-tight text-6xl font-bold text-black font-pg p-40">
+                  <div className="flex items-center justify-center no-select text-center tracking-widest pulsate leading-tight lg:text-[10rem] text-[2.5rem] font-extrabold text-black font-spookyman p-40" 
+                  >
                 <h1
-                  className=""
+                  className="block lg:inline"
                   onMouseEnter={handleMouseEnter} // Increase bubble size on text hover
                   onMouseLeave={handleMouseLeave} // Reset bubble size when not hovering over text
                 >
                   {head1}
-                <h1 className="" 
+                  
+                <h1 className="block lg:inLine" 
                 onMouseEnter={handleMouseEnter} 
                   onMouseLeave={handleMouseLeave}>
                 {head2}
                 </h1>
-                  
                 </h1>
                 </div>
 
