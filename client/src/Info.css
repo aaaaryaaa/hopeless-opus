@@ -6,7 +6,7 @@
 .meet-the-devs-container {
     padding: 1.2em;
     text-align: center;
-    background-image: linear-gradient(#000000, #076066);
+    background-image: linear-gradient(#076066, #000000);
     color: white;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }

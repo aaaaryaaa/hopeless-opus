@@ -25,12 +25,12 @@ const Footer = () => {
         backgroundSize: 'cover', // Ensures the image covers the entire footer
         backgroundPosition: 'center', // Positions the image at the center
         backgroundRepeat: 'no-repeat', // Prevents the image from repeating
-        padding: '2rem 0', // Adds vertical padding
+        // padding: '2rem 0', // Adds vertical padding
         display: 'flex', // Use flexbox for better alignment
         flexDirection: 'column', // Stacks content vertically
-        justifyContent: 'center', // Vertically center the content
+        justifyContent: 'flex-end', // Vertically center the content
         alignItems: 'center', // Horizontally center the content
-        minHeight: '250px', // Sets a minimum height for the footer
+        height: '400px',
       }}
     >
       <div
@@ -87,8 +87,17 @@ const Footer = () => {
           </button>
         </div>
         <div
-          className="text-gray-300 text-lg"
-          style={{ marginTop: '1rem' }}
+          className="text-gray-300 pb-4"
+          style={{
+            color: '#FFF',
+            textAlign: 'center',
+            fontFamily: 'Roboto Serif',
+            fontSize: '15px',
+            fontStyle: 'normal',
+            fontWeight: 400,
+            lineHeight: '26.99px',
+            marginTop: '1rem'
+          }}
         >
           © {new Date().getFullYear()} ACUMEN. All rights reserved.
         </div>
