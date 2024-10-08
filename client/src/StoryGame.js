@@ -157,40 +157,109 @@ const StoryGame = () => {
   };
 
   return (
-    <div className='p-10 '>
-      {storyId === "0000" ? (
-        <p>Loading....</p>
+    <div
+      style={{
+        backgroundImage: `url(${story?.bgimg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        width: '100%', // Cover the full width of the viewport
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-end', // Align content to the bottom
+        padding: '20px',
+        color: 'white', // Text color for better readability
+      }}
+      onClick={handleNextSnippet}
+    >
+      {loading ? (
+        <p>Loading...</p>
       ) : (
-        <>
-          {loading && <p>Loading...</p>}
-          {story && (
-            <div>
-              <p>{story.snippet[snippetIndex].text}</p> {/* Display current snippet */}
-              <p>Points: {points}</p> {/* Display current points */}
+        story && (<>
+          <div 
+            className="text-end">
+              <div 
+              style={{
+                backgroundColor: 'rgba(0, 0, 0, 0.7)', // Semi-transparent background for the text box
+                padding: '20px',
+                maxWidth: '90%',
+                margin: '0 auto',
+              }}
+              className="absolute top-24 right-0"
+              >
+              <p>Points: {points}</p>
               <p>Health: {health}</p>
               <p>Money: {money}</p>
               <p>Risk Factor: {rf}</p>
-              <p>Key: {inventory.key.value && (<>true</>)}</p>
-              <p>Umbrella: {inventory.umbrella.value && (<>true</>)}</p>
-              <p>Journal: {inventory.journal.value && (<>true</>)}</p>
-              {snippetIndex < story.snippet.length - 1 && (
-                <button onClick={handleNextSnippet}>Next</button> 
-              )}
-              {snippetIndex === story.snippet.length - 1 && (
-                <div>
-                  {story.options.map((option, index) => (
-                    <button
-                      key={index}
-                      onClick={() => handleOptionClick(option.nextStoryId, option.points, option.health, option.money, option.rf, option.inventory)} // Pass the option's points
-                    >
-                      {option.optionText}
-                    </button>
-                  ))}
-                </div>
-              )}
+              <p>Key: {inventory?.key?.value ? 'Yes' : 'No'}</p>
+              <p>Umbrella: {inventory?.umbrella?.value ? 'Yes' : 'No'}</p>
+              <p>Journal: {inventory?.journal?.value ? 'Yes' : 'No'}</p>
             </div>
-          )}
+          </div>
+
+          <div className="mb-5">
+            {snippetIndex === story.snippet.length - 1 && (
+              <div className="flex ">
+                {story.options.map((option, index) => (
+                  <button
+                    key={index}
+                    style={{
+                      backgroundColor: 'rgba(0, 0, 0, 0.7)', // Semi-transparent background for the text box
+                      padding: '20px',
+                      borderRadius: '10px',
+                      width: '100%',
+                      margin: '1rem 0.5rem',
+                    }}
+                    onClick={() =>
+                      handleOptionClick(
+                        option.nextStoryId,
+                        option.points,
+                        option.health,
+                        option.money,
+                        option.rf,
+                        option.inventory
+                      )
+                    }
+                  >
+                    {option.optionText}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <div
+            style={{
+              backgroundColor: 'rgba(0, 0, 0, 0.7)', // Semi-transparent background for the text box
+              padding: '20px',
+              width: '100%',
+              margin: '0 auto',
+            }}
+          >
+            <p>{story.snippet[snippetIndex].text}</p>
+            
+
+            {/* {snippetIndex < story.snippet.length - 1 && (
+              <button
+                style={{
+                  marginTop: '10px',
+                  padding: '10px 20px',
+                  backgroundColor: '#007bff',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '5px',
+                  cursor: 'pointer',
+                }}
+                onClick={handleNextSnippet}
+              >
+                Next
+              </button>
+            )} */}
+
+          </div>
         </>
+        )
       )}
     </div>
   );

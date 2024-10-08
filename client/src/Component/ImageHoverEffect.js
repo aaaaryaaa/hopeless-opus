@@ -46,9 +46,9 @@ const ImageHoverEffect = () => {
         onClick={toggleVisibility}
         style={{
           position: 'absolute',
-          top: '20px',
-          left: '20px',
-          zIndex: 1000,
+          top: '8rem',
+          left: '2rem',
+          zIndex: 998,
           padding: '0px',
           width: '50px',  // Ensure the button has a defined size
           height: '50px', // Ensure the button has a defined size
