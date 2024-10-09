@@ -10,7 +10,7 @@ import Register from "./Component/Register.js";
 import Login from "./Component/Login.js";
 import Info from "./Component/Info.js";
 import StoryError from './Component/StoryError.js';
-import Contact from "./Component/contactform.js"
+import Contact from "./Component/contactform.js";
 
 function App() {
   const [data, setData] = useState("");
