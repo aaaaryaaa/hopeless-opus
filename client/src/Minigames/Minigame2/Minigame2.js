@@ -3,7 +3,7 @@ import Card from "./Card"; // Ensure Tailwind is imported
 
 const cardImages = ["🍎", "🍌", "🍇", "🍉", "🍋", "🍊", "🍓", "🍒"];
 
-function Minigame2() {
+function Minigame2({ gameResult }) {
   const [cards, setCards] = useState([]);
   const [firstCard, setFirstCard] = useState(null);
   const [secondCard, setSecondCard] = useState(null);
@@ -26,6 +26,7 @@ function Minigame2() {
       return () => clearInterval(timer);
     } else if (timeLeft === 0) {
       setGameOver(true);
+      gameResult(score);
     }
   }, [timeLeft, gameOver]);
 

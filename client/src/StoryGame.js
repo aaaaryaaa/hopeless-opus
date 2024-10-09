@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import BaseUrl from "./BaseUrl";
 import { useNavigate } from "react-router-dom";
+import HammerGame from './Minigames/Minigame1/HammerGame' //minigame1
+import Minigame2 from "./Minigames/Minigame2/Minigame2"; //minigame2
+import MazeGame from "./Minigames/Minigame3/MazeGame" //minigame3
+import Main from "./Minigames/Minigame4/Main"; //minigame4
+import WhackaWolf from "./Minigames/Minigame5/WhackaWolf"; //minigame5
 
 const StoryGame = () => {
   const nav = useNavigate();
@@ -156,6 +161,43 @@ const StoryGame = () => {
     }
   };
 
+  //variables for minigames
+  const [minigameOneWon, setMinigameOneWon] = useState(false);
+  const [minigameOnePoints, setMinigameOnePoints] = useState(0);
+  const [minigameTwoPoints, setMinigameTwoPoints] = useState(0);
+  const [minigameThreePoints, setMinigameThreePoints] = useState(0);
+  const [minigameFourPoints, setMinigameFourPoints] = useState(0);
+  const [minigameFivePoints, setMinigameFivePoints] = useState(0);
+
+  //function for minigame 1
+  const handleMiniGameOneResult = (won) => {
+    setMinigameOneWon(won); // Update the state based on the mini-game result
+    if (won) {
+      console.log("Player won the hammer game!");
+      // You can update the player's points or perform other logic if needed
+    }
+  };
+
+  const handleMiniGameTwoResult = (pts) => {
+    setMinigameTwoPoints(pts); // Update the state based on the mini-game result
+    console.log(`Player got: ${pts}`);
+  };
+
+  const handleMiniGameThreeResult = (pts) => {
+    setMinigameThreePoints(pts); // Update the state based on the mini-game result
+    console.log(`Player got: ${pts}`);
+  };
+
+  const handleMiniGameFourResult = (pts) => {
+    setMinigameFourPoints(pts); // Update the state based on the mini-game result
+    console.log(`Player got: ${pts}`);
+  };
+
+  const handleMiniGameFiveResult = (pts) => {
+    setMinigameFivePoints(pts); // Update the state based on the mini-game result
+    console.log(`Player got: ${pts}`);
+  };
+
   return (
     <div
       style={{
@@ -177,8 +219,14 @@ const StoryGame = () => {
         <p>Loading...</p>
       ) : (
         story && (<>
-          <div 
-            className="text-end">
+          <div className="text-end">
+
+              {false && (<HammerGame gameResult={handleMiniGameOneResult}/>)} 
+              {false && (<Minigame2 gameResult={handleMiniGameTwoResult} />)}
+              {false && (<MazeGame gameResult={handleMiniGameThreeResult} />)}
+              {false && (<Main gameResult={handleMiniGameFourResult} />)}
+              {false && (<WhackaWolf gameResult={handleMiniGameFiveResult} />)}
+
               <div 
               style={{
                 backgroundColor: 'rgba(0, 0, 0, 0.7)', // Semi-transparent background for the text box
@@ -195,6 +243,9 @@ const StoryGame = () => {
               <p>Key: {inventory?.key?.value ? 'Yes' : 'No'}</p>
               <p>Umbrella: {inventory?.umbrella?.value ? 'Yes' : 'No'}</p>
               <p>Journal: {inventory?.journal?.value ? 'Yes' : 'No'}</p>
+              <p>Minigame1 won? : {minigameOneWon ? 'Yes' : 'No'}</p>
+              <p>Minigame2 pts: {minigameTwoPoints}</p>
+              <p>Minigame3 pts: {minigameThreePoints}</p>
             </div>
           </div>
 
@@ -237,7 +288,12 @@ const StoryGame = () => {
               margin: '0 auto',
             }}
           >
-            <p>{story.snippet[snippetIndex].text}</p>
+            {/* <p>{story.snippet[snippetIndex].text}</p> */}
+            {story.snippet[snippetIndex].text.split('\n').map((line, index) => (
+              <p key={index}>{line}</p>
+            ))}
+            <p className="text-end">{snippetIndex !==0 && (<button onClick={() => setSnippetIndex(0)}>restart</button>)}</p>
+
             
 
             {/* {snippetIndex < story.snippet.length - 1 && (

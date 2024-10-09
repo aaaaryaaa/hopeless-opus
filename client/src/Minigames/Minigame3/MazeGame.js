@@ -167,7 +167,7 @@ import React, { useState, useEffect } from 'react';
 import { maze } from './maze';
 import './MazeGame.css';
 
-const MazeGame = () => {
+const MazeGame = ({ gameResult }) => {
   const [playerPosition, setPlayerPosition] = useState({ x: 0, y: 0 });
   const [clickCount, setClickCount] = useState(0);
   const [timeLeft, setTimeLeft] = useState(30);
@@ -237,6 +237,7 @@ const MazeGame = () => {
       if (x === 9 && y === 9) {
         setWin(true);
         setGameOver(true);
+        gameResult(100*timeLeft);
       }
     }
   };

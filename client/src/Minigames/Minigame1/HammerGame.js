@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const HammerGame = () => {
+const HammerGame = ({ gameResult}) => {
     const [grid, setGrid] = useState(Array(3).fill(Array(3).fill(null))); // 3x3 grid
     const [hammerPosition, setHammerPosition] = useState({ row: -1, col: -1 });
     const [guessesLeft, setGuessesLeft] = useState(5);
@@ -24,6 +24,7 @@ const HammerGame = () => {
                 setMessage("You found the hammer! You broke the door!");
                 setGameOver(true);
                 setPlayerWon(true);
+                gameResult(true);
             } else {
                 setGuessesLeft(guessesLeft - 1);
                 setMessage(`Incorrect! You have ${guessesLeft - 1} guesses left.`);
@@ -32,6 +33,7 @@ const HammerGame = () => {
             if (guessesLeft - 1 === 0 && !playerWon) {
                 setMessage("You ran out of guesses. Someone else opened the door.");
                 setGameOver(true);
+                gameResult(false);
             }
         }
     };

@@ -4,7 +4,7 @@ import './App.css';
 const rows = 5;
 const cols = 11;
 
-function WhackaWolf() {
+function WhackaWolf({ gameResult }) {
     const [score, setScore] = useState(0);
     const [wolfPosition, setWolfPosition] = useState({ row: 0, col: 0 });
     const [gameStarted, setGameStarted] = useState(false);

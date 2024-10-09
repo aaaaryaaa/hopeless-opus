@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import CodeEditor from './CodeEditor';
 import Output from './Output';
 
-const Main = () => {
+const Main = ({ gameResult }) => {
   const questions = [
     {
       id: 1,
