@@ -45,56 +45,50 @@ export default function BubbleRevealText() {
     setBubbleSize(300); // Reset bubble size when not hovering over text
   };
 
-  const head1 = `HOPELESS`;
-  const head2 = `OPUS`;
+  const head1 = `HOPELESS `;
+  const head3=`   `
+  const head2 = ` OPUS`;
 
   return (
-    <div className="w-full">
+    <div className='w-full h-screen overflow-hidden'>
         <div
           ref={textContainerRef}
           onMouseMove={handleMouseMove}
-          className="relative h-screen cursor-default overflow-hidden rounded-lg bg-[#1C2E2F]"
+          className="relative h-screen cursor-default overflow-hidden rounded-lg"
         >
-          <div className="flex justify-center items-center absolute inset-0">
-            {/* Base layer - invisible text */}
-            <h1 className="absolute inset-0 text-lg font-medium leading-relaxed text-transparent">
-              {head1}
-            </h1>
-            <h1 className="absolute inset-0 text-lg font-medium leading-relaxed text-transparent">
-              {head2}
-            </h1>
-
             {/* Visible layer with radial gradient mask */}
             <div
-              className="flex justify-center items-center absolute inset-0"
+              className="absolute inset-0"
               style={{
                 WebkitMaskImage: `radial-gradient(circle ${bubbleSize}px at ${mousePosition.x}px ${mousePosition.y}px, black 20%, transparent 80%)`,
                 maskImage: `radial-gradient(circle ${bubbleSize}px at ${mousePosition.x}px ${mousePosition.y}px, black 20%, transparent 80%)`,
-                backdropFilter: 'blur(10px) saturate(700%)',
-                transition: 'mask-position 100s ease-out', // Smooth transition effect
-                backgroundColor: 'rgba(139, 0, 0, 5)',
+                backdropFilter: 'blur(10px) saturate(70%)',
+                transition: 'mask-position 300s ease-out', // Smooth transition effect
+                backgroundColor: 'rgba(255, 255, 255, 1)',
               }}
             >
-              <div className="flex flex-col items-center">
                 {/* Text Elements with Hover Handlers */}
+                  <div className="flex items-center justify-center no-select text-center tracking-widest pulsate leading-tight lg:text-[10rem] text-[2.5rem] font-extrabold text-black font-spookyman p-40" 
+                  >
                 <h1
-                  className="no-select pulsate text-center text-8xl tracking-widest leading-tight mb-4 font-bold text-white font-spookyman"
+                  className="block lg:inline"
                   onMouseEnter={handleMouseEnter} // Increase bubble size on text hover
                   onMouseLeave={handleMouseLeave} // Reset bubble size when not hovering over text
                 >
                   {head1}
+                  
+                <h1 className="block lg:inLine" 
+                onMouseEnter={handleMouseEnter} 
+                  onMouseLeave={handleMouseLeave}>
+                {head2}
                 </h1>
-                <h1
-                  className="no-select pulsate text-center text-8xl tracking-widest leading-tight mb-4 font-bold text-white font-spookyman"
-                  onMouseEnter={handleMouseEnter} // Increase bubble size on text hover
-                  onMouseLeave={handleMouseLeave} // Reset bubble size when not hovering over text
-                >
-                  {head2}
                 </h1>
-              </div>
+                </div>
+
             </div>
-          </div>
         </div>
+
     </div>
   );
 }
+

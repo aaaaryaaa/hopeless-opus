@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'custom-bg': "url('/src/Resources/Landingbg.svg')"
+      },
       fontFamily: {
         spookyman: ['Spookyman','sans-serif'],
       },

@@ -7,6 +7,7 @@ import ContactForm from "../Component/contactform";
 import GallerySection from "../GallerySection.js";
 import Scroll from "../Component/Scrollcirc.js";
 import BubbleRevealText from "../Component/BubbleRevealText.js";
+import CaptionHp from "../Component/HomeCaption.js";
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -26,8 +27,14 @@ export default function HomePage() {
         backgroundRepeat: "no-repeat",
         zIndex: "-1",
       }}
-    >
+    > <div  className="w-full items-center justify-center bg-custom-bg bg-no-repeat ">
       <BubbleRevealText />
+      <div className="flex items-center">
+      <p className="pb-80 pr-40 pl-40 pt-20">
+      <CaptionHp />
+      </p>
+      </div>
+      </div>
       <Countdown />
       <Scroll />
       <CardSlider />
