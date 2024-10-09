@@ -24,12 +24,34 @@ const storySchema = new mongoose.Schema({
         required: true,
         default: 0,
       },
+      money: {
+        type: Number,
+        required: true,
+        default: 0,
+      },
+      rf: {
+        type: Number,
+        required: true,
+        default: 0,
+      },
+      health: {
+        type: Number,
+        required: true,
+        default: 0,
+      },
+      inventory: {
+        key: {
+          type: Boolean
+        },
+        umbrella: {
+          type: Boolean
+        },
+        journal: {
+          type: Boolean
+        }
+      }
     },
   ],
-  previousStoryId: {
-    type: String,
-    required: false,
-  },
   minigame: {
     type: Number,
     required: true,

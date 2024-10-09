@@ -36,7 +36,7 @@ router.get("/getuser", authMiddleware, (req, res) => {
 
 // PUT Route to update currentStoryId and points
 router.put("/updatestory", authMiddleware, (req, res) => {
-  const { currentStoryId, points } = req.body;
+  const { currentStoryId, points, health, money, rf, inventory } = req.body;
 
   if (!currentStoryId) {
     return res.status(400).json({ message: "currentStoryId is required" });
@@ -46,10 +46,26 @@ router.put("/updatestory", authMiddleware, (req, res) => {
     return res.status(400).json({ message: "points are required" });
   }
 
+  if (health === undefined) {
+    return res.status(400).json({ message: "health is required" });
+  }
+
+  if (money === undefined) {
+    return res.status(400).json({ message: "money is required" });
+  }
+
+  if (rf === undefined) {
+    return res.status(400).json({ message: "rf is required" });
+  }
+
+  if (inventory === undefined) {
+    return res.status(400).json({ message: "inventory is required" });
+  }
+
   // Find the user by req.userId and update currentStoryId and points
   User.findByIdAndUpdate(
     req.userId,
-    { currentStoryId, points }, // Update both currentStoryId and points
+    { currentStoryId, points, health, money, rf, inventory }, // Update both currentStoryId and points
     { new: true, useFindAndModify: false } // Return the updated user and avoid deprecation warning
   )
     .select("-password") // Exclude password from the response

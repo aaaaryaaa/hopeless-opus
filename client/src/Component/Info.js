@@ -23,6 +23,16 @@ const Info = () => {
 
   return (
     <div className="meet-the-devs-container">
+      <div className='acumen'>
+      <h1 className='acumen-title'>WHAT IS ACUMEN?</h1>
+      <p className='acumen-para'>lorem ipsum dummy dummy nigga</p>
+      </div>
+
+      <div className='hopeless'>
+      <h1 className='hopeless-title'>WHAT IS HOPELESS OPUS?</h1>
+      <p className='hopeless-para'>lorem ipsum dummy dummy nigga</p>
+      </div>
+      
       <h1><span className='meet-the'>Meet The </span><span className="core-team"> Core Team</span></h1>
       <div className="dev-grid">
         {devs.map((dev, index) => (

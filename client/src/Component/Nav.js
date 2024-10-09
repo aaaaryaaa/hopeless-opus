@@ -8,7 +8,7 @@ const Nav = () => {
   const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  
+
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -18,11 +18,11 @@ const Nav = () => {
 
   const closeMenu = () => {
     setIsMobileMenuOpen(false);
-    
+
   };
 
 
-  
+
 
   const openHome = () => {
     navigate('/');
@@ -44,7 +44,7 @@ const Nav = () => {
     closeMenu();
   };
   const openSignup = () => {
-    navigate('/signup');
+    navigate('/register');
     closeMenu();
   };
   const openLogin = () => {
@@ -55,24 +55,24 @@ const Nav = () => {
   return (
     <div>
       {isMobileMenuOpen && <div className="mobile-overlay" onClick={closeMenu}></div>}
-      
+
       <nav className={`navbar ${isMobileMenuOpen ? 'menu-open' : ''}`}>
         <div className="nav-logo">
           <div className="istelogo">
             <img src={image1} alt="ISTE Logo" />
           </div>
-          <a href="/" className='hopeless'>Hopeless Opus</a>
+          <a href="/" className='hopeless-name'>Hopeless Opus</a>
         </div>
 
-          <ul className={`nav-links ${isMobileMenuOpen? 'nav-links-mobile' : ''}`}>
-            <li><button onClick={openHome}>Home</button></li>
-            <li><button onClick={openPlay}>Play</button></li>
-            <li><button onClick={openAbout}>About</button></li>
-            <li><button onClick={openContact}>Contact</button></li>
-            <li><button onClick={openSignup}>Signup</button></li>
-            <li><button onClick={openLogin}>Login</button></li>
-            
-          </ul>
+        <ul className={`nav-links ${isMobileMenuOpen ? 'nav-links-mobile' : ''}`}>
+          <li><button onClick={openHome}>Home</button></li>
+          <li><button onClick={openPlay}>Play</button></li>
+          <li><button onClick={openAbout}>About</button></li>
+          <li><button onClick={openContact}>Contact</button></li>
+          <li><button onClick={openSignup}>Register</button></li>
+          <li><button onClick={openLogin}>Login</button></li>
+
+        </ul>
 
         <ul className={`nav-dash ${isMobileMenuOpen ? 'nav-dash-mobile' : ''}`}>
           <div className="drawer drawer-end">
@@ -87,21 +87,21 @@ const Nav = () => {
               </label>
             </div>
             <div className="drawer-side">
-  <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
-  <ul className="menu bg-black text-white min-h-full w-80 p-6 space-y-4">
-    <li className="text-lg font-semibold border-b border-blue-600 pb-2">Names:</li>
-    <li className="text-lg font-semibold border-b border-blue-600 pb-2">Class:</li>
-    <li className="text-lg font-semibold border-b border-blue-600 pb-2">Team Number:</li>
-    <li className="text-lg font-semibold">Progress:</li>
-  </ul>
-</div>
+              <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
+              <ul className="menu bg-black text-white min-h-full w-80 p-6 space-y-4">
+                <li className="text-lg font-semibold border-b border-blue-600 pb-2">Names:</li>
+                <li className="text-lg font-semibold border-b border-blue-600 pb-2">Class:</li>
+                <li className="text-lg font-semibold border-b border-blue-600 pb-2">Team Number:</li>
+                <li className="text-lg font-semibold">Progress:</li>
+              </ul>
+            </div>
 
           </div>
         </ul>
 
         <div className="mobile-menu-icon" onClick={toggleMobileMenu}>
           {isMobileMenuOpen ? <>&#x2715;</> : <>&#9776;</>}
-        
+
         </div>
       </nav>
     </div>
