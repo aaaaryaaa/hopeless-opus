@@ -67,8 +67,10 @@ const Minigame8 = ({ gameResult }) => {
     const value2 = evaluateExpression(expression2);
     if (value1 > value2) {
       setScore(score + 10); // Correct answer
+      gameResult(score+10);
     } else {
       setScore(score - 5); // Wrong answer
+      gameResult(score-5);
     }
     generateExpressions();
   };
@@ -78,8 +80,10 @@ const Minigame8 = ({ gameResult }) => {
     const value2 = evaluateExpression(expression2);
     if (value1 < value2) {
       setScore(score + 10); // Correct answer
+      gameResult(score+10);
     } else {
       setScore(score - 10); // Wrong answer
+      gameResult(score-10);
     }
     generateExpressions();
   };

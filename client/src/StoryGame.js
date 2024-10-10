@@ -247,11 +247,11 @@ const StoryGame = () => {
           <div className="text-end">
 
               {false && (<HammerGame gameResult={handleMiniGameOneResult}/>)} 
-              {false && (<Minigame2 gameResult={handleMiniGameTwoResult} />)}
+              {false && (<Minigame2 gameResult={handleMiniGameTwoResult} />)} {/*problem*/}
               {false && (<MazeGame gameResult={handleMiniGameThreeResult} />)}
               {false && (<Main gameResult={handleMiniGameFourResult} />)}
               {false && (<WhackaWolf gameResult={handleMiniGameFiveResult} />)}
-              {false && (<Wordle gameResult={handleMiniGameSixResult} />)}
+              {false && (<Wordle gameResult={handleMiniGameSixResult} />)} {/*will be fixed */}
               {false && (<MathematicalDroplets gameResult={handleMiniGameSevenResult} />)}
               {false && (<Minigame8 gameResult={handleMiniGameEightResult} />)}
               {false && (<Minigame9 gameResult={handleMiniGameNineResult} />)}
@@ -287,7 +287,7 @@ const StoryGame = () => {
           <div className="mb-5">
             {snippetIndex === story.snippet.length - 1 && (
               <div className="flex ">
-                {story.options.map((option, index) => (
+                {story.options ? (story.options.map((option, index) => (
                   <button
                     key={index}
                     style={{
@@ -310,7 +310,9 @@ const StoryGame = () => {
                   >
                     {option.optionText}
                   </button>
-                ))}
+                ))) : ( <>
+                
+                </>)}
               </div>
             )}
           </div>

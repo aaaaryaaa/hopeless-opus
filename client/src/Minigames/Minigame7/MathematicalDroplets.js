@@ -117,6 +117,7 @@ const MathematicalDroplets = ({ gameResult }) => {
 
         if (gameOver) {
           setIsGameOver(true);
+          gameResult(5*score)
         }
 
         return newPositions;

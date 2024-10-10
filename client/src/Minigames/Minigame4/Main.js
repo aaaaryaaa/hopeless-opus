@@ -119,6 +119,7 @@ int main() {
       if (question.correctOutput) {
         setOutput(question.correctOutput);
         setScore(score + question.points);
+        gameResult(score + question.points);
         setFeedback(`Correct! You earned ${question.points} points.`);
         setIsQuestionCompleted(true); // Prevent further edits or running the code again for the current question
       }

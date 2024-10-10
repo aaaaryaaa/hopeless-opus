@@ -65,7 +65,7 @@ function WhackaWolf({ gameResult }) {
     };
 
     const handleEndGame = () => {
-        gameResult(100);
+        gameResult(100*score);
         setGameStarted(false);
     };
 

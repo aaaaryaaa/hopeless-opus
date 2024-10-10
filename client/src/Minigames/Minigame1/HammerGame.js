@@ -24,7 +24,7 @@ const HammerGame = ({ gameResult}) => {
                 setMessage("You found the hammer! You broke the door!");
                 setGameOver(true);
                 setPlayerWon(true);
-                gameResult(true);
+                gameResult(100*guessesLeft);
             } else {
                 setGuessesLeft(guessesLeft - 1);
                 setMessage(`Incorrect! You have ${guessesLeft - 1} guesses left.`);
@@ -33,7 +33,6 @@ const HammerGame = ({ gameResult}) => {
             if (guessesLeft - 1 === 0 && !playerWon) {
                 setMessage("You ran out of guesses. Someone else opened the door.");
                 setGameOver(true);
-                gameResult(false);
             }
         }
     };
