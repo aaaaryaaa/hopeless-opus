@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './ImageHoverEffect.css';
-import yourImage from '../Resources/map.jpg';
 import yourButton from '../Resources/mapicon.png';
 import customCursor from '../Resources/56697.png'; // Path to your custom cursor image
 
@@ -58,7 +57,7 @@ const ImageHoverEffect = () => {
         }}
       >
         <img
-          src={yourButton}
+          src= "https://res.cloudinary.com/diswj8gya/image/upload/v1728569097/mapicon_ltcjkx.png"
           alt="Button"
           style={{
             width: '100%',
@@ -81,7 +80,7 @@ const ImageHoverEffect = () => {
           }}
         >
           <img
-            src={yourImage}
+            src= "https://res.cloudinary.com/diswj8gya/image/upload/v1728569079/map_tacmtr.jpg"
             alt="Hover Effect"
             style={imageStyle}
             className="image-fade-in"

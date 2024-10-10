@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import './Nav.css';
 import { useNavigate } from 'react-router-dom';
-import image1 from "../Resources/hopelesslogo.svg";
-import dash from '../Resources/dash.svg';
 
 const Nav = () => {
   const navigate = useNavigate();
@@ -59,7 +57,7 @@ const Nav = () => {
       <nav className={`navbar ${isMobileMenuOpen ? 'menu-open' : ''}`}>
         <div className="nav-logo">
           <div className="istelogo">
-            <img src={image1} alt="ISTE Logo" />
+            <img src= "https://res.cloudinary.com/diswj8gya/image/upload/v1728568492/hopelesslogo_i8sypv.svg" alt="ISTE Logo" />
           </div>
           <a href="/" className='hopeless-name'>Hopeless Opus</a>
         </div>
@@ -80,7 +78,7 @@ const Nav = () => {
             <div className="drawer-content">
               <label htmlFor="my-drawer-4" className="drawer-button relative inline-block">
                 <img
-                  src={dash}
+                  src= "https://res.cloudinary.com/diswj8gya/image/upload/v1728568126/dash_zjkend.svg"
                   alt="Dashboard"
                   className="w-12 h-12 transition-opacity duration-200 hover:opacity-60 rounded-full"
                 />

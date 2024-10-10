@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import image from "../Resources/globe.png";
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -48,7 +47,7 @@ const ContactForm = () => {
     return (
         <div className="min-h-screen flex items-center justify-center relative p-4 bg-black">
             <div className="flex max-w-5xl w-full -space-x-36 gap-16">
-                <img src={image} alt="Globe" className="w-[40%] h-full object-cover rounded-l-lg mr-40 my-auto" />
+                <img src="https://res.cloudinary.com/diswj8gya/image/upload/v1728568179/globe_rbbnjv.png" alt="Globe" className="w-[40%] h-full object-cover rounded-l-lg mr-40 my-auto" />
 
                 <div className="max-w-xl mx-10 p-8 bg-black shadow-lg rounded-lg">
                     <h2 className="text-4xl font-bold text-white mb-4 text-left">

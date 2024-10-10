@@ -7,14 +7,14 @@ const getGalleryImages = () => {
   return [
     {
       id: 1,
-      image: `${image1}`,
+      image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728569013/imposter_upbcqh.jpg",
       alt: "Image 1",
     },
     {
       id: 2,
       image: `${image2}`,
       alt: "Image 2",
-    },
+    }, 
     {
       id: 3,
       image: `${image2}`,

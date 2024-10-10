@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
-import footerImage from "../Resources/Earth2.jpeg";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -21,7 +20,7 @@ const Footer = () => {
     <footer
       className="text-white"
       style={{
-        backgroundImage: `url(${footerImage})`, // Correctly use the image
+        backgroundImage: `url(https://res.cloudinary.com/diswj8gya/image/upload/v1728568149/Earth2_hyfg6q.jpg)`, // Correctly use the image
         backgroundSize: 'cover', // Ensures the image covers the entire footer
         backgroundPosition: 'center', // Positions the image at the center
         backgroundRepeat: 'no-repeat', // Prevents the image from repeating
