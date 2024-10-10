@@ -6,6 +6,10 @@ import Minigame2 from "./Minigames/Minigame2/Minigame2"; //minigame2
 import MazeGame from "./Minigames/Minigame3/MazeGame" //minigame3
 import Main from "./Minigames/Minigame4/Main"; //minigame4
 import WhackaWolf from "./Minigames/Minigame5/WhackaWolf"; //minigame5
+import  Wordle from "./Minigames/Minigame6/Wordle" //minigame6
+import MathematicalDroplets from "./Minigames/Minigame7/MathematicalDroplets"; //minigame7
+import Minigame8 from "./Minigames/Minigame8/Minigame8" //minigame8
+import Minigame9 from "./Minigames/Minigame9/Minigame9";
 
 const StoryGame = () => {
   const nav = useNavigate();
@@ -168,14 +172,15 @@ const StoryGame = () => {
   const [minigameThreePoints, setMinigameThreePoints] = useState(0);
   const [minigameFourPoints, setMinigameFourPoints] = useState(0);
   const [minigameFivePoints, setMinigameFivePoints] = useState(0);
+  const [minigameSixPoints, setMinigameSixPoints] = useState(0);
+  const [minigameSevenPoints, setMinigameSevenPoints] = useState(0);
+  const [minigameEightPoints, setMinigameEightPoints] = useState(0);
+  const [minigameNinePoints, setMinigameNinePoints] = useState(0);
 
   //function for minigame 1
-  const handleMiniGameOneResult = (won) => {
-    setMinigameOneWon(won); // Update the state based on the mini-game result
-    if (won) {
-      console.log("Player won the hammer game!");
-      // You can update the player's points or perform other logic if needed
-    }
+  const handleMiniGameOneResult = (pts) => {
+    setMinigameOnePoints(pts);
+    console.log(`Player got: ${pts}`);
   };
 
   const handleMiniGameTwoResult = (pts) => {
@@ -198,6 +203,26 @@ const StoryGame = () => {
     console.log(`Player got: ${pts}`);
   };
 
+  const handleMiniGameSixResult = (pts) => {
+    setMinigameSixPoints(pts); // Update the state based on the mini-game result
+    console.log(`Player got: ${pts}`);
+  };
+
+  const handleMiniGameSevenResult = (pts) => {
+    setMinigameSevenPoints(pts); // Update the state based on the mini-game result
+    console.log(`Player got: ${pts}`);
+  };
+
+  const handleMiniGameEightResult = (pts) => {
+    setMinigameEightPoints(pts); // Update the state based on the mini-game result
+    console.log(`Player got: ${pts}`);
+  };
+
+  const handleMiniGameNineResult = (pts) => {
+    setMinigameNinePoints(pts); // Update the state based on the mini-game result
+    console.log(`Player got: ${pts}`);
+  };
+
   return (
     <div
       style={{
@@ -206,7 +231,7 @@ const StoryGame = () => {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         width: '100%', // Cover the full width of the viewport
-        height: '100%',
+        height: '100vh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end', // Align content to the bottom
@@ -226,6 +251,10 @@ const StoryGame = () => {
               {false && (<MazeGame gameResult={handleMiniGameThreeResult} />)}
               {false && (<Main gameResult={handleMiniGameFourResult} />)}
               {false && (<WhackaWolf gameResult={handleMiniGameFiveResult} />)}
+              {false && (<Wordle gameResult={handleMiniGameSixResult} />)}
+              {false && (<MathematicalDroplets gameResult={handleMiniGameSevenResult} />)}
+              {false && (<Minigame8 gameResult={handleMiniGameEightResult} />)}
+              {false && (<Minigame9 gameResult={handleMiniGameNineResult} />)}
 
               <div 
               style={{
@@ -246,6 +275,12 @@ const StoryGame = () => {
               <p>Minigame1 won? : {minigameOneWon ? 'Yes' : 'No'}</p>
               <p>Minigame2 pts: {minigameTwoPoints}</p>
               <p>Minigame3 pts: {minigameThreePoints}</p>
+              <p>Minigame4 pts: {minigameFourPoints}</p>
+              <p>Minigame5 pts: {minigameFivePoints}</p>
+              <p>Minigame6 pts: {minigameSixPoints}</p>
+              <p>Minigame7 pts: {minigameSevenPoints}</p>
+              <p>Minigame8 pts: {minigameEightPoints}</p>
+              <p>Minigame9 pts: {minigameNinePoints}</p>
             </div>
           </div>
 

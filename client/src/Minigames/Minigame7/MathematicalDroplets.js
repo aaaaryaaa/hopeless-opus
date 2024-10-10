@@ -34,7 +34,7 @@ const generateQuestion = () => {
   return { question, correctAnswer };
 };
 
-const MathematicalDroplets = () => {
+const MathematicalDroplets = ({ gameResult }) => {
   const [questions, setQuestions] = useState([]); // Initialize with empty array
   const [answer, setAnswer] = useState("");
   const [dropletPositions, setDropletPositions] = useState({});

@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './Game1.css'; // Import the CSS file
 
-const Minigame9 = () => {
+const Minigame9 = ({ gameResult }) => {
   const [timerDisplay, setTimerDisplay] = useState('Time: 0.0000 s');
   const [result, setResult] = useState('');
   const [pointsDisplay, setPointsDisplay] = useState('');
@@ -73,6 +73,7 @@ const Minigame9 = () => {
       }
 
       setPoints(earnedPoints);
+      gameResult(earnedPoints);
       setPointsDisplay(`You earned: ${earnedPoints} points`);
       setGameEnded(true);
       nextGameButtonRef.current.style.display = 'block'; // Show Next Game button

@@ -16,7 +16,7 @@ const WORD_LIST = [
 
 const MAX_GUESSES = 6; // Maximum number of guesses allowed
 
-const Wordle = () => {
+const Wordle = ({ gameResult }) => {
   const [guess, setGuess] = useState('');
   const [guesses, setGuesses] = useState([]);
   const [targetWord, setTargetWord] = useState('');

@@ -1,5 +1,5 @@
 /* src/styles.css */
-body {
+/* body {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,7 +8,7 @@ body {
     background: linear-gradient(135deg, #420541, #042b51);
     font-family: 'Arial', sans-serif;
     color: #ffffff;
-}
+} */
 
 #game-container {
     text-align: center;

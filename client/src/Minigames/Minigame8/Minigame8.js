@@ -4,7 +4,7 @@ import ExpressionBox from "./ExpressionBox";
 import ScoreBoard from "./ScoreBoard";
 import "../../index.css";
 
-const App = () => {
+const Minigame8 = ({ gameResult }) => {
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(30);
   const [expression1, setExpression1] = useState("");
@@ -156,4 +156,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Minigame8;
