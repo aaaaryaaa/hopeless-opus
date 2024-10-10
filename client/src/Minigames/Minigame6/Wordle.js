@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import './Wordle.css';
 
-const WORD_LIST = [
-    "APPLE", "BRAVE", "CHAIR", "DANCE", "EARTH", "FLUTE", "GRASS", "HOUSE", "IVORY", "JOKER",
-    "KNIFE", "LEMON", "MOUSE", "NIGHT", "OCEAN", "PARTY", "QUEEN", "RIVER", "STONE", "TIGER",
-    "UMBRA", "VIVID", "WATER", "XENON", "YACHT", "ZEBRA", "ANGEL", "BLAZE", "CRANE", "DOUBT",
-    "EAGLE", "FLAME", "GIANT", "HEART", "IDEAL", "JOLLY", "KINGS", "LUNAR", "MAGIC", "NORTH",
-    "OLIVE", "PEACE", "QUICK", "RAVEN", "SHARP", "TALON", "URBAN", "VALVE", "WIDEN", "XYLEM",
-    "YOUTH", "ZONES", "AMBER", "BOOST", "CHARM", "DREAM", "ENTRY", "FLOCK", "GLOOM", "HARSH",
-    "IMAGE", "JOKES", "KNOCK", "LEAPS", "MARCH", "NEONS", "ORBIT", "PEARL", "QUIET", "ROAST",
-    "SHIFT", "TABLE", "ULTRA", "VIPER", "WHALE", "XEROX", "YELLS", "ZINGS", "ANVIL", "BLISS",
-    "CREEK", "DELTA", "FROST", "GLOBE", "HONEY", "IVIES", "JUMPS", "KITES", "LINKS", "MIRTH",
-    "NODES", "OPENS", "PLUSH", "QUIRK", "ROOTS", "STARS", "TWICE", "UNSET", "VIBES", "WAVES"
-]
+const WORD_LIST = ["FABLE", "MAJOR", "STONY", "RAINY", "CLUEY", "TEXTS", "SCARE", "FIRST", "TIMED", "DEPTH", 
+  "ASHES", "FIREY", "CYCLE", "GUARD", "BOWED", "FINDY", "FUNDS", "BLOOD", "QUEST", "PARTY", 
+  "FAILS", "RIOT", "CRYPT", "FLARE", "SHADE", "BREAK", "GAZE", "CLOCK", "MOB", "BUCKS", "SHIFT", 
+  "EMBER", "CAVE", "CHILL", "RALLY", "FLASH", "WHISP", "PROBE", "COVER", "SMELL", "SCORE", 
+  "RIDEY", "REALM", "HITCH", "GREEN", "CRUDE", "DARKY", "CHAIN", "GANGY", "FLOCK", "GRAD", 
+  "CHESS", "BIKE", "BRAIN", "FEARY", "GLOOM", "GAMES", "EERIE", "SCAN", "LOGIC", "SPEED", 
+  "CASHY", "CLASS", "TRAIL", "HASTY", "WRITE", "GRIMY", "DREAD", "HAUNT", "BRAKE", "RICHY", 
+  "TENSE", "GEARS", "CLUES", "STUDY", "PASTY", "DIARY", "TREND", "SCARY", "GUNKY", "ROCKY", 
+  "GHOUL", "VAGUE", "EPOCH", "BUMPY", "COINS", "HONOR", "YOUTH", "CHRON", "GLINT", "OMINY", 
+  "NOTES", "ADATE", "LOGS", "MONEY", "ESSAY"]
+  
 
 const MAX_GUESSES = 6; // Maximum number of guesses allowed
 
@@ -22,13 +21,13 @@ const Wordle = ({ gameResult }) => {
   const [targetWord, setTargetWord] = useState('');
   const [message, setMessage] = useState('');
   const [absentLetters, setAbsentLetters] = useState(new Set());
+  const [points, setPoints] = useState(0); // Track points
 
   useEffect(() => {
     // Select a random target word when the component mounts
     setTargetWord(WORD_LIST[Math.floor(Math.random() * WORD_LIST.length)]);
   }, []);
 
-  
   const handleChange = (letter) => {
     if (guess.length < 5) {
       setGuess((prev) => prev + letter);
@@ -59,10 +58,14 @@ const Wordle = ({ gameResult }) => {
     });
     setAbsentLetters(newAbsentLetters);
 
+    // Calculate points based on the number of guesses
     if (guess === targetWord) {
-      setMessage('Congratulations! You guessed the word!');
+      const score = 100 - guesses.length * 10;
+      setPoints(score);
+      setMessage(`Congratulations! You guessed the word and earned ${score} points!`);
     } else if (guesses.length === MAX_GUESSES - 1) {
-      setMessage(`Game over! The word was ${targetWord}.`);
+      setMessage(`Game over! The word was ${targetWord}. You earned 0 points.`);
+      setPoints(0); // No points if the player fails to guess
     }
     setGuess('');
   };
@@ -174,6 +177,7 @@ const Wordle = ({ gameResult }) => {
         {renderGuesses()}
       </div>
       {renderKeyboard()}
+      <p>Points: {points}</p>
     </div>
   );
 };
