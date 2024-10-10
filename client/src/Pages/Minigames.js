@@ -8,6 +8,7 @@ import Minigame6 from '../Minigames/Minigame6/Wordle'
 import Minigame7 from "../Minigames/Minigame7/Math"
 import Minigame8 from '../Minigames/Minigame8/Minigame8'
 import Minigame9 from '../Minigames/Minigame9/Game1'
+import Minigame10 from "../Minigames/Minigame10/Minigame10"
 
 function Minigames() {
   return (
