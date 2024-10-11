@@ -52,7 +52,7 @@ const Tile = ({ text, onClick, isActive, isAnsweredCorrectly, isTextVisible }) =
   );
 };
 
-const Game = () => {
+const Minigame10 = ({ gameResult }) => {
   const [currentRow, setCurrentRow] = useState(0);
   const [answeredCorrectly, setAnsweredCorrectly] = useState(null); // Track correct/incorrect feedback
 
@@ -102,12 +102,4 @@ const Game = () => {
   );
 };
 
-const App = () => {
-  return (
-    <div className="App">
-      <Game />
-    </div>
-  );
-};
-
-export default App;
+export default Minigame10;

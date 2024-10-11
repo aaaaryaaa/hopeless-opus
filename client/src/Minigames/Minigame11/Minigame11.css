@@ -1,5 +1,5 @@
 /* Full-screen settings */
-body {
+.gamebody {
   font-family: sans-serif;
   display: flex;
   justify-content: center;
@@ -8,10 +8,9 @@ body {
   margin: 0;
   overflow: hidden;
   background: linear-gradient(to bottom, #87CEEB, #00BFFF);
-  /* Sky gradient */
 }
 
-.App {
+.gameApp {
   text-align: center;
   position: relative;
 }
@@ -19,7 +18,7 @@ body {
 canvas {
   display: block;
   margin: 0;
-  width: 100vw;
+  width: 90vw;
   /* Full-screen width */
   height: 100vh;
   /* Full-screen height */

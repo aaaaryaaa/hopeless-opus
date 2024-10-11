@@ -13,7 +13,6 @@ const storySchema = new mongoose.Schema({
   ],
   bgimg: {
     type: String, // Cloudinary link
-    required: true, 
   },
   options: [
     {
@@ -21,22 +20,18 @@ const storySchema = new mongoose.Schema({
       nextStoryId: String,
       points: {
         type: Number,
-        required: true,
         default: 0,
       },
       money: {
         type: Number,
-        required: true,
         default: 0,
       },
       rf: {
         type: Number,
-        required: true,
         default: 0,
       },
       health: {
         type: Number,
-        required: true,
         default: 0,
       },
       inventory: {

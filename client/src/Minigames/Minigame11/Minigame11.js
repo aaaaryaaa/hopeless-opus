@@ -7,7 +7,7 @@ const stopObstacleGenerationTime = 52000; // 52 seconds
 const fadeOutStartTime = 0; // Start fading out the land at the beginning
 const fadeInStartTime = gameDuration - 5000; // Start fading in the land in the last 5 seconds
 
-function App() {
+function Minigame11({ gameResult }) {
   const [playerX, setPlayerX] = useState(150);
   const [obstacles, setObstacles] = useState([]);
   const [gameOver, setGameOver] = useState(false);
@@ -22,7 +22,7 @@ function App() {
 
   useEffect(() => {
     const updateCanvasSize = () => {
-      setCanvasSize({ width: window.innerWidth, height: window.innerHeight });
+      setCanvasSize({ width: window.innerWidth*0.9, height: window.innerHeight });
     };
 
     window.addEventListener('resize', updateCanvasSize);
@@ -141,7 +141,7 @@ function App() {
   }, [playerX, canvasSize]);
 
   return (
-    <div className="App">
+    <div className="gameApp">
       <canvas ref={canvasRef} width={canvasSize.width} height={canvasSize.height} />
 
       {showLand && <div className="land-gradient"></div>}
@@ -153,4 +153,4 @@ function App() {
   );
 }
 
-export default App;
+export default Minigame11;

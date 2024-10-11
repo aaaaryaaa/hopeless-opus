@@ -9,7 +9,9 @@ import WhackaWolf from "./Minigames/Minigame5/WhackaWolf"; //minigame5
 import  Wordle from "./Minigames/Minigame6/Wordle" //minigame6
 import MathematicalDroplets from "./Minigames/Minigame7/MathematicalDroplets"; //minigame7
 import Minigame8 from "./Minigames/Minigame8/Minigame8" //minigame8
-import Minigame9 from "./Minigames/Minigame9/Minigame9";
+import Minigame9 from "./Minigames/Minigame9/Minigame9"; //minigame9
+import Minigame10 from "./Minigames/Minigame10/Minigame10"; //minigame10
+import Minigame11 from "./Minigames/Minigame11/Minigame11"; //minigame11
 
 const StoryGame = () => {
   const nav = useNavigate();
@@ -22,6 +24,7 @@ const StoryGame = () => {
   const [rf, setRF] = useState(0);
   const [snippetIndex, setSnippetIndex] = useState(0); // State for snippet index
   const [inventory, setInventory] = useState(null);
+  const [minigame, setMinigame] = useState(false);
 
   // Fetch user details only when the component mounts
   async function fetchUserDetails() {
@@ -67,6 +70,12 @@ const StoryGame = () => {
       const response = await fetch(`${BaseUrl}/api/story/${storyId}`);
       const data = await response.json();
       setStory(data);
+      console.log(data);
+      if(data.options.length===0){
+        setGameNo(1); console.log('game 1');
+      }else {
+        setGameNo(0)
+      }
       setSnippetIndex(0); // Reset the snippet index to 0 when a new story is fetched
     } catch (error) {
       console.error("Error fetching story:", error);
@@ -162,10 +171,17 @@ const StoryGame = () => {
   const handleNextSnippet = () => {
     if (snippetIndex < story.snippet.length - 1) {
       setSnippetIndex(snippetIndex + 1); // Move to the next snippet
+      if(snippetIndex+1 === story.snippet.length - 1) {
+        setGameDialogue(true);
+      } else{
+        setGameDialogue(false);
+      }
     }
   };
 
   //variables for minigames
+  const [gameNo, setGameNo] = useState(0);
+  const [gameDialogue, setGameDialogue] = useState(false);
   const [minigameOneWon, setMinigameOneWon] = useState(false);
   const [minigameOnePoints, setMinigameOnePoints] = useState(0);
   const [minigameTwoPoints, setMinigameTwoPoints] = useState(0);
@@ -176,10 +192,13 @@ const StoryGame = () => {
   const [minigameSevenPoints, setMinigameSevenPoints] = useState(0);
   const [minigameEightPoints, setMinigameEightPoints] = useState(0);
   const [minigameNinePoints, setMinigameNinePoints] = useState(0);
+  const [minigameTenPoints, setMinigameTenPoints] = useState(0);
+  const [minigameElevenPoints, setMinigameElevenPoints] = useState(0);
 
   //function for minigame 1
-  const handleMiniGameOneResult = (pts) => {
+  const handleMiniGameOneResult = (pts, won) => {
     setMinigameOnePoints(pts);
+    setMinigameOneWon(won)
     console.log(`Player got: ${pts}`);
   };
 
@@ -223,6 +242,16 @@ const StoryGame = () => {
     console.log(`Player got: ${pts}`);
   };
 
+  const handleMiniGameTenResult = (pts) => {
+    setMinigameTenPoints(pts); // Update the state based on the mini-game result
+    console.log(`Player got: ${pts}`);
+  };
+
+  const handleMiniGameElevenResult = (pts) => {
+    setMinigameElevenPoints(pts); // Update the state based on the mini-game result
+    console.log(`Player got: ${pts}`);
+  };
+
   return (
     <div
       style={{
@@ -246,15 +275,17 @@ const StoryGame = () => {
         story && (<>
           <div className="text-end">
 
-              {false && (<HammerGame gameResult={handleMiniGameOneResult}/>)} 
-              {false && (<Minigame2 gameResult={handleMiniGameTwoResult} />)} {/*problem*/}
-              {false && (<MazeGame gameResult={handleMiniGameThreeResult} />)}
-              {false && (<Main gameResult={handleMiniGameFourResult} />)}
-              {false && (<WhackaWolf gameResult={handleMiniGameFiveResult} />)}
-              {false && (<Wordle gameResult={handleMiniGameSixResult} />)} {/*will be fixed */}
-              {false && (<MathematicalDroplets gameResult={handleMiniGameSevenResult} />)}
-              {false && (<Minigame8 gameResult={handleMiniGameEightResult} />)}
-              {false && (<Minigame9 gameResult={handleMiniGameNineResult} />)}
+              {gameDialogue && gameNo===1 && (<HammerGame gameResult={handleMiniGameOneResult}/>)} 
+              {gameDialogue && gameNo===2 && (<Minigame2 gameResult={handleMiniGameTwoResult} />)} {/*problem*/}
+              {gameDialogue && gameNo===3 && (<MazeGame gameResult={handleMiniGameThreeResult} />)}
+              {gameDialogue && gameNo===4 && (<Main gameResult={handleMiniGameFourResult} />)}
+              {gameDialogue && gameNo===5 && (<WhackaWolf gameResult={handleMiniGameFiveResult} />)}
+              {gameDialogue && gameNo===6 && (<Wordle gameResult={handleMiniGameSixResult} />)} {/*will be fixed */}
+              {gameDialogue && gameNo===7 && (<MathematicalDroplets gameResult={handleMiniGameSevenResult} />)}
+              {gameDialogue && gameNo===8 && (<Minigame8 gameResult={handleMiniGameEightResult} />)}
+              {gameDialogue && gameNo===9 && (<Minigame9 gameResult={handleMiniGameNineResult} />)}
+              {true && (<Minigame10 />)} {/*game result to be added */}
+              {gameDialogue && gameNo===11 && (<Minigame11 />)}
 
               <div 
               style={{
@@ -287,7 +318,7 @@ const StoryGame = () => {
           <div className="mb-5">
             {snippetIndex === story.snippet.length - 1 && (
               <div className="flex ">
-                {story.options ? (story.options.map((option, index) => (
+                {story.options.length!== 0 ? (story.options.map((option, index) => (
                   <button
                     key={index}
                     style={{
@@ -311,7 +342,19 @@ const StoryGame = () => {
                     {option.optionText}
                   </button>
                 ))) : ( <>
-                
+                  <button
+                    style={{
+                      backgroundColor: 'rgba(0, 0, 0, 0.7)', // Semi-transparent background for the text box
+                      padding: '20px',
+                      borderRadius: '10px',
+                      width: '100%',
+                      margin: '1rem 0.5rem',
+                    }}
+
+                    onClick={() => {console.log('lol')}}
+                  >
+                    Finish Minigame
+                  </button>
                 </>)}
               </div>
             )}
@@ -329,7 +372,7 @@ const StoryGame = () => {
             {story.snippet[snippetIndex].text.split('\n').map((line, index) => (
               <p key={index}>{line}</p>
             ))}
-            <p className="text-end">{snippetIndex !==0 && (<button onClick={() => setSnippetIndex(0)}>restart</button>)}</p>
+            <p className="text-end">{snippetIndex !==0 && (<button onClick={() => {setSnippetIndex(0); setGameDialogue(false)}}>restart</button>)}</p>
 
             
 

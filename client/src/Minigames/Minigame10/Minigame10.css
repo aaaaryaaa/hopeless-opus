@@ -1,11 +1,6 @@
-/* src/App.css */
-body {
-  background-color: #2c2c54;
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-}
 
-.App {
+
+.gameApp {
   text-align: center;
   display: flex;
   justify-content: center;

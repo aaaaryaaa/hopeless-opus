@@ -43,7 +43,7 @@ router.post("/story", async (req, res) => {
   const { storyId, snippet, options, bgimg, minigame } = req.body; // Include bgimg and minigame
 
   // Check if all required fields are present
-  if (!storyId || !snippet || !options || !bgimg || minigame === undefined) {
+  if (!storyId || !snippet || minigame === undefined) {
     return res.status(400).json({ error: "All fields are required" });
   }
 

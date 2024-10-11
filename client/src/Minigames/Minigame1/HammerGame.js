@@ -24,7 +24,7 @@ const HammerGame = ({ gameResult}) => {
                 setMessage("You found the hammer! You broke the door!");
                 setGameOver(true);
                 setPlayerWon(true);
-                gameResult(100*guessesLeft);
+                gameResult(100*guessesLeft, true);
             } else {
                 setGuessesLeft(guessesLeft - 1);
                 setMessage(`Incorrect! You have ${guessesLeft - 1} guesses left.`);
