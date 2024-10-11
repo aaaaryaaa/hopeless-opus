@@ -8,6 +8,7 @@ import GallerySection from "../GallerySection.js";
 import Scroll from "../Component/Scrollcirc.js";
 import BubbleRevealText from "../Component/BubbleRevealText.js";
 import CaptionHp from "../Component/HomeCaption.js";
+import Footer from "../Component/Footer";
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -41,6 +42,7 @@ export default function HomePage() {
       <FAQ />
       <GallerySection />
       <ContactForm />
+      <Footer />
       {/* Hero and Footer can be added here if needed */}
     </div>
   );

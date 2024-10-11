@@ -143,12 +143,12 @@ int main() {
 
   return (
     <>
-      <div style={{ padding: '20px' }}>
-        <h1>C Code Debugger Game</h1>
+      <div style={{ padding: '20px', paddingTop: "5px" }}>
+        <h1 className='text-center'>C Code Debugger Game</h1>
         <h2>Score: {score}</h2>
         <CodeEditor code={code} setCode={setCode} disabled={isQuestionCompleted} />
-        <button onClick={runDebugger} disabled={isQuestionCompleted}>Run Code</button>
-        <button onClick={nextQuestion} disabled={!isQuestionCompleted}>Next Question</button>
+        <button className="hover:bg-white hover:text-black rounded-lg" onClick={runDebugger} disabled={isQuestionCompleted}>Run Code</button>
+        <button className="hover:bg-white hover:text-black rounded-lg" onClick={nextQuestion} disabled={!isQuestionCompleted}>Next Question</button>
         <Output output={output} />
         {feedback && <h3>{feedback}</h3>}
       </div>

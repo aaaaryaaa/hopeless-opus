@@ -253,14 +253,15 @@ const StoryGame = () => {
   };
 
   return (
-    <div
+    <div className="bg-gray-900"
       style={{
+        // backgroundColor : "black",
         backgroundImage: `url(${story?.bgimg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         width: '100%', // Cover the full width of the viewport
-        height: '100vh',
+        height: '110vh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end', // Align content to the bottom
@@ -275,7 +276,7 @@ const StoryGame = () => {
         story && (<>
           <div className="text-end">
 
-              {gameDialogue && gameNo===1 && (<HammerGame gameResult={handleMiniGameOneResult}/>)} 
+              {false && (<HammerGame gameResult={handleMiniGameOneResult}/>)} 
               {gameDialogue && gameNo===2 && (<Minigame2 gameResult={handleMiniGameTwoResult} />)} {/*problem*/}
               {gameDialogue && gameNo===3 && (<MazeGame gameResult={handleMiniGameThreeResult} />)}
               {gameDialogue && gameNo===4 && (<Main gameResult={handleMiniGameFourResult} />)}
@@ -284,12 +285,12 @@ const StoryGame = () => {
               {gameDialogue && gameNo===7 && (<MathematicalDroplets gameResult={handleMiniGameSevenResult} />)}
               {gameDialogue && gameNo===8 && (<Minigame8 gameResult={handleMiniGameEightResult} />)}
               {gameDialogue && gameNo===9 && (<Minigame9 gameResult={handleMiniGameNineResult} />)}
-              {true && (<Minigame10 />)} {/*game result to be added */}
-              {gameDialogue && gameNo===11 && (<Minigame11 />)}
+              {gameDialogue && gameNo===10 && (<Minigame10 />)} {/*game result to be added */}
+              {gameDialogue && (<Minigame11 />)}
 
-              <div 
+              {/* <div 
               style={{
-                backgroundColor: 'rgba(0, 0, 0, 0.7)', // Semi-transparent background for the text box
+                backgroundColor: 'rgba(0, 0, 0, 0.7)',
                 padding: '20px',
                 maxWidth: '90%',
                 margin: '0 auto',
@@ -312,7 +313,7 @@ const StoryGame = () => {
               <p>Minigame7 pts: {minigameSevenPoints}</p>
               <p>Minigame8 pts: {minigameEightPoints}</p>
               <p>Minigame9 pts: {minigameNinePoints}</p>
-            </div>
+            </div> */}
           </div>
 
           <div className="mb-5">

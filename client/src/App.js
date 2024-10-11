@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Play from "./Pages/Play.js";
 import HomePage from "./Pages/HomePage.js";
 import NotFoundPage from "./Component/NotFound.js";
-import Footer from "./Component/Footer.js";
 import Register from "./Component/Register.js";
 import Login from "./Component/Login.js";
 import Info from "./Component/Info.js";
@@ -37,7 +36,6 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
           <Route path='/storyerror' element={<StoryError />} />
         </Routes>
-        <Footer />
       </Router>
       
       {/* Uncomment this line to include StoryGame conditionally */}
