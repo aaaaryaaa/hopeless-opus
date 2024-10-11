@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './Wordle.css';
 
 const WORD_LIST = ["FABLE", "MAJOR", "STONY", "RAINY", "CLUEY", "TEXTS", "SCARE", "FIRST", "TIMED", "DEPTH", 
@@ -10,8 +10,7 @@ const WORD_LIST = ["FABLE", "MAJOR", "STONY", "RAINY", "CLUEY", "TEXTS", "SCARE"
   "CASHY", "CLASS", "TRAIL", "HASTY", "WRITE", "GRIMY", "DREAD", "HAUNT", "BRAKE", "RICHY", 
   "TENSE", "GEARS", "CLUES", "STUDY", "PASTY", "DIARY", "TREND", "SCARY", "GUNKY", "ROCKY", 
   "GHOUL", "VAGUE", "EPOCH", "BUMPY", "COINS", "HONOR", "YOUTH", "CHRON", "GLINT", "OMINY", 
-  "NOTES", "ADATE", "LOGS", "MONEY", "ESSAY"]
-  
+  "NOTES", "ADATE", "LOGS", "MONEY", "ESSAY"];
 
 const MAX_GUESSES = 6; // Maximum number of guesses allowed
 
@@ -22,92 +21,130 @@ const Wordle = ({ gameResult }) => {
   const [message, setMessage] = useState('');
   const [absentLetters, setAbsentLetters] = useState(new Set());
   const [points, setPoints] = useState(0); // Track points
+  const [validWords, setValidWords] = useState([]); // Store valid words
 
   useEffect(() => {
+    // Fetch valid words from valid_words.txt
+    fetch('./valid_words.txt')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text(); // Get the content as text
+      })
+      .then(data => {
+        // Convert the text to an array of words
+        const wordList = data.split('\n').map(word => word.trim().toUpperCase());
+        setValidWords(wordList); // Store the words in the state
+      })
+      .catch(error => console.error('Error fetching words:', error));
+  
     // Select a random target word when the component mounts
-    setTargetWord(WORD_LIST[Math.floor(Math.random() * WORD_LIST.length)]);
+    const randomWord = WORD_LIST[Math.floor(Math.random() * WORD_LIST.length)];
+    setTargetWord(randomWord);
   }, []);
 
-  const handleChange = (letter) => {
+  const handleChange = useCallback((letter) => {
     if (guess.length < 5) {
-      setGuess((prev) => prev + letter);
+      setGuess((prev) => prev + letter.toUpperCase());
     }
-  };
+  }, [guess]);
 
-  const handleDelete = () => {
+  const handleDelete = useCallback(() => {
     setGuess((prev) => prev.slice(0, -1));
-  };
+  }, []);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = useCallback((event) => {
     event.preventDefault();
-
+  
     if (guess.length !== 5) {
       setMessage('Guess must be 5 letters long.');
       return;
     }
-
-    setGuesses([...guesses, guess]);
+  
+    const upperGuess = guess.toUpperCase();
+  
+    if (!validWords.includes(upperGuess)) {
+      setMessage('Invalid word.');
+      return;
+    }
+  
+    setGuesses([...guesses, upperGuess]);
     setMessage('');
-
-    // Update absent letters based on the current guess
+  
     const newAbsentLetters = new Set(absentLetters);
-    guess.split('').forEach((letter) => {
+    upperGuess.split('').forEach((letter) => {
       if (!targetWord.includes(letter)) {
         newAbsentLetters.add(letter);
       }
     });
     setAbsentLetters(newAbsentLetters);
-
-    // Calculate points based on the number of guesses
-    if (guess === targetWord) {
-      const score = 100 - guesses.length * 10;
+  
+    if (upperGuess === targetWord) {
+      const score = 100 - guesses.length * 10; // Points calculation
       setPoints(score);
       setMessage(`Congratulations! You guessed the word and earned ${score} points!`);
     } else if (guesses.length === MAX_GUESSES - 1) {
       setMessage(`Game over! The word was ${targetWord}. You earned 0 points.`);
       setPoints(0); // No points if the player fails to guess
     }
+  
     setGuess('');
-  };
+  }, [guess, guesses, validWords, targetWord, absentLetters]);
+
+  useEffect(() => {
+    // Add keyboard event listener for direct typing
+    const handleKeyPress = (event) => {
+      const key = event.key.toUpperCase();
+      if (key >= 'A' && key <= 'Z' && guess.length < 5) {
+        handleChange(key);
+      } else if (key === 'Backspace') {
+        handleDelete();
+      } else if (key === 'Enter') {
+        handleSubmit(event);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [guess, handleChange, handleDelete, handleSubmit]); // Include handleChange and handleSubmit in dependencies
 
   const renderGuesses = () => {
     return Array.from({ length: MAX_GUESSES }, (_, index) => {
       const currentGuess = guesses[index] || '';
-      const targetLetterCount = {}; // Count occurrences of each letter in the target word
+      const targetLetterCount = {}; 
 
-      // Initialize the count of each letter in the target word
       targetWord.split('').forEach(letter => {
         targetLetterCount[letter] = (targetLetterCount[letter] || 0) + 1;
       });
 
-      // First pass: Mark correct (green) letters and decrease the target letter count
       const result = Array.from({ length: 5 }, (_, i) => {
         const letter = currentGuess[i] || ''; 
         let className = 'letter';
 
         if (letter && targetWord[i] === letter) {
-          className += ' correct'; // Correct letter and position
-          targetLetterCount[letter]--; // Decrease count of this letter
+          className += ' correct';
+          targetLetterCount[letter]--;
         }
 
         return { letter, className };
       });
 
-      // Second pass: Mark present (yellow) letters if the count allows it
       result.forEach((entry, i) => {
         if (!entry.className.includes('correct') && targetWord.includes(entry.letter)) {
           if (targetLetterCount[entry.letter] > 0) {
-            entry.className += ' present'; // Correct letter but wrong position
-            targetLetterCount[entry.letter]--; // Decrease count of this letter
+            entry.className += ' present';
+            targetLetterCount[entry.letter]--;
           } else {
-            entry.className += ' absent'; // No more occurrences of this letter in the target word
+            entry.className += ' absent';
           }
         } else if (!entry.className.includes('correct')) {
-          entry.className += ' absent'; // Letter not in word
+          entry.className += ' absent';
         }
       });
 
-      // Render the guess row
       return (
         <div key={index} className="guess-row">
           {result.map((entry, i) => (
