@@ -26,6 +26,79 @@ const StoryGame = () => {
   const [inventory, setInventory] = useState(null);
   const [minigame, setMinigame] = useState(false);
 
+  //variables for minigames
+  const [gameNo, setGameNo] = useState(0);
+  const [gameDialogue, setGameDialogue] = useState(false);
+  const [minigameOneWon, setMinigameOneWon] = useState(false);
+  const [minigameOnePoints, setMinigameOnePoints] = useState(0);
+  const [minigameTwoPoints, setMinigameTwoPoints] = useState(0);
+  const [minigameThreePoints, setMinigameThreePoints] = useState(0);
+  const [minigameFourPoints, setMinigameFourPoints] = useState(0);
+  const [minigameFivePoints, setMinigameFivePoints] = useState(0);
+  const [minigameSixPoints, setMinigameSixPoints] = useState(0);
+  const [minigameSevenPoints, setMinigameSevenPoints] = useState(0);
+  const [minigameEightPoints, setMinigameEightPoints] = useState(0);
+  const [minigameNinePoints, setMinigameNinePoints] = useState(0);
+  const [minigameTenPoints, setMinigameTenPoints] = useState(0);
+  const [minigameElevenPoints, setMinigameElevenPoints] = useState(0);
+
+  //function for minigame 1
+  const handleMiniGameOneResult = (pts, won) => {
+    setMinigameOnePoints(pts);
+    setMinigameOneWon(won)
+    console.log(`Player got: ${pts}`);
+  };
+
+  const handleMiniGameTwoResult = (pts) => {
+    setMinigameTwoPoints(pts); // Update the state based on the mini-game result
+    console.log(`Player got: ${pts}`);
+  };
+
+  const handleMiniGameThreeResult = (pts) => {
+    setMinigameThreePoints(pts); // Update the state based on the mini-game result
+    console.log(`Player got: ${pts}`);
+  };
+
+  const handleMiniGameFourResult = (pts) => {
+    setMinigameFourPoints(pts); // Update the state based on the mini-game result
+    console.log(`Player got: ${pts}`);
+  };
+
+  const handleMiniGameFiveResult = (pts) => {
+    setMinigameFivePoints(pts); // Update the state based on the mini-game result
+    console.log(`Player got: ${pts}`);
+  };
+
+  const handleMiniGameSixResult = (pts) => {
+    setMinigameSixPoints(pts); // Update the state based on the mini-game result
+    console.log(`Player got: ${pts}`);
+  };
+
+  const handleMiniGameSevenResult = (pts) => {
+    setMinigameSevenPoints(pts); // Update the state based on the mini-game result
+    console.log(`Player got: ${pts}`);
+  };
+
+  const handleMiniGameEightResult = (pts) => {
+    setMinigameEightPoints(pts); // Update the state based on the mini-game result
+    console.log(`Player got: ${pts}`);
+  };
+
+  const handleMiniGameNineResult = (pts) => {
+    setMinigameNinePoints(pts); // Update the state based on the mini-game result
+    console.log(`Player got: ${pts}`);
+  };
+
+  const handleMiniGameTenResult = (pts) => {
+    setMinigameTenPoints(pts); // Update the state based on the mini-game result
+    console.log(`Player got: ${pts}`);
+  };
+
+  const handleMiniGameElevenResult = (pts) => {
+    setMinigameElevenPoints(pts); // Update the state based on the mini-game result
+    console.log(`Player got: ${pts}`);
+  };
+
   // Fetch user details only when the component mounts
   async function fetchUserDetails() {
     const token = localStorage.getItem("token"); // Get the token from localStorage
@@ -168,6 +241,85 @@ const StoryGame = () => {
     }
   };
 
+  const handleGameNext = async () => {
+    const token = localStorage.getItem("token"); // Get the token from localStorage
+    try {
+      const response = await fetch(`${BaseUrl}/api/user/getuser`, {
+        method: "GET",
+        headers: {
+          Authorization: `${token}`, // Include the token in the Authorization header
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch user details");
+      }
+
+      const userDetails = await response.json();
+      console.log(userDetails); // Use user details as needed
+      setStoryId(userDetails.currentStoryId);
+
+      if(gameNo===1){
+        if (points === null) setPoints(0);
+        const updatedPoints = points + minigameOnePoints; // Add option points to current points
+        const updatedHealth = health;
+        const updatedMoney = money;
+        const updatedRF = rf;
+        console.log(updatedPoints, points);
+        console.log(updatedHealth, health);
+        console.log(updatedMoney, money);
+        console.log(updatedRF, rf);
+        setPoints(updatedPoints); // Update the UI with new points
+        setHealth(updatedHealth);
+        setMoney(updatedMoney);
+        setRF(updatedRF);
+        const inv = inventory;
+        
+        if(gameDialogue && gameNo===1) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+      }
+
+      if(gameNo===2){
+
+      }
+
+      if(gameNo===3){
+        
+      }
+
+      if(gameNo===4){
+        
+      }
+
+      if(gameNo===5){
+        
+      }
+
+      if(gameNo===6){
+        
+      }
+
+      if(gameNo===7){
+        
+      }
+
+      if(gameNo===8){
+        
+      }
+
+      if(gameNo===9){
+        
+      }
+
+      if(gameNo===10){
+        
+      }
+      
+    } catch (error) {
+      console.error("Error fetching user details:", error.message);
+    }
+  } 
+
   const handleNextSnippet = () => {
     if (snippetIndex < story.snippet.length - 1) {
       setSnippetIndex(snippetIndex + 1); // Move to the next snippet
@@ -179,78 +331,6 @@ const StoryGame = () => {
     }
   };
 
-  //variables for minigames
-  const [gameNo, setGameNo] = useState(0);
-  const [gameDialogue, setGameDialogue] = useState(false);
-  const [minigameOneWon, setMinigameOneWon] = useState(false);
-  const [minigameOnePoints, setMinigameOnePoints] = useState(0);
-  const [minigameTwoPoints, setMinigameTwoPoints] = useState(0);
-  const [minigameThreePoints, setMinigameThreePoints] = useState(0);
-  const [minigameFourPoints, setMinigameFourPoints] = useState(0);
-  const [minigameFivePoints, setMinigameFivePoints] = useState(0);
-  const [minigameSixPoints, setMinigameSixPoints] = useState(0);
-  const [minigameSevenPoints, setMinigameSevenPoints] = useState(0);
-  const [minigameEightPoints, setMinigameEightPoints] = useState(0);
-  const [minigameNinePoints, setMinigameNinePoints] = useState(0);
-  const [minigameTenPoints, setMinigameTenPoints] = useState(0);
-  const [minigameElevenPoints, setMinigameElevenPoints] = useState(0);
-
-  //function for minigame 1
-  const handleMiniGameOneResult = (pts, won) => {
-    setMinigameOnePoints(pts);
-    setMinigameOneWon(won)
-    console.log(`Player got: ${pts}`);
-  };
-
-  const handleMiniGameTwoResult = (pts) => {
-    setMinigameTwoPoints(pts); // Update the state based on the mini-game result
-    console.log(`Player got: ${pts}`);
-  };
-
-  const handleMiniGameThreeResult = (pts) => {
-    setMinigameThreePoints(pts); // Update the state based on the mini-game result
-    console.log(`Player got: ${pts}`);
-  };
-
-  const handleMiniGameFourResult = (pts) => {
-    setMinigameFourPoints(pts); // Update the state based on the mini-game result
-    console.log(`Player got: ${pts}`);
-  };
-
-  const handleMiniGameFiveResult = (pts) => {
-    setMinigameFivePoints(pts); // Update the state based on the mini-game result
-    console.log(`Player got: ${pts}`);
-  };
-
-  const handleMiniGameSixResult = (pts) => {
-    setMinigameSixPoints(pts); // Update the state based on the mini-game result
-    console.log(`Player got: ${pts}`);
-  };
-
-  const handleMiniGameSevenResult = (pts) => {
-    setMinigameSevenPoints(pts); // Update the state based on the mini-game result
-    console.log(`Player got: ${pts}`);
-  };
-
-  const handleMiniGameEightResult = (pts) => {
-    setMinigameEightPoints(pts); // Update the state based on the mini-game result
-    console.log(`Player got: ${pts}`);
-  };
-
-  const handleMiniGameNineResult = (pts) => {
-    setMinigameNinePoints(pts); // Update the state based on the mini-game result
-    console.log(`Player got: ${pts}`);
-  };
-
-  const handleMiniGameTenResult = (pts) => {
-    setMinigameTenPoints(pts); // Update the state based on the mini-game result
-    console.log(`Player got: ${pts}`);
-  };
-
-  const handleMiniGameElevenResult = (pts) => {
-    setMinigameElevenPoints(pts); // Update the state based on the mini-game result
-    console.log(`Player got: ${pts}`);
-  };
 
   return (
     <div className="bg-gray-900"
@@ -277,7 +357,7 @@ const StoryGame = () => {
         <p>Loading...</p>
       ) : (
         story && (<>
-          <div className="text-end">
+          <div className="text-end h-[100vh]">
 
               {false && (<HammerGame gameResult={handleMiniGameOneResult}/>)} 
               {gameDialogue && gameNo===2 && (<Minigame2 gameResult={handleMiniGameTwoResult} />)} {/*problem*/}
@@ -355,7 +435,7 @@ const StoryGame = () => {
                       margin: '1rem 0.5rem',
                     }}
 
-                    onClick={() => {console.log('lol')}}
+                    onClick={handleGameNext}
                   >
                     Finish Minigame
                   </button>
@@ -376,7 +456,7 @@ const StoryGame = () => {
             {story.snippet[snippetIndex].text.split('\n').map((line, index) => (
               <p key={index}>{line}</p>
             ))}
-            <p className="text-end">{snippetIndex !==0 && (<button onClick={() => {setSnippetIndex(0); setGameDialogue(false)}}>restart</button>)}</p>
+            {story.options.length!==0 && snippetIndex===story.snippet.length-1 && (<p className="text-end">{snippetIndex !==0 && (<button onClick={() => {setSnippetIndex(0); setGameDialogue(false)}}>restart</button>)}</p>)}
 
             
 

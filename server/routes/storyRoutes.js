@@ -40,7 +40,7 @@ router.get("/story/:storyId", async (req, res) => {
 //   }
 // });
 router.post("/story", async (req, res) => {
-  const { storyId, snippet, options, bgimg, minigame } = req.body; // Include bgimg and minigame
+  const { storyId, snippet, options, minigame } = req.body; // Include bgimg and minigame
 
   // Check if all required fields are present
   if (!storyId || !snippet || minigame === undefined) {
@@ -52,7 +52,6 @@ router.post("/story", async (req, res) => {
       storyId,
       snippet,
       options,
-      bgimg,     // Add bgimg here
       minigame,  // Add minigame here
     });
 
