@@ -280,39 +280,174 @@ const StoryGame = () => {
       }
 
       if(gameNo===2){
-
+        if (points === null) setPoints(0);
+        const updatedPoints = points + minigameOnePoints; // Add option points to current points
+        const updatedHealth = health;
+        const updatedMoney = money;
+        const updatedRF = rf;
+        console.log(updatedPoints, points);
+        console.log(updatedHealth, health);
+        console.log(updatedMoney, money);
+        console.log(updatedRF, rf);
+        setPoints(updatedPoints); // Update the UI with new points
+        setHealth(updatedHealth);
+        setMoney(updatedMoney);
+        setRF(updatedRF);
+        const inv = inventory;
+        
+        if(gameDialogue && gameNo===1) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
       }
 
       if(gameNo===3){
+        if (points === null) setPoints(0);
+        const updatedPoints = points + minigameTwoPoints; // Add option points to current points
+        const updatedHealth = health;
+        const updatedMoney = money;
+        const updatedRF = rf;
+        console.log(updatedPoints, points);
+        console.log(updatedHealth, health);
+        console.log(updatedMoney, money);
+        console.log(updatedRF, rf);
+        setPoints(updatedPoints); // Update the UI with new points
+        setHealth(updatedHealth);
+        setMoney(updatedMoney);
+        setRF(updatedRF);
+        const inv = inventory;
         
+        if(gameDialogue && gameNo===1) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
       }
 
       if(gameNo===4){
+        if (points === null) setPoints(0);
+        const updatedPoints = points + minigameThreePoints; // Add option points to current points
+        const updatedHealth = health;
+        const updatedMoney = money;
+        const updatedRF = rf;
+        console.log(updatedPoints, points);
+        console.log(updatedHealth, health);
+        console.log(updatedMoney, money);
+        console.log(updatedRF, rf);
+        setPoints(updatedPoints); // Update the UI with new points
+        setHealth(updatedHealth);
+        setMoney(updatedMoney);
+        setRF(updatedRF);
+        const inv = inventory;
         
+        if(gameDialogue && gameNo===1) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
       }
 
       if(gameNo===5){
+        if (points === null) setPoints(0);
+        const updatedPoints = points + minigameFourPoints; // Add option points to current points
+        const updatedHealth = health;
+        const updatedMoney = money;
+        const updatedRF = rf;
+        console.log(updatedPoints, points);
+        console.log(updatedHealth, health);
+        console.log(updatedMoney, money);
+        console.log(updatedRF, rf);
+        setPoints(updatedPoints); // Update the UI with new points
+        setHealth(updatedHealth);
+        setMoney(updatedMoney);
+        setRF(updatedRF);
+        const inv = inventory;
         
+        if(gameDialogue && gameNo===1) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
       }
 
       if(gameNo===6){
+        if (points === null) setPoints(0);
+        const updatedPoints = points + minigameFivePoints; // Add option points to current points
+        const updatedHealth = health;
+        const updatedMoney = money;
+        const updatedRF = rf;
+        console.log(updatedPoints, points);
+        console.log(updatedHealth, health);
+        console.log(updatedMoney, money);
+        console.log(updatedRF, rf);
+        setPoints(updatedPoints); // Update the UI with new points
+        setHealth(updatedHealth);
+        setMoney(updatedMoney);
+        setRF(updatedRF);
+        const inv = inventory;
         
+        if(gameDialogue && gameNo===1) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
       }
 
       if(gameNo===7){
+        if (points === null) setPoints(0);
+        const updatedPoints = points + minigameSixPoints; // Add option points to current points
+        const updatedHealth = health;
+        const updatedMoney = money;
+        const updatedRF = rf;
+        console.log(updatedPoints, points);
+        console.log(updatedHealth, health);
+        console.log(updatedMoney, money);
+        console.log(updatedRF, rf);
+        setPoints(updatedPoints); // Update the UI with new points
+        setHealth(updatedHealth);
+        setMoney(updatedMoney);
+        setRF(updatedRF);
+        const inv = inventory;
         
+        if(gameDialogue && gameNo===1) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
       }
 
       if(gameNo===8){
+        if (points === null) setPoints(0);
+        const updatedPoints = points + minigameSevenPoints; // Add option points to current points
+        const updatedHealth = health;
+        const updatedMoney = money;
+        const updatedRF = rf;
+        console.log(updatedPoints, points);
+        console.log(updatedHealth, health);
+        console.log(updatedMoney, money);
+        console.log(updatedRF, rf);
+        setPoints(updatedPoints); // Update the UI with new points
+        setHealth(updatedHealth);
+        setMoney(updatedMoney);
+        setRF(updatedRF);
+        const inv = inventory;
         
+        if(gameDialogue && gameNo===1) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
       }
 
       if(gameNo===9){
+        if (points === null) setPoints(0);
+        const updatedPoints = points + minigameNinePoints; // Add option points to current points
+        const updatedHealth = health;
+        const updatedMoney = money;
+        const updatedRF = rf;
+        console.log(updatedPoints, points);
+        console.log(updatedHealth, health);
+        console.log(updatedMoney, money);
+        console.log(updatedRF, rf);
+        setPoints(updatedPoints); // Update the UI with new points
+        setHealth(updatedHealth);
+        setMoney(updatedMoney);
+        setRF(updatedRF);
+        const inv = inventory;
         
+        if(gameDialogue && gameNo===1) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
       }
 
       if(gameNo===10){
+        if (points === null) setPoints(0);
+        const updatedPoints = points + minigameTenPoints; // Add option points to current points
+        const updatedHealth = health;
+        const updatedMoney = money;
+        const updatedRF = rf;
+        console.log(updatedPoints, points);
+        console.log(updatedHealth, health);
+        console.log(updatedMoney, money);
+        console.log(updatedRF, rf);
+        setPoints(updatedPoints); // Update the UI with new points
+        setHealth(updatedHealth);
+        setMoney(updatedMoney);
+        setRF(updatedRF);
+        const inv = inventory;
         
+        if(gameDialogue && gameNo===1) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
       }
       
     } catch (error) {
@@ -359,7 +494,7 @@ const StoryGame = () => {
           <div className="text-end h-[100vh]">
 
               {false && (<HammerGame gameResult={handleMiniGameOneResult}/>)} 
-              {gameDialogue && gameNo===2 && (<Minigame2 gameResult={handleMiniGameTwoResult} />)} {/*problem*/}
+              {gameDialogue && (<Minigame2 gameResult={handleMiniGameTwoResult} />)} {/*problem*/}
               {gameDialogue && gameNo===3 && (<MazeGame gameResult={handleMiniGameThreeResult} />)}
               {gameDialogue && gameNo===4 && (<Main gameResult={handleMiniGameFourResult} />)}
               {gameDialogue && gameNo===5 && (<WhackaWolf gameResult={handleMiniGameFiveResult} />)}
