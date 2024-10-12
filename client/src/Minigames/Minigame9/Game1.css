@@ -63,7 +63,7 @@ h1 {
     color: #ffffff;
     font-weight: bold;
 }
-
+/* 
 #next-game-button {
     display: none;
     background-color: #1c0e01;
@@ -111,4 +111,4 @@ h1 {
     transform: scale(4);
     opacity: 0;
     transition: 0s;
-}
+} */

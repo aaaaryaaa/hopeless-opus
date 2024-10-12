@@ -198,30 +198,25 @@ const Wordle = ({ gameResult }) => {
   };
 
   return (
-    <div className="game-container">
-      <div className="guess-section">
-        <h1>Wordle Game</h1>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={guess}
-            readOnly
-            placeholder="Enter your guess"
-            className="guess-input"
-          />
-        </form>
-        {message && <p className="message">{message}</p>}
-        <div className="guess-container">
-          {renderGuesses()}
-        </div>
-        <p>Points: {points}</p>
+    <div className="wordle">
+      <h1>Wordle Game</h1>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={guess}
+          readOnly
+          placeholder="Enter your guess"
+          className="guess-input"
+        />
+      </form>
+      {message && <p className="message">{message}</p>}
+      <div className="guess-container">
+        {renderGuesses()}
       </div>
-      <div className="keyboard-section">
-        {renderKeyboard()}
-      </div>
+      {renderKeyboard()}
+      <p>Points: {points}</p>
     </div>
   );
-  
 };
 
 export default Wordle;

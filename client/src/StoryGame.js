@@ -262,7 +262,8 @@ const StoryGame = () => {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         width: '100%', // Cover the full width of the viewport
-        height: '110vh',
+        // height: '110vh',
+        minHeight: "100vh",
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end', // Align content to the bottom
@@ -283,9 +284,9 @@ const StoryGame = () => {
               {gameDialogue && gameNo===3 && (<MazeGame gameResult={handleMiniGameThreeResult} />)}
               {gameDialogue && gameNo===4 && (<Main gameResult={handleMiniGameFourResult} />)}
               {gameDialogue && gameNo===5 && (<WhackaWolf gameResult={handleMiniGameFiveResult} />)}
-              {true && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '115%' }}><Wordle gameResult={handleMiniGameSixResult} /></div>)} {/*will be fixed */}
-              {gameDialogue && gameNo===7 && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}><MathematicalDroplets gameResult={handleMiniGameSevenResult} /></div>)} {/*will be fixed */}
-              {gameDialogue && gameNo===8 && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}><Minigame8 gameResult={handleMiniGameEightResult}/></div>)}
+              {gameDialogue && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '115%' }}><Wordle gameResult={handleMiniGameSixResult} /></div>)} {/*will be fixed */}
+              {gameDialogue && gameNo===7 && (<MathematicalDroplets gameResult={handleMiniGameSevenResult} />)} {/*will be fixed */}
+              {gameDialogue && gameNo===8 && (<Minigame8 gameResult={handleMiniGameEightResult}/>)}
               {gameDialogue && gameNo===9 && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}><Minigame9 gameResult={handleMiniGameNineResult}/></div>)}
               {gameDialogue && gameNo===10 && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '115%' }}><Minigame10 gameResult={handleMiniGameTenResult} /></div>)}
               {gameDialogue && gameNo===11 && (<Minigame11 />)}

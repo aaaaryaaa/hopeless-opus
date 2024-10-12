@@ -162,8 +162,10 @@ const MathematicalDroplets = ({ gameResult }) => {
       {!isGameOver ? (
         <>
           <div className="text-4xl font-bold mb-4 text-white">
-            Mathematical Droplets
-          </div>
+  Mathematical Droplets
+</div>
+
+
 
           {/* Timer */}
           <div className="text-xl text-white mb-4">Time Left: {timeLeft}s</div>
@@ -187,7 +189,7 @@ const MathematicalDroplets = ({ gameResult }) => {
             ))}
 
             {/* Puddle at the bottom */}
-            <div className="absolute bottom-0 left-0 right-0 bg-blue-700 h-10 rounded-b-lg"></div>
+            <div className="absolute bottom-0 left-0 right-0 bg-blue-700 h-5 rounded-b-lg"></div>
           </div>
 
           {/* Single Input field for all answers */}

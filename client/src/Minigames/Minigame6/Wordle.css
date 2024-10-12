@@ -1,23 +1,6 @@
-.game-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-  gap: 50px;
+.wordle {
+  text-align: center;
   margin-top: 50px;
-}
-
-.guess-section {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.keyboard-section {
-  flex: 1;
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
 }
 
 h1 {
@@ -80,11 +63,7 @@ input {
 }
 
 .keyboard {
-  display: flex;
-  flex-direction: column; /* Stack the rows vertically */
-  justify-content: center; /* Center rows within the keyboard */
-  align-items: center; /* Align rows at the center */
-  height: 100%;
+  margin-top: 30px;
 }
 
 .keyboard-row {

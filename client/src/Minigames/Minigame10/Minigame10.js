@@ -83,9 +83,19 @@ const Minigame10 = () => {
 
   return (
     <div className="game-container">
-      <div className="question-container">
-        <h2>{currentQuestion.question}</h2>
-      </div>
+      <div
+  className="question-container"
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100vh",
+    textAlign: "center"
+  }}
+>
+  <h2>{currentQuestion.question}</h2>
+</div>
+
       <div className="grid-container">
         {/* Display all tiles in a grid in reverse order */}
         {questions
