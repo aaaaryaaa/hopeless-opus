@@ -11,12 +11,17 @@
 } */
 
 #game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     background: #0d042d22;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    width: 400px;
+    width: 100%; /* Full width */
+    max-width: 400px; /* Limit to 400px */
 }
 
 h1 {
@@ -58,7 +63,7 @@ h1 {
     color: #ffffff;
     font-weight: bold;
 }
-
+/* 
 #next-game-button {
     display: none;
     background-color: #1c0e01;
@@ -106,4 +111,4 @@ h1 {
     transform: scale(4);
     opacity: 0;
     transition: 0s;
-}
+} */

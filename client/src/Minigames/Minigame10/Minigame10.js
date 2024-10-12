@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Minigame10.css";
 
+
 // Sample questions and answers for each level (6 levels)
 const questions = [
   {
@@ -52,9 +53,11 @@ const Tile = ({ text, onClick, isActive, isAnsweredCorrectly, isTextVisible }) =
   );
 };
 
-const Minigame10 = ({ gameResult }) => {
+const Minigame10 = () => {
   const [currentRow, setCurrentRow] = useState(0);
-  const [answeredCorrectly, setAnsweredCorrectly] = useState(null); // Track correct/incorrect feedback
+  const [answeredCorrectly, setAnsweredCorrectly] = useState(null);
+  const [previousAnswers, setPreviousAnswers] = useState([]);
+  const [score, setScore] = useState(100); // Start with 100 points
 
   const currentQuestion = questions[currentRow];
 
@@ -62,22 +65,37 @@ const Minigame10 = ({ gameResult }) => {
     if (answeredCorrectly === null) {
       if (index === currentQuestion.correctIndex) {
         setAnsweredCorrectly(true);
+        setPreviousAnswers((prev) => [...prev, currentQuestion]);
+        // Keep the score the same since the player got it right
+
         setTimeout(() => {
           setCurrentRow(currentRow + 1);
           setAnsweredCorrectly(null);
-        }, 1000); // Move to next row after showing correct feedback
+        }, 1000);
       } else {
         setAnsweredCorrectly(false);
-        setTimeout(() => setAnsweredCorrectly(null), 1000); // Reset feedback after a wrong answer
+        setScore((prev) => Math.max(prev - 10, 0)); // Deduct points for wrong answer
+
+        setTimeout(() => setAnsweredCorrectly(null), 1000);
       }
     }
   };
 
   return (
     <div className="game-container">
-      <div className="question-container">
-        <h2>{currentQuestion.question}</h2>
-      </div>
+      <div
+  className="question-container"
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100vh",
+    textAlign: "center"
+  }}
+>
+  <h2>{currentQuestion.question}</h2>
+</div>
+
       <div className="grid-container">
         {/* Display all tiles in a grid in reverse order */}
         {questions
@@ -91,12 +109,15 @@ const Minigame10 = ({ gameResult }) => {
                   text={option}
                   onClick={() => handleTileClick(index)}
                   isActive={currentRow === questions.length - 1 - rowIndex && answeredCorrectly === null}
-                  isAnsweredCorrectly={answeredCorrectly}
+                  isAnsweredCorrectly={previousAnswers.some(prev => prev === question) ? true : answeredCorrectly}
                   isTextVisible={currentRow === questions.length - 1 - rowIndex} // Show text only for the current question
                 />
               ))}
             </div>
           ))}
+      </div>
+      <div className="score-container">
+        <h2>Score: {score}</h2> {/* Display score */}
       </div>
     </div>
   );

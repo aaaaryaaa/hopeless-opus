@@ -121,7 +121,7 @@ ul {
   z-index: 1001;
 }
 
-@media (max-width: 1070px) {
+@media (max-width: 1282px) {
   .nav-links {
     display: none;
     flex-direction: column;
