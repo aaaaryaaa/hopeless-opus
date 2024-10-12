@@ -255,7 +255,7 @@ const StoryGame = () => {
   return (
     <div className="bg-gray-900"
       style={{
-        // backgroundColor : "black",
+        backgroundColor : "black",
         backgroundImage: `url(${story?.bgimg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',

@@ -147,8 +147,8 @@ int main() {
         <h1 className='text-center'>C Code Debugger Game</h1>
         <h2>Score: {score}</h2>
         <CodeEditor code={code} setCode={setCode} disabled={isQuestionCompleted} />
-        <button className="hover:bg-white hover:text-black rounded-lg" onClick={runDebugger} disabled={isQuestionCompleted}>Run Code</button>
-        <button className="hover:bg-white hover:text-black rounded-lg" onClick={nextQuestion} disabled={!isQuestionCompleted}>Next Question</button>
+        <button className="hover:bg-white hover:text-black rounded-lg m-1 p-1" onClick={runDebugger} disabled={isQuestionCompleted}>Run Code</button>
+        <button className="hover:bg-white hover:text-black rounded-lg m-1 p-1" onClick={nextQuestion} disabled={!isQuestionCompleted}>Next Question</button>
         <Output output={output} />
         {feedback && <h3>{feedback}</h3>}
       </div>

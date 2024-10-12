@@ -130,29 +130,29 @@ const MazeGame = ({ gameResult }) => {
           <div>Time Left: {timeLeft}s</div>
         </div>
 
-        {/* Render maze only if the game is not over */}
         {!gameOver && (
-          <div className="grid grid-cols-10 mt-6 justify-center mx-auto">
-            {maze.map((row, rowIndex) => (
-              <div key={rowIndex} className="flex">
-                {row.map((cell, colIndex) => (
-                  <div
-                    key={colIndex}
-                    className={`w-6 h-6 transition-colors duration-300 ${
-                      cell === 1 ? 'bg-gray-800' : 'bg-gray-300'
-                    } ${
-                      playerPosition.x === colIndex && playerPosition.y === rowIndex
-                        ? 'bg-green-500'
-                        : ''
-                    } ${
-                      colIndex === 9 && rowIndex === 9 ? 'bg-yellow-500' : ''
-                    }`}
-                  ></div>
-                ))}
-              </div>
-            ))}
-          </div>
-        )}
+  <div className="grid grid-cols-10 grid-rows-10 gap-1 mt-6 justify-center mx-auto">
+    {maze.map((row, rowIndex) => (
+      <React.Fragment key={rowIndex}>
+        {row.map((cell, colIndex) => (
+          <div
+            key={colIndex}
+            className={`w-6 h-6 transition-colors duration-300 ${
+              cell === 1 ? 'bg-gray-800' : 'bg-gray-300'
+            } ${
+              playerPosition.x === colIndex && playerPosition.y === rowIndex
+                ? 'bg-green-500'
+                : ''
+            } ${
+              colIndex === 9 && rowIndex === 9 ? 'bg-yellow-500' : ''
+            }`}
+          ></div>
+        ))}
+      </React.Fragment>
+    ))}
+  </div>
+)}
+
 
         {gameOver && (
           <div className="mt-8 p-6 border-2 border-yellow-700 rounded-lg bg-transparent">

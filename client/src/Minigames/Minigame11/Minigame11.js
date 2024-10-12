@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './Minigame11.css';
+import boat from "./boat.png";
+import stone from "./stone.png";
 
-const initialObstacleGenerationInterval = 400;
+const initialObstacleGenerationInterval = 400; // Faster obstacle generation
 const gameDuration = 60000; // 1 minute
 const stopObstacleGenerationTime = 52000; // 52 seconds
 const fadeOutStartTime = 0; // Start fading out the land at the beginning
@@ -20,9 +21,25 @@ function Minigame11({ gameResult }) {
   const canvasRef = useRef(null);
   const gameStartTime = useRef(Date.now());
 
+  // New refs for the boat and rock images
+  const boatRef = useRef(null);
+  const rockRef = useRef(null);
+
+  // Load the boat and rock images
+  useEffect(() => {
+    const boatImage = new Image();
+    const rockImage = new Image();
+    
+    boatImage.src = `${boat}` // Update this with the actual path to the boat image
+    rockImage.src = `${stone}`; // Update this with the actual path to the rock image
+
+    boatRef.current = boatImage;
+    rockRef.current = rockImage;
+  }, []);
+
   useEffect(() => {
     const updateCanvasSize = () => {
-      setCanvasSize({ width: window.innerWidth*0.9, height: window.innerHeight });
+      setCanvasSize({ width: window.innerWidth * 0.9, height: window.innerHeight });
     };
 
     window.addEventListener('resize', updateCanvasSize);
@@ -78,25 +95,28 @@ function Minigame11({ gameResult }) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (!gameOver && !gameCompleted) {
+      if (!gameOver && !gameCompleted && boatRef.current && rockRef.current) {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext('2d');
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        ctx.fillStyle = 'blue';
-        ctx.fillRect(playerX, canvasSize.height - 50, 40, 40);
+        // Draw player (replace rectangle with boat image)
+        ctx.drawImage(boatRef.current, playerX, canvasSize.height - 90, 80, 40); // Adjust as necessary
 
-        const newObstacles = obstacles.map((obstacle) => ({
-          ...obstacle,
-          y: obstacle.y + obstacleSpeed,
-        })).filter((obstacle) => obstacle.y < canvasSize.height);
+        // Draw obstacles (replace rectangle with rock image)
+        const newObstacles = obstacles
+          .map((obstacle) => ({
+            ...obstacle,
+            y: obstacle.y + obstacleSpeed,
+          }))
+          .filter((obstacle) => obstacle.y < canvasSize.height);
 
         newObstacles.forEach((obstacle) => {
-          ctx.fillStyle = 'red';
-          ctx.fillRect(obstacle.x, obstacle.y, 40, 40);
+          ctx.drawImage(rockRef.current, obstacle.x, obstacle.y, 40, 40); // Adjust size as needed
 
+          // Check collision
           if (
-            obstacle.y > canvasSize.height - 100 &&
+            obstacle.y > canvasSize.height - 100 && 
             obstacle.y < canvasSize.height - 50 &&
             obstacle.x < playerX + 40 &&
             obstacle.x + 40 > playerX
@@ -110,8 +130,9 @@ function Minigame11({ gameResult }) {
         const elapsedTime = Date.now() - gameStartTime.current;
         setObstacleSpeed(5 + Math.floor(elapsedTime / 10000));
 
+        // Speed up obstacle generation after 30 seconds
         if (elapsedTime >= 30000 && obstacleGenerationInterval === initialObstacleGenerationInterval) {
-          setObstacleGenerationInterval(initialObstacleGenerationInterval / 2);
+          setObstacleGenerationInterval(initialObstacleGenerationInterval / 1.5);
         }
 
         if (elapsedTime >= gameDuration) {
@@ -141,14 +162,39 @@ function Minigame11({ gameResult }) {
   }, [playerX, canvasSize]);
 
   return (
-    <div className="gameApp">
-      <canvas ref={canvasRef} width={canvasSize.width} height={canvasSize.height} />
+    <div className="gameApp flex flex-col justify-center items-center">
+      <canvas
+        ref={canvasRef}
+        width={canvasSize.width}
+        height={canvasSize.height}
+        className="block w-[70vw] h-[80vh] bg-gradient-to-r from-blue-400 to-blue-500 shadow-lg transition-all duration-300"
+      />
 
-      {showLand && <div className="land-gradient"></div>}
-      {showEndLand && <div className="land-gradient-end"></div>}
+      {/* Land gradients */}
+      {showLand && (
+        <div className="absolute bottom-0 w-[70vw] h-[16vh] bg-gradient-to-b from-blue-400 to-yellow-700 opacity-100 transition-opacity duration-700 ease-in"></div>
+      )}
+      {showEndLand && (
+        <div className="absolute top-0 w-[70vw] h-[16vh] bg-gradient-to-b from-yellow-700 to-blue-400 opacity-100 transition-opacity duration-700 ease-out"></div>
+      )}
 
-      {gameOver && <div className="game-over">Game Over! <button onClick={resetGame}>Restart</button></div>}
-      {gameCompleted && <div className="game-over">River crossed successfully!</div>}
+      {/* Game over or success messages */}
+      {gameOver && (
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black text-white p-6 rounded-lg z-50 shadow-2xl text-lg transition-transform duration-300 ease-in-out">
+          <p className="mb-4">Game Over!</p>
+          <button
+            onClick={resetGame}
+            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 focus:ring-2 focus:ring-blue-300"
+          >
+            Restart
+          </button>
+        </div>
+      )}
+      {gameCompleted && (
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black text-white p-6 rounded-lg z-50 shadow-2xl text-lg transition-transform duration-300 ease-in-out">
+          River crossed successfully!
+        </div>
+      )}
     </div>
   );
 }

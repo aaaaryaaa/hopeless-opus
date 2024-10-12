@@ -99,20 +99,29 @@ function Minigame2({ gameResult }) {
     shuffleCards();
   };
 
-  return (
-    <div className="min-h-screen bg-black flex flex-col items-center justify-center">
-      <h1 className="text-4xl font-bold mb-4">Memory Matching Game</h1>
+  const chunkArray = (array, chunkSize) => {
+    const result = [];
+    for (let i = 0; i < array.length; i += chunkSize) {
+      result.push(array.slice(i, i + chunkSize));
+    }
+    return result;
+  };
+  
 
+  return (
+    <div className="h-full bg-black flex flex-col items-center mt-auto mb-auto p-10 justify-center">
+      <h1 className="text-3xl font-bold mb-4">Memory Matching Game</h1>
+  
       {/* Display Timer and Score */}
       <div className="mb-4">
-        <p className="text-xl font-semibold">Time Left: {timeLeft}s</p>
-        <p className="text-xl font-semibold">Score: {score}</p>
+        <p className="text-lg font-semibold">Time Left: {timeLeft}s</p>
+        <p className="text-lg font-semibold">Score: {score}</p>
       </div>
-
+  
       {/* Game Over message */}
       {gameOver && (
         <div className="mb-4 text-red-500">
-          <h2 className="text-3xl font-bold">Game Over!</h2>
+          <h2 className="text-2xl font-bold">Game Over!</h2>
           <button
             onClick={handleRestart}
             className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md"
@@ -121,19 +130,23 @@ function Minigame2({ gameResult }) {
           </button>
         </div>
       )}
-
+  
       {/* Game Board */}
-      <div className={`grid grid-cols-4 gap-4 ${gameOver ? "pointer-events-none" : ""}`}>
-        {cards.map((card) => (
-          <Card
-            key={card.id}
-            card={card}
-            handleFlip={handleFlip}
-          />
+      <div className={`flex flex-col ${gameOver ? "pointer-events-none" : ""}`}>
+        {chunkArray(cards, 4).map((row, rowIndex) => (
+          <div key={rowIndex} className="flex flex-row">
+            {row.map((card) => (
+              <Card
+                key={card.id}
+                card={card}
+                handleFlip={handleFlip}
+              />
+            ))}
+          </div>
         ))}
       </div>
     </div>
   );
-}
+}  
 
 export default Minigame2;
