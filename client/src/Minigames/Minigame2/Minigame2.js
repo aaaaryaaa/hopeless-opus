@@ -106,7 +106,6 @@ function Minigame2({ gameResult }) {
     }
     return result;
   };
-  
 
   return (
     <div className="h-full bg-black flex flex-col items-center mt-auto mb-auto p-10 justify-center">

@@ -492,7 +492,6 @@ const StoryGame = () => {
       ) : (
         story && (<>
           <div className="text-end h-[100vh]">
-
               {false && (<HammerGame gameResult={handleMiniGameOneResult}/>)} 
               {gameDialogue && (<Minigame2 gameResult={handleMiniGameTwoResult} />)} {/*problem*/}
               {gameDialogue && gameNo===3 && (<MazeGame gameResult={handleMiniGameThreeResult} />)}
