@@ -37,7 +37,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
           <Route path='/storyerror' element={<StoryError />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
       
       {/* Uncomment this line to include StoryGame conditionally */}

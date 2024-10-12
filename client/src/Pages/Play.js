@@ -1,14 +1,13 @@
 import React from "react";
 import "./Play.css";
-import Animate from "../Component/Animate";
 import StoryGame from "../StoryGame";
 import ImageHoverEffect from "../Component/ImageHoverEffect";
 
 const Play = () => {
   return (
-    <div className="h-screen">
+    <div className="h-[100vh]">
       <ImageHoverEffect/>
-        <StoryGame />
+      <StoryGame />
     </div>
   );
 };
