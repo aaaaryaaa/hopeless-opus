@@ -6,7 +6,7 @@ import Minigame2 from "./Minigames/Minigame2/Minigame2"; //minigame2
 import MazeGame from "./Minigames/Minigame3/MazeGame" //minigame3
 import Main from "./Minigames/Minigame4/Main"; //minigame4
 import WhackaWolf from "./Minigames/Minigame5/WhackaWolf"; //minigame5
-import  Wordle from "./Minigames/Minigame6/Wordle" //minigame6
+import Wordle from "./Minigames/Minigame6/Wordle" //minigame6
 import MathematicalDroplets from "./Minigames/Minigame7/MathematicalDroplets"; //minigame7
 import Minigame8 from "./Minigames/Minigame8/Minigame8" //minigame8
 import Minigame9 from "./Minigames/Minigame9/Minigame9"; //minigame9
@@ -257,6 +257,7 @@ const StoryGame = () => {
       style={{
         backgroundColor : "black",
         backgroundImage: `url(${story?.bgimg})`,
+        backgroundColor: "black",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -267,6 +268,7 @@ const StoryGame = () => {
         justifyContent: 'flex-end', // Align content to the bottom
         padding: '20px',
         color: 'white', // Text color for better readability
+        
       }}
       onClick={handleNextSnippet}
     >
@@ -281,12 +283,12 @@ const StoryGame = () => {
               {gameDialogue && gameNo===3 && (<MazeGame gameResult={handleMiniGameThreeResult} />)}
               {gameDialogue && gameNo===4 && (<Main gameResult={handleMiniGameFourResult} />)}
               {gameDialogue && gameNo===5 && (<WhackaWolf gameResult={handleMiniGameFiveResult} />)}
-              {gameDialogue && gameNo===6 && (<Wordle gameResult={handleMiniGameSixResult} />)} {/*will be fixed */}
-              {gameDialogue && gameNo===7 && (<MathematicalDroplets gameResult={handleMiniGameSevenResult} />)}
-              {gameDialogue && gameNo===8 && (<Minigame8 gameResult={handleMiniGameEightResult} />)}
-              {gameDialogue && gameNo===9 && (<Minigame9 gameResult={handleMiniGameNineResult} />)}
-              {gameDialogue && gameNo===10 && (<Minigame10 />)} {/*game result to be added */}
-              {gameDialogue && (<Minigame11 />)}
+              {true && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '115%' }}><Wordle gameResult={handleMiniGameSixResult} /></div>)} {/*will be fixed */}
+              {gameDialogue && gameNo===7 && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}><MathematicalDroplets gameResult={handleMiniGameSevenResult} /></div>)} {/*will be fixed */}
+              {gameDialogue && gameNo===8 && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}><Minigame8 gameResult={handleMiniGameEightResult}/></div>)}
+              {gameDialogue && gameNo===9 && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}><Minigame9 gameResult={handleMiniGameNineResult}/></div>)}
+              {gameDialogue && gameNo===10 && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '115%' }}><Minigame10 gameResult={handleMiniGameTenResult} /></div>)}
+              {gameDialogue && gameNo===11 && (<Minigame11 />)}
 
               {/* <div 
               style={{
