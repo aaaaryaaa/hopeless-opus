@@ -9,11 +9,9 @@ const storySchema = new mongoose.Schema({
   snippet: [
     {
       text: String,
+      changeBg: Boolean
     }
   ],
-  bgimg: {
-    type: String, // Cloudinary link
-  },
   options: [
     {
       optionText: String,
