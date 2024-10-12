@@ -99,6 +99,15 @@ function Minigame2({ gameResult }) {
     shuffleCards();
   };
 
+  const chunkArray = (array, chunkSize) => {
+    const result = [];
+    for (let i = 0; i < array.length; i += chunkSize) {
+      result.push(array.slice(i, i + chunkSize));
+    }
+    return result;
+  };
+  
+
   return (
     <div className="min-h-screen bg-black flex flex-col items-center justify-center">
       <h1 className="text-4xl font-bold mb-4">Memory Matching Game</h1>
@@ -123,15 +132,20 @@ function Minigame2({ gameResult }) {
       )}
 
       {/* Game Board */}
-      <div className={`grid grid-cols-4 gap-4 ${gameOver ? "pointer-events-none" : ""}`}>
-        {cards.map((card) => (
-          <Card
-            key={card.id}
-            card={card}
-            handleFlip={handleFlip}
-          />
-        ))}
-      </div>
+      <div className={`flex flex-col ${gameOver ? "pointer-events-none" : ""}`}>
+  {chunkArray(cards, 4).map((row, rowIndex) => (
+    <div key={rowIndex} className="flex flex-row">
+      {row.map((card) => (
+        <Card
+          key={card.id}
+          card={card}
+          handleFlip={handleFlip}
+        />
+      ))}
+    </div>
+  ))}
+</div>
+
     </div>
   );
 }

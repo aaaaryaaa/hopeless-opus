@@ -276,7 +276,7 @@ const StoryGame = () => {
           <div className="text-end">
 
               {gameDialogue && gameNo===1 && (<HammerGame gameResult={handleMiniGameOneResult}/>)} 
-              {gameDialogue && gameNo===2 && (<Minigame2 gameResult={handleMiniGameTwoResult} />)} {/*problem*/}
+              {gameDialogue &&  gameNo===2 &&(<Minigame2 gameResult={handleMiniGameTwoResult} />)} {/*problem*/}
               {gameDialogue && gameNo===3 && (<MazeGame gameResult={handleMiniGameThreeResult} />)}
               {gameDialogue && gameNo===4 && (<Main gameResult={handleMiniGameFourResult} />)}
               {gameDialogue && gameNo===5 && (<WhackaWolf gameResult={handleMiniGameFiveResult} />)}
@@ -284,7 +284,7 @@ const StoryGame = () => {
               {gameDialogue && gameNo===7 && (<MathematicalDroplets gameResult={handleMiniGameSevenResult} />)}
               {gameDialogue && gameNo===8 && (<Minigame8 gameResult={handleMiniGameEightResult} />)}
               {gameDialogue && gameNo===9 && (<Minigame9 gameResult={handleMiniGameNineResult} />)}
-              {true && (<Minigame10 />)} {/*game result to be added */}
+              {gameDialogue && gameNo===10 && (<Minigame10 />)} {/*game result to be added */}
               {gameDialogue && gameNo===11 && (<Minigame11 />)}
 
               <div 
