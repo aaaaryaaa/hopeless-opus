@@ -6,7 +6,7 @@ import Minigame2 from "./Minigames/Minigame2/Minigame2"; //minigame2
 import MazeGame from "./Minigames/Minigame3/MazeGame" //minigame3
 import Main from "./Minigames/Minigame4/Main"; //minigame4
 import WhackaWolf from "./Minigames/Minigame5/WhackaWolf"; //minigame5
-import  Wordle from "./Minigames/Minigame6/Wordle" //minigame6
+import Wordle from "./Minigames/Minigame6/Wordle" //minigame6
 import MathematicalDroplets from "./Minigames/Minigame7/MathematicalDroplets"; //minigame7
 import Minigame8 from "./Minigames/Minigame8/Minigame8" //minigame8
 import Minigame9 from "./Minigames/Minigame9/Minigame9"; //minigame9
@@ -333,19 +333,23 @@ const StoryGame = () => {
 
 
   return (
-    <div
+    <div className="bg-gray-900"
       style={{
-        // backgroundImage: `url(${story?.bgimg})`,
-        // backgroundSize: 'cover',
+        backgroundColor : "black",
+        backgroundImage: `url(${story?.bgimg})`,
+        backgroundColor: "black",
+        backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         width: '100%', // Cover the full width of the viewport
-        // height: '100vh',
+        // height: '110vh',
+        minHeight: "100vh",
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end', // Align content to the bottom
         padding: '20px',
         color: 'white', // Text color for better readability
+        
       }}
       onClick={handleNextSnippet}
     >
@@ -355,21 +359,21 @@ const StoryGame = () => {
         story && (<>
           <div className="text-end h-[100vh]">
 
-              {gameDialogue && gameNo===1 && (<HammerGame gameResult={handleMiniGameOneResult}/>)} 
+              {false && (<HammerGame gameResult={handleMiniGameOneResult}/>)} 
               {gameDialogue && gameNo===2 && (<Minigame2 gameResult={handleMiniGameTwoResult} />)} {/*problem*/}
               {gameDialogue && gameNo===3 && (<MazeGame gameResult={handleMiniGameThreeResult} />)}
               {gameDialogue && gameNo===4 && (<Main gameResult={handleMiniGameFourResult} />)}
               {gameDialogue && gameNo===5 && (<WhackaWolf gameResult={handleMiniGameFiveResult} />)}
-              {gameDialogue && gameNo===6 && (<Wordle gameResult={handleMiniGameSixResult} />)} {/*will be fixed */}
-              {gameDialogue && gameNo===7 && (<MathematicalDroplets gameResult={handleMiniGameSevenResult} />)}
-              {gameDialogue && gameNo===8 && (<Minigame8 gameResult={handleMiniGameEightResult} />)}
-              {gameDialogue && gameNo===9 && (<Minigame9 gameResult={handleMiniGameNineResult} />)}
-              {gameDialogue && gameNo===10 && (<Minigame10 />)} {/*game result to be added */}
+              {gameDialogue && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '115%' }}><Wordle gameResult={handleMiniGameSixResult} /></div>)} {/*will be fixed */}
+              {gameDialogue && gameNo===7 && (<MathematicalDroplets gameResult={handleMiniGameSevenResult} />)} {/*will be fixed */}
+              {gameDialogue && gameNo===8 && (<Minigame8 gameResult={handleMiniGameEightResult}/>)}
+              {gameDialogue && gameNo===9 && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}><Minigame9 gameResult={handleMiniGameNineResult}/></div>)}
+              {gameDialogue && gameNo===10 && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '115%' }}><Minigame10 gameResult={handleMiniGameTenResult} /></div>)}
               {gameDialogue && gameNo===11 && (<Minigame11 />)}
 
-              <div 
+              {/* <div 
               style={{
-                backgroundColor: 'rgba(0, 0, 0, 0.7)', // Semi-transparent background for the text box
+                backgroundColor: 'rgba(0, 0, 0, 0.7)',
                 padding: '20px',
                 maxWidth: '90%',
                 margin: '0 auto',
@@ -392,7 +396,7 @@ const StoryGame = () => {
               <p>Minigame7 pts: {minigameSevenPoints}</p>
               <p>Minigame8 pts: {minigameEightPoints}</p>
               <p>Minigame9 pts: {minigameNinePoints}</p>
-            </div>
+            </div> */}
           </div>
 
           <div className="mb-5">

@@ -1,19 +1,41 @@
 import React, { useState, useEffect } from "react";
 
-const HammerGame = ({ gameResult}) => {
-    const [grid, setGrid] = useState(Array(3).fill(Array(3).fill(null))); // 3x3 grid
+const HammerGame = ({ gameResult }) => {
+    const initialGrid = Array(3).fill(Array(3).fill(null));
+
+    // Initial states
+    const initialGuesses = 5;
+    const initialMessage = "Guess where the hammer is!";
+
+    const [grid, setGrid] = useState(initialGrid); // 3x3 grid
     const [hammerPosition, setHammerPosition] = useState({ row: -1, col: -1 });
-    const [guessesLeft, setGuessesLeft] = useState(5);
-    const [message, setMessage] = useState("Guess where the hammer is!");
+    const [guessesLeft, setGuessesLeft] = useState(initialGuesses);
+    const [message, setMessage] = useState(initialMessage);
     const [gameOver, setGameOver] = useState(false);
     const [playerWon, setPlayerWon] = useState(false);
+    const [incorrectGuesses, setIncorrectGuesses] = useState([]); // Track incorrect guesses
 
     // Function to randomly place the hammer at the start of the game
-    useEffect(() => {
+    const placeHammerRandomly = () => {
         const randomRow = Math.floor(Math.random() * 3);
         const randomCol = Math.floor(Math.random() * 3);
         setHammerPosition({ row: randomRow, col: randomCol });
+    };
+
+    useEffect(() => {
+        placeHammerRandomly();
     }, []);
+
+    // Function to reset the game
+    const resetGame = () => {
+        setGrid(initialGrid);
+        setGuessesLeft(initialGuesses);
+        setMessage(initialMessage);
+        setGameOver(false);
+        setPlayerWon(false);
+        setIncorrectGuesses([]); // Reset incorrect guesses
+        placeHammerRandomly();
+    };
 
     // Function to handle player's guess
     const handleGuess = (row, col) => {
@@ -24,14 +46,14 @@ const HammerGame = ({ gameResult}) => {
                 setMessage("You found the hammer! You broke the door!");
                 setGameOver(true);
                 setPlayerWon(true);
-                gameResult(100*guessesLeft, true);
+                gameResult(100 * guessesLeft, true);
             } else {
                 setGuessesLeft(guessesLeft - 1);
                 setMessage(`Incorrect! You have ${guessesLeft - 1} guesses left.`);
+                setIncorrectGuesses([...incorrectGuesses, { row, col }]); // Add incorrect guess
             }
 
             if (guessesLeft - 1 === 0 && !playerWon) {
-                setMessage("You ran out of guesses. Someone else opened the door.");
                 setGameOver(true);
             }
         }
@@ -41,42 +63,53 @@ const HammerGame = ({ gameResult}) => {
     const renderGrid = () => {
         return grid.map((row, rowIndex) => (
             <div key={rowIndex} style={{ display: "flex", justifyContent: "center" }}>
-                {row.map((_, colIndex) => (
-                    <button
-                        key={colIndex}
-                        onClick={() => handleGuess(rowIndex, colIndex)}
-                        style={{
-                            width: "100px", // Bigger width
-                            height: "100px", // Bigger height
-                            margin: "10px",  // More space between buttons
-                            backgroundColor: gameOver
-                                ? rowIndex === hammerPosition.row && colIndex === hammerPosition.col
-                                    ? "green"
-                                    : "red"
-                                : "lightgrey",
-                            fontSize: "24px", // Bigger font for the hammer emoji
-                            cursor: "pointer",
-                        }}
-                        disabled={gameOver}
-                    >
-                        {gameOver && rowIndex === hammerPosition.row && colIndex === hammerPosition.col
-                            ? "🔨"
-                            : ""}
-                    </button>
-                ))}
+                {row.map((_, colIndex) => {
+                    const isIncorrectGuess = incorrectGuesses.some(
+                        (guess) => guess.row === rowIndex && guess.col === colIndex
+                    );
+
+                    return (
+                        <button
+                            key={colIndex}
+                            onClick={() => handleGuess(rowIndex, colIndex)}
+                            style={{
+                                width: "100px", // Bigger width
+                                height: "100px", // Bigger height
+                                margin: "10px", // More space between buttons
+                                backgroundColor: gameOver
+                                    ? rowIndex === hammerPosition.row && colIndex === hammerPosition.col
+                                        ? "black"
+                                        : "white"
+                                    : isIncorrectGuess
+                                    ? "red" // Tile turns red if guessed incorrectly
+                                    : "lightgrey",
+                                fontSize: "24px", // Bigger font for the hammer emoji
+                                cursor: "pointer",
+                            }}
+                            disabled={gameOver}
+                        >
+                            {gameOver && rowIndex === hammerPosition.row && colIndex === hammerPosition.col
+                                ? "🔨"
+                                : ""}
+                        </button>
+                    );
+                })}
             </div>
         ));
     };
 
     return (
-        <div style={{ textAlign: "center", marginTop: "50px" }}>
+        <div style={{ textAlign: "center", marginTop: "10px", marginBottom: "90px" }}>
             <h1>Hammer Guessing Game</h1>
             <p>{message}</p>
-            <div>{renderGrid()}</div>
+            {/* Fixed height container to prevent shifting */}
+            <div style={{ height: "350px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                {renderGrid()}
+            </div>
             {gameOver && (
                 <div>
                     <h2>{playerWon ? "You Win!" : "Game Over"}</h2>
-                    <button onClick={() => window.location.reload()}>Play Again</button>
+                    <button onClick={resetGame}>Play Again</button>
                 </div>
             )}
         </div>

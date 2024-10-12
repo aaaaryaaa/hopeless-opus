@@ -29,7 +29,7 @@ const Minigame9 = ({ gameResult }) => {
     setResult('');
     setPointsDisplay('');
     setGameEnded(false);
-    nextGameButtonRef.current.style.display = 'none';
+    // nextGameButtonRef.current.style.display = 'none';
 
     // Start timer
     let currentTime = 0;
@@ -58,16 +58,18 @@ const Minigame9 = ({ gameResult }) => {
 
       // Assign points based on the reaction time
       let earnedPoints = 0;
-      if (reactionTime < 0.3) {
+      if (reactionTime < 0.4) {
         earnedPoints = 100;
-      } else if (reactionTime < 0.5) {
-        earnedPoints = 70;
-      } else if (reactionTime < 0.65) {
+      } else if (reactionTime < 0.45) {
+        earnedPoints = 80;
+      } else if (reactionTime < 0.50) {
         earnedPoints = 60;
-      } else if (reactionTime < 0.7) {
+      } else if (reactionTime < 0.55) {
         earnedPoints = 50;
-      } else if (reactionTime < 1) {
+      } else if (reactionTime < 0.65) {
         earnedPoints = 30;
+      } else if (reactionTime < 0.75) {
+        earnedPoints = 10;
       } else {
         earnedPoints = 0;
       }
@@ -76,7 +78,7 @@ const Minigame9 = ({ gameResult }) => {
       gameResult(earnedPoints);
       setPointsDisplay(`You earned: ${earnedPoints} points`);
       setGameEnded(true);
-      nextGameButtonRef.current.style.display = 'block'; // Show Next Game button
+      // nextGameButtonRef.current.style.display = 'block'; // Show Next Game button
     } else {
       clearTimeout(timeoutId.current);
       clearInterval(timerInterval.current);
@@ -85,9 +87,9 @@ const Minigame9 = ({ gameResult }) => {
     }
   };
 
-  const goToHomePage = () => {
-    window.location.href = ''; // Redirect to homepage or desired URL
-  };
+  // const goToHomePage = () => {
+  //   window.location.href = '';
+  // };
 
   return (
     <div id="game-container">
@@ -103,7 +105,7 @@ const Minigame9 = ({ gameResult }) => {
       </div>
       <div id="result">{result}</div>
       <div id="points">{pointsDisplay}</div>
-      <div className="center">
+      {/* <div className="center">
         <button
           id="next-game-button"
           ref={nextGameButtonRef}
@@ -112,7 +114,7 @@ const Minigame9 = ({ gameResult }) => {
         >
           NEXT GAME
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

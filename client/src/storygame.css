@@ -1,0 +1,93 @@
+/* Style for dialogue page */
+.dialogue-page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* background-color: #1a1a1a;  */
+    /* Dark background color */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align dialogue box at the bottom */
+    align-items: center;
+    /* background-size: cover; */
+    background-position: center;
+  }
+  
+  /* Style for the dialogue box */
+  .dialogue-box {
+    width: 80%;
+    padding: 20px;
+    /* background: rgba(0, 0, 0, 0.6);  */
+    /* Dark semi-transparent box */
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Hover effect for dialogue box */
+  .dialogue-box:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Style for the dialogue text */
+  .dialogue-text {
+    font-family: 'Courier New', Courier, monospace; /* Typewriter-like font */
+    color: #f0f0f0; /* Slightly off-white for softer contrast */
+    text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff; /* Glowing text effect */
+  }
+  
+  /* Style for options container */
+  .options-container {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap; /* Allows for dynamic positioning if there are fewer or more buttons */
+  }
+  
+  /* Style for option buttons */
+  .option-button {
+    padding: 20px 40px;
+    background-color: #222;
+    color: #fff;
+    border: 3px solid #00f0ff;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5), 0 0 8px rgba(0, 240, 255, 0.3);
+    margin: 10px;
+    min-width: 200px;
+    max-width: 300px;
+  }
+  
+  /* Hover effect for option buttons */
+  .option-button:hover {
+    background-color: #00f0ff;
+    color: #000;
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 1);
+  }
+  .dialogue-image-container {
+    width: 100%; /* Or set a fixed width like 600px */
+    max-width: 600px;
+    height: auto;
+    overflow: hidden; /* Ensures content doesn't overflow */
+  }
+  .dialogue-page img {
+    width: 100%; /* Ensures the image takes full width of its container */
+    max-width: 600px; /* Optional: limits the maximum width */
+    height: auto; /* Maintains the aspect ratio */
+    object-fit: cover; /* Prevents distortion while fitting in the container */
+    transition: width 0.3s ease; /* Smooth transition for width change, if any */
+  }
+  
