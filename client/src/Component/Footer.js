@@ -18,7 +18,7 @@ const Footer = () => {
 
   return (
     <footer
-      className="text-white"
+      className="text-white w-full"
       style={{
         backgroundImage: `url(https://res.cloudinary.com/diswj8gya/image/upload/v1728568149/Earth2_hyfg6q.jpg)`, // Correctly use the image
         backgroundSize: 'cover', // Ensures the image covers the entire footer

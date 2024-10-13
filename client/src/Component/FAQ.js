@@ -22,7 +22,7 @@ const FAQ = () => {
       {faqData.map((faq, index) => (
         <div
           key={index}
-          className="mb-6 bg-gradient-to-r from-black via-gray-900 to-blue-950 rounded-lg transition-transform transform hover:scale-105"
+          className="mb-6 bg-gradient-to-r from-black via-stone-800  to-gray-950 rounded-lg transition-transform transform hover:scale-105"
         >
           <div
             className="flex justify-between items-center p-5 cursor-pointer border-b border-gray-600"
@@ -60,30 +60,45 @@ const FAQ = () => {
 
 const faqData = [
   {
-    question: "What documents do I need for my trip, and how do I obtain them?",
+    question: "How does the game work ?",
     answer:
-      "Provide a step-by-step guide on how users can browse and book travel services on your platform...",
+      "The game is designed as a 1-2 player interactive experience where each player's choices directly influence how the story unfolds. Both players will share the same screen, collaborating and competing to shape the narrative.",
   },
   {
-    question: "What documents do I need for my trip, and how do I obtain them?",
-    answer: "Same question repeated.",
+    question: "How do choices affect the game?",
+    answer: "Choices can lead to different outcomes, alter character relationships, and influence the overall narrative direction, creating a unique experience for each player.",
   },
   {
     question:
-      "In the event that I need to modify or cancel my reservation, what are the policies in place?",
+      "Is the game purely focused on making decisions?",
     answer:
-      "Information about the policies regarding reservation modification and cancellations.",
+      "The game includes several mini-games that allow players to score points and perform specific tasks. These mini-games help players pass obstacles and progress further in the game.",
   },
   {
     question:
-      "Can you specify the types of credit/debit cards, digital wallets, or other online payment methods accepted?",
-    answer: "Accepted payment methods including cards and wallets.",
+      "What if I get stuck on a puzzle/minigame or decision?",
+    answer: "Depending on the game or choices you get a few tries and on some games there's just one chance. So play wisely! ",
   },
   {
     question:
-      "What are the working hours, and what can I expect in terms of response times?",
-    answer: "Details about the working hours and expected response times.",
+      "What platforms can I play this game on?",
+    answer: "The game is compatible on PC. We suggest players to screencast while playing to get a better experience.",
   },
+  {
+    question:
+      "How will the Winner be decided or what are the constraints?",
+    answer: "The game features several constraints that will ultimately determine how players are judged, including time, money, health, and points. Players have a total of three lives, and their choices and performance in mini-games contributes to their overall score. Additionally, managing health and money effectively will be crucial to navigating the challenges presented throughout the game",
+  },
+  {
+    question:
+      "The game froze. What should I do",
+    answer: "If the game freezes, refreshing the page or restarting the app usually helps. If issues persist, check your internet connection or clear your browser cache.",
+  },
+  {
+    question:
+      " How do I track my progress in the story?",
+    answer: "Progress is tracked through a menu, where players can see completed tasks, current challenges, and any unlocked mini-games or story elements.",
+  }
 ];
 
 export default FAQ;

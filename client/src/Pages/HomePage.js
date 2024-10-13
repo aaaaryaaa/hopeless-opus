@@ -31,8 +31,8 @@ export default function HomePage() {
       }}
     > <div  className="w-full items-center justify-center bg-custom-bg bg-no-repeat ">
       <BubbleRevealText />
-      <div className="flex items-center">
-      <p className="pb-80 pr-40 pl-40 pt-20">
+      <div className="flex items-center align-middle">
+      <p className="pb-20 pr-40 pl-40 pt-20 ">
       <CaptionHp />
       </p>
       </div>
