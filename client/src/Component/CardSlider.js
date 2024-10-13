@@ -22,7 +22,7 @@ const DivScrolling = styled.div`
 `;
 
 const Div = styled.div`
-  margin-top: 10rem; 
+  margin-top: 12rem; 
   // margin-top: max(15rem, calc((100vh - 44rem) / 2));
   margin-left: 55%;
  margin-bottom: 10rem;
