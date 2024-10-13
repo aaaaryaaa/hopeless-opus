@@ -9,7 +9,7 @@ import Scroll from "../Component/Scrollcirc.js";
 import BubbleRevealText from "../Component/BubbleRevealText.js";
 import CaptionHp from "../Component/HomeCaption.js";
 import Footer from "../Component/Footer";
-import Minigame12 from "../Minigames/Minigame12/Minigame12.js";
+import Minigame13 from "../Minigames/Minigame13/Minigame13.js";
 
 export default function HomePage() {
   const navigate = useNavigate();
