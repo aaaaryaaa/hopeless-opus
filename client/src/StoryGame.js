@@ -145,7 +145,7 @@ const StoryGame = () => {
       setStory(data);
       console.log(data);
       if(data.options.length===0){
-        setGameNo(1); console.log('game 1');
+        setGameNo(data.minigame); console.log('game 1');
       }else {
         setGameNo(0)
       }
@@ -158,6 +158,7 @@ const StoryGame = () => {
   };
 
   const updateCurrentStoryIdAndPoints = async (newStoryId, newPoints, newHealth, newMoney, newRF, inv) => {
+    setGameDialogue(false);
     const token = localStorage.getItem("token"); // Get the token from localStorage
     const userId = localStorage.getItem("userId"); // Store user ID in localStorage when user logs in
 
@@ -275,30 +276,13 @@ const StoryGame = () => {
         setMoney(updatedMoney);
         setRF(updatedRF);
         const inv = inventory;
+        const nextStory = 9998;
+        fetchStory(nextStory);
         
-        if(gameDialogue && gameNo===1) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+        if(gameDialogue && gameNo===1) updateCurrentStoryIdAndPoints(nextStory, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
       }
 
       if(gameNo===2){
-        if (points === null) setPoints(0);
-        const updatedPoints = points + minigameOnePoints; // Add option points to current points
-        const updatedHealth = health;
-        const updatedMoney = money;
-        const updatedRF = rf;
-        console.log(updatedPoints, points);
-        console.log(updatedHealth, health);
-        console.log(updatedMoney, money);
-        console.log(updatedRF, rf);
-        setPoints(updatedPoints); // Update the UI with new points
-        setHealth(updatedHealth);
-        setMoney(updatedMoney);
-        setRF(updatedRF);
-        const inv = inventory;
-        
-        if(gameDialogue && gameNo===1) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
-      }
-
-      if(gameNo===3){
         if (points === null) setPoints(0);
         const updatedPoints = points + minigameTwoPoints; // Add option points to current points
         const updatedHealth = health;
@@ -313,11 +297,13 @@ const StoryGame = () => {
         setMoney(updatedMoney);
         setRF(updatedRF);
         const inv = inventory;
+        const nextStory = 9997;
+        fetchStory(nextStory);
         
-        if(gameDialogue && gameNo===1) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+        if(gameDialogue && gameNo===2) updateCurrentStoryIdAndPoints(nextStory, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
       }
 
-      if(gameNo===4){
+      if(gameNo===3){
         if (points === null) setPoints(0);
         const updatedPoints = points + minigameThreePoints; // Add option points to current points
         const updatedHealth = health;
@@ -333,10 +319,10 @@ const StoryGame = () => {
         setRF(updatedRF);
         const inv = inventory;
         
-        if(gameDialogue && gameNo===1) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+        if(gameDialogue && gameNo===3) updateCurrentStoryIdAndPoints(9997, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
       }
 
-      if(gameNo===5){
+      if(gameNo===4){
         if (points === null) setPoints(0);
         const updatedPoints = points + minigameFourPoints; // Add option points to current points
         const updatedHealth = health;
@@ -352,10 +338,10 @@ const StoryGame = () => {
         setRF(updatedRF);
         const inv = inventory;
         
-        if(gameDialogue && gameNo===1) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+        if(gameDialogue && gameNo===4) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
       }
 
-      if(gameNo===6){
+      if(gameNo===5){
         if (points === null) setPoints(0);
         const updatedPoints = points + minigameFivePoints; // Add option points to current points
         const updatedHealth = health;
@@ -371,10 +357,10 @@ const StoryGame = () => {
         setRF(updatedRF);
         const inv = inventory;
         
-        if(gameDialogue && gameNo===1) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+        if(gameDialogue && gameNo===5) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
       }
 
-      if(gameNo===7){
+      if(gameNo===6){
         if (points === null) setPoints(0);
         const updatedPoints = points + minigameSixPoints; // Add option points to current points
         const updatedHealth = health;
@@ -390,10 +376,10 @@ const StoryGame = () => {
         setRF(updatedRF);
         const inv = inventory;
         
-        if(gameDialogue && gameNo===1) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+        if(gameDialogue && gameNo===6) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
       }
 
-      if(gameNo===8){
+      if(gameNo===7){
         if (points === null) setPoints(0);
         const updatedPoints = points + minigameSevenPoints; // Add option points to current points
         const updatedHealth = health;
@@ -409,7 +395,26 @@ const StoryGame = () => {
         setRF(updatedRF);
         const inv = inventory;
         
-        if(gameDialogue && gameNo===1) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+        if(gameDialogue && gameNo===7) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+      }
+
+      if(gameNo===8){
+        if (points === null) setPoints(0);
+        const updatedPoints = points + minigameEightPoints; // Add option points to current points
+        const updatedHealth = health;
+        const updatedMoney = money;
+        const updatedRF = rf;
+        console.log(updatedPoints, points);
+        console.log(updatedHealth, health);
+        console.log(updatedMoney, money);
+        console.log(updatedRF, rf);
+        setPoints(updatedPoints); // Update the UI with new points
+        setHealth(updatedHealth);
+        setMoney(updatedMoney);
+        setRF(updatedRF);
+        const inv = inventory;
+        
+        if(gameDialogue && gameNo===8) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
       }
 
       if(gameNo===9){
@@ -428,7 +433,7 @@ const StoryGame = () => {
         setRF(updatedRF);
         const inv = inventory;
         
-        if(gameDialogue && gameNo===1) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+        if(gameDialogue && gameNo===9) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
       }
 
       if(gameNo===10){
@@ -447,7 +452,7 @@ const StoryGame = () => {
         setRF(updatedRF);
         const inv = inventory;
         
-        if(gameDialogue && gameNo===1) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+        if(gameDialogue && gameNo===10) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
       }
       
     } catch (error) {
@@ -492,19 +497,19 @@ const StoryGame = () => {
       ) : (
         story && (<>
           <div className="text-end h-[100vh]">
-              {false && (<HammerGame gameResult={handleMiniGameOneResult}/>)} 
-              {gameDialogue && (<Minigame2 gameResult={handleMiniGameTwoResult} />)} {/*problem*/}
-              {gameDialogue && gameNo===3 && (<MazeGame gameResult={handleMiniGameThreeResult} />)}
+              {gameDialogue && gameNo===1 && (<HammerGame gameResult={handleMiniGameOneResult}/>)} 
+              {gameDialogue && gameNo===2 && (<Minigame2 gameResult={handleMiniGameTwoResult} />)} {/*problem*/}
+              {gameDialogue && gameNo===3 && (<MazeGame gameResult={handleMiniGameThreeResult} className="" />)}
               {gameDialogue && gameNo===4 && (<Main gameResult={handleMiniGameFourResult} />)}
               {gameDialogue && gameNo===5 && (<WhackaWolf gameResult={handleMiniGameFiveResult} />)}
-              {gameDialogue && gameNo ===6 && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '115%' }}><Wordle gameResult={handleMiniGameSixResult} /></div>)} {/*will be fixed */}
+              {gameDialogue && gameNo===6 && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '115%' }}><Wordle gameResult={handleMiniGameSixResult} /></div>)} {/*will be fixed */}
               {gameDialogue && gameNo===7 && (<MathematicalDroplets gameResult={handleMiniGameSevenResult} />)} {/*will be fixed */}
               {gameDialogue && gameNo===8 && (<Minigame8 gameResult={handleMiniGameEightResult}/>)}
               {gameDialogue && gameNo===9 && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}><Minigame9 gameResult={handleMiniGameNineResult}/></div>)}
               {gameDialogue && gameNo===10 && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '115%' }}><Minigame10 gameResult={handleMiniGameTenResult} /></div>)}
               {gameDialogue && gameNo===11 && (<Minigame11 />)}
 
-              {/* <div 
+              <div 
               style={{
                 backgroundColor: 'rgba(0, 0, 0, 0.7)',
                 padding: '20px',
@@ -529,7 +534,7 @@ const StoryGame = () => {
               <p>Minigame7 pts: {minigameSevenPoints}</p>
               <p>Minigame8 pts: {minigameEightPoints}</p>
               <p>Minigame9 pts: {minigameNinePoints}</p>
-            </div> */}
+            </div>
           </div>
 
           <div className="mb-5">
