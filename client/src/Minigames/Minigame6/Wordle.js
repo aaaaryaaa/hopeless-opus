@@ -96,20 +96,24 @@ const Wordle = ({ gameResult }) => {
     // Add keyboard event listener for direct typing
     const handleKeyPress = (event) => {
       const key = event.key.toUpperCase();
-      if (key >= 'A' && key <= 'Z' && guess.length < 5) {
-        handleChange(key);
-      } else if (key === 'Backspace') {
+  
+      if (event.key === 'Backspace') {
         handleDelete();
-      } else if (key === 'Enter') {
+        event.preventDefault(); // Prevent Backspace from typing into the input
+      } else if (event.key === 'Enter') {
         handleSubmit(event);
+        event.preventDefault(); // Prevent Enter from typing into the input
+      } else if (key >= 'A' && key <= 'Z' && guess.length < 5) {
+        handleChange(key);
+        event.preventDefault(); // Ensure only letters are typed
       }
     };
-
+  
     window.addEventListener('keydown', handleKeyPress);
     return () => {
       window.removeEventListener('keydown', handleKeyPress);
     };
-  }, [guess, handleChange, handleDelete, handleSubmit]); // Include handleChange and handleSubmit in dependencies
+  }, [guess, handleChange, handleDelete, handleSubmit]);
 
   const renderGuesses = () => {
     return Array.from({ length: MAX_GUESSES }, (_, index) => {
@@ -159,9 +163,7 @@ const Wordle = ({ gameResult }) => {
 
   const renderKeyboard = () => {
     const keyboardLayout = [
-      'QWERTYUIOP',
-      'ASDFGHJKL',
-      'ZXCVBNM',
+      
     ];
 
     return (
