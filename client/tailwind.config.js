@@ -7,10 +7,10 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'custom-bg': "url('/src/Resources/Landingbg.svg')"
+        'custom-bg': "url('/src/Resources/Landingbgbubble.svg')"
       },
       fontFamily: {
-        spookyman: ['Spookyman','sans-serif'],
+        guerrilla: ['ProtestGuerrilla','sans-serif'],
       },
       keyframes: {
         fadeIn: {

@@ -6,89 +6,103 @@ export default function BubbleRevealText() {
   const textContainerRef = useRef(null);
   const [containerPosition, setContainerPosition] = useState({ x: 0, y: 0 });
   const requestRef = useRef(null);
+  const [initialAnimationDone, setInitialAnimationDone] = useState(false);
   const currentMousePosition = useRef({ x: 0, y: 0 });
   const [bubbleSize, setBubbleSize] = useState(300); // Initial bubble size
 
+  // Set container position and initial mouse position to be centered over the text container
   useEffect(() => {
     if (textContainerRef.current) {
       const rect = textContainerRef.current.getBoundingClientRect();
       setContainerPosition({ x: rect.left, y: rect.top });
+
+      // Set the bubble to move from (0, 0) to (rect.width / 2, rect.height / 2)
+      currentMousePosition.current = { x: rect.width / 2, y: rect.height / 2 }; // Set the center as the target
+      setInitialAnimationDone(true);
     }
   }, []);
 
+  // Adjust bubble size based on screen width for mobile responsiveness
+  useEffect(() => {
+    const updateBubbleSize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth < 640) { // Mobile view
+        setBubbleSize(150);
+      } else if (screenWidth < 1024) { // Tablet view
+        setBubbleSize(200);
+      } else {
+        setBubbleSize(300); // Default for larger screens
+      }
+    };
+
+    updateBubbleSize(); // Initial call to set bubble size
+    window.addEventListener('resize', updateBubbleSize);
+
+    return () => window.removeEventListener('resize', updateBubbleSize);
+  }, []);
+
+  // Slower bubble movement that follows the mouse position smoothly
   useEffect(() => {
     const updateMousePosition = () => {
       setMousePosition((prevPosition) => {
-        const newX = prevPosition.x + (currentMousePosition.current.x - prevPosition.x) * 0.1;
-        const newY = prevPosition.y + (currentMousePosition.current.y - prevPosition.y) * 0.1;
+        // Adjust the movement speed towards currentMousePosition
+        const newX = prevPosition.x + (currentMousePosition.current.x - prevPosition.x) * 0.05;
+        const newY = prevPosition.y + (currentMousePosition.current.y - prevPosition.y) * 0.05;
         return { x: newX, y: newY };
       });
+
+      // Request the next animation frame for continuous smooth movement
       requestRef.current = requestAnimationFrame(updateMousePosition);
     };
 
     requestRef.current = requestAnimationFrame(updateMousePosition);
+
+    // Cleanup function to cancel the animation frame
     return () => cancelAnimationFrame(requestRef.current);
   }, []);
 
-  const handleMouseMove = (e) => {
-    currentMousePosition.current = {
-      x: e.clientX - containerPosition.x,
-      y: e.clientY - containerPosition.y,
+  // Handle mouse movement and update the current mouse position
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      if (initialAnimationDone) {
+        currentMousePosition.current = {
+          x: e.clientX - containerPosition.x,
+          y: e.clientY - containerPosition.y,
+        };
+      }
     };
-  };
 
-  const handleMouseEnter = () => {
-    setBubbleSize(300); // Increase bubble size on text hover
-  };
+    window.addEventListener('mousemove', handleMouseMove);
 
-  const handleMouseLeave = () => {
-    setBubbleSize(300); // Reset bubble size when not hovering over text
-  };
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, [initialAnimationDone, containerPosition]);
 
   const head1 = `HOPELESS `;
-  const head3=`   `
-  const head2 = ` OPUS`;
+  const head2 = `OPUS`;
 
   return (
-    <div className='w-full h-screen overflow-hidden'>
+    <div className="w-full overflow-hidden">
+      <div
+        ref={textContainerRef}
+        className="relative lg:h-[100vh] h-[70vh] cursor-default overflow-hidden"
+      >
+        {/* Visible layer with radial gradient mask */}
         <div
-          ref={textContainerRef}
-          onMouseMove={handleMouseMove}
-          className="relative h-screen cursor-default overflow-hidden rounded-lg"
+          className="absolute inset-0"
+          style={{
+            WebkitMaskImage: `radial-gradient(circle ${bubbleSize}px at ${mousePosition.x}px ${mousePosition.y}px, black 20%, transparent 80%)`,
+            maskImage: `radial-gradient(circle ${bubbleSize}px at ${mousePosition.x}px ${mousePosition.y}px, black 20%, transparent 80%)`,
+            backdropFilter: 'blur(10px) saturate(700%)',
+            transition: 'mask-position 300ms ease-out', // Smooth transition effect
+            backgroundColor: 'rgba(0, 0, 0, 0.6)',
+          }}
         >
-            {/* Visible layer with radial gradient mask */}
-            <div
-              className="absolute inset-0"
-              style={{
-                WebkitMaskImage: `radial-gradient(circle ${bubbleSize}px at ${mousePosition.x}px ${mousePosition.y}px, black 20%, transparent 80%)`,
-                maskImage: `radial-gradient(circle ${bubbleSize}px at ${mousePosition.x}px ${mousePosition.y}px, black 20%, transparent 80%)`,
-                backdropFilter: 'blur(10px) saturate(70%)',
-                transition: 'mask-position 300s ease-out', // Smooth transition effect
-                backgroundColor: 'rgba(255, 255, 255, 1)',
-              }}
-            >
-                {/* Text Elements with Hover Handlers */}
-                  <div className="flex items-center justify-center no-select text-center tracking-widest pulsate leading-tight lg:text-[10rem] text-[2.5rem] font-extrabold text-black font-spookyman p-40" 
-                  >
-                <h1
-                  className="block lg:inline"
-                  onMouseEnter={handleMouseEnter} // Increase bubble size on text hover
-                  onMouseLeave={handleMouseLeave} // Reset bubble size when not hovering over text
-                >
-                  {head1}
-                  
-                <h1 className="block lg:inLine" 
-                onMouseEnter={handleMouseEnter} 
-                  onMouseLeave={handleMouseLeave}>
-                {head2}
-                </h1>
-                </h1>
-                </div>
-
-            </div>
+          {/* Text Elements */}
+          <div className="flex items-center justify-center no-select tracking-widest leading-tight lg:text-[8rem] text-[2rem] font-extrabold text-white font-guerrilla lg:pt-5 lg:pb-30 pt-40">
+            <h1 className="block lg:inline">{head1}<span className="block lg:inline">{head2}</span></h1>
+          </div>
         </div>
-
+      </div>
     </div>
   );
 }
-
