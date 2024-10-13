@@ -12,6 +12,8 @@ import Minigame8 from "./Minigames/Minigame8/Minigame8" //minigame8
 import Minigame9 from "./Minigames/Minigame9/Minigame9"; //minigame9
 import Minigame10 from "./Minigames/Minigame10/Minigame10"; //minigame10
 import Minigame11 from "./Minigames/Minigame11/Minigame11"; //minigame11
+import Minigame12 from "./Minigames/Minigame12/Minigame12";//minigame12
+import Minigame13 from "./Minigames/Minigame13/Minigame13";//minigame13
 
 const StoryGame = () => {
   const nav = useNavigate();
@@ -497,7 +499,7 @@ const StoryGame = () => {
       ) : (
         story && (<>
           <div className="text-end h-[100vh]">
-              {gameDialogue && gameNo===1 && (<HammerGame gameResult={handleMiniGameOneResult}/>)} 
+              {gameDialogue && gameNo===1 && (<HammerGame gameResult={handleMiniGameOneResult}/>)}
               {gameDialogue && gameNo===2 && (<Minigame2 gameResult={handleMiniGameTwoResult} />)} {/*problem*/}
               {gameDialogue && gameNo===3 && (<MazeGame gameResult={handleMiniGameThreeResult} className="" />)}
               {gameDialogue && gameNo===4 && (<Main gameResult={handleMiniGameFourResult} />)}

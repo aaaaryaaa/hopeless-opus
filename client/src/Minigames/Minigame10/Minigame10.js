@@ -5,34 +5,54 @@ import "./Minigame10.css";
 // Sample questions and answers for each level (6 levels)
 const questions = [
   {
-    question: "What is the capital of France?",
-    options: ["Berlin", "Paris", "Madrid"],
-    correctIndex: 1,
+    question: "How many water bottles did the stranger ask for at the shop?",
+    options: ["11", "18", "7", "14"],
+    correctIndex: 2,
   },
+  // {
+  //   question: "What symbol does the pocket watch have?",
+  //   options: ["Phoenix", "Illuminati", "Tiger", "Pyramid"],
+  //   correctIndex: 0,
+  // },
+  // {
+  //   question: "What is the number of libraries the campus has?",
+  //   options: ["2", "4", "1", "3"],
+  //   correctIndex: 3,
+  // },
+  // {
+  //   question: "Total number of workshops the campus has?",
+  //   options: ["6", "7", "5", "9"],
+  //   correctIndex: 1,
+  // },
   {
-    question: "What is 5 + 7?",
-    options: ["10", "12", "15"],
-    correctIndex: 1,
-  },
-  {
-    question: "Which planet is known as the Red Planet?",
-    options: ["Earth", "Mars", "Jupiter"],
-    correctIndex: 1,
-  },
-  {
-    question: "What is the largest ocean on Earth?",
-    options: ["Atlantic", "Indian", "Pacific"],
+    question: "Let x be the number of libraries and y be the number of sports fields on the campus, what is (19 * x) + (58 * y)?",
+    options: ["410", "533", "405", "672"],
     correctIndex: 2,
   },
   {
-    question: "Which element has the chemical symbol 'O'?",
-    options: ["Oxygen", "Gold", "Silver"],
-    correctIndex: 0,
+    question: "Which among the following was not asked in the previous round?",
+    options: ["Function of a compiler", "Moon rover", "Green revolution", "Numerical pattern question"],
+    correctIndex: 2,
   },
   {
-    question: "Who wrote 'Romeo and Juliet'?",
-    options: ["Shakespeare", "Dickens", "Tolstoy"],
+    question: "In the family photo you found, what members of the family were there?",
+    options: ["Father, mother, two daughters, one son", "Father, mother, two daughters", "Father, mother, one son, one daughter", "Father, mother, two sons, one daughter"],
+    correctIndex: 1,
+  },
+  {
+    question: "What years did the file you found in the library have details about?",
+    options: ["2013, 2002", "2014, 2002", "2013, 2003", "2014, 2003"],
     correctIndex: 0,
+  },
+  // {
+  //   question: "Where was the conference held?",
+  //   options: ["Library conference hall", "MV seminar hall", "AB5 210", "AB1 quadrangle"],
+  //   correctIndex: 1,
+  // },
+  {
+    question: "How old was the prime suspect?",
+    options: ["22", "23", "27", "25"],
+    correctIndex: 3,
   },
 ];
 

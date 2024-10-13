@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Card"; // Ensure Tailwind is imported
 
-const cardImages = ["🍎", "🍌", "🍇", "🍉", "🍋", "🍊", "🍓", "🍒"];
+const cardImages = ["🔪", "🔫", "🗡️", "⚔️", "🏹", "🛠️", "🛡️", "⌚"];
 
 function Minigame2({ gameResult }) {
   const [cards, setCards] = useState([]);
