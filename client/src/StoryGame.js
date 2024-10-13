@@ -504,7 +504,7 @@ const StoryGame = () => {
               {gameDialogue && gameNo===3 && (<MazeGame gameResult={handleMiniGameThreeResult} className="" />)}
               {gameDialogue && gameNo===4 && (<Main gameResult={handleMiniGameFourResult} />)}
               {gameDialogue && gameNo===5 && (<WhackaWolf gameResult={handleMiniGameFiveResult} />)}
-              {gameDialogue && gameNo===6 && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '115%' }}><Wordle gameResult={handleMiniGameSixResult} /></div>)} {/*will be fixed */}
+              {gameDialogue && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '115%' }}><Wordle gameResult={handleMiniGameSixResult} /></div>)} {/*will be fixed */}
               {gameDialogue && gameNo===7 && (<MathematicalDroplets gameResult={handleMiniGameSevenResult} />)} {/*will be fixed */}
               {gameDialogue && gameNo===8 && (<Minigame8 gameResult={handleMiniGameEightResult}/>)}
               {gameDialogue && gameNo===9 && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}><Minigame9 gameResult={handleMiniGameNineResult}/></div>)}
