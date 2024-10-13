@@ -40,7 +40,7 @@ export default function Login() {
   };
 
   return (
-    <div className="flex pb-80 justify-center min-h-screen bg-black">
+    <div className="flex pb-96 pt-12 justify-center min-h-screen bg-black">
       <div className="bg-gray-900 backdrop-blur-md p-8 rounded-lg shadow-lg w-full max-w-md">
         <h2 className="text-3xl font-bold text-white text-center mb-6">Login</h2>
         <form onSubmit={handleLogin} className="space-y-6">
