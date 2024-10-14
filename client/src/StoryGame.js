@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
 import BaseUrl from "./BaseUrl";
 import { useNavigate } from "react-router-dom";
-import HammerGame from './Minigames/Minigame1/HammerGame' //minigame1
+import HammerGame from "./Minigames/Minigame1/HammerGame"; //minigame1
 import Minigame2 from "./Minigames/Minigame2/Minigame2"; //minigame2
-import MazeGame from "./Minigames/Minigame3/MazeGame" //minigame3
+import MazeGame from "./Minigames/Minigame3/MazeGame"; //minigame3
 import Main from "./Minigames/Minigame4/Main"; //minigame4
 import WhackaWolf from "./Minigames/Minigame5/WhackaWolf"; //minigame5
-import Wordle from "./Minigames/Minigame6/Wordle" //minigame6
+import Wordle from "./Minigames/Minigame6/Wordle"; //minigame6
 import MathematicalDroplets from "./Minigames/Minigame7/MathematicalDroplets"; //minigame7
-import Minigame8 from "./Minigames/Minigame8/Minigame8" //minigame8
+import Minigame8 from "./Minigames/Minigame8/Minigame8"; //minigame8
 import Minigame9 from "./Minigames/Minigame9/Minigame9"; //minigame9
 import Minigame10 from "./Minigames/Minigame10/Minigame10"; //minigame10
 import Minigame11 from "./Minigames/Minigame11/Minigame11"; //minigame11
-import Minigame12 from "./Minigames/Minigame12/Minigame12";//minigame12
-import Minigame13 from "./Minigames/Minigame13/Minigame13";//minigame13
+import Minigame12 from "./Minigames/Minigame12/Minigame12"; //minigame12
+import Minigame13 from "./Minigames/Minigame13/Minigame13"; //minigame13
 
 const StoryGame = () => {
   const nav = useNavigate();
@@ -47,7 +47,7 @@ const StoryGame = () => {
   //function for minigame 1
   const handleMiniGameOneResult = (pts, won) => {
     setMinigameOnePoints(pts);
-    setMinigameOneWon(won)
+    setMinigameOneWon(won);
     console.log(`Player got: ${pts}`);
   };
 
@@ -109,7 +109,7 @@ const StoryGame = () => {
       const response = await fetch(`${BaseUrl}/api/user/getuser`, {
         method: "GET",
         headers: {
-          Authorization: `${token}`, // Include the token in the Authorization header
+          Authorization: ` Bearer ${token}`, // Include the token in the Authorization header
           "Content-Type": "application/json",
         },
       });
@@ -146,10 +146,11 @@ const StoryGame = () => {
       const data = await response.json();
       setStory(data);
       console.log(data);
-      if(data.options.length===0){
-        setGameNo(data.minigame); console.log('game 1');
-      }else {
-        setGameNo(0)
+      if (data.options.length === 0) {
+        setGameNo(data.minigame);
+        console.log("game 1");
+      } else {
+        setGameNo(0);
       }
       setSnippetIndex(0); // Reset the snippet index to 0 when a new story is fetched
     } catch (error) {
@@ -159,7 +160,14 @@ const StoryGame = () => {
     }
   };
 
-  const updateCurrentStoryIdAndPoints = async (newStoryId, newPoints, newHealth, newMoney, newRF, inv) => {
+  const updateCurrentStoryIdAndPoints = async (
+    newStoryId,
+    newPoints,
+    newHealth,
+    newMoney,
+    newRF,
+    inv
+  ) => {
     setGameDialogue(false);
     const token = localStorage.getItem("token"); // Get the token from localStorage
     const userId = localStorage.getItem("userId"); // Store user ID in localStorage when user logs in
@@ -178,7 +186,7 @@ const StoryGame = () => {
           health: newHealth,
           money: newMoney,
           rf: newRF,
-          inventory: inv
+          inventory: inv,
         }),
       });
 
@@ -193,7 +201,14 @@ const StoryGame = () => {
     }
   };
 
-  const handleOptionClick = async (nextStoryId, optionPoints, optionHealth, optionMoney, optionRF, optionInventory) => {
+  const handleOptionClick = async (
+    nextStoryId,
+    optionPoints,
+    optionHealth,
+    optionMoney,
+    optionRF,
+    optionInventory
+  ) => {
     const token = localStorage.getItem("token"); // Get the token from localStorage
     try {
       const response = await fetch(`${BaseUrl}/api/user/getuser`, {
@@ -237,7 +252,14 @@ const StoryGame = () => {
         console.log(inv, optionInventory);
         setInventory(inv);
         fetchStory(nextStoryId); // Fetch the new story
-        updateCurrentStoryIdAndPoints(nextStoryId, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+        updateCurrentStoryIdAndPoints(
+          nextStoryId,
+          updatedPoints,
+          updatedHealth,
+          updatedMoney,
+          updatedRF,
+          inv
+        ); // Update the story ID and points in the backend
       }
     } catch (error) {
       console.error("Error fetching user details:", error.message);
@@ -263,7 +285,7 @@ const StoryGame = () => {
       console.log(userDetails); // Use user details as needed
       setStoryId(userDetails.currentStoryId);
 
-      if(gameNo===1){
+      if (gameNo === 1) {
         if (points === null) setPoints(0);
         const updatedPoints = points + minigameOnePoints; // Add option points to current points
         const updatedHealth = health;
@@ -280,11 +302,19 @@ const StoryGame = () => {
         const inv = inventory;
         const nextStory = 9998;
         fetchStory(nextStory);
-        
-        if(gameDialogue && gameNo===1) updateCurrentStoryIdAndPoints(nextStory, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+
+        if (gameDialogue && gameNo === 1)
+          updateCurrentStoryIdAndPoints(
+            nextStory,
+            updatedPoints,
+            updatedHealth,
+            updatedMoney,
+            updatedRF,
+            inv
+          ); // Update the story ID and points in the backend
       }
 
-      if(gameNo===2){
+      if (gameNo === 2) {
         if (points === null) setPoints(0);
         const updatedPoints = points + minigameTwoPoints; // Add option points to current points
         const updatedHealth = health;
@@ -301,11 +331,19 @@ const StoryGame = () => {
         const inv = inventory;
         const nextStory = 9997;
         fetchStory(nextStory);
-        
-        if(gameDialogue && gameNo===2) updateCurrentStoryIdAndPoints(nextStory, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+
+        if (gameDialogue && gameNo === 2)
+          updateCurrentStoryIdAndPoints(
+            nextStory,
+            updatedPoints,
+            updatedHealth,
+            updatedMoney,
+            updatedRF,
+            inv
+          ); // Update the story ID and points in the backend
       }
 
-      if(gameNo===3){
+      if (gameNo === 3) {
         if (points === null) setPoints(0);
         const updatedPoints = points + minigameThreePoints; // Add option points to current points
         const updatedHealth = health;
@@ -320,11 +358,19 @@ const StoryGame = () => {
         setMoney(updatedMoney);
         setRF(updatedRF);
         const inv = inventory;
-        
-        if(gameDialogue && gameNo===3) updateCurrentStoryIdAndPoints(9997, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+
+        if (gameDialogue && gameNo === 3)
+          updateCurrentStoryIdAndPoints(
+            9997,
+            updatedPoints,
+            updatedHealth,
+            updatedMoney,
+            updatedRF,
+            inv
+          ); // Update the story ID and points in the backend
       }
 
-      if(gameNo===4){
+      if (gameNo === 4) {
         if (points === null) setPoints(0);
         const updatedPoints = points + minigameFourPoints; // Add option points to current points
         const updatedHealth = health;
@@ -339,11 +385,19 @@ const StoryGame = () => {
         setMoney(updatedMoney);
         setRF(updatedRF);
         const inv = inventory;
-        
-        if(gameDialogue && gameNo===4) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+
+        if (gameDialogue && gameNo === 4)
+          updateCurrentStoryIdAndPoints(
+            9998,
+            updatedPoints,
+            updatedHealth,
+            updatedMoney,
+            updatedRF,
+            inv
+          ); // Update the story ID and points in the backend
       }
 
-      if(gameNo===5){
+      if (gameNo === 5) {
         if (points === null) setPoints(0);
         const updatedPoints = points + minigameFivePoints; // Add option points to current points
         const updatedHealth = health;
@@ -358,11 +412,19 @@ const StoryGame = () => {
         setMoney(updatedMoney);
         setRF(updatedRF);
         const inv = inventory;
-        
-        if(gameDialogue && gameNo===5) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+
+        if (gameDialogue && gameNo === 5)
+          updateCurrentStoryIdAndPoints(
+            9998,
+            updatedPoints,
+            updatedHealth,
+            updatedMoney,
+            updatedRF,
+            inv
+          ); // Update the story ID and points in the backend
       }
 
-      if(gameNo===6){
+      if (gameNo === 6) {
         if (points === null) setPoints(0);
         const updatedPoints = points + minigameSixPoints; // Add option points to current points
         const updatedHealth = health;
@@ -377,11 +439,19 @@ const StoryGame = () => {
         setMoney(updatedMoney);
         setRF(updatedRF);
         const inv = inventory;
-        
-        if(gameDialogue && gameNo===6) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+
+        if (gameDialogue && gameNo === 6)
+          updateCurrentStoryIdAndPoints(
+            9998,
+            updatedPoints,
+            updatedHealth,
+            updatedMoney,
+            updatedRF,
+            inv
+          ); // Update the story ID and points in the backend
       }
 
-      if(gameNo===7){
+      if (gameNo === 7) {
         if (points === null) setPoints(0);
         const updatedPoints = points + minigameSevenPoints; // Add option points to current points
         const updatedHealth = health;
@@ -396,11 +466,19 @@ const StoryGame = () => {
         setMoney(updatedMoney);
         setRF(updatedRF);
         const inv = inventory;
-        
-        if(gameDialogue && gameNo===7) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+
+        if (gameDialogue && gameNo === 7)
+          updateCurrentStoryIdAndPoints(
+            9998,
+            updatedPoints,
+            updatedHealth,
+            updatedMoney,
+            updatedRF,
+            inv
+          ); // Update the story ID and points in the backend
       }
 
-      if(gameNo===8){
+      if (gameNo === 8) {
         if (points === null) setPoints(0);
         const updatedPoints = points + minigameEightPoints; // Add option points to current points
         const updatedHealth = health;
@@ -415,11 +493,19 @@ const StoryGame = () => {
         setMoney(updatedMoney);
         setRF(updatedRF);
         const inv = inventory;
-        
-        if(gameDialogue && gameNo===8) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+
+        if (gameDialogue && gameNo === 8)
+          updateCurrentStoryIdAndPoints(
+            9998,
+            updatedPoints,
+            updatedHealth,
+            updatedMoney,
+            updatedRF,
+            inv
+          ); // Update the story ID and points in the backend
       }
 
-      if(gameNo===9){
+      if (gameNo === 9) {
         if (points === null) setPoints(0);
         const updatedPoints = points + minigameNinePoints; // Add option points to current points
         const updatedHealth = health;
@@ -434,11 +520,19 @@ const StoryGame = () => {
         setMoney(updatedMoney);
         setRF(updatedRF);
         const inv = inventory;
-        
-        if(gameDialogue && gameNo===9) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+
+        if (gameDialogue && gameNo === 9)
+          updateCurrentStoryIdAndPoints(
+            9998,
+            updatedPoints,
+            updatedHealth,
+            updatedMoney,
+            updatedRF,
+            inv
+          ); // Update the story ID and points in the backend
       }
 
-      if(gameNo===10){
+      if (gameNo === 10) {
         if (points === null) setPoints(0);
         const updatedPoints = points + minigameTenPoints; // Add option points to current points
         const updatedHealth = health;
@@ -453,154 +547,227 @@ const StoryGame = () => {
         setMoney(updatedMoney);
         setRF(updatedRF);
         const inv = inventory;
-        
-        if(gameDialogue && gameNo===10) updateCurrentStoryIdAndPoints(9998, updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+
+        if (gameDialogue && gameNo === 10)
+          updateCurrentStoryIdAndPoints(
+            9998,
+            updatedPoints,
+            updatedHealth,
+            updatedMoney,
+            updatedRF,
+            inv
+          ); // Update the story ID and points in the backend
       }
-      
     } catch (error) {
       console.error("Error fetching user details:", error.message);
     }
-  } 
+  };
 
   const handleNextSnippet = () => {
     if (snippetIndex < story.snippet.length - 1) {
       setSnippetIndex(snippetIndex + 1); // Move to the next snippet
-      if(snippetIndex+1 === story.snippet.length - 1) {
+      if (snippetIndex + 1 === story.snippet.length - 1) {
         setGameDialogue(true);
-      } else{
+      } else {
         setGameDialogue(false);
       }
     }
   };
 
-
   return (
-    <div className="bg-gray-900"
+    <div
+      className="bg-gray-900"
       style={{
-        backgroundColor : "black",
+        backgroundColor: "black",
         backgroundImage: `url(${story?.bgimg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        width: '100%', // Cover the full width of the viewport
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        width: "100%", // Cover the full width of the viewport
         // height: '110vh',
         minHeight: "100vh",
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'flex-end', // Align content to the bottom
-        padding: '20px',
-        color: 'white', // Text color for better readability
-        
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-end", // Align content to the bottom
+        padding: "20px",
+        color: "white", // Text color for better readability
       }}
       onClick={handleNextSnippet}
     >
       {loading ? (
         <p>Loading...</p>
       ) : (
-        story && (<>
-          <div className="text-end h-[100vh]">
-              {gameDialogue && gameNo===1 && (<HammerGame gameResult={handleMiniGameOneResult}/>)}
-              {gameDialogue && gameNo===2 && (<Minigame2 gameResult={handleMiniGameTwoResult} />)} {/*problem*/}
-              {gameDialogue && gameNo===3 && (<MazeGame gameResult={handleMiniGameThreeResult} className="" />)}
-              {gameDialogue && gameNo===4 && (<Main gameResult={handleMiniGameFourResult} />)}
-              {gameDialogue && gameNo===5 && (<WhackaWolf gameResult={handleMiniGameFiveResult} />)}
-              {gameDialogue && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '115%' }}><Wordle gameResult={handleMiniGameSixResult} /></div>)} {/*will be fixed */}
-              {gameDialogue && gameNo===7 && (<MathematicalDroplets gameResult={handleMiniGameSevenResult} />)} {/*will be fixed */}
-              {gameDialogue && gameNo===8 && (<Minigame8 gameResult={handleMiniGameEightResult}/>)}
-              {gameDialogue && gameNo===9 && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}><Minigame9 gameResult={handleMiniGameNineResult}/></div>)}
-              {gameDialogue && gameNo===10 && (<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '115%' }}><Minigame10 gameResult={handleMiniGameTenResult} /></div>)}
-              {gameDialogue && gameNo===11 && (<Minigame11 />)}
-
-              <div 
-              style={{
-                backgroundColor: 'rgba(0, 0, 0, 0.7)',
-                padding: '20px',
-                maxWidth: '90%',
-                margin: '0 auto',
-              }}
-              className="absolute top-24 right-0"
+        story && (
+          <>
+            <div className="text-end h-[100vh]">
+              {gameDialogue && gameNo === 1 && (
+                <HammerGame gameResult={handleMiniGameOneResult} />
+              )}
+              {gameDialogue && gameNo === 2 && (
+                <Minigame2 gameResult={handleMiniGameTwoResult} />
+              )}{" "}
+              {/*problem*/}
+              {gameDialogue && gameNo === 3 && (
+                <MazeGame gameResult={handleMiniGameThreeResult} className="" />
+              )}
+              {gameDialogue && gameNo === 4 && (
+                <Main gameResult={handleMiniGameFourResult} />
+              )}
+              {gameDialogue && gameNo === 5 && (
+                <WhackaWolf gameResult={handleMiniGameFiveResult} />
+              )}
+              {gameDialogue && (
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "115%",
+                  }}
+                >
+                  <Wordle gameResult={handleMiniGameSixResult} />
+                </div>
+              )}{" "}
+              {/*will be fixed */}
+              {gameDialogue && gameNo === 7 && (
+                <MathematicalDroplets gameResult={handleMiniGameSevenResult} />
+              )}{" "}
+              {/*will be fixed */}
+              {gameDialogue && gameNo === 8 && (
+                <Minigame8 gameResult={handleMiniGameEightResult} />
+              )}
+              {gameDialogue && gameNo === 9 && (
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "100%",
+                  }}
+                >
+                  <Minigame9 gameResult={handleMiniGameNineResult} />
+                </div>
+              )}
+              {gameDialogue && gameNo === 10 && (
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "115%",
+                  }}
+                >
+                  <Minigame10 gameResult={handleMiniGameTenResult} />
+                </div>
+              )}
+              {gameDialogue && gameNo === 11 && <Minigame11 />}
+              <div
+                style={{
+                  backgroundColor: "rgba(0, 0, 0, 0.7)",
+                  padding: "20px",
+                  maxWidth: "90%",
+                  margin: "0 auto",
+                }}
+                className="absolute top-24 right-0"
               >
-              <p>Points: {points}</p>
-              <p>Health: {health}</p>
-              <p>Money: {money}</p>
-              <p>Risk Factor: {rf}</p>
-              <p>Key: {inventory?.key?.value ? 'Yes' : 'No'}</p>
-              <p>Umbrella: {inventory?.umbrella?.value ? 'Yes' : 'No'}</p>
-              <p>Journal: {inventory?.journal?.value ? 'Yes' : 'No'}</p>
-              <p>Minigame1 won? : {minigameOneWon ? 'Yes' : 'No'}</p>
-              <p>Minigame2 pts: {minigameTwoPoints}</p>
-              <p>Minigame3 pts: {minigameThreePoints}</p>
-              <p>Minigame4 pts: {minigameFourPoints}</p>
-              <p>Minigame5 pts: {minigameFivePoints}</p>
-              <p>Minigame6 pts: {minigameSixPoints}</p>
-              <p>Minigame7 pts: {minigameSevenPoints}</p>
-              <p>Minigame8 pts: {minigameEightPoints}</p>
-              <p>Minigame9 pts: {minigameNinePoints}</p>
-            </div>
-          </div>
-
-          <div className="mb-5">
-            {snippetIndex === story.snippet.length - 1 && (
-              <div className="flex ">
-                {story.options.length!== 0 ? (story.options.map((option, index) => (
-                  <button
-                    key={index}
-                    style={{
-                      backgroundColor: 'rgba(0, 0, 0, 0.7)', // Semi-transparent background for the text box
-                      padding: '20px',
-                      borderRadius: '10px',
-                      width: '100%',
-                      margin: '1rem 0.5rem',
-                    }}
-                    onClick={() =>
-                      handleOptionClick(
-                        option.nextStoryId,
-                        option.points,
-                        option.health,
-                        option.money,
-                        option.rf,
-                        option.inventory
-                      )
-                    }
-                  >
-                    {option.optionText}
-                  </button>
-                ))) : ( <>
-                  <button
-                    style={{
-                      backgroundColor: 'rgba(0, 0, 0, 0.7)', // Semi-transparent background for the text box
-                      padding: '20px',
-                      borderRadius: '10px',
-                      width: '100%',
-                      margin: '1rem 0.5rem',
-                    }}
-
-                    onClick={handleGameNext}
-                  >
-                    Finish Minigame
-                  </button>
-                </>)}
+                <p>Points: {points}</p>
+                <p>Health: {health}</p>
+                <p>Money: {money}</p>
+                <p>Risk Factor: {rf}</p>
+                <p>Key: {inventory?.key?.value ? "Yes" : "No"}</p>
+                <p>Umbrella: {inventory?.umbrella?.value ? "Yes" : "No"}</p>
+                <p>Journal: {inventory?.journal?.value ? "Yes" : "No"}</p>
+                <p>Minigame1 won? : {minigameOneWon ? "Yes" : "No"}</p>
+                <p>Minigame2 pts: {minigameTwoPoints}</p>
+                <p>Minigame3 pts: {minigameThreePoints}</p>
+                <p>Minigame4 pts: {minigameFourPoints}</p>
+                <p>Minigame5 pts: {minigameFivePoints}</p>
+                <p>Minigame6 pts: {minigameSixPoints}</p>
+                <p>Minigame7 pts: {minigameSevenPoints}</p>
+                <p>Minigame8 pts: {minigameEightPoints}</p>
+                <p>Minigame9 pts: {minigameNinePoints}</p>
               </div>
-            )}
-          </div>
+            </div>
 
-          <div
-            style={{
-              backgroundColor: 'rgba(0, 0, 0, 0.7)', // Semi-transparent background for the text box
-              padding: '20px',
-              width: '100%',
-              margin: '0 auto',
-            }}
-          >
-            {/* <p>{story.snippet[snippetIndex].text}</p> */}
-            {story.snippet[snippetIndex].text.split('\n').map((line, index) => (
-              <p key={index}>{line}</p>
-            ))}
-            {story.options.length!==0 && snippetIndex===story.snippet.length-1 && (<p className="text-end">{snippetIndex !==0 && (<button onClick={() => {setSnippetIndex(0); setGameDialogue(false)}}>restart</button>)}</p>)}
+            <div className="mb-5">
+              {snippetIndex === story.snippet.length - 1 && (
+                <div className="flex ">
+                  {story.options.length !== 0 ? (
+                    story.options.map((option, index) => (
+                      <button
+                        key={index}
+                        style={{
+                          backgroundColor: "rgba(0, 0, 0, 0.7)", // Semi-transparent background for the text box
+                          padding: "20px",
+                          borderRadius: "10px",
+                          width: "100%",
+                          margin: "1rem 0.5rem",
+                        }}
+                        onClick={() =>
+                          handleOptionClick(
+                            option.nextStoryId,
+                            option.points,
+                            option.health,
+                            option.money,
+                            option.rf,
+                            option.inventory
+                          )
+                        }
+                      >
+                        {option.optionText}
+                      </button>
+                    ))
+                  ) : (
+                    <>
+                      <button
+                        style={{
+                          backgroundColor: "rgba(0, 0, 0, 0.7)", // Semi-transparent background for the text box
+                          padding: "20px",
+                          borderRadius: "10px",
+                          width: "100%",
+                          margin: "1rem 0.5rem",
+                        }}
+                        onClick={handleGameNext}
+                      >
+                        Finish Minigame
+                      </button>
+                    </>
+                  )}
+                </div>
+              )}
+            </div>
 
-            
+            <div
+              style={{
+                backgroundColor: "rgba(0, 0, 0, 0.7)", // Semi-transparent background for the text box
+                padding: "20px",
+                width: "100%",
+                margin: "0 auto",
+              }}
+            >
+              {/* <p>{story.snippet[snippetIndex].text}</p> */}
+              {story.snippet[snippetIndex].text
+                .split("\n")
+                .map((line, index) => (
+                  <p key={index}>{line}</p>
+                ))}
+              {story.options.length !== 0 &&
+                snippetIndex === story.snippet.length - 1 && (
+                  <p className="text-end">
+                    {snippetIndex !== 0 && (
+                      <button
+                        onClick={() => {
+                          setSnippetIndex(0);
+                          setGameDialogue(false);
+                        }}
+                      >
+                        restart
+                      </button>
+                    )}
+                  </p>
+                )}
 
-            {/* {snippetIndex < story.snippet.length - 1 && (
+              {/* {snippetIndex < story.snippet.length - 1 && (
               <button
                 style={{
                   marginTop: '10px',
@@ -616,9 +783,8 @@ const StoryGame = () => {
                 Next
               </button>
             )} */}
-
-          </div>
-        </>
+            </div>
+          </>
         )
       )}
     </div>

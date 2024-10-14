@@ -1,23 +1,66 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
 const UserSchema = new Schema({
-  teamLeader_name: {
+  teamId: {
     type: String,
     required: true,
   },
-  player2_name: {
-    type: String,
-    required: false,
+  teamLeader: {
+    delegateId: {
+      type: String,
+      required: true,
+      unique: true, // Ensure this is unique if necessary
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    registrationNumber: {
+      type: String,
+      required: true,
+    },
+    phone: {
+      type: String,
+      required: true,
+    },
+    institute: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true, // Ensure this is truly necessary
+    },
   },
-  teamLeader_phone: {
-    type: String,
-    required: true,
-  },
-  teamLeader_email: {
-    type: String,
-    required: true,
-    unique: true,
+  player2: {
+    delegateId: {
+      type: String,
+      required: false,
+      unique: true, // If necessary, ensure this is unique across all users
+    },
+    name: {
+      type: String,
+      required: false,
+    },
+    registrationNumber: {
+      type: String,
+      required: false,
+    },
+    phone: {
+      type: String,
+      required: false,
+    },
+    institute: {
+      type: String,
+      required: false,
+    },
+    email: {
+      type: String,
+      required: false,
+      unique: true, // Consider if necessary
+    },
   },
   password: {
     type: String,
@@ -48,37 +91,69 @@ const UserSchema = new Schema({
     default: "",
   },
   inventory: {
-    key:{
+    script: {
       value: {
         type: Boolean,
-        default: false
+        default: false,
       },
       description: {
         type: String,
-        default: ""
-      }
+        default: "",
+      },
     },
-    umbrella:{
+    journal: {
       value: {
         type: Boolean,
-        default: false
+        default: false,
       },
       description: {
         type: String,
-        default: ""
-      }
+        default: "",
+      },
     },
-    journal:{
+    kumbh: {
       value: {
         type: Boolean,
-        default: false
+        default: false,
       },
       description: {
         type: String,
-        default: ""
-      }
-    }
-  }
+        default: "",
+      },
+    },
+    sword: {
+      value: {
+        type: Boolean,
+        default: false,
+      },
+      description: {
+        type: String,
+        default: "",
+      },
+    },
+    pickaxe: {
+      value: {
+        type: Boolean,
+        default: false,
+      },
+      description: {
+        type: String,
+        default: "",
+      },
+    },
+    axe: {
+      value: {
+        type: Boolean,
+        default: false,
+      },
+      description: {
+        type: String,
+        default: "",
+      },
+    },
+  },
 });
 
-module.exports = mongoose.model("User", UserSchema);
+// Export the model
+const User = mongoose.model("User", UserSchema);
+module.exports = User; // Ensure you are exporting the model correctly

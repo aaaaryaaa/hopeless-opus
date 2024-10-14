@@ -3,10 +3,11 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import BaseUrl from "../BaseUrl";
 import "./Login.css";
+
 export default function Login() {
-  const [teamLeader_email, setEmail] = useState("");
+  const [teamId, setTeamId] = useState(""); // Changed to teamId
   const [password, setPassword] = useState("");
-  const [emailActive, setEmailActive] = useState(false);
+  const [teamIdActive, setTeamIdActive] = useState(false); // Separate state for Team ID
   const [passwordActive, setPasswordActive] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
@@ -19,25 +20,28 @@ export default function Login() {
     e.preventDefault();
     setErrorMessage("");
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(teamLeader_email)) {
-      setErrorMessage("Please enter a valid email address.");
+    // Validate Team ID format (example regex)
+    const teamIdPattern = /^[A-Za-z0-9-_]+$/;
+    if (!teamIdPattern.test(teamId)) {
+      setErrorMessage("Please enter a valid Team ID.");
       return;
     }
 
     axios
       .post(`${BaseUrl}/api/auth/login`, {
-        teamLeader_email,
+        teamId, // Changed to teamId
         password,
       })
       .then((response) => {
-        console.log(response.data);
         localStorage.setItem("token", response.data.token);
         navigate("/play");
       })
       .catch((error) => {
+        const errorMessage =
+          error.response?.data?.message ||
+          "Login failed. Please check your credentials.";
         console.error(error);
-        setErrorMessage("Login failed. Please check your credentials.");
+        setErrorMessage(errorMessage);
       });
   };
 
@@ -48,21 +52,19 @@ export default function Login() {
           Login
         </h2>
         <form onSubmit={handleLogin} className="space-y-6">
-          {/* Email Input with Animation */}
+          {/* Team ID Input with Animation */}
           <div
             className={`input-container ${
-              emailActive || teamLeader_email ? "active" : ""
+              teamIdActive || teamId ? "active" : ""
             }`}
           >
-            <label className="block font-medium text-gray-200">
-              Team Leader Email:
-            </label>
+            <label className="block font-medium text-gray-200">Team ID:</label>
             <input
-              type="email"
-              value={teamLeader_email}
-              onFocus={() => setEmailActive(true)}
-              onBlur={() => setEmailActive(false)}
-              onChange={(e) => setEmail(e.target.value)}
+              type="text" // Changed to text for teamId
+              value={teamId} // Changed to teamId
+              onFocus={() => setTeamIdActive(true)} // Updated to setTeamIdActive
+              onBlur={() => setTeamIdActive(false)} // Updated to setTeamIdActive
+              onChange={(e) => setTeamId(e.target.value)} // Changed to setTeamId
               required
               className="mt-1 p-3 w-full border rounded-lg focus:ring-indigo-500 focus:border-indigo-500 border-gray-700 bg-gray-1000 text-gray-200"
             />
