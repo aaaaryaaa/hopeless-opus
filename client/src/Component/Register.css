@@ -1,0 +1,31 @@
+.input-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.input-container label {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  transition: 0.2s ease all;
+  color: #aaa; /* Adjust label color */
+}
+
+.input-container input {
+  padding: 1rem 0.5rem;
+  border: 1px solid #777;
+  background: transparent;
+  color: #fff;
+  transition: 0.2s ease all;
+}
+
+.input-container.active label {
+  top: -0.5rem;
+  left: 0.5rem;
+  font-size: 0.85rem;
+  color: #00bcd4; /* Adjust to your preferred color */
+}
+
+.input-container.active input {
+  border-color: #00bcd4; /* Match with label color */
+}

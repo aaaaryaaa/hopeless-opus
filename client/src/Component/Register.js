@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import BaseUrl from "../BaseUrl";
@@ -11,10 +11,11 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [activeInputs, setActiveInputs] = useState([]);
   const navigate = useNavigate();
 
   const openLogin = () => {
-    navigate('/login');
+    navigate("/login");
   };
 
   const handleRegister = async (e) => {
@@ -27,7 +28,6 @@ export default function Register() {
       setIsLoading(false);
       return;
     }
-
 
     // Validate phone number
     const phonePattern = /^[0-9]{10}$/;
@@ -66,6 +66,14 @@ export default function Register() {
     }
   };
 
+  const handleFocus = (index) => {
+    setActiveInputs((prev) => [...new Set([...prev, index])]);
+  };
+
+  const handleBlur = (index) => {
+    setActiveInputs((prev) => prev.filter((i) => i !== index));
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-black">
       <div className="bg-gray-900 p-8 rounded-lg shadow-lg w-full max-w-md">
@@ -73,7 +81,12 @@ export default function Register() {
           Register
         </h2>
         <form onSubmit={handleRegister} className="space-y-6">
-          <div>
+          {/* Team Leader Name */}
+          <div
+            className={`input-container ${
+              activeInputs.includes(0) ? "active" : ""
+            }`}
+          >
             <label className="block font-medium text-gray-200">
               Team Leader Name:
             </label>
@@ -82,10 +95,18 @@ export default function Register() {
               value={teamLeader_name}
               onChange={(e) => setName(e.target.value)}
               required
+              onFocus={() => handleFocus(0)}
+              onBlur={() => handleBlur(0)}
               className="mt-1 p-3 w-full border rounded-lg focus:ring-indigo-500 focus:border-indigo-500 border-gray-700 bg-gray-1000 text-gray-200"
             />
           </div>
-          <div>
+
+          {/* Player 2 Name */}
+          <div
+            className={`input-container ${
+              activeInputs.includes(1) ? "active" : ""
+            }`}
+          >
             <label className="block font-medium text-gray-200">
               Player 2 Name:
             </label>
@@ -94,10 +115,18 @@ export default function Register() {
               value={player2_name}
               onChange={(e) => setplayer2_name(e.target.value)}
               required
+              onFocus={() => handleFocus(1)}
+              onBlur={() => handleBlur(1)}
               className="mt-1 p-3 w-full border rounded-lg focus:ring-indigo-500 focus:border-indigo-500 border-gray-700 bg-gray-1000 text-gray-200"
             />
           </div>
-          <div>
+
+          {/* Team Leader Email */}
+          <div
+            className={`input-container ${
+              activeInputs.includes(2) ? "active" : ""
+            }`}
+          >
             <label className="block font-medium text-gray-200">
               Team Leader Email:
             </label>
@@ -106,10 +135,18 @@ export default function Register() {
               value={teamLeader_email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              onFocus={() => handleFocus(2)}
+              onBlur={() => handleBlur(2)}
               className="mt-1 p-3 w-full border rounded-lg focus:ring-indigo-500 focus:border-indigo-500 border-gray-700 bg-gray-1000 text-gray-200"
             />
           </div>
-          <div>
+
+          {/* Team Leader Phone Number */}
+          <div
+            className={`input-container ${
+              activeInputs.includes(3) ? "active" : ""
+            }`}
+          >
             <label className="block font-medium text-gray-200">
               Team Leader Phone Number:
             </label>
@@ -118,22 +155,36 @@ export default function Register() {
               value={teamLeader_phone}
               onChange={(e) => setPhone(e.target.value)}
               required
+              onFocus={() => handleFocus(3)}
+              onBlur={() => handleBlur(3)}
               className="mt-1 p-3 w-full border rounded-lg focus:ring-indigo-500 focus:border-indigo-500 border-gray-700 bg-gray-1000 text-gray-200"
             />
           </div>
-          <div>
-            <label className="block font-medium text-gray-200">
-              Password:
-            </label>
+
+          {/* Password */}
+          <div
+            className={`input-container ${
+              activeInputs.includes(4) ? "active" : ""
+            }`}
+          >
+            <label className="block font-medium text-gray-200">Password:</label>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
+              onFocus={() => handleFocus(4)}
+              onBlur={() => handleBlur(4)}
               className="mt-1 p-3 w-full border rounded-lg focus:ring-indigo-500 focus:border-indigo-500 border-gray-700 bg-gray-1000 text-gray-200"
             />
           </div>
-          <div>
+
+          {/* Confirm Password */}
+          <div
+            className={`input-container ${
+              activeInputs.includes(5) ? "active" : ""
+            }`}
+          >
             <label className="block font-medium text-gray-200">
               Confirm Password:
             </label>
@@ -142,9 +193,12 @@ export default function Register() {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
+              onFocus={() => handleFocus(5)}
+              onBlur={() => handleBlur(5)}
               className="mt-1 p-3 w-full border rounded-lg focus:ring-indigo-500 focus:border-indigo-500 border-gray-700 bg-gray-1000 text-gray-200"
             />
           </div>
+
           <button
             type="submit"
             disabled={isLoading}
@@ -165,4 +219,3 @@ export default function Register() {
     </div>
   );
 }
-
