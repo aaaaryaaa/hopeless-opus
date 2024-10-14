@@ -8,11 +8,11 @@ const Info = () => {
     { name: 'Nikhilesh', role: 'CORE COMMITTEE', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728827526/Nikhilesh_gn1hzy.jpg", stats: "69% Anime" },
     { name: 'Roopanshi', role: 'CORE COMMITTEE', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728827527/Roopesh_rhduuk.jpg", stats: "99% Home" },
     { name: 'Aarya', role: 'CORE COMMITTEE', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728827512/Aarya_tbbamn.jpg", stats: "50% Biking" },
-    { name: 'Kavish', role: 'CORE COMMITTEE', image: ima, stats: "52% Snacks" },
+    { name: 'Kavish', role: 'CORE COMMITTEE', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728844761/Kavish_ljwbh4.jpg", stats: "52% Snacks" },
     { name: 'Shivansh', role: 'CORE COMMITTEE', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728827519/Shivansh_fneolr.jpg", stats: "100% Episodes"},
-    { name: 'Haripriya', role: 'CORE COMMITTEE', image: ima, stats: "66% Netflix" },
-    { name: 'Ranveer', role: 'CORE COMMITTEE', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728827514/Ranveer_ja9dgd.jpg", stats: "99% Pajji" },
-    { name: 'Pranav', role: 'OC-WEBDEV', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728827515/Pranav_qgsi1n.jpg", stats: "100% Coke" },
+    { name: 'Haripriya', role: 'CORE COMMITTEE', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728844443/Haripriya_hjpfsu.jpg", stats: "66% Netflix" },
+    { name: 'Ranveer', role: 'CORE COMMITTEE', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728845623/Ranveer_tarnbg.jpg", stats: "99% Pajji" },
+    { name: 'Pranav', role: 'OC-WEBDEV', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728845624/Pranav_ri0ny6.jpg", stats: "100% Coke" },
     { name: 'Mehul', role: 'OC-WEBDEV', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728827515/Mehul_xdmrt6.jpg", stats: "150% Chatgpt"},
     { name: 'Siddhan', role: 'OC-WEBDEV', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728827520/Siddhan_ekxgn4.jpg", stats: "77% Music" },
     { name: 'Tanvi', role: 'OC-WEBDEV', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728827522/Tanvi_yev0hs.jpg", stats: "75% Debugging" },
@@ -24,10 +24,10 @@ const Info = () => {
     { name: 'Saksham', role: 'OC-STORY', image: ima, stats: "66% Hindi"},
     { name: 'Shivam', role: 'OC-STORY', image: ima, stats: "100% Veg" },
     { name: 'Sara', role: 'OC-STORY', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728827515/Sara_sat2pl.jpg" , stats: "40% Chart"},    
-    { name: 'Yosha', role: 'OC-DESIGN', image: ima, stats: "55% Oranges" },
+    { name: 'Yosha', role: 'OC-DESIGN', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728849765/Yosha_byho0t.jpg", stats: "55% Oranges" },
     { name: 'Riddhi', role: 'OC-DESIGN', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728827521/Riddhi_crba0c.jpg", stats: "100% Riddhi"  },
     { name: 'Vidhi', role: 'OC-DESIGN', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728827522/Vidhi_boxfyu.jpg", stats: "88% Missing" },
-    { name: 'Urja', role: 'OC-DESIGN', image: ima , stats: "90% Hardworker" }
+    { name: 'Urja', role: 'OC-DESIGN', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728844443/Urja_k6mlww.jpg" , stats: "90% Hardworker" }
     
   ];
 
