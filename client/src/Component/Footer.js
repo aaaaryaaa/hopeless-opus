@@ -57,28 +57,28 @@ const Footer = () => {
           }}
         >
           <button
-            className="text-gray-200 text-xl hover:text-white"
+            className="text-gray-200 text-xl hover:text-white p-2"
             onClick={openHome}
             style={{ transition: 'color 0.3s ease' }} // Smooth transition on hover
           >
             Home
           </button>
           <button
-            className="text-gray-200 text-xl hover:text-white"
+            className="text-gray-200 text-xl hover:text-white p-2"
             onClick={openPlay}
             style={{ transition: 'color 0.3s ease' }}
           >
             About
           </button>
           <button
-            className="text-gray-200 text-xl hover:text-white"
+            className="text-gray-200 text-xl hover:text-white p-2"
             onClick={openContact}
             style={{ transition: 'color 0.3s ease' }}
           >
             Contact
           </button>
           <button
-            className="text-gray-200 text-xl hover:text-white"
+            className="text-gray-200 text-xl hover:text-white p-2"
             onClick={openHome}
             style={{ transition: 'color 0.3s ease' }}
           >

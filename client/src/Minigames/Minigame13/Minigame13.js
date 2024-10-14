@@ -64,7 +64,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-800 text-white p-10 flex flex-col items-center">
+    <div className="min-h-screen bg-black text-white p-10 flex flex-col items-center">
       <h1 className="text-4xl font-bold mb-10">Crafting Table</h1>
       <h2 className="text-sm font-bold mb-10">Click on ingredient to place it and blank option to remove it</h2>
       
@@ -89,7 +89,7 @@ function App() {
         {ingredients.map((ingredient) => (
           <button
             key={ingredient.name}
-            className="bg-black hover:bg-gray-700 text-white font-bold py-2 px-4 rounded m-2 flex items-center justify-center"
+            className="bg-gray-900 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded m-2 flex items-center justify-center"
             onClick={() => setSelectedIngredient(ingredient.name)} // Set selected ingredient
             disabled={!!craftedWeapon} // Disable ingredient selection if a weapon is crafted
           >

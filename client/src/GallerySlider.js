@@ -7,17 +7,17 @@ const getGalleryImages = () => {
   return [
     {
       id: 1,
-      image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728569013/imposter_upbcqh.jpg",
+      image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728922227/Screenshot_2024-10-14_214012_lez3nw.png",
       alt: "Image 1",
     },
     {
       id: 2,
-      image: `${image2}`,
+      image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728922195/Screenshot_2024-10-14_213938_c269ru.png",
       alt: "Image 2",
     }, 
     {
       id: 3,
-      image: `${image2}`,
+      image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728922144/Screenshot_2024-10-14_213845_ffxwpd.png",
       alt: "Image 3",
     },
   ];
