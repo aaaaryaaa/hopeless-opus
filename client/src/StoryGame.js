@@ -446,8 +446,13 @@ const StoryGame = () => {
         const inv = inventory;
         
         if(gameDialogue && gameNo===6){
-          if(minigameSixWon) updateCurrentStoryIdAndPoints('0703', updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
-          else updateCurrentStoryIdAndPoints('0704', updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+          if(minigameSixWon){
+            fetchStory('0703');
+             updateCurrentStoryIdAndPoints('0703', updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+          } else{
+            fetchStory('0704');
+             updateCurrentStoryIdAndPoints('0704', updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+          } 
         }
       }
 
