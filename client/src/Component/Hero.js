@@ -1,27 +1,27 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import logo from "../Resources/image2.svg"; // Ensure this path is correct
+import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import logo from '../Resources/image2.svg' // Ensure this path is correct
 
 const Hero = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const navigate = useNavigate();
+  const [isVisible, setIsVisible] = useState(false)
+  const navigate = useNavigate()
 
   // This effect will make the image appear after scrolling a bit
   useEffect(() => {
     const onScroll = () => {
       if (window.scrollY > 100) {
-        setIsVisible(true);
+        setIsVisible(true)
       } else {
-        setIsVisible(false);
+        setIsVisible(false)
       }
-    };
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    }
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   const handlePlayClick = () => {
-    navigate("/play");
-  };
+    navigate('/play')
+  }
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 relative overflow-hidden">
@@ -37,11 +37,11 @@ const Hero = () => {
         <img src={logo} alt="Logo" className="h-10 w-10" />
         <span
           style={{
-            color: "white",
-            fontSize: "22px",
-            fontFamily: "Monoton",
-            fontWeight: "400",
-            lineHeight: "22px",
+            color: 'white',
+            fontSize: '22px',
+            fontFamily: 'Monoton',
+            fontWeight: '400',
+            lineHeight: '22px',
           }}
         >
           Hopeless Opus
@@ -54,10 +54,10 @@ const Hero = () => {
           className="text-white font-bold"
           style={{
             fontFamily: "'Protest Guerrilla', 'sans-serif'",
-            fontSize: "100.4px",
-            lineHeight: "203px",
-            letterSpacing: "6.5px",
-            fontWeight: "400",
+            fontSize: '100.4px',
+            lineHeight: '203px',
+            letterSpacing: '6.5px',
+            fontWeight: '400',
           }}
         >
           HOPELESS OPUS
@@ -67,11 +67,11 @@ const Hero = () => {
         <p
           className="mt-5 max-w-3xl mx-auto"
           style={{
-            color: "#9E9E9E",
-            fontSize: "20px",
-            fontFamily: "Poppins",
-            fontWeight: "400",
-            lineHeight: "44.6px",
+            color: '#9E9E9E',
+            fontSize: '20px',
+            fontFamily: 'Poppins',
+            fontWeight: '400',
+            lineHeight: '44.6px',
           }}
         >
           A good design is not only aesthetically pleasing, but also functional.
@@ -91,7 +91,7 @@ const Hero = () => {
       {/* Image appearing after scroll */}
       <div
         className={`mt-20 transition-opacity duration-1000 ${
-          isVisible ? "opacity-100" : "opacity-0"
+          isVisible ? 'opacity-100' : 'opacity-0'
         }`}
       >
         <img
@@ -101,7 +101,7 @@ const Hero = () => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero
