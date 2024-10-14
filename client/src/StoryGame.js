@@ -37,6 +37,7 @@ const StoryGame = () => {
   const [minigameThreePoints, setMinigameThreePoints] = useState(0);
   const [minigameFourPoints, setMinigameFourPoints] = useState(0);
   const [minigameFivePoints, setMinigameFivePoints] = useState(0);
+  const [minigameSixWon, setMinigameSixWon] = useState(false);
   const [minigameSixPoints, setMinigameSixPoints] = useState(0);
   const [minigameSevenPoints, setMinigameSevenPoints] = useState(0);
   const [minigameEightPoints, setMinigameEightPoints] = useState(0);
@@ -71,8 +72,9 @@ const StoryGame = () => {
     console.log(`Player got: ${pts}`);
   };
 
-  const handleMiniGameSixResult = (pts) => {
+  const handleMiniGameSixResult = (pts, won) => {
     setMinigameSixPoints(pts); // Update the state based on the mini-game result
+    setMinigameSixWon(won);
     console.log(`Player got: ${pts}`);
   };
 
@@ -439,16 +441,11 @@ const StoryGame = () => {
         setMoney(updatedMoney);
         setRF(updatedRF);
         const inv = inventory;
-
-        if (gameDialogue && gameNo === 6)
-          updateCurrentStoryIdAndPoints(
-            9998,
-            updatedPoints,
-            updatedHealth,
-            updatedMoney,
-            updatedRF,
-            inv
-          ); // Update the story ID and points in the backend
+        
+        if(gameDialogue && gameNo===6){
+          if(minigameSixWon) updateCurrentStoryIdAndPoints('0703', updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+          else updateCurrentStoryIdAndPoints('0704', updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+        }
       }
 
       if (gameNo === 7) {
