@@ -111,7 +111,7 @@ const StoryGame = () => {
       const response = await fetch(`${BaseUrl}/api/user/getuser`, {
         method: "GET",
         headers: {
-          Authorization: ` Bearer ${token}`, // Include the token in the Authorization header
+          Authorization: `Bearer ${token}`, // Include the token in the Authorization header
           "Content-Type": "application/json",
         },
       });
@@ -178,7 +178,7 @@ const StoryGame = () => {
       const response = await fetch(`${BaseUrl}/api/user/updatestory`, {
         method: "PUT",
         headers: {
-          Authorization: `${token}`,
+          Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
@@ -216,7 +216,7 @@ const StoryGame = () => {
       const response = await fetch(`${BaseUrl}/api/user/getuser`, {
         method: "GET",
         headers: {
-          Authorization: `${token}`, // Include the token in the Authorization header
+          Authorization: `Bearer ${token}`, // Include the token in the Authorization header
           "Content-Type": "application/json",
         },
       });
@@ -248,9 +248,12 @@ const StoryGame = () => {
         setMoney(updatedMoney);
         setRF(updatedRF);
         const inv = inventory;
-        inv.key.value = optionInventory.key;
-        inv.umbrella.value = optionInventory.umbrella;
+        inv.script.value = optionInventory.key;
+        inv.kumbh.value = optionInventory.umbrella;
         inv.journal.value = optionInventory.journal;
+        inv.sword.value = optionInventory.sword;
+        inv.pickaxe.value = optionInventory.pickaxe;
+        inv.axe.value = optionInventory.axe;
         console.log(inv, optionInventory);
         setInventory(inv);
         fetchStory(nextStoryId); // Fetch the new story
@@ -274,7 +277,7 @@ const StoryGame = () => {
       const response = await fetch(`${BaseUrl}/api/user/getuser`, {
         method: "GET",
         headers: {
-          Authorization: `${token}`, // Include the token in the Authorization header
+          Authorization: `Bearer ${token}`, // Include the token in the Authorization header
           "Content-Type": "application/json",
         },
       });
@@ -613,7 +616,7 @@ const StoryGame = () => {
               {gameDialogue && gameNo === 5 && (
                 <WhackaWolf gameResult={handleMiniGameFiveResult} />
               )}
-              {gameDialogue && (
+              {gameDialogue && gameNo===6 &&(
                 <div
                   style={{
                     display: "flex",
@@ -671,9 +674,12 @@ const StoryGame = () => {
                 <p>Health: {health}</p>
                 <p>Money: {money}</p>
                 <p>Risk Factor: {rf}</p>
-                <p>Key: {inventory?.key?.value ? "Yes" : "No"}</p>
-                <p>Umbrella: {inventory?.umbrella?.value ? "Yes" : "No"}</p>
+                <p>Script: {inventory?.key?.value ? "Yes" : "No"}</p>
+                <p>Kumbh: {inventory?.umbrella?.value ? "Yes" : "No"}</p>
                 <p>Journal: {inventory?.journal?.value ? "Yes" : "No"}</p>
+                <p>Sword: {inventory?.sword?.value ? "Yes" : "No"}</p>
+                <p>Pickaxe: {inventory?.pickaxe?.value ? "Yes" : "No"}</p>
+                <p>Axe: {inventory?.axe?.value ? "Yes" : "No"}</p>
                 <p>Minigame1 won? : {minigameOneWon ? "Yes" : "No"}</p>
                 <p>Minigame2 pts: {minigameTwoPoints}</p>
                 <p>Minigame3 pts: {minigameThreePoints}</p>

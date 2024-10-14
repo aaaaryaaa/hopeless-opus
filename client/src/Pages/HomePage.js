@@ -39,7 +39,7 @@ export default function HomePage() {
       </div>
       <Countdown />
       <Scroll />
-      <CardSlider />
+      {/* <CardSlider /> */}
       <FAQ />
       <GallerySection />
       <ContactForm />
