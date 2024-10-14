@@ -8,9 +8,9 @@ import NotFoundPage from "./Component/NotFound.js";
 import Register from "./Component/Register.js";
 import Login from "./Component/Login.js";
 import Info from "./Component/Info.js";
-import StoryError from './Component/StoryError.js';
+import StoryError from "./Component/StoryError.js";
 import Contact from "./Component/contactform.js";
-
+import PlayParallax from "./Component/PlayParallax.js";
 function App() {
   const [data, setData] = useState("");
 
@@ -34,10 +34,11 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFoundPage />} />
-          <Route path='/storyerror' element={<StoryError />} />
+          <Route path="/storyerror" element={<StoryError />} />
+          <Route path="/playparallax" element={<PlayParallax />} />
         </Routes>
       </Router>
-      
+
       {/* Uncomment this line to include StoryGame conditionally */}
       {/* <StoryGame /> */}
     </div>
