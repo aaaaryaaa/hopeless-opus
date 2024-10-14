@@ -2,7 +2,7 @@ import { styled, keyframes } from "styled-components";
 import React, { useRef, useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
-//gsap imports
+// gsap imports
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -20,21 +20,21 @@ const DivScrolling = styled.div`
 `;
 
 const Div = styled.div`
-  margin-top: 8rem; // Reduced from 12rem to 5rem
-  margin-left: 55%;
-  margin-bottom: 10rem;
+  margin-top: 6rem;
+  margin-left: 50%;
+  margin-bottom: 8rem;
   width: fit-content;
   display: flex;
   justify-content: center;
-  gap: 5rem;
+  gap: 4rem;
 
   @media (max-width: 760px) {
-    margin-left: 3em;
+    margin-left: 2em;
     width: 100%;
     padding: 0 1rem;
     flex-direction: column;
     justify-content: center;
-    gap: 5rem;
+    gap: 3rem;
     height: fit-content;
     overflow: hidden;
   }
@@ -45,8 +45,8 @@ const DivEventCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 25rem; // Reduced width from 30rem to 25rem
-  height: 25rem; // Reduced height from 30rem to 25rem
+  width: 24rem; /* Increased width */
+  height: 24rem; /* Increased height */
   background: linear-gradient(
     159.14deg,
     rgba(1, 1, 1, 0.648) -6.84%,
@@ -54,111 +54,43 @@ const DivEventCard = styled.div`
   );
   border-radius: 1rem;
   border: 1px solid rgba(170, 170, 170, 0.6);
+  padding: 3rem 2rem 0 2rem; /* Increased top padding */
+  backdrop-filter: blur(2px);
 
   @media (max-width: 760px) {
-    width: 80%;
-    height: 45rem; // Adjust height for mobile as well
-    padding: 1rem 2rem 0 2rem;
+    width: 85%;
+    height: 42rem; /* Adjusted height for mobile */
+    padding: 2rem 1.5rem 0 1.5rem;
   }
-
-  padding: 3rem 3rem 0 3rem;
-  backdrop-filter: blur(2px);
 `;
 
 const EventCardTitle = styled.div`
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: white;
+
   @media (max-width: 760px) {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 `;
 
 const EventCardBody = styled.div`
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.4;
   font-weight: 400;
   word-wrap: wrap;
   color: white;
-  @media (max-width: 760px) {
-    font-size: 1.5rem;
-    line-height: 1.4;
-  }
   margin-top: 1rem;
   border-top: solid 0.2rem rgba(255, 255, 255, 0.2);
-  padding-top: 1.5rem;
+  padding-top: 1.2rem;
+
+  @media (max-width: 760px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const DivEventCardBottom = styled.div`
   margin-top: auto;
-`;
-
-const EventCardLine = styled.div`
-  border-bottom: solid 0.2rem rgba(255, 255, 255, 0.2);
-  font-size: 1.5rem;
-  // padding-top: 2rem;
-  padding-bottom: 1.4rem;
-  label {
-    color: #9882f8;
-  }
-  span {
-    color: #fff;
-  }
-`;
-
-const EventDate = styled.div`
-  font-size: 1.2rem;
-  font-weight: 375;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  @media (max-width: 760px) {
-    font-size: 1rem;
-    padding: 1rem 0.5rem;
-  }
-`;
-
-const EventCardFooter = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 6.2rem;
-`;
-
-const HighlightButton = keyframes`
-  to {
-    border: 0.1rem solid rgba(255, 255, 255, 1);
-  }
-`;
-
-const ExpandEventButton = styled.button`
-  width: 3.5rem;
-  height: 2.5rem;
-  /* margin-right: 4rem; */
-  border-radius: 2.5rem;
-  border: 0.1rem solid rgba(255, 255, 255, 0.1);
-  background: linear-gradient(
-    93.71deg,
-    #202020 0%,
-    rgba(32, 32, 32, 0.69) 107.41%
-  );
-  color: white;
-  font-size: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &:hover {
-    cursor: pointer;
-    animation: ${HighlightButton} 0.15s linear 1 forwards;
-  }
-  @media (max-width: 760px) {
-    font-size: 2.6rem;
-    width: 6rem;
-    // padding-bottom: 2rem;
-  }
 `;
 
 const CardSlider = React.forwardRef(
@@ -184,8 +116,6 @@ const CardSlider = React.forwardRef(
             trigger: horizontalScrollingSection.current,
             pin: true,
             scrub: 1,
-            // snap: 1 / (eventCards.length - 1),
-
             end: () => "+=" + horizontalScrollingSection.current.offsetWidth,
           },
         });
@@ -195,134 +125,106 @@ const CardSlider = React.forwardRef(
     const [events, setEvents] = useState([
       {
         ID: 100,
-        Name: "Codalympics",
-        Desc: "During the event Participants will be engaged in debugging coding challenges by identifying and rectifying errors in the code. Analysing datasets to develop algorithms based on two sample input-output pairs. Teams will collaborate in a code relay challenge, where members take turns in solving complex coding problems.",
+        Name: "📅Game Schedule",
+        Desc: `October 17th: 6:30 PM - 11:30 PM<br />
+        October 18th: 12:00 AM - 12:00 PM<br />
+        October 19th: 7:30 PM - 11:30 PM<br /><br/>Don't miss out on the action!`,
         Date: "R1-(10/4/2024) R2&R3-(11/4/2024)",
-        Time: "R1-(8:30pm to 9:30pm) R2-(4pm to 6pm)\nR3-(9pm)",
-        Venue: "R1-(Online) R2-(AB5 312)\nR3-(*)",
-        "Team Size": "3-4",
-        "Prize Pool": 6000,
+        Time: "R1-(8:30pm to 9:30pm) R2-(4pm to 6pm)<br />R3-(9pm)",
+        Venue: "R1-(Online) R2-(AB5 312)<br />R3-(*)",
+        TeamSize: "3-4",
+        PrizePool: 6000,
         isIndividual: false,
-        ShortDesc:
-          "Codalympics consists of three rounds: Debug the code, analysing data and creating algorithms, and a code relay challenge to test participants' coding skills.",
+        ShortDesc: `October 17th: 6:30 PM - 11:30 PM<br />
+        October 18th: 12:00 AM - 12:00 PM<br />
+        October 19th: 7:30 PM - 11:30 PM<br />
+        <br />Don't miss out!<br />
+        Are you ready to play?`,
       },
       {
         ID: 200,
-        Name: "NeuralClash",
-        Desc: "Step into the captivating world of NeuralClash, where innovation meets friendly competition! Dive into the exciting realm of image classification, where participants of all backgrounds are welcomed with open arms. Join us for a thrilling journey filled with challenges, learning, and the chance to connect with fellow enthusiasts in a vibrant and supportive community.",
+        Name: "🏆Prizes:",
+        Desc: `1st Place: Rs 4000<br />2nd Place: Rs 3000<br />3rd Place: Rs 2000<br/><br/><b>Grand Prize Pool: Rs 9000<b> `,
         Date: "06/04/2024 to 08/04/2024",
         Time: "6th Apr 11:59pm to 8th Apr 11:59pm",
         Venue: "Online",
-        "Team Size": "1",
-        "Prize Pool": 6000,
+        TeamSize: "1",
+        PrizePool: 6000,
         isIndividual: true,
         ShortDesc:
-          "Join NeuralClash: A thrilling image classification competition for everyone! Dive in to test your ML skills, learn, and connect with fellow enthusiasts.",
+          "1st Place: Rs 4000<br />2nd Place: Rs 3000<br />3rd Place: Rs 2000",
       },
       {
         ID: 300,
-        Name: "Neural Dreams",
-        Desc: "Dive into the fascinating world of Neural Networks basics alongside Convolutional Neural Networks (CNNs) and Neural Style Transfer (NST) in our workshop. Explore how AI drives innovative artistic expression, blurring the boundaries between technology and creativity.",
+        Name: "💪🏼 How to Win",
+        Desc: `Accumulate Points: Participate in minigames and make strategic choices.<br/>
+Climb the Leaderboard: Track your progress on the live leaderboard<br/>
+Are you ready to take the top spot?`,
         Date: "06/04/2024",
         Time: "5pm to 8pm",
         Venue: "AB5 312",
-        "Team Size": "1",
+        TeamSize: "1",
         isIndividual: true,
-        ShortDesc:
-          "Unlock creative potential with our workshop on Neural Networks basics, CNNs, and NST, fostering innovative artistic expression through AI.",
+        ShortDesc: `Accumulate Points: Play minigames and make strategic choices.<br />
+        Track progress on the leaderboard.<br />Play to win!`,
       },
       {
         ID: 400,
-        Name: "DreamForge",
-        Desc: "Enter the captivating realm of DreamForge where creativity meets competition! Immerse yourself in the magic of web development by crafting dreamy full-stack applications using our carefully curated list of APIs fueled by your imagination and experiences from the workshop. You will compete to craft the most innovative dream-inspired applications, showcasing the power of imagination in action.",
+        Name: "⚙ How It Works",
+        Desc: `Each minigame has points up for grabs. Your performance directly impacts your story path.<br/>
+Prepare for a thrilling adventure where your fate lies in your hands!<br/>
+Are you ready to see where your skills will lead you?
+
+`,
         Date: "08/04/2024 to 10/04/2024",
         Time: "8th Apr 8pm to 10th Apr 8pm",
         Venue: "Online",
-        "Team Size": "4",
-        "Prize Pool": 5000,
+        TeamSize: "4",
+        PrizePool: 5000,
         isIndividual: false,
-        ShortDesc:
-          "Backend focused Web Development competition with our curated list of APIs. We also have a workshop to help you get started.",
+        ShortDesc: `Minigames offer points and influence story paths.<br />Unfold your unique adventure!`,
       },
       {
         ID: 500,
-        Name: "DevForge",
-        Desc: "Discover the art of web development in our immersive DreamForge workshop.",
+        Name: "✨ Ready For A Win?",
+        Desc: "Prepare for a thrilling adventure where your fate lies in your hands!<br/>Are you ready to see where your skills will lead you?",
         Date: "08/04/2024",
         Time: "5pm to 8pm",
         Venue: "AB5 312",
-        "Team Size": "1",
+        TeamSize: "1",
         isIndividual: true,
-        ShortDesc:
-          "Unlonaurrrrrr.",
+        ShortDesc: "Unlock web development potential!",
       },
       {
         ID: 600,
-        Name: "VoltVoyage",
-        Desc: "hellohellohello mik testing",
-        Date: "09/04/2024",
-        Time: "5pm to 8pm",
-        Venue: "Electronics Lab 1",
-        "Team Size": "1-3",
-        "Prize Pool": 5000,
-        isIndividual: false,
-        ShortDesc:
-          "VoltVoyage: hellooooo n",
-      },
-      {
-        ID: 700,
-        Name: "Commsync",
-        Desc: "Discover the intricacies of antenna-based communication, learning to navigate the invisible waves that connect our dreams. Uncover the potential of antennas in our engaging workshop. Explore practical design insights and applications for real-world innovation. ",
-        Date: "09/04/2024",
-        Time: "5pm to 8pm",
-        Venue: "Electronics Lab 1",
-        "Team Size": "1",
-        isIndividual: true,
-        ShortDesc:
-          "Commsync: jsdgyjsdhsjn.",
-      },
-      {
-        ID: 800,
-        Name: "Questscape",
-        Desc: "Teams join a three-round treasure hunt:\n1. Round 1: Teams watch a video with a blurry slideshow revealing riddle answers and receive the first hint. They focus on the video and solve a technical question and a riddle on a placard.\n2. Round 2: Teams solve a riddle to locate a place with a QR code locked by the previous round's technical question answer. Unlocking reveals the 2nd placard with new questions.\n3. Round 3: Teams complete a dare with video/photo proof. Requesting video rewatch deducts points.",
+        Name: "🎃 Join the Adventure!",
+        Desc: `Dive into Hopeless Opus and create your own epic tale!`,
         Date: "07/04/2024",
         Time: "4pm to 6pm",
         Venue: "MIT Campus",
-        "Team Size": "3",
-        "Prize Pool": 4000,
+        TeamSize: "3",
+        PrizePool: 4000,
         isIndividual: false,
-        ShortDesc:
-          "Step into the realm of mystery and adventure with our exhilarating Treasure Hunt event!",
+        ShortDesc: `Step into mystery with our exhilarating Treasure Hunt event!`,
       },
     ]);
 
     return (
       <Section id="event">
-        <div ref={forwardedRef}>
-          <DivScrolling ref={horizontalScrollingSection}>
-            <Div ref={ref}>
-              {Array.from({ length: 8 }).map((_, index) => (
-                <DivEventCard key={index} className="eventCard">
-                  <EventCardTitle>
-                    {events && events[index].Name}
-                  </EventCardTitle>
-                  <EventCardBody>
-                    {events && events[index].ShortDesc}
-                  </EventCardBody>
-                  <DivEventCardBottom>
-                    {/* <EventCardLine> */}
-                    {/* {events && events[index]["Prize Pool"] && (
-                      <div>
-                        <label>Prize Pool: </label>
-                        <span>
-                          &#8377;{events && events[index]["Prize Pool"]}
-                        </span>
-                      </div>
-                    )} */}
-                    {/* </EventCardLine> */}
-                  </DivEventCardBottom>
-                </DivEventCard>
-              ))}
+        <div ref={horizontalScrollingSection}>
+          <DivScrolling>
+            <Div>
+              {events.map((event) => {
+                return (
+                  <DivEventCard key={event.ID} className="eventCard">
+                    <EventCardTitle>{event.Name}</EventCardTitle>
+                    <EventCardBody>
+                      <div dangerouslySetInnerHTML={{ __html: event.Desc }} />
+                    </EventCardBody>
+                    <DivEventCardBottom />
+                  </DivEventCard>
+                );
+              })}
             </Div>
           </DivScrolling>
         </div>
@@ -330,7 +232,5 @@ const CardSlider = React.forwardRef(
     );
   }
 );
-
-CardSlider.displayName = "CardSlider";
 
 export default CardSlider;
