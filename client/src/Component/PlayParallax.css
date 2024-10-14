@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rancho&display=swap");
+
+:root {
+  --primary: #094b65;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  background: black;
+  min-height: 100vh;
+}
+
+#header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+#header .logo {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 2em;
+  text-decoration: none;
+}
+
+#header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#header ul li {
+  list-style: none;
+  margin-left: 20px;
+}
+
+#header ul li a {
+  text-decoration: none;
+  padding: 6px 15px;
+  color: var(--primary);
+  border-radius: 20px;
+}
+
+#header ul li a:hover,
+#header ul li a.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, black);
+  z-index: 10;
+}
+
+section img {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+section #text {
+  position: absolute;
+  color: #076066;
+  font-size: 10vw;
+  text-align: center;
+  line-height: 0.55em;
+  font-family: "Rancho", cursive;
+  transform: translateY(-50%);
+}
+
+section #text span {
+  font-size: 0.2em;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+#btn {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 30px;
+  background: #fff;
+  color: var(--primary);
+  font-size: 1.2em;
+  font-weight: 500;
+  letter-spacing: 2px;
+  border-radius: 40px;
+  transform: translateY(100px);
+}
+
+.sec {
+  position: relative;
+  padding: 100px;
+  background: black;
+}
+
+.sec h2 {
+  font-size: 3.5em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.sec p {
+  font-size: 1em;
+  color: #fff;
+}
+
+footer {
+  position: relative;
+  padding: 0px 100px;
+  background: var(--primary);
+}
+
+footer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* PlayParallax.css */
+
+/* Rules Section */
+.rules-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Styling for the list */
+.rules-section ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+/* Styling for individual list items */
+.rules-section li {
+  margin: 10px 100px; /* Spacing between list items */
+  padding-left: 20px; /* Indent for better readability */
+}
+
+/* Checkbox container styling */
+.checkbox-label {
+  display: flex;
+  align-items: left;
+  margin: 10px 0;
+}
+
+.checkbox-input {
+  margin-right: 10px; /* Adjust spacing between checkbox and label text */
+  cursor: pointer; /* Change cursor to pointer for better UX */
+  width: 20px; /* Set width */
+  height: 20px;
+  border-radius: 30px; /* Set height */
+}
+
+/* Optional: Style the checkbox itself if you want to customize it further */
+.checkbox-input:checked {
+  accent-color: #007bff; /* Change the color of the checkbox when checked */
+}
+
+/* Button styling */
+.start-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+ 
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.start-button.active {
+  background-color: #04a5a5;
+}
+
+.start-button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.start-button:hover:not(:disabled) {
+  background-color: #059b9b;
+}
+
+/* Styling for the Game Rules heading */
+.rules-section h3 {
+  font-size: 56px;
+  font-weight: bold;
+  color: #FFD700;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  letter-spacing: 14px;
+  border-bottom: 2px solid #04a5a5;
+  padding-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Add a hover effect to the heading */
+.rules-section h3:hover {
+  transform: scale(1.05); /* Slightly scale up on hover */
+}
