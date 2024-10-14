@@ -33,13 +33,22 @@ const storySchema = new mongoose.Schema({
         default: 0,
       },
       inventory: {
-        key: {
-          type: Boolean
-        },
-        umbrella: {
+        script: {
           type: Boolean
         },
         journal: {
+          type: Boolean
+        },
+        kumbh: {
+          type: Boolean
+        },
+        sword: {
+          type: Boolean
+        },
+        pickaxe: {
+          type: Boolean
+        },
+        axe: {
           type: Boolean
         }
       }

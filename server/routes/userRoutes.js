@@ -1,38 +1,38 @@
-const express = require('express')
-const jwt = require('jsonwebtoken')
-const User = require('../models/User') // Import your User model
-const router = express.Router()
+const express = require("express");
+const jwt = require("jsonwebtoken");
+const User = require("../models/User"); // Import your User model
+const router = express.Router();
 
 // Middleware to authenticate JWT
 const authMiddleware = (req, res, next) => {
-  const token = req.headers.authorization?.split(' ')[1] // Get token from the Authorization header
+  const token = req.headers.authorization?.split(" ")[1]; // Get token from the Authorization header
 
   if (!token) {
-    return res.status(401).json({ message: 'No token provided' })
+    return res.status(401).json({ message: "No token provided" });
   }
 
   jwt.verify(token, process.env.SECRET, (err, decoded) => {
     if (err) {
-      return res.status(401).json({ message: 'Unauthorized' })
+      return res.status(401).json({ message: "Unauthorized" });
     }
 
-    req.userId = decoded.id // Save user ID from the token
-    next() // Continue to the next middleware or route handler
-  })
-}
+    req.userId = decoded.id; // Save user ID from the token
+    next(); // Continue to the next middleware or route handler
+  });
+};
 
 // Route to get user details
-router.get('/getuser', authMiddleware, (req, res) => {
+router.get("/getuser", authMiddleware, (req, res) => {
   User.findById(req.userId)
-    .select('-password') // Exclude password from the response
+    .select("-password") // Exclude password from the response
     .then((user) => {
       if (!user) {
-        return res.status(404).json({ message: 'User not found' })
+        return res.status(404).json({ message: "User not found" });
       }
-      res.json(user) // Return user details
+      res.json(user); // Return user details
     })
-    .catch((err) => res.status(500).json({ error: err.message }))
-})
+    .catch((err) => res.status(500).json({ error: err.message }));
+});
 
 // Route to get leaderboard
 router.get('/leaderboard', (req, res) => {
@@ -52,72 +52,48 @@ router.get('/leaderboard', (req, res) => {
 })
 
 // Route to get all users (No authentication required)
-router.get('/allusers', (req, res) => {
+router.get("/allusers", (req, res) => {
   User.find({})
-    .select('-password') // Exclude password from the response
+    .select("-password") // Exclude password from the response
     .then((users) => {
       if (!users || users.length === 0) {
-        return res.status(404).json({ message: 'No users found' })
+        return res.status(404).json({ message: "No users found" });
       }
-      res.json(users) // Return all users
+      res.json(users); // Return all users
     })
-    .catch((err) => res.status(500).json({ error: err.message }))
-})
-// // Route to get all users
-// router.get('/allusers', authMiddleware, (req, res) => {
-//   User.find({})
-//     .select('-password') // Exclude password from the response
-//     .then((users) => {
-//       if (!users || users.length === 0) {
-//         return res.status(404).json({ message: 'No users found' })
-//       }
-//       res.json(users) // Return all users
-//     })
-//     .catch((err) => res.status(500).json({ error: err.message }))
-// })
+    .catch((err) => res.status(500).json({ error: err.message }));
+});
 
 // PUT Route to update currentStoryId and points
-router.put('/updatestory', authMiddleware, (req, res) => {
-  const { currentStoryId, points, health, money, rf, inventory } = req.body
+router.put("/updatestory", authMiddleware, (req, res) => {
+  const { currentStoryId, points, health, money, rf, inventory } = req.body;
 
-  if (!currentStoryId) {
-    return res.status(400).json({ message: 'currentStoryId is required' })
+  // Validate the required fields
+  if (
+    !currentStoryId ||
+    points === undefined ||
+    health === undefined ||
+    money === undefined ||
+    rf === undefined ||
+    inventory === undefined
+  ) {
+    return res.status(400).json({ message: "All fields are required" });
   }
 
-  if (points === undefined) {
-    return res.status(400).json({ message: 'points are required' })
-  }
-
-  if (health === undefined) {
-    return res.status(400).json({ message: 'health is required' })
-  }
-
-  if (money === undefined) {
-    return res.status(400).json({ message: 'money is required' })
-  }
-
-  if (rf === undefined) {
-    return res.status(400).json({ message: 'rf is required' })
-  }
-
-  if (inventory === undefined) {
-    return res.status(400).json({ message: 'inventory is required' })
-  }
-
-  // Find the user by req.userId and update currentStoryId and points
+  // Find the user by req.userId and update currentStoryId, points, and other attributes
   User.findByIdAndUpdate(
     req.userId,
-    { currentStoryId, points, health, money, rf, inventory }, // Update both currentStoryId and points
+    { currentStoryId, points, health, money, rf, inventory }, // Update the values
     { new: true, useFindAndModify: false } // Return the updated user and avoid deprecation warning
   )
-    .select('-password') // Exclude password from the response
+    .select("-password") // Exclude password from the response
     .then((user) => {
       if (!user) {
-        return res.status(404).json({ message: 'User not found' })
+        return res.status(404).json({ message: "User not found" });
       }
-      res.json({ message: 'Story and points updated successfully', user })
+      res.json({ message: "Story and attributes updated successfully", user });
     })
-    .catch((err) => res.status(500).json({ error: err.message }))
-})
+    .catch((err) => res.status(500).json({ error: err.message }));
+});
 
-module.exports = router
+module.exports = router;

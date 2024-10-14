@@ -83,10 +83,12 @@ const Wordle = ({ gameResult }) => {
     if (upperGuess === targetWord) {
       const score = 100 - guesses.length * 10; // Points calculation
       setPoints(score);
+      gameResult(score, true);
       setMessage(`Congratulations! You guessed the word and earned ${score} points!`);
     } else if (guesses.length === MAX_GUESSES - 1) {
       setMessage(`Game over! The word was ${targetWord}. You earned 0 points.`);
       setPoints(0); // No points if the player fails to guess
+      gameResult(0, false);
     }
   
     setGuess('');
