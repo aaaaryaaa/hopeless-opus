@@ -37,7 +37,8 @@ function App() {
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="*" element={<NotFoundPage />} />
           <Route path="/storyerror" element={<StoryError />} />
-          //<Route path="/playparallax" element={<PlayParallax />} />
+      {/* <Route path="/playparallax" element={<PlayParallax />} /> */}
+
         </Routes>
       </Router>
 
