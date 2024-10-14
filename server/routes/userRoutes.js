@@ -34,6 +34,23 @@ router.get("/getuser", authMiddleware, (req, res) => {
     .catch((err) => res.status(500).json({ error: err.message }));
 });
 
+// Route to get leaderboard
+router.get('/leaderboard', (req, res) => {
+  User.find({})
+    // .select('-password -inventory') // Exclude password and inventory from the response
+    .sort({ points: -1, time: 1 }) // Sort by points descending and time ascending
+    .then((users) => {
+      if (!users || users.length === 0) {
+        return res.status(404).json({ message: 'No users found' })
+      }
+
+      // Prepare leaderboard with ranking
+
+      res.json(users) // Return leaderboard
+    })
+    .catch((err) => res.status(500).json({ error: err.message }))
+})
+
 // Route to get all users (No authentication required)
 router.get("/allusers", (req, res) => {
   User.find({})
