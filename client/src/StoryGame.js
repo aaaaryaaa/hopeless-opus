@@ -14,6 +14,10 @@ import Minigame10 from "./Minigames/Minigame10/Minigame10"; //minigame10
 import Minigame11 from "./Minigames/Minigame11/Minigame11"; //minigame11
 import Minigame12 from "./Minigames/Minigame12/Minigame12"; //minigame12
 import Minigame13 from "./Minigames/Minigame13/Minigame13"; //minigame13
+import Minigame14 from "./Minigames/Minigame14/Minigame14";
+import Minigame15 from "./Minigames/Minigame15/Minigame15";
+import Minigame16 from "./Minigames/Minigame16/Minigame16";
+
 
 const StoryGame = () => {
   const nav = useNavigate();
@@ -621,6 +625,22 @@ const StoryGame = () => {
               {gameDialogue && gameNo === 5 && (
                 <WhackaWolf gameResult={handleMiniGameFiveResult} />
               )}
+              {gameDialogue && gameNo === 12 && (
+                <Minigame12 gameResult={handleMiniGameOneResult} />
+              )}
+              {gameDialogue&& gameNo === 13 && (
+                <Minigame13 gameResult={handleMiniGameOneResult} />
+              )}
+              {gameDialogue&& gameNo === 14 && (
+                <Minigame14 gameResult={handleMiniGameOneResult} />
+              )}
+              {gameDialogue && gameNo === 15 && (
+                <Minigame15 gameResult={handleMiniGameOneResult} />
+              )}
+              {gameDialogue && (
+                <Minigame16 gameResult={handleMiniGameOneResult} />
+              )}
+              
               {gameDialogue && gameNo===6 &&(
                 <div
                   style={{
@@ -675,6 +695,8 @@ const StoryGame = () => {
                 }}
                 className="absolute top-24 right-0"
               >
+                
+                
                 <p>Points: {points}</p>
                 <p>Health: {health}</p>
                 <p>Money: {money}</p>
