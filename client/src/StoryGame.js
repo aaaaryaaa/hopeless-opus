@@ -17,6 +17,7 @@ import Minigame13 from "./Minigames/Minigame13/Minigame13"; //minigame13
 import Minigame14 from "./Minigames/Minigame14/Minigame14";
 import Minigame15 from "./Minigames/Minigame15/Minigame15";
 import Minigame16 from "./Minigames/Minigame16/Minigame16";
+import Game from "./Minigames/Minigame18/Game";
 
 
 const StoryGame = () => {
@@ -637,7 +638,7 @@ const StoryGame = () => {
               {gameDialogue && gameNo === 15 && (
                 <Minigame15 gameResult={handleMiniGameOneResult} />
               )}
-              {gameDialogue && (
+              {gameDialogue && gameNo===16 && (
                 <Minigame16 gameResult={handleMiniGameOneResult} />
               )}
               
@@ -686,6 +687,11 @@ const StoryGame = () => {
                 </div>
               )}
               {gameDialogue && gameNo === 11 && <Minigame11 />}
+
+              {gameDialogue && (
+                <Game />  
+              )}
+
               <div
                 style={{
                   backgroundColor: "rgba(0, 0, 0, 0.7)",
@@ -697,7 +703,7 @@ const StoryGame = () => {
               >
                 
                 
-                <p>Points: {points}</p>
+                {/* <p>Points: {points}</p>
                 <p>Health: {health}</p>
                 <p>Money: {money}</p>
                 <p>Risk Factor: {rf}</p>
@@ -715,7 +721,7 @@ const StoryGame = () => {
                 <p>Minigame6 pts: {minigameSixPoints}</p>
                 <p>Minigame7 pts: {minigameSevenPoints}</p>
                 <p>Minigame8 pts: {minigameEightPoints}</p>
-                <p>Minigame9 pts: {minigameNinePoints}</p>
+                <p>Minigame9 pts: {minigameNinePoints}</p> */}
               </div>
             </div>
 
