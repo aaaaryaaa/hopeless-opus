@@ -63,52 +63,60 @@ export default function Sidebar({ isOpen, setIsOpen }) {
 
   return (
     <aside
-      className={`fixed right-0 top-0 h-full mt-28 z-[9999] bg-[#000000] text-white w-64 transition-transform duration-300 ease-in-out transform ${
+      className={`fixed right-0 top-0 h-full mt-0 z-[9999] bg-[#000000] text-white w-64 transition-transform duration-300 ease-in-out transform ${
         isOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
       <nav className="flex flex-col justify-between">
-        <ul className="space-y-6 mt-8 text-center">
-          <SidebarItem label="Team ID" value={data.teamId} />
-          <SidebarItem label="Points" value={data.points} />
-          <HealthProgress health={data.health} />
-          <SidebarItem label="Money" value={`₹${data.money}`} />
+        {localStorage.getItem("token")!==null ? (<>
+            <ul className="space-y-6 mt-8 text-center">
+                <SidebarItem label="Team ID" value={data.teamId} />
+                <SidebarItem label="Points" value={data.points} />
+                <HealthProgress health={data.health} />
+                <SidebarItem label="Money" value={`₹${data.money}`} />
 
-          {/* Inventory Dropdown */}
-          <li className="relative flex flex-col items-center text-center py-2 px-3 my-1 font-medium rounded-md cursor-pointer transition-colors">
-            <span className="text-sm">Inventory</span>
-            <ul className="space-y-2 mt-2">
-              {Object.entries(data.inventory).some(([_, item]) => item.value) ? (
-                Object.entries(data.inventory).map(([key, item], index) =>
-                  item.value ? (
-                    // <li key={index} className="text-sm">
-                    //   {key} - 
-                    // </li>
-                    <li
-                        key={index}
-                        className="text-sm cursor-pointer text-blue-700 hover:text-blue-400 transition-colors"
-                        onClick={() => navi(`/${key}`)}
-                    >
-                        {key.toUpperCase()}
-                    </li>
-                  ) : null
-                )
-              ) : (
-                <li className="text-sm text-gray-400">No items</li>
-              )}
+                {/* Inventory Dropdown */}
+                <li className="relative flex flex-col items-center text-center py-2 px-3 my-1 font-medium rounded-md cursor-pointer transition-colors">
+                    <span className="text-sm">Inventory</span>
+                    <ul className="space-y-2 mt-2">
+                    {Object.entries(data.inventory).some(([_, item]) => item.value) ? (
+                        Object.entries(data.inventory).map(([key, item], index) =>
+                        item.value ? (
+                            // <li key={index} className="text-sm">
+                            //   {key} - 
+                            // </li>
+                            <li
+                                key={index}
+                                className="text-sm cursor-pointer text-blue-700 hover:text-blue-400 transition-colors"
+                                onClick={() => navi(`/${key}`)}
+                            >
+                                {key.toUpperCase()}
+                            </li>
+                        ) : null
+                        )
+                    ) : (
+                        <li className="text-sm text-gray-400">No items</li>
+                    )}
+                    </ul>
+                </li>
             </ul>
-          </li>
-        </ul>
 
-        {/* Logout Button */}
-        <div className="py-4 border-t border-gray-700 text-center">
-          <button
-            className="rounded-xl w-[80%] bg-red-700 p-2 text-gray-200 border-none font-semibold"
-            onClick={handleLogout}
-          >
-            Logout
-          </button>
-        </div>
+            {/* Logout Button */}
+            <div className="py-4 border-t border-gray-700 text-center">
+            <button
+                className="rounded-xl w-[80%] bg-red-700 p-2 text-gray-200 border-none font-semibold"
+                onClick={handleLogout}
+            >
+                Logout
+            </button>
+                </div>
+        </>) : (<>
+            <a 
+          href="/login" 
+          className="inline-block mx-auto mt-12 px-6 py-3 text-lg font-semibold text-black bg-white rounded-lg hover:bg-gray-300 transition">
+           Login
+        </a>
+        </>)}
       </nav>
     </aside>
   );
