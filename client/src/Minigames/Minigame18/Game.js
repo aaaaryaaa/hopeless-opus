@@ -1,9 +1,8 @@
-// src/components/Game.jsx
 import React, { useState, useEffect } from 'react';
 import Gate from './Gate';
 import Scoreboard from './Scoreboard';
 import Timer from './Timer';
-import { generateCombinations } from './utils'; 
+import { generateCombinations } from './utils';
 
 const Game = () => {
   const TOTAL_GATES = 5;
@@ -16,48 +15,58 @@ const Game = () => {
   const [moves, setMoves] = useState(0);
   const [score, setScore] = useState(0);
   const [timer, setTimer] = useState(ROUND_TIME);
-  const [gameOver, setGameOver] = useState(false); // New state for game over
+  const [gameOver, setGameOver] = useState(false);
+  const [hasStarted, setHasStarted] = useState(false); // New state for start button
 
+  // Generate combinations on game start
   useEffect(() => {
     const combos = generateCombinations(TOTAL_GATES);
     setCombinations(combos);
   }, []);
 
+  // Timer logic
   useEffect(() => {
-    if (timer === 0) {
-      handleRoundEnd(); // Call this to end the game if time runs out
-      return;
-    }
+    if (!hasStarted || timer === 0) return;
 
     const countdown = setInterval(() => {
-      setTimer(prev => prev - 1);
+      setTimer((prev) => prev - 1);
     }, 1000);
 
+    if (timer === 0) {
+      setGameOver(true); // Set game over when time runs out
+      setHasStarted(false); // Stop the game
+    }
+
     return () => clearInterval(countdown);
-  }, [timer]);
+  }, [timer, hasStarted]);
+
+  const handleStart = () => {
+    setHasStarted(true);
+    setTimer(ROUND_TIME);
+    setGameOver(false);
+  };
 
   const handleToggle = (index) => {
     const updatedSwitches = [...userSwitches];
     updatedSwitches[index] = !updatedSwitches[index];
     setUserSwitches(updatedSwitches);
-    setMoves(prev => prev + 1);
+    setMoves((prev) => prev + 1);
 
     const currentCombination = combinations[currentRound - 1];
     if (arraysEqual(updatedSwitches, currentCombination)) {
-      const pointsEarned = Math.max(100 - (moves * 10), 0);
-      setScore(prev => prev + pointsEarned);
+      const pointsEarned = Math.max(100 - moves * 10, 0);
+      setScore((prev) => prev + pointsEarned);
       handleRoundEnd();
     }
   };
 
   const handleRoundEnd = () => {
     if (timer === 0) {
-      // End the game if time runs out
-      setGameOver(true);
+      setGameOver(true); // End the game if the time runs out
       return;
     }
     if (currentRound < TOTAL_GATES) {
-      setCurrentRound(prev => prev + 1);
+      setCurrentRound((prev) => prev + 1);
       setUserSwitches(Array(switchCount).fill(false));
       setMoves(0);
       setTimer(ROUND_TIME);
@@ -73,21 +82,35 @@ const Game = () => {
     setMoves(0);
     setScore(0);
     setTimer(ROUND_TIME);
-    setGameOver(false); // Reset game over state
+    setHasStarted(false);
+    setGameOver(false);
     setCombinations(generateCombinations(TOTAL_GATES));
   };
 
-  const arraysEqual = (a1, a2) => {
-    return JSON.stringify(a1) === JSON.stringify(a2);
-  };
+  const arraysEqual = (a1, a2) => JSON.stringify(a1) === JSON.stringify(a2);
 
   return (
-    <div className="p-4">
-      {gameOver ? (
-        <div className="text-2xl font-bold text-red-500 text-center mt-10">
-          Game Over! The monster caught up to you!
+    <div className="p-20">
+      {/* Game not started yet */}
+      {!hasStarted && !gameOver ? (
+        <div className="flex flex-col items-center justify-center h-screen pt-10">
+          <h1 className="text-3xl font-bold mb-4 mt-[-20em]">Ready to Play?</h1>
+          <button
+            onClick={handleStart}
+            className="bg-red-500 hover:bg-red-800 text-white font-bold py-2 px-4 rounded"
+          >
+            Start Game
+          </button>
+        </div>
+      ) : gameOver ? (
+        // Game over screen when the time runs out
+        <div className="flex flex-col items-center justify-center h-screen">
+          <h1 className="text-4xl font-bold text-red-600">Game Over!</h1>
+          <p className="text-xl mt-4">Time's up. The monster caught you!</p>
+          <p className="text-2xl mt-4">Final Score: {score}</p>
         </div>
       ) : (
+        // Game UI when the game is active
         <>
           <Scoreboard score={score} currentRound={currentRound} />
           <Timer time={timer} />

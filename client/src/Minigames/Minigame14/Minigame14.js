@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-const MorseCodeQuiz = () => {
+const Minigame14 = ({ gameResult }) => {
   // Morse code question and the correct answer
-  const correctAnswer = "In a Quiet, Affluent Neighbourhood";
+  const correctAnswer = "IN A QUIET AFFLUENT NEIGHBOURHOOD";
   const morseCodeQuestion = ".. -. / .- / --.- ..- .. . - / .- ..-. ..-. .-.. ..- . -. - / -. . .. --. .... -... --- ..- .-. .... --- --- -..";
 
   // React state variables
@@ -10,16 +10,17 @@ const MorseCodeQuiz = () => {
   const [timeLeft, setTimeLeft] = useState(30);
   const [isGameOver, setIsGameOver] = useState(false);
   const [message, setMessage] = useState('');
+  const [hasStarted, setHasStarted] = useState(false); // New state for tracking game start
 
   // Timer effect hook
   useEffect(() => {
-    if (timeLeft > 0 && !isGameOver) {
-      const timer = setInterval(() => setTimeLeft(timeLeft - 1), 1000);
+    if (timeLeft > 0 && !isGameOver && hasStarted) {
+      const timer = setInterval(() => setTimeLeft((prevTimeLeft) => prevTimeLeft - 1), 1000);
       return () => clearInterval(timer); // Clear timer on component unmount
     } else if (timeLeft === 0 && !isGameOver) {
       checkAnswer(); // Auto-check answer when time is up
     }
-  }, [timeLeft, isGameOver]);
+  }, [timeLeft, isGameOver, hasStarted]);
 
   // Handle the input change
   const handleChange = (e) => {
@@ -29,9 +30,11 @@ const MorseCodeQuiz = () => {
   // Function to check the answer
   const checkAnswer = () => {
     if (userAnswer.trim().toLowerCase() === correctAnswer.toLowerCase()) {
-      setMessage("Correct!");
+      setMessage("Correct! You win!");
+      gameResult(100, true);
     } else {
-      setMessage(`Incorrect! `);
+      setMessage(`Game Over! Incorrect answer.`);
+      gameResult(-50, false);
     }
     setIsGameOver(true); // End the game
   };
@@ -41,23 +44,44 @@ const MorseCodeQuiz = () => {
     checkAnswer();
   };
 
+  // Handle the start button click
+  const handleStart = () => {
+    setUserAnswer('');
+    setTimeLeft(30);
+    setIsGameOver(false);
+    setMessage('');
+    setHasStarted(true); // Set the game to started
+  };
+
   return (
     <div style={styles.container}>
-      <div style={styles.question}>{morseCodeQuestion}</div>
-      <input
-        type="text"
-        value={userAnswer}
-        onChange={handleChange}
-        disabled={isGameOver}
-        placeholder="Type your answer here"
-        style={styles.input}
-      />
-      <br />
-      <button onClick={handleSubmit} disabled={isGameOver} style={styles.button}>
-        Submit
-      </button>
-      <div style={styles.message}>{message}</div>
-      <div style={styles.timer}>Time left: {timeLeft}s</div>
+      {!hasStarted ? ( // Show start button if the game hasn't started
+        <button onClick={handleStart} style={styles.startButton}>
+          Start Game
+        </button>
+      ) : (
+        <>
+          {!isGameOver ? (
+            <>
+              <div style={styles.question}>{morseCodeQuestion}</div>
+              <input
+                type="text"
+                value={userAnswer}
+                onChange={handleChange}
+                placeholder="Type your answer here"
+                style={styles.input}
+              />
+              <br />
+              <button onClick={handleSubmit} style={styles.button}>
+                Submit
+              </button>
+              <div style={styles.timer}>Time left: {timeLeft}s</div>
+            </>
+          ) : (
+            <div style={styles.message}>{message}</div>
+          )}
+        </>
+      )}
     </div>
   );
 };
@@ -93,6 +117,15 @@ const styles = {
     borderRadius: '5px',
     marginTop: '10px',
   },
+  startButton: {
+    padding: '10px 20px',
+    fontSize: '16px',
+    cursor: 'pointer',
+    backgroundColor: 'green',
+    color: 'white',
+    border: 'none',
+    borderRadius: '5px',
+  },
   message: {
     fontSize: '18px',
     marginTop: '20px',
@@ -103,4 +136,4 @@ const styles = {
   },
 };
 
-export default MorseCodeQuiz;
+export default Minigame14;

@@ -14,9 +14,9 @@ const FAQ = () => {
           <span className="border-b-4 border-gray-700">Frequently Asked</span>{" "}
           <span className="text-red-900">Questions</span>
         </h1>
-        <p className="text-2xl text-gray-400">
+        {/* <p className="text-2xl text-gray-400">
           You need to come at least once in your life
-        </p>
+        </p> */}
       </div>
 
       {faqData.map((faq, index) => (

@@ -43,6 +43,7 @@ const MathematicalDroplets = ({ gameResult }) => {
   const [isGameOver, setIsGameOver] = useState(false);
   const [timeLeft, setTimeLeft] = useState(60); // 60 seconds game timer
   const [usedPositions, setUsedPositions] = useState([]); // To track used horizontal positions
+  const [hasStarted, setHasStarted] = useState(false); // State to track if the game has started
 
   // Function to add a new question
   const addNewQuestion = () => {
@@ -117,7 +118,7 @@ const MathematicalDroplets = ({ gameResult }) => {
 
         if (gameOver) {
           setIsGameOver(true);
-          gameResult(5*score)
+          gameResult(5 * score);
         }
 
         return newPositions;
@@ -157,63 +158,81 @@ const MathematicalDroplets = ({ gameResult }) => {
     });
   };
 
+  // Handle the start button click
+  const handleStart = () => {
+    setQuestions([]); // Clear previous questions
+    setAnswer(""); // Clear previous answer
+    setDropletPositions({}); // Clear droplet positions
+    setSpeed(1); // Reset speed
+    setScore(0); // Reset score
+    setIsGameOver(false); // Reset game over state
+    setTimeLeft(60); // Reset timer
+    setUsedPositions([]); // Clear used positions
+    setHasStarted(true); // Set the game to started
+    addNewQuestion(); // Start the first question immediately
+  };
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-blue-100 to-blue-500">
-      {!isGameOver ? (
-        <>
-          <div className="text-4xl font-bold mb-4 text-white">
-  Mathematical Droplets
-</div>
-
-
-
-          {/* Timer */}
-          <div className="text-xl text-white mb-4">Time Left: {timeLeft}s</div>
-
-          {/* Droplet Container */}
-          <div className="relative w-full h-96 bg-blue-200 rounded-lg overflow-hidden">
-            {questions.map((q) => (
-              <div
-                key={q.id}
-                className="absolute text-xl font-bold bg-blue-400 text-white p-6 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ease-out transform"
-                style={{
-                  top: `${dropletPositions[q.id]}%`,
-                  left: `${q.xPos}%`, // Random horizontal position
-                  width: "120px",
-                  height: "120px",
-                  transition: "top 0.05s linear",
-                }}
-              >
-                {q.question}
-              </div>
-            ))}
-
-            {/* Puddle at the bottom */}
-            <div className="absolute bottom-0 left-0 right-0 bg-blue-700 h-5 rounded-b-lg"></div>
-          </div>
-
-          {/* Single Input field for all answers */}
-          <input
-            type="text"
-            value={answer}
-            onChange={handleInputChange}
-            className={`mt-8 px-4 py-2 rounded-md shadow-lg text-xl text-center ${
-              isGameOver ? "bg-gray-300" : ""
-            }`} // Gray out input when game is over
-            placeholder="Type your answer..."
-            autoFocus
-            disabled={isGameOver} // Disable input when game is over
-          />
-
-          {/* Score display */}
-          <div className="mt-4 text-2xl text-white">Score: {score}</div>
-        </>
+      {!hasStarted ? ( // Show start button if the game hasn't started
+        <button onClick={handleStart} className="px-6 py-3 bg-blue-800 text-white text-xl rounded-md">
+          Start Game
+        </button>
       ) : (
-        <div className="flex flex-col items-center">
-          <div className="text-3xl font-bold text-white">
-            Game Over! Your Score: {score}
-          </div>
-        </div>
+        <>
+          {!isGameOver ? (
+            <>
+              <div className="text-4xl font-bold mb-4 text-white">Mathematical Droplets</div>
+
+              {/* Timer */}
+              <div className="text-xl text-white mb-4">Time Left: {timeLeft}s</div>
+
+              {/* Droplet Container */}
+              <div className="relative w-full h-96 bg-blue-200 rounded-lg overflow-hidden">
+                {questions.map((q) => (
+                  <div
+                    key={q.id}
+                    className="absolute text-xl font-bold bg-blue-400 text-white p-6 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ease-out transform"
+                    style={{
+                      top: `${dropletPositions[q.id]}%`,
+                      left: `${q.xPos}%`, // Random horizontal position
+                      width: "120px",
+                      height: "120px",
+                      transition: "top 0.05s linear",
+                    }}
+                  >
+                    {q.question}
+                  </div>
+                ))}
+
+                {/* Puddle at the bottom */}
+                <div className="absolute bottom-0 left-0 right-0 bg-blue-700 h-5 rounded-b-lg"></div>
+              </div>
+
+              {/* Single Input field for all answers */}
+              <input
+                type="text"
+                value={answer}
+                onChange={handleInputChange}
+                className={`mt-8 px-4 py-2 rounded-md shadow-lg text-xl text-center ${
+                  isGameOver ? "bg-gray-300" : ""
+                }`} // Gray out input when game is over
+                placeholder="Type your answer..."
+                autoFocus
+                disabled={isGameOver} // Disable input when game is over
+              />
+
+              {/* Score display */}
+              <div className="mt-4 text-2xl text-white">Score: {score}</div>
+            </>
+          ) : (
+            <div className="flex flex-col items-center">
+              <div className="text-3xl font-bold text-white">
+                Game Over! Your Score: {score}
+              </div>
+            </div>
+          )}
+        </>
       )}
     </div>
   );
