@@ -14,7 +14,7 @@ import Minigame10 from "./Minigames/Minigame10/Minigame10"; //minigame10
 import Minigame11 from "./Minigames/Minigame11/Minigame11"; //minigame11
 import Minigame12 from "./Minigames/Minigame12/Minigame12"; //minigame12
 import Minigame13 from "./Minigames/Minigame13/Minigame13"; //minigame13
-import Minigame14 from "./Minigames/Minigame14/Minigame14";
+import Minigame14 from "./Minigames/Minigame14/Minigame14"; //minigame14
 import Minigame15 from "./Minigames/Minigame15/Minigame15";
 import Minigame16 from "./Minigames/Minigame16/Minigame16";
 import Minigame18 from "./Minigames/Minigame18/Game";
@@ -49,6 +49,49 @@ const StoryGame = () => {
   const [minigameNinePoints, setMinigameNinePoints] = useState(0);
   const [minigameTenPoints, setMinigameTenPoints] = useState(0);
   const [minigameElevenPoints, setMinigameElevenPoints] = useState(0);
+  const [minigameFourteenWon, setMinigameFourteenWon] = useState(false);
+  const [minigameFourteenPoints, setMinigameFourteenPoints] = useState(0);
+
+
+  //bgimg ka array
+  const bgarray = [
+    '',//0
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728917655/1.png', //1
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728930116/2_1_uldavh.png', //2
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921617/3_c82xob_x6kpxe.png', //3
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921635/4_ay2tal_uv9i1u.png', //4
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921639/5_v01egf_du9xqs.png', //5
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921641/6_kffzxo_aungzz.png', //6
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918610/7_cfoetn.png', //7
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728922012/8_i63knk.png', //8
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921654/9_jq7f7b_kbae5g.png', //9
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921617/10_fzpjgp_uyjc1e.png', //10
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921653/11_aljo7g_jugaqe.png', //11
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728932361/12_o_auarlv.png', //12
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921641/13_fjmu45_douwxr.jpg', //13
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728922300/14_yjbyhz_c_pad_b_gen_fill_w_1440_h_1024_lxm2vt.png', //14
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728922043/15_aoxwgf.png', //15
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728922976/16_hcbmak_arju7k.png', //16
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728922977/17_drqzlg_njpoul.png', //17
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728922649/18_twrzq6_c_pad_b_gen_fill_w_1440_h_1024_dfkpnu.png', //18
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728920787/19_l3fpqd_c_pad_b_gen_fill_w_1440_h_1024_smva4a.png', //19
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918649/20_ratvde.png', //20
+    //21
+    //22
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728932471/23_wpseh7.png', //23
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921645/24_osspg4_hkaskt.png', //24
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728920134/25_k81ope_c_pad_b_gen_fill_w_1440_h_1024_cfpgar.png', //25
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728920666/26_ne9l6b_c_pad_b_gen_fill_w_1440_h_1024_b8fusi.png', //26
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918667/27_oy5z45.png', //27
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918686/28_x9gtno.png', //28
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728920544/29_svbxaf_c_pad_b_gen_fill_w_1440_h_1024_hrvuya.png', //29
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728920337/30_bj19em_c_pad_b_gen_fill_w_1440_h_1024_ostomm.png', //30
+    //31
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918687/32_k6jarr.png', //32
+    //33
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918699/34_i9wrzd.png', //34
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918705/35_p4srrh.png', //35
+  ];
 
   //function for minigame 1
   const handleMiniGameOneResult = (pts, won) => {
@@ -107,6 +150,12 @@ const StoryGame = () => {
     setMinigameElevenPoints(pts); // Update the state based on the mini-game result
     console.log(`Player got: ${pts}`);
   };
+
+  const handleMiniGameFourteenResult = (pts, won) => {
+    setMinigameFourteenPoints(pts);
+    setMinigameFourteenWon(won);
+    console.log(`Player got: ${pts}`);
+  }
 
   // Fetch user details only when the component mounts
   async function fetchUserDetails() {
@@ -568,6 +617,34 @@ const StoryGame = () => {
             inv
           ); // Update the story ID and points in the backend
       }
+
+      if (gameNo === 14) {
+        if (points === null) setPoints(0);
+        const updatedPoints = points + minigameFourteenPoints; // Add option points to current points
+        const updatedHealth = health;
+        const updatedMoney = money;
+        const updatedRF = rf;
+        console.log(updatedPoints, points);
+        console.log(updatedHealth, health);
+        console.log(updatedMoney, money);
+        console.log(updatedRF, rf);
+        setPoints(updatedPoints); // Update the UI with new points
+        setHealth(updatedHealth);
+        setMoney(updatedMoney);
+        setRF(updatedRF);
+        const inv = inventory;
+
+        if(gameDialogue && gameNo===14){
+          if(minigameFourteenWon){
+            fetchStory('1101');
+             updateCurrentStoryIdAndPoints('1101', updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+          } else{
+            fetchStory('1102');
+             updateCurrentStoryIdAndPoints('1102', updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+          } 
+        }
+      }
+      
     } catch (error) {
       console.error("Error fetching user details:", error.message);
     }
@@ -589,7 +666,7 @@ const StoryGame = () => {
       className="bg-gray-900"
       style={{
         backgroundColor: "black",
-        backgroundImage: `url(${story?.bgimg})`,
+        backgroundImage: `url(${bgarray[story?.snippet[snippetIndex].bgIndex]})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -633,7 +710,7 @@ const StoryGame = () => {
                 <Minigame13 gameResult={handleMiniGameOneResult} /> //Crafting Table
               )}
               {gameDialogue&& gameNo === 14 && (
-                <Minigame14 gameResult={handleMiniGameOneResult} /> //Morse Code
+                <Minigame14 gameResult={handleMiniGameFourteenResult} /> //Morse Code
               )}
               {gameDialogue && gameNo === 15 && (
                 <Minigame15 gameResult={handleMiniGameOneResult} /> //Dino ahh Game
@@ -755,18 +832,32 @@ const StoryGame = () => {
                     ))
                   ) : (
                     <>
-                      <button
-                        style={{
-                          backgroundColor: "rgba(0, 0, 0, 0.7)", // Semi-transparent background for the text box
-                          padding: "20px",
-                          borderRadius: "10px",
-                          width: "100%",
-                          margin: "1rem 0.5rem",
-                        }}
-                        onClick={handleGameNext}
-                      >
-                        Finish Minigame
-                      </button>
+                      {gameNo !== 0 ? (<>
+                        <button
+                          style={{
+                            backgroundColor: "rgba(0, 0, 0, 0.7)", // Semi-transparent background for the text box
+                            padding: "20px",
+                            borderRadius: "10px",
+                            width: "100%",
+                            margin: "1rem 0.5rem",
+                          }}
+                          onClick={handleGameNext}
+                        >
+                          Finish Minigame
+                        </button>
+                      </>): (<>
+                        <button
+                          style={{
+                            backgroundColor: "rgba(0, 0, 0, 0.7)", // Semi-transparent background for the text box
+                            padding: "20px",
+                            borderRadius: "10px",
+                            width: "100%",
+                            margin: "1rem 0.5rem",
+                          }}
+                        >
+                          Will be continued in Phase 2.
+                        </button>
+                      </>)}
                     </>
                   )}
                 </div>
