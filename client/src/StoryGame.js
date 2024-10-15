@@ -17,6 +17,7 @@ import Minigame13 from "./Minigames/Minigame13/Minigame13"; //minigame13
 import Minigame14 from "./Minigames/Minigame14/Minigame14"; //minigame14
 import Minigame15 from "./Minigames/Minigame15/Minigame15";
 import Minigame16 from "./Minigames/Minigame16/Minigame16";
+import Minigame17 from "./Minigames/Minigame17/Minigame17";
 import Minigame18 from "./Minigames/Minigame18/Game";
 
 
@@ -717,6 +718,10 @@ const StoryGame = () => {
               )}
               {gameDialogue && gameNo===16 && (
                 <Minigame16 gameResult={handleMiniGameOneResult} /> //Flash Game
+              )}
+
+              {gameDialogue && gameNo===17 && (
+                <Minigame17 gameResult={handleMiniGameOneResult} /> //Wire Game
               )}
               
               {gameDialogue && gameNo===6 &&(
