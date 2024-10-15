@@ -19,6 +19,61 @@ import Minigame15 from "./Minigames/Minigame15/Minigame15";
 import Minigame16 from "./Minigames/Minigame16/Minigame16";
 import Minigame17 from "./Minigames/Minigame17/Minigame17";
 import Minigame18 from "./Minigames/Minigame18/Game";
+import Typewriter from 'typewriter-effect';
+
+const SequentialTypewriter = ({
+  lines,
+  typingSpeed = 20,  // Faster typing speed
+  delayBetweenLines = 300, // Reduced delay between lines for quicker transitions
+  onComplete,  // Callback to signal completion
+}) => {
+  const [currentLineIndex, setCurrentLineIndex] = useState(0);
+  const [displayedLines, setDisplayedLines] = useState([]);
+
+  useEffect(() => {
+    if (currentLineIndex < lines.length) {
+      const timeout = setTimeout(() => {
+        // Add the current line to the displayedLines array at the end
+        setDisplayedLines((prevLines) => [
+          ...prevLines,
+          lines[currentLineIndex], // Add the new line at the bottom
+        ]);
+        setCurrentLineIndex(currentLineIndex + 1); // Move to the next line
+      }, typingSpeed * lines[currentLineIndex].length + delayBetweenLines);
+
+      return () => clearTimeout(timeout); // Clean up the timeout
+    } else {
+      // Call the onComplete callback if all lines have been displayed
+      if (onComplete) {
+        onComplete(); 
+      }
+    }
+  }, [currentLineIndex, lines, typingSpeed, delayBetweenLines, onComplete]);
+
+  return (
+    <div>
+      {/* Render all displayed lines as static text */}
+      {displayedLines.map((line, index) => (
+        <div key={index} style={{ marginBottom: '10px' }}>
+          {line} {/* Display the line directly */}
+        </div>
+      ))}
+
+      {/* Render the typewriter effect for the current line */}
+      {currentLineIndex < lines.length && (
+        <Typewriter
+          options={{
+            strings: [lines[currentLineIndex]], // Only type the current line
+            autoStart: true,
+            loop: false,
+            delay: typingSpeed,  // Set typing speed for each line
+          }}
+        />
+      )}
+    </div>
+  );
+};
+
 
 
 const StoryGame = () => {
@@ -878,11 +933,23 @@ const StoryGame = () => {
               }}
             >
               {/* <p>{story.snippet[snippetIndex].text}</p> */}
-              {story.snippet[snippetIndex].text
+              
+              {/* {story.snippet[snippetIndex].text
                 .split("\n")
                 .map((line, index) => (
                   <p key={index}>{line}</p>
-                ))}
+                ))} */}
+
+
+<SequentialTypewriter
+  lines={story.snippet[snippetIndex].text.split("\n")} // Split the text into lines
+  typingSpeed={100} // Adjust typing speed if necessary
+  delayBetweenLines={500} // Delay between lines
+  onComplete={() => console.log('All lines displayed!')} // Optional callback
+/>
+
+                
+
               {story.options.length !== 0 &&
                 snippetIndex === story.snippet.length - 1 && (
                   <p className="text-end">
