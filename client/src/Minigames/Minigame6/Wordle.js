@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './Wordle.css';
 
-const WORD_LIST = ["FABLE", "MAJOR", "STONY", "RAINY", "CLUEY", "TEXTS", "SCARE", "FIRST", "TIMED", "DEPTH", 
-  "ASHES", "FIREY", "CYCLE", "GUARD", "BOWED", "FINDY", "FUNDS", "BLOOD", "QUEST", "PARTY", 
-  "FAILS", "RIOT", "CRYPT", "FLARE", "SHADE", "BREAK", "GAZE", "CLOCK", "MOB", "BUCKS", "SHIFT", 
-  "EMBER", "CAVE", "CHILL", "RALLY", "FLASH", "WHISP", "PROBE", "COVER", "SMELL", "SCORE", 
-  "RIDEY", "REALM", "HITCH", "GREEN", "CRUDE", "DARKY", "CHAIN", "GANGY", "FLOCK", "GRAD", 
-  "CHESS", "BIKE", "BRAIN", "FEARY", "GLOOM", "GAMES", "EERIE", "SCAN", "LOGIC", "SPEED", 
-  "CASHY", "CLASS", "TRAIL", "HASTY", "WRITE", "GRIMY", "DREAD", "HAUNT", "BRAKE", "RICHY", 
-  "TENSE", "GEARS", "CLUES", "STUDY", "PASTY", "DIARY", "TREND", "SCARY", "GUNKY", "ROCKY", 
-  "GHOUL", "VAGUE", "EPOCH", "BUMPY", "COINS", "HONOR", "YOUTH", "CHRON", "GLINT", "OMINY", 
-  "NOTES", "ADATE", "LOGS", "MONEY", "ESSAY"];
+const WORD_LIST = ["BRAVE", "CHAOS", "FLAIR", "GRACE", "SHINE", "BLAST", "CLOUD", "QUEST", "PEACE", "SMILE", 
+  "JOKER", "DREAM", "LIGHT", "BLINK", "TWINK", "BRISK", "PRIZE", "STORM", "EARTH", "WATER", 
+  "FIERY", "WOODS", "STONE", "CRISP", "FRUIT", "STALK", "CLIMB", "CLIFF", "GLASS", "SKIES", 
+  "SPACE", "STARS", "MOONY", "OCEAN", "WINGS", "GREEN", "RIDER", "FLUSH", "PULSE", "DRIFT", 
+  "SCOPE", "GRASP", "PLANS", "PAPER", "GRIND", "BUILD", "HOUSE", "MOUNT", "CARRY", "SPEED", 
+  "SHIFT", "REACH", "PIVOT", "BLEND", "TASTE", "FRESH", "SPICE", "CLEAN", "TREND", "SWIFT", 
+  "TRICK", "SKILL", "CRAFT", "BRICK", "TOOLS", "METAL", "BEAST", "SHARP", "QUIET", "SHOCK", 
+  "CRANE", "FIELD", "TREES", "FAUNA", "FAITH", "AHEAD", "DRIVE", "MOTOR", "HAZEL", "LUSHY", 
+  "STEEL", "MIGHT", "SNEAK", "BLISS", "SLEEP", "NIGHT", "BLANK", "CLOCK", "WHEAT", "TOAST", 
+  "SOUND", "TUNES", "LUNCH", "SNACK", "CRISP", "HAPPY", "LAUGH", "FROST", "CHILL", "SPARK"];
 
 const MAX_GUESSES = 6; // Maximum number of guesses allowed
 

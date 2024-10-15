@@ -37,28 +37,35 @@ const Nav = () => {
           <a href="/" className="hopeless-name">Hopeless Opus</a>
         </div>
 
-        <ul className={`nav-links ${isMobileMenuOpen ? "nav-links-mobile" : ""}`}>
-          <li><button onClick={() => navigate("/")}>Home</button></li>
-          <li><button onClick={() => navigate("/play")}>Play</button></li>
-          <li><button onClick={() => navigate("/about")}>About</button></li>
-          <li><button onClick={() => navigate("/contact")}>Contact</button></li>
-          {/* <li><button onClick={() => navigate("/register")}>Register</button></li> */}
-          {localStorage.getItem("token")===null && (<li><button onClick={() => navigate("/login")}>Login</button></li>)}
-        </ul>
+        <div className="">
+          <ul className={`nav-links ${isMobileMenuOpen ? "nav-links-mobile" : ""}`}>
+            <li><button onClick={() => navigate("/")}>Home</button></li>
+            <li><button onClick={() => navigate("/play")}>Play</button></li>
+            <li><button onClick={() => navigate("/about")}>About</button></li>
+            <li><button onClick={() => navigate("/contact")}>Contact</button></li>
+            {/* <li><button onClick={() => navigate("/register")}>Register</button></li> */}
+            {localStorage.getItem("token")===null && (<li><button onClick={() => navigate("/login")}>Login</button></li>)}
+          </ul>
+        </div> 
 
-        <ul className={`nav-dash ${isMobileMenuOpen ? "nav-dash-mobile" : ""}`}>
-          <div className="drawer drawer-end">
-            <div className="drawer-content">
-              <button onClick={toggleSidebar} className="relative inline-block">
-                <img
-                  src="https://res.cloudinary.com/diswj8gya/image/upload/v1728568126/dash_zjkend.svg"
-                  alt="Dashboard"
-                  className="w-12 h-12 transition-opacity duration-200 hover:opacity-60 rounded-full"
-                />
-              </button>
+
+        <div className="lg:w-[5rem] w-full">
+        <div className="w-[5rem] ml-auto mr-auto">
+          <ul className={`nav-dash ${isMobileMenuOpen ? "nav-dash-mobile" : ""}`}>
+            <div className="drawer drawer-end">
+              <div className="drawer-content">
+                <button onClick={toggleSidebar} className="relative inline-block">
+                  <img
+                    src="https://res.cloudinary.com/diswj8gya/image/upload/v1728568126/dash_zjkend.svg"
+                    alt="Dashboard"
+                    className="w-12 h-12 transition-opacity duration-200 hover:opacity-60 rounded-full"
+                  />
+                </button>
+              </div>
             </div>
-          </div>
-        </ul>
+          </ul>
+        </div>
+        </div>
 
         <div className="mobile-menu-icon" onClick={toggleMobileMenu}>
           {isMobileMenuOpen ? <>&#x2715;</> : <>&#9776;</>}
