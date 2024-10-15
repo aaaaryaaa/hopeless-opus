@@ -14,7 +14,7 @@ import Minigame10 from "./Minigames/Minigame10/Minigame10"; //minigame10
 import Minigame11 from "./Minigames/Minigame11/Minigame11"; //minigame11
 import Minigame12 from "./Minigames/Minigame12/Minigame12"; //minigame12
 import Minigame13 from "./Minigames/Minigame13/Minigame13"; //minigame13
-import Minigame14 from "./Minigames/Minigame14/Minigame14";
+import Minigame14 from "./Minigames/Minigame14/Minigame14"; //minigame14
 import Minigame15 from "./Minigames/Minigame15/Minigame15";
 import Minigame16 from "./Minigames/Minigame16/Minigame16";
 import Game from "./Minigames/Minigame18/Game";
@@ -49,6 +49,8 @@ const StoryGame = () => {
   const [minigameNinePoints, setMinigameNinePoints] = useState(0);
   const [minigameTenPoints, setMinigameTenPoints] = useState(0);
   const [minigameElevenPoints, setMinigameElevenPoints] = useState(0);
+  const [minigameFourteenWon, setMinigameFourteenWon] = useState(false);
+  const [minigameFourteenPoints, setMinigameFourteenPoints] = useState(0);
 
 
   //bgimg ka array
@@ -148,6 +150,12 @@ const StoryGame = () => {
     setMinigameElevenPoints(pts); // Update the state based on the mini-game result
     console.log(`Player got: ${pts}`);
   };
+
+  const handleMiniGameFourteenResult = (pts, won) => {
+    setMinigameFourteenPoints(pts);
+    setMinigameFourteenWon(won);
+    console.log(`Player got: ${pts}`);
+  }
 
   // Fetch user details only when the component mounts
   async function fetchUserDetails() {
@@ -609,6 +617,34 @@ const StoryGame = () => {
             inv
           ); // Update the story ID and points in the backend
       }
+
+      if (gameNo === 14) {
+        if (points === null) setPoints(0);
+        const updatedPoints = points + minigameFourteenPoints; // Add option points to current points
+        const updatedHealth = health;
+        const updatedMoney = money;
+        const updatedRF = rf;
+        console.log(updatedPoints, points);
+        console.log(updatedHealth, health);
+        console.log(updatedMoney, money);
+        console.log(updatedRF, rf);
+        setPoints(updatedPoints); // Update the UI with new points
+        setHealth(updatedHealth);
+        setMoney(updatedMoney);
+        setRF(updatedRF);
+        const inv = inventory;
+
+        if(gameDialogue && gameNo===14){
+          if(minigameFourteenWon){
+            fetchStory('1101');
+             updateCurrentStoryIdAndPoints('1101', updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+          } else{
+            fetchStory('1102');
+             updateCurrentStoryIdAndPoints('1102', updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+          } 
+        }
+      }
+      
     } catch (error) {
       console.error("Error fetching user details:", error.message);
     }
@@ -674,7 +710,7 @@ const StoryGame = () => {
                 <Minigame13 gameResult={handleMiniGameOneResult} />
               )}
               {gameDialogue&& gameNo === 14 && (
-                <Minigame14 gameResult={handleMiniGameOneResult} />
+                <Minigame14 gameResult={handleMiniGameFourteenResult} />
               )}
               {gameDialogue && gameNo === 15 && (
                 <Minigame15 gameResult={handleMiniGameOneResult} />
@@ -796,18 +832,32 @@ const StoryGame = () => {
                     ))
                   ) : (
                     <>
-                      <button
-                        style={{
-                          backgroundColor: "rgba(0, 0, 0, 0.7)", // Semi-transparent background for the text box
-                          padding: "20px",
-                          borderRadius: "10px",
-                          width: "100%",
-                          margin: "1rem 0.5rem",
-                        }}
-                        onClick={handleGameNext}
-                      >
-                        Finish Minigame
-                      </button>
+                      {gameNo !== 0 ? (<>
+                        <button
+                          style={{
+                            backgroundColor: "rgba(0, 0, 0, 0.7)", // Semi-transparent background for the text box
+                            padding: "20px",
+                            borderRadius: "10px",
+                            width: "100%",
+                            margin: "1rem 0.5rem",
+                          }}
+                          onClick={handleGameNext}
+                        >
+                          Finish Minigame
+                        </button>
+                      </>): (<>
+                        <button
+                          style={{
+                            backgroundColor: "rgba(0, 0, 0, 0.7)", // Semi-transparent background for the text box
+                            padding: "20px",
+                            borderRadius: "10px",
+                            width: "100%",
+                            margin: "1rem 0.5rem",
+                          }}
+                        >
+                          Will be continued in Phase 2.
+                        </button>
+                      </>)}
                     </>
                   )}
                 </div>

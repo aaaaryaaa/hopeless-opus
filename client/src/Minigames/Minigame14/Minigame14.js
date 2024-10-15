@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-const MorseCodeQuiz = () => {
+const Minigame14 = ({ gameResult }) => {
   // Morse code question and the correct answer
-  const correctAnswer = "In a Quiet, Affluent Neighbourhood";
+  const correctAnswer = "IN A QUIET AFFLUENT NEIGHBOURHOOD";
   const morseCodeQuestion = ".. -. / .- / --.- ..- .. . - / .- ..-. ..-. .-.. ..- . -. - / -. . .. --. .... -... --- ..- .-. .... --- --- -..";
 
   // React state variables
@@ -30,8 +30,10 @@ const MorseCodeQuiz = () => {
   const checkAnswer = () => {
     if (userAnswer.trim().toLowerCase() === correctAnswer.toLowerCase()) {
       setMessage("Correct!");
+      gameResult(100, true);
     } else {
       setMessage(`Incorrect! `);
+      gameResult(-50, false);
     }
     setIsGameOver(true); // End the game
   };
@@ -43,6 +45,7 @@ const MorseCodeQuiz = () => {
 
   return (
     <div style={styles.container}>
+      <div>Give the answer in All Caps: </div>
       <div style={styles.question}>{morseCodeQuestion}</div>
       <input
         type="text"
@@ -103,4 +106,4 @@ const styles = {
   },
 };
 
-export default MorseCodeQuiz;
+export default Minigame14;
