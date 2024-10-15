@@ -58,17 +58,18 @@ ul {
 }
 
 .nav-links {
-  margin: 1em;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
-  gap: 2rem;
-  padding-left: 15%;
-  padding-right: 2%;
+  /* padding-left: 5rem;
+  padding-right: 5rem; */
   flex: 1;
   transition: all 0.3s ease-in-out;
 }
 
 .nav-links li {
   text-align: center;
+  margin: 0 1em;
   transition: all 0.3s ease-in-out;
   font-family: "Archivo";
 }
@@ -97,6 +98,8 @@ ul {
 .nav-dash {
   display: flex;
   gap: 2rem;
+  margin: 0.1em;
+  padding: 0.1em;
   z-index: 1002;
 }
 
@@ -127,7 +130,7 @@ ul {
   z-index: 1001;
 }
 
-@media (max-width: 1282px) {
+@media (max-width: 992px) {
   .nav-links {
     display: none;
     flex-direction: column;
@@ -211,9 +214,13 @@ ul {
     z-index: 1001;
   }
 
+  .nav-links-mobile ul{
+    padding: 0;
+  }
+
   .nav-links-mobile li button {
     font-size: 0.5em;
-    padding: 0.3rem 2rem;
+    padding: 0.3rem rem;
     width: auto;
     text-align: center;
     background-color: transparent;
