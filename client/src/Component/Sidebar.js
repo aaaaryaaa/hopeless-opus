@@ -53,7 +53,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
 
   useEffect(() => {
     fetchUserDetails(); // Fetch user details when the component mounts
-  }, []); // Empty dependency array ensures it runs only once when the component mounts
+  }, [isOpen]); // Empty dependency array ensures it runs only once when the component mounts
 
   const handleLogout = () => {
     localStorage.removeItem("token");
