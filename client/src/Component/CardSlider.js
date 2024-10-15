@@ -20,7 +20,7 @@ const DivScrolling = styled.div`
 `;
 
 const Div = styled.div`
-  margin-top: 6rem;
+  margin-top: 15rem;
   margin-left: 50%;
   margin-bottom: 8rem;
   width: fit-content;
