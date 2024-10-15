@@ -159,9 +159,39 @@
   }
 
   @media (max-width: 480px) {
+    .acumen-title{
+      color: white;
+      font-size: 2em;
+      padding: 0 1.5em 0 1.5em;
+      margin: 0 1em 0.5em 1em;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  
+    .acumen-para{
+      margin-bottom: 2em;
+      font-size: 1em;
+      font-weight: 100;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .hopeless-title{
+      color: white;
+      font-size: 2em;
+      padding: 0 1.5em 0 1.5em;
+      margin: 0 1em 0.5em 1em;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  
+    .hopeless-para{
+      margin-bottom: 3em;
+      font-size: 1em;
+      font-weight: 100;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
     .dev-grid {
       grid-template-columns: 1fr;
     }
+
   }
    
 

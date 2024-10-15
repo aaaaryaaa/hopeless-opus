@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import BaseUrl from "./BaseUrl";
 import { useNavigate } from "react-router-dom";
-import HammerGame from "./Minigames/Minigame1/HammerGame"; //minigame1
+import Minigame1 from "./Minigames/Minigame1/HammerGame"; //minigame1
 import Minigame2 from "./Minigames/Minigame2/Minigame2"; //minigame2
-import MazeGame from "./Minigames/Minigame3/MazeGame"; //minigame3
-import Main from "./Minigames/Minigame4/Main"; //minigame4
-import WhackaWolf from "./Minigames/Minigame5/WhackaWolf"; //minigame5
-import Wordle from "./Minigames/Minigame6/Wordle"; //minigame6
-import MathematicalDroplets from "./Minigames/Minigame7/MathematicalDroplets"; //minigame7
+import Minigame3 from "./Minigames/Minigame3/MazeGame"; //minigame3
+import Minigame4 from "./Minigames/Minigame4/Main"; //minigame4
+import Minigame5 from "./Minigames/Minigame5/WhackaWolf"; //minigame5
+import Minigame6 from "./Minigames/Minigame6/Wordle"; //minigame6
+import Minigame7 from "./Minigames/Minigame7/MathematicalDroplets"; //minigame7
 import Minigame8 from "./Minigames/Minigame8/Minigame8"; //minigame8
 import Minigame9 from "./Minigames/Minigame9/Minigame9"; //minigame9
 import Minigame10 from "./Minigames/Minigame10/Minigame10"; //minigame10
@@ -17,7 +17,7 @@ import Minigame13 from "./Minigames/Minigame13/Minigame13"; //minigame13
 import Minigame14 from "./Minigames/Minigame14/Minigame14"; //minigame14
 import Minigame15 from "./Minigames/Minigame15/Minigame15";
 import Minigame16 from "./Minigames/Minigame16/Minigame16";
-import Game from "./Minigames/Minigame18/Game";
+import Minigame18 from "./Minigames/Minigame18/Game";
 
 
 const StoryGame = () => {
@@ -688,35 +688,35 @@ const StoryGame = () => {
           <>
             <div className="text-end h-[100vh]">
               {gameDialogue && gameNo === 1 && (
-                <HammerGame gameResult={handleMiniGameOneResult} />
+                <Minigame1 gameResult={handleMiniGameOneResult} /> //Hammer Game
               )}
-              {gameDialogue && gameNo === 2 && (
-                <Minigame2 gameResult={handleMiniGameTwoResult} />
+              {gameDialogue  && gameNo === 2 && (
+                <Minigame2 gameResult={handleMiniGameTwoResult} /> //Memory Game
               )}{" "}
               {/*problem*/}
               {gameDialogue && gameNo === 3 && (
-                <MazeGame gameResult={handleMiniGameThreeResult} className="" />
+                <Minigame3 gameResult={handleMiniGameThreeResult} className="" /> //Fucked maze
               )}
               {gameDialogue && gameNo === 4 && (
-                <Main gameResult={handleMiniGameFourResult} />
+                <Minigame4 gameResult={handleMiniGameFourResult} /> //Code Debugger game
               )}
               {gameDialogue && gameNo === 5 && (
-                <WhackaWolf gameResult={handleMiniGameFiveResult} />
+                <Minigame5 gameResult={handleMiniGameFiveResult} /> //WhackAWolf
               )}
               {gameDialogue && gameNo === 12 && (
-                <Minigame12 gameResult={handleMiniGameOneResult} />
+                <Minigame12 gameResult={handleMiniGameOneResult} /> //Jungle Maze
               )}
               {gameDialogue&& gameNo === 13 && (
-                <Minigame13 gameResult={handleMiniGameOneResult} />
+                <Minigame13 gameResult={handleMiniGameOneResult} /> //Crafting Table
               )}
               {gameDialogue&& gameNo === 14 && (
-                <Minigame14 gameResult={handleMiniGameFourteenResult} />
+                <Minigame14 gameResult={handleMiniGameFourteenResult} /> //Morse Code
               )}
               {gameDialogue && gameNo === 15 && (
-                <Minigame15 gameResult={handleMiniGameOneResult} />
+                <Minigame15 gameResult={handleMiniGameOneResult} /> //Dino ahh Game
               )}
               {gameDialogue && gameNo===16 && (
-                <Minigame16 gameResult={handleMiniGameOneResult} />
+                <Minigame16 gameResult={handleMiniGameOneResult} /> //Flash Game
               )}
               
               {gameDialogue && gameNo===6 &&(
@@ -728,16 +728,16 @@ const StoryGame = () => {
                     height: "115%",
                   }}
                 >
-                  <Wordle gameResult={handleMiniGameSixResult} />
-                </div>
+                  <Minigame6 gameResult={handleMiniGameSixResult} />
+                </div> //Wordle
               )}{" "}
               {/*will be fixed */}
               {gameDialogue && gameNo === 7 && (
-                <MathematicalDroplets gameResult={handleMiniGameSevenResult} />
+                <Minigame7 gameResult={handleMiniGameSevenResult} /> //Mathematical Droplets
               )}{" "}
               {/*will be fixed */}
               {gameDialogue && gameNo === 8 && (
-                <Minigame8 gameResult={handleMiniGameEightResult} />
+                <Minigame8 gameResult={handleMiniGameEightResult} /> //Math Speed Game
               )}
               {gameDialogue && gameNo === 9 && (
                 <div
@@ -748,8 +748,8 @@ const StoryGame = () => {
                     height: "100%",
                   }}
                 >
-                  <Minigame9 gameResult={handleMiniGameNineResult} />
-                </div>
+                  <Minigame9 gameResult={handleMiniGameNineResult} /> 
+                </div> //Reaction Time game
               )}
               {gameDialogue && gameNo === 10 && (
                 <div
@@ -761,12 +761,12 @@ const StoryGame = () => {
                   }}
                 >
                   <Minigame10 gameResult={handleMiniGameTenResult} />
-                </div>
+                </div> //Tile Game
               )}
-              {gameDialogue && gameNo === 11 && <Minigame11 />}
-
-              {gameDialogue && gameNo ===18 &&(
-                <Game />  
+              {gameDialogue && gameNo === 11 && <Minigame11 />}  
+                
+              {gameDialogue && gameNo === 18 && (
+                <Minigame18 />  //Switch Game and 11 is Row Boat game
               )}
 
               <div

@@ -15,21 +15,21 @@ const Minigame9 = ({ gameResult }) => {
   let timeoutId = useRef(null);
   let timerInterval = useRef(null);
 
+  // Effect to clean up timers on component unmount
   useEffect(() => {
-    startGame();
     return () => {
       clearTimeout(timeoutId.current);
       clearInterval(timerInterval.current);
     };
   }, []);
 
+  // Function to start the game
   const startGame = () => {
     // Reset game state
     setColor('#ffa406');
     setResult('');
     setPointsDisplay('');
     setGameEnded(false);
-    // nextGameButtonRef.current.style.display = 'none';
 
     // Start timer
     let currentTime = 0;
@@ -49,7 +49,7 @@ const Minigame9 = ({ gameResult }) => {
   };
 
   const handleBoxClick = () => {
-    if (gameEnded) return;
+    if (gameEnded) return; // Prevent actions after game ends
 
     if (color === 'rgb(255, 0, 0)' || color === '#ff0000') {
       const endTime = new Date().getTime();
@@ -77,19 +77,19 @@ const Minigame9 = ({ gameResult }) => {
       setPoints(earnedPoints);
       gameResult(earnedPoints);
       setPointsDisplay(`You earned: ${earnedPoints} points`);
-      setGameEnded(true);
-      // nextGameButtonRef.current.style.display = 'block'; // Show Next Game button
+      setGameEnded(true); // Mark the game as ended
     } else {
       clearTimeout(timeoutId.current);
       clearInterval(timerInterval.current);
       setResult('Clicked too early! Wait for the color to change.');
-      startGame(); // Restart the game
+      // No retries allowed, do not restart the game here
     }
   };
 
-  // const goToHomePage = () => {
-  //   window.location.href = '';
-  // };
+  // Handler for the start button
+  const handleStartButton = () => {
+    startGame();
+  };
 
   return (
     <div id="game-container">
@@ -105,16 +105,15 @@ const Minigame9 = ({ gameResult }) => {
       </div>
       <div id="result">{result}</div>
       <div id="points">{pointsDisplay}</div>
-      {/* <div className="center">
-        <button
-          id="next-game-button"
-          ref={nextGameButtonRef}
-          style={{ display: 'none' }}
-          onClick={goToHomePage}
-        >
-          NEXT GAME
-        </button>
-      </div> */}
+
+      {/* Start Button */}
+      {!gameEnded && (
+        <div className="start-button-container">
+          <button onClick={handleStartButton} className="start bg-white text-black p-1 m-1 rounded-md">
+            Start Game
+          </button>
+        </div>
+      )}
     </div>
   );
 };

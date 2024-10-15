@@ -7,6 +7,7 @@ const gameDuration = 60000; // 1 minute
 const stopObstacleGenerationTime = 52000; // 52 seconds
 const fadeOutStartTime = 0; // Start fading out the land at the beginning
 const fadeInStartTime = gameDuration - 5000; // Start fading in the land in the last 5 seconds
+const maxRetries = 2; // Maximum number of retries allowed
 
 function Minigame11({ gameResult }) {
   const [playerX, setPlayerX] = useState(150);
@@ -18,6 +19,10 @@ function Minigame11({ gameResult }) {
   const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
   const [obstacleSpeed, setObstacleSpeed] = useState(5);
   const [obstacleGenerationInterval, setObstacleGenerationInterval] = useState(initialObstacleGenerationInterval);
+  const [gameStarted, setGameStarted] = useState(false); // Track if the game has started
+  const [restartAttempts, setRestartAttempts] = useState(0); // Track the number of restarts
+  const [lost, setLost] = useState(false); // Track if the player has lost
+
   const canvasRef = useRef(null);
   const gameStartTime = useRef(Date.now());
 
@@ -58,7 +63,7 @@ function Minigame11({ gameResult }) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (!gameOver && !gameCompleted) {
+      if (!gameOver && !gameCompleted && gameStarted) {
         const elapsedTime = Date.now() - gameStartTime.current;
 
         // Handle land gradient fade-out
@@ -91,11 +96,11 @@ function Minigame11({ gameResult }) {
     }, obstacleGenerationInterval);
 
     return () => clearInterval(interval);
-  }, [gameOver, gameCompleted, canvasSize, obstacleGenerationInterval]);
+  }, [gameOver, gameCompleted, canvasSize, obstacleGenerationInterval, gameStarted]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (!gameOver && !gameCompleted && boatRef.current && rockRef.current) {
+      if (!gameOver && !gameCompleted && boatRef.current && rockRef.current && gameStarted) {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext('2d');
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -142,18 +147,23 @@ function Minigame11({ gameResult }) {
     }, 100);
 
     return () => clearInterval(interval);
-  }, [obstacles, playerX, gameOver, gameCompleted, canvasSize, obstacleSpeed, obstacleGenerationInterval]);
+  }, [obstacles, playerX, gameOver, gameCompleted, canvasSize, obstacleSpeed, obstacleGenerationInterval, gameStarted]);
 
   const resetGame = () => {
-    setPlayerX(canvasSize.width / 2);
-    setObstacles([]);
-    setGameOver(false);
-    setGameCompleted(false);
-    setObstacleSpeed(5);
-    setObstacleGenerationInterval(initialObstacleGenerationInterval);
-    setShowLand(true);
-    setShowEndLand(false);
-    gameStartTime.current = Date.now();
+    if (restartAttempts < maxRetries) {
+      setPlayerX(canvasSize.width / 2);
+      setObstacles([]);
+      setGameOver(false);
+      setGameCompleted(false);
+      setObstacleSpeed(5);
+      setObstacleGenerationInterval(initialObstacleGenerationInterval);
+      setShowLand(true);
+      setShowEndLand(false);
+      gameStartTime.current = Date.now();
+      setRestartAttempts(restartAttempts + 1); // Increment restart attempts
+    } else {
+      setLost(true); // Set the player as lost after max retries
+    }
   };
 
   useEffect(() => {
@@ -161,8 +171,28 @@ function Minigame11({ gameResult }) {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [playerX, canvasSize]);
 
+  const startGame = () => {
+    setGameStarted(true);
+    gameStartTime.current = Date.now();
+  };
+
   return (
     <div className="gameApp flex flex-col justify-center items-center">
+      {!gameStarted && !lost && (
+        <button
+          onClick={startGame}
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 focus:ring-2 focus:ring-blue-300"
+        >
+          Start Game
+        </button>
+      )}
+
+      {lost && (
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black text-white p-6 rounded-lg z-50 shadow-2xl text-lg transition-transform duration-300 ease-in-out">
+          <p className="mb-4">You've lost the game!</p>
+        </div>
+      )}
+
       <canvas
         ref={canvasRef}
         width={canvasSize.width}
@@ -179,18 +209,20 @@ function Minigame11({ gameResult }) {
       )}
 
       {/* Game over or success messages */}
-      {gameOver && (
+      {gameOver && !lost && (
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black text-white p-6 rounded-lg z-50 shadow-2xl text-lg transition-transform duration-300 ease-in-out">
           <p className="mb-4">Game Over!</p>
-          <button
-            onClick={resetGame}
-            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 focus:ring-2 focus:ring-blue-300"
-          >
-            Restart
-          </button>
+          {restartAttempts < maxRetries ? (
+            <button
+              onClick={resetGame}
+              className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 focus:ring-2 focus:ring-blue-300"
+            >
+              Restart ({restartAttempts + 1}/{maxRetries})
+            </button>
+          ) : null}
         </div>
       )}
-      {gameCompleted && (
+      {gameCompleted && !lost && (
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black text-white p-6 rounded-lg z-50 shadow-2xl text-lg transition-transform duration-300 ease-in-out">
           River crossed successfully!
         </div>
