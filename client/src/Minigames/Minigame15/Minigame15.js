@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Dino.css';
 
-function Minigame15() {
+function Minigame15({gameResult}) {
   const [isJumping, setIsJumping] = useState(false);
   const [dinoPosition, setDinoPosition] = useState(0);
   const [obstaclePosition, setObstaclePosition] = useState(1000);
@@ -66,7 +66,8 @@ function Minigame15() {
       setGameOver(true);
       setStartGame(false); // Stop the game after collision
     } else if (!gameOver && startGame) {
-      setScore((prevScore) => prevScore + 1);
+      setScore(score + 1);
+      gameResult(score + 1);
     }
   }, [obstaclePosition, dinoPosition, gameOver, startGame]);
 
@@ -77,11 +78,12 @@ function Minigame15() {
     setObstaclePosition(1000);
     setGameOver(false);
     setScore(0);
+    gameResult(0);
     setStartGame(true);
   };
 
   return (
-    <div className="game-container">
+    <div className="h-[40%] mb-[20rem] flex justify-center">
       {startGame && !gameOver ? (
         <>
           <div 

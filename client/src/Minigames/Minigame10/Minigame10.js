@@ -73,7 +73,7 @@ const Tile = ({ text, onClick, isActive, isAnsweredCorrectly, isTextVisible }) =
   );
 };
 
-const Minigame10 = () => {
+const Minigame10 = ({gameResult}) => {
   const [currentRow, setCurrentRow] = useState(0);
   const [answeredCorrectly, setAnsweredCorrectly] = useState(null);
   const [previousAnswers, setPreviousAnswers] = useState([]);
@@ -95,6 +95,7 @@ const Minigame10 = () => {
       } else {
         setAnsweredCorrectly(false);
         setScore((prev) => Math.max(prev - 10, 0)); // Deduct points for wrong answer
+        gameResult(Math.max(score - 10, 0));
 
         setTimeout(() => setAnsweredCorrectly(null), 1000);
       }

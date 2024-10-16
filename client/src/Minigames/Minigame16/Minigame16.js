@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './Search.css';
 
-export default function Search() {
+export default function Search({ gameResult }) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0});
   const textContainerRef = useRef(null);
   const [containerPosition, setContainerPosition] = useState({ x: 0, y: 0 });
@@ -177,6 +177,8 @@ const EmojiGame = () => {
       if (col.includes('📱')) {
         setScore(200);
         console.log('You found the mobile phone!');
+        alert('You found the mobile phone!');
+        gameResult(200, true);
       }
     }
   };

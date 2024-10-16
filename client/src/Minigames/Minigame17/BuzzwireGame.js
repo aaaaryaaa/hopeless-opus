@@ -1,13 +1,14 @@
 import React, { useRef, useEffect, useState } from "react";
 import pipeImage from "./image.png"; // Import the image from the src folder
 
-const BuzzwireGame = () => {
+const BuzzwireGame = ({gameResult}) => {
   const canvasRef = useRef(null);
   const [gameOver, setGameOver] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
   const [promptVisible, setPromptVisible] = useState(true);
   const [winMessage, setWinMessage] = useState("");
   const [mouseFlag, setMouseFlag] = useState(0);
+  const [gameDone, setGameDone] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -33,7 +34,7 @@ const BuzzwireGame = () => {
             "Place mouse at beginning of pipe and hit Enter!! Don't click OK!"
           );
         }
-      } else if (x <= 10) {
+      } else if (x <= 20) {
         setMouseFlag(1);
         startGame();
       }
@@ -74,6 +75,8 @@ const BuzzwireGame = () => {
           setWinMessage(
             "You Win! Congratulations on successfully traversing the pipe!"
           );
+          alert("You Win! Congratulations on successfully traversing the pipe! You finish minigame.");
+          gameResult(200);
           setGameStarted(false); // Reset game state
         }
       };
@@ -103,11 +106,11 @@ const BuzzwireGame = () => {
   return (
     <div className="flex flex-col items-center justify-center">
       <h1 className="text-4xl mb-6">Buzzwire Game</h1>
-      {promptVisible && (
+      {/* {promptVisible && (
         <p className="mb-4 text-lg text-red-600">
           Place your mouse at the start of the pipe and press Enter.
         </p>
-      )}
+      )} */}
       <canvas
         ref={canvasRef}
         width={1400}

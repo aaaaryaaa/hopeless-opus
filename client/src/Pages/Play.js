@@ -5,8 +5,7 @@ import ImageHoverEffect from '../Component/ImageHoverEffect'
 
 const Play = () => {
   return (
-    <div className="h-[100vh]">
-      <ImageHoverEffect />
+    <div className="">
       <StoryGame />
     </div>
   )

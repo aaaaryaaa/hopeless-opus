@@ -21,58 +21,58 @@ import Minigame17 from "./Minigames/Minigame17/Minigame17";
 import Minigame18 from "./Minigames/Minigame18/Game";
 import Typewriter from 'typewriter-effect';
 
-const SequentialTypewriter = ({
-  lines,
-  typingSpeed = 20,  // Faster typing speed
-  delayBetweenLines = 300, // Reduced delay between lines for quicker transitions
-  onComplete,  // Callback to signal completion
-}) => {
-  const [currentLineIndex, setCurrentLineIndex] = useState(0);
-  const [displayedLines, setDisplayedLines] = useState([]);
+// const SequentialTypewriter = ({
+//   lines,
+//   typingSpeed = 20,  // Faster typing speed
+//   delayBetweenLines = 300, // Reduced delay between lines for quicker transitions
+//   onComplete,  // Callback to signal completion
+// }) => {
+//   const [currentLineIndex, setCurrentLineIndex] = useState(0);
+//   const [displayedLines, setDisplayedLines] = useState([]);
 
-  useEffect(() => {
-    if (currentLineIndex < lines.length) {
-      const timeout = setTimeout(() => {
-        // Add the current line to the displayedLines array at the end
-        setDisplayedLines((prevLines) => [
-          ...prevLines,
-          lines[currentLineIndex], // Add the new line at the bottom
-        ]);
-        setCurrentLineIndex(currentLineIndex + 1); // Move to the next line
-      }, typingSpeed * lines[currentLineIndex].length + delayBetweenLines);
+//   useEffect(() => {
+//     if (currentLineIndex < lines.length) {
+//       const timeout = setTimeout(() => {
+//         // Add the current line to the displayedLines array at the end
+//         setDisplayedLines((prevLines) => [
+//           ...prevLines,
+//           lines[currentLineIndex], // Add the new line at the bottom
+//         ]);
+//         setCurrentLineIndex(currentLineIndex + 1); // Move to the next line
+//       }, typingSpeed * lines[currentLineIndex].length + delayBetweenLines);
 
-      return () => clearTimeout(timeout); // Clean up the timeout
-    } else {
-      // Call the onComplete callback if all lines have been displayed
-      if (onComplete) {
-        onComplete(); 
-      }
-    }
-  }, [currentLineIndex, lines, typingSpeed, delayBetweenLines, onComplete]);
+//       return () => clearTimeout(timeout); // Clean up the timeout
+//     } else {
+//       // Call the onComplete callback if all lines have been displayed
+//       if (onComplete) {
+//         onComplete(); 
+//       }
+//     }
+//   }, [currentLineIndex, lines, typingSpeed, delayBetweenLines, onComplete]);
 
-  return (
-    <div>
-      {/* Render all displayed lines as static text */}
-      {displayedLines.map((line, index) => (
-        <div key={index} style={{ marginBottom: '10px' }}>
-          {line} {/* Display the line directly */}
-        </div>
-      ))}
+//   return (
+//     <div>
+//       {/* Render all displayed lines as static text */}
+//       {displayedLines.map((line, index) => (
+//         <div key={index} style={{ marginBottom: '10px' }}>
+//           {line} {/* Display the line directly */}
+//         </div>
+//       ))}
 
-      {/* Render the typewriter effect for the current line */}
-      {currentLineIndex < lines.length && (
-        <Typewriter
-          options={{
-            strings: [lines[currentLineIndex]], // Only type the current line
-            autoStart: true,
-            loop: false,
-            delay: typingSpeed,  // Set typing speed for each line
-          }}
-        />
-      )}
-    </div>
-  );
-};
+//       {/* Render the typewriter effect for the current line */}
+//       {currentLineIndex < lines.length && (
+//         <Typewriter
+//           options={{
+//             strings: [lines[currentLineIndex]], // Only type the current line
+//             autoStart: true,
+//             loop: false,
+//             delay: typingSpeed,  // Set typing speed for each line
+//           }}
+//         />
+//       )}
+//     </div>
+//   );
+// };
 
 
 
@@ -107,6 +107,12 @@ const StoryGame = () => {
   const [minigameElevenPoints, setMinigameElevenPoints] = useState(0);
   const [minigameFourteenWon, setMinigameFourteenWon] = useState(false);
   const [minigameFourteenPoints, setMinigameFourteenPoints] = useState(0);
+  const [minigameFifteenPoints, setMinigameFifteenPoints] = useState(0);
+  const [minigameSixteenWon, setMinigameSixteenWon] = useState(false);
+  const [minigameSixteenPoints, setMinigameSixteenPoints] = useState(0);
+  const [minigameSeventeenPoints, setMinigameSeventeenPoints] = useState(0);
+  const [minigameEighteenWon, setMinigameEighteenWon] = useState(false);
+  const [minigameEighteenPoints, setMinigameEighteenPoints] = useState(0);
 
 
   //bgimg ka array
@@ -132,8 +138,8 @@ const StoryGame = () => {
     'https://res.cloudinary.com/diswj8gya/image/upload/v1728922649/18_twrzq6_c_pad_b_gen_fill_w_1440_h_1024_dfkpnu.png', //18
     'https://res.cloudinary.com/diswj8gya/image/upload/v1728920787/19_l3fpqd_c_pad_b_gen_fill_w_1440_h_1024_smva4a.png', //19
     'https://res.cloudinary.com/diswj8gya/image/upload/v1728918649/20_ratvde.png', //20
-    //21
-    //22
+    '',//21
+    '',//22
     'https://res.cloudinary.com/diswj8gya/image/upload/v1728932471/23_wpseh7.png', //23
     'https://res.cloudinary.com/diswj8gya/image/upload/v1728921645/24_osspg4_hkaskt.png', //24
     'https://res.cloudinary.com/diswj8gya/image/upload/v1728920134/25_k81ope_c_pad_b_gen_fill_w_1440_h_1024_cfpgar.png', //25
@@ -142,9 +148,9 @@ const StoryGame = () => {
     'https://res.cloudinary.com/diswj8gya/image/upload/v1728918686/28_x9gtno.png', //28
     'https://res.cloudinary.com/diswj8gya/image/upload/v1728920544/29_svbxaf_c_pad_b_gen_fill_w_1440_h_1024_hrvuya.png', //29
     'https://res.cloudinary.com/diswj8gya/image/upload/v1728920337/30_bj19em_c_pad_b_gen_fill_w_1440_h_1024_ostomm.png', //30
-    //31
+    '',//31
     'https://res.cloudinary.com/diswj8gya/image/upload/v1728918687/32_k6jarr.png', //32
-    //33
+    '',//33
     'https://res.cloudinary.com/diswj8gya/image/upload/v1728918699/34_i9wrzd.png', //34
     'https://res.cloudinary.com/diswj8gya/image/upload/v1728918705/35_p4srrh.png', //35
   ];
@@ -213,6 +219,28 @@ const StoryGame = () => {
     console.log(`Player got: ${pts}`);
   }
 
+  const handleMiniGameFifteenResult = (pts) => {
+    setMinigameFifteenPoints(pts);
+    console.log(`Player got: ${pts}`);
+  }
+
+  const handleMiniGameSixteenResult = (pts, won) => {
+    setMinigameSixteenPoints(pts);
+    setMinigameSixteenWon(won);
+    console.log(`Player got: ${pts}`);
+  }
+
+  const handleMiniGameSeventeenResult = (pts) => {
+    setMinigameSeventeenPoints(pts);
+    console.log(`Player got: ${pts}`);
+  }
+
+  const handleMiniGameEighteenResult = (pts, won) => {
+    setMinigameEighteenPoints(pts);
+    setMinigameEighteenWon(won);
+    console.log(`Player got: ${pts}`);
+  }
+
   // Fetch user details only when the component mounts
   async function fetchUserDetails() {
     const token = localStorage.getItem("token"); // Get the token from localStorage
@@ -260,9 +288,13 @@ const StoryGame = () => {
       console.log(data);
       if (data.options.length === 0) {
         setGameNo(data.minigame);
-        console.log("game 1");
+        console.log(`game: ${gameNo}`);
       } else {
         setGameNo(0);
+      }
+      
+      if(data.snippet.length===1){
+        setGameDialogue(true)
       }
       setSnippetIndex(0); // Reset the snippet index to 0 when a new story is fetched
     } catch (error) {
@@ -358,8 +390,8 @@ const StoryGame = () => {
         setMoney(updatedMoney);
         setRF(updatedRF);
         const inv = inventory;
-        inv.script.value = optionInventory.key;
-        inv.kumbh.value = optionInventory.umbrella;
+        inv.script.value = optionInventory.script;
+        inv.kumbh.value = optionInventory.kumbh;
         inv.journal.value = optionInventory.journal;
         inv.sword.value = optionInventory.sword;
         inv.pickaxe.value = optionInventory.pickaxe;
@@ -415,18 +447,25 @@ const StoryGame = () => {
         setMoney(updatedMoney);
         setRF(updatedRF);
         const inv = inventory;
-        const nextStory = 9998;
-        fetchStory(nextStory);
 
-        if (gameDialogue && gameNo === 1)
-          updateCurrentStoryIdAndPoints(
-            nextStory,
-            updatedPoints,
-            updatedHealth,
-            updatedMoney,
-            updatedRF,
-            inv
-          ); // Update the story ID and points in the backend
+        // if (gameDialogue && gameNo === 1)
+        //   updateCurrentStoryIdAndPoints(
+        //     nextStory,
+        //     updatedPoints,
+        //     updatedHealth,
+        //     updatedMoney,
+        //     updatedRF,
+        //     inv
+        //   ); // Update the story ID and points in the backend
+        if(gameDialogue && gameNo===1){
+          if(minigameOneWon){
+            fetchStory('1301');
+             updateCurrentStoryIdAndPoints('1301', updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+          } else{
+            fetchStory('1401');
+             updateCurrentStoryIdAndPoints('1401', updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+          } 
+        }
       }
 
       if (gameNo === 2) {
@@ -529,8 +568,9 @@ const StoryGame = () => {
         const inv = inventory;
 
         if (gameDialogue && gameNo === 5)
+          fetchStory('1802');
           updateCurrentStoryIdAndPoints(
-            9998,
+            '1802',
             updatedPoints,
             updatedHealth,
             updatedMoney,
@@ -664,8 +704,9 @@ const StoryGame = () => {
         const inv = inventory;
 
         if (gameDialogue && gameNo === 10)
+          fetchStory('2602');
           updateCurrentStoryIdAndPoints(
-            9998,
+            '2602',
             updatedPoints,
             updatedHealth,
             updatedMoney,
@@ -700,6 +741,104 @@ const StoryGame = () => {
           } 
         }
       }
+
+      if (gameNo === 15) {
+        if (points === null) setPoints(0);
+        const updatedPoints = points + minigameFifteenPoints; // Add option points to current points
+        const updatedHealth = health;
+        const updatedMoney = money;
+        const updatedRF = rf;
+        console.log(updatedPoints, points);
+        console.log(updatedHealth, health);
+        console.log(updatedMoney, money);
+        console.log(updatedRF, rf);
+        setPoints(updatedPoints); // Update the UI with new points
+        setHealth(updatedHealth);
+        setMoney(updatedMoney);
+        setRF(updatedRF);
+        const inv = inventory;
+
+        if(gameDialogue && gameNo===15){
+            fetchStory('2301');
+            updateCurrentStoryIdAndPoints('2301', updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+        }
+      }
+
+      if (gameNo === 16) {
+        if (points === null) setPoints(0);
+        const updatedPoints = points + minigameSixteenPoints; // Add option points to current points
+        const updatedHealth = health;
+        const updatedMoney = money;
+        const updatedRF = rf;
+        console.log(updatedPoints, points);
+        console.log(updatedHealth, health);
+        console.log(updatedMoney, money);
+        console.log(updatedRF, rf);
+        setPoints(updatedPoints); // Update the UI with new points
+        setHealth(updatedHealth);
+        setMoney(updatedMoney);
+        setRF(updatedRF);
+        const inv = inventory;
+
+        if(gameDialogue && gameNo===16){
+          if(minigameSixteenWon){
+            fetchStory('1602');
+             updateCurrentStoryIdAndPoints('1602', updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+          } else{
+            fetchStory('1601');
+             updateCurrentStoryIdAndPoints('1601', updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+          } 
+        }
+      }
+
+      if (gameNo === 17) {
+        if (points === null) setPoints(0);
+        const updatedPoints = points + minigameSeventeenPoints; // Add option points to current points
+        const updatedHealth = health;
+        const updatedMoney = money;
+        const updatedRF = rf;
+        console.log(updatedPoints, points);
+        console.log(updatedHealth, health);
+        console.log(updatedMoney, money);
+        console.log(updatedRF, rf);
+        setPoints(updatedPoints); // Update the UI with new points
+        setHealth(updatedHealth);
+        setMoney(updatedMoney);
+        setRF(updatedRF);
+        const inv = inventory;
+
+        if(gameDialogue && gameNo===17){
+          fetchStory('3601');
+            updateCurrentStoryIdAndPoints('3601', updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+        }
+      }
+
+      if (gameNo === 18) {
+        if (points === null) setPoints(0);
+        const updatedPoints = points + minigameEighteenPoints; // Add option points to current points
+        const updatedHealth = health;
+        const updatedMoney = money;
+        const updatedRF = rf;
+        console.log(updatedPoints, points);
+        console.log(updatedHealth, health);
+        console.log(updatedMoney, money);
+        console.log(updatedRF, rf);
+        setPoints(updatedPoints); // Update the UI with new points
+        setHealth(updatedHealth);
+        setMoney(updatedMoney);
+        setRF(updatedRF);
+        const inv = inventory;
+
+        if(gameDialogue && gameNo===18){
+          if(minigameEighteenWon){
+            fetchStory('1402');
+             updateCurrentStoryIdAndPoints('1402', updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+          } else{
+            fetchStory('1401');
+             updateCurrentStoryIdAndPoints('1401', updatedPoints, updatedHealth, updatedMoney, updatedRF, inv); // Update the story ID and points in the backend
+          } 
+        }
+      }
       
     } catch (error) {
       console.error("Error fetching user details:", error.message);
@@ -728,7 +867,7 @@ const StoryGame = () => {
         backgroundRepeat: "no-repeat",
         width: "100%", // Cover the full width of the viewport
         // height: '110vh',
-        minHeight: "100vh",
+        minHeight: "110vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-end", // Align content to the bottom
@@ -742,7 +881,7 @@ const StoryGame = () => {
       ) : (
         story && (
           <>
-            <div className="text-end h-[100vh]">
+            <div className="text-end">
               {gameDialogue && gameNo === 1 && (
                 <Minigame1 gameResult={handleMiniGameOneResult} /> //Hammer Game
               )}
@@ -769,14 +908,14 @@ const StoryGame = () => {
                 <Minigame14 gameResult={handleMiniGameFourteenResult} /> //Morse Code
               )}
               {gameDialogue && gameNo === 15 && (
-                <Minigame15 gameResult={handleMiniGameOneResult} /> //Dino ahh Game
+                <Minigame15 gameResult={handleMiniGameFifteenResult} /> //Dino ahh Game
               )}
               {gameDialogue && gameNo===16 && (
-                <Minigame16 gameResult={handleMiniGameOneResult} /> //Flash Game
+                <Minigame16 gameResult={handleMiniGameSixteenResult} /> //Mobile find Flash Game
               )}
 
               {gameDialogue && gameNo===17 && (
-                <Minigame17 gameResult={handleMiniGameOneResult} /> //Wire Game
+                <Minigame17 gameResult={handleMiniGameSeventeenResult} /> //Wire Game
               )}
               
               {gameDialogue && gameNo===6 &&(
@@ -826,7 +965,7 @@ const StoryGame = () => {
               {gameDialogue && gameNo === 11 && <Minigame11 />}  
                 
               {gameDialogue && gameNo === 18 && (
-                <Minigame18 />  //Switch Game and 11 is Row Boat game
+                <Minigame18 gameResult={handleMiniGameEighteenResult}/>  //Switch Game and 11 is Row Boat game
               )}
 
               <div
@@ -844,13 +983,13 @@ const StoryGame = () => {
                 <p>Health: {health}</p>
                 <p>Money: {money}</p>
                 <p>Risk Factor: {rf}</p>
-                <p>Script: {inventory?.key?.value ? "Yes" : "No"}</p>
-                <p>Kumbh: {inventory?.umbrella?.value ? "Yes" : "No"}</p>
+                <p>Script: {inventory?.script?.value ? "Yes" : "No"}</p>
+                <p>Kumbh: {inventory?.kumbh?.value ? "Yes" : "No"}</p>
                 <p>Journal: {inventory?.journal?.value ? "Yes" : "No"}</p>
                 <p>Sword: {inventory?.sword?.value ? "Yes" : "No"}</p>
                 <p>Pickaxe: {inventory?.pickaxe?.value ? "Yes" : "No"}</p>
                 <p>Axe: {inventory?.axe?.value ? "Yes" : "No"}</p>
-                <p>Minigame1 won? : {minigameOneWon ? "Yes" : "No"}</p>
+                <p>Minigame16 won? : {minigameSixteenWon ? "Yes" : "No"}</p>
                 <p>Minigame2 pts: {minigameTwoPoints}</p>
                 <p>Minigame3 pts: {minigameThreePoints}</p>
                 <p>Minigame4 pts: {minigameFourPoints}</p>
@@ -941,12 +1080,19 @@ const StoryGame = () => {
                 ))} */}
 
 
-<SequentialTypewriter
+{/* <SequentialTypewriter
   lines={story.snippet[snippetIndex].text.split("\n")} // Split the text into lines
   typingSpeed={100} // Adjust typing speed if necessary
   delayBetweenLines={500} // Delay between lines
   onComplete={() => console.log('All lines displayed!')} // Optional callback
-/>
+/> */}
+
+              {/* <p>{story.snippet[snippetIndex].text}</p> */}
+              {story.snippet[snippetIndex].text
+                .split("\n")
+                .map((line, index) => (
+                  <p key={index}>{line}</p>
+                ))}
 
                 
 

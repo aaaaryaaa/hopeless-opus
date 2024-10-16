@@ -4,7 +4,7 @@ import Scoreboard from './Scoreboard';
 import Timer from './Timer';
 import { generateCombinations } from './utils';
 
-const Game = () => {
+const Game = ({ gameResult }) => {
   const TOTAL_GATES = 5;
   const ROUND_TIME = 30; // seconds
   const switchCount = 4; // Update this if you change it in utils
@@ -63,6 +63,7 @@ const Game = () => {
   const handleRoundEnd = () => {
     if (timer === 0) {
       setGameOver(true); // End the game if the time runs out
+      gameResult(score, false);
       return;
     }
     if (currentRound < TOTAL_GATES) {
@@ -71,7 +72,8 @@ const Game = () => {
       setMoves(0);
       setTimer(ROUND_TIME);
     } else {
-      alert(`Game Over! Your score: ${score}`);
+      // alert(`Game Over! Your score: ${score}`);
+      gameResult(score, true);
       resetGame();
     }
   };
@@ -93,7 +95,7 @@ const Game = () => {
     <div className="p-20">
       {/* Game not started yet */}
       {!hasStarted && !gameOver ? (
-        <div className="flex flex-col items-center justify-center h-screen pt-10">
+        <div className="flex flex-col items-center justify-center pt-10">
           <h1 className="text-3xl font-bold mb-4 mt-[-20em]">Ready to Play?</h1>
           <button
             onClick={handleStart}
