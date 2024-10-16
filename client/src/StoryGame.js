@@ -155,6 +155,21 @@ const StoryGame = () => {
     'https://res.cloudinary.com/diswj8gya/image/upload/v1728918705/35_p4srrh.png', //35
   ];
 
+  const charArray = [
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090763/HopelessOpus/gt7ydwwje8vwegcr4ivc.png",
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729013292/HopelessOpus/fedyjky3yb6fgqgslkc7.png",
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090708/HopelessOpus/ga5d8f0tvww8argx3ztb.png",
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090775/HopelessOpus/b9vfp0obwsuj3nuvl5hk.png",
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090782/HopelessOpus/q0vnzeekssuubsqduvc9.png",
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090774/HopelessOpus/mny9ouu6urkqcime9rl6.png",
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729089986/HopelessOpus/d4ceocqtigimm9p1rlv2.png",
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729089984/HopelessOpus/ufybinz2ekqzdppdm7wl.png",
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090015/HopelessOpus/wfkv25xxjara1bxqtjvv.png",
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090746/HopelessOpus/nmbwuzhcamgc27rkl9m3.png",
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729093163/HopelessOpus/aeji6yhxt1r7tiylk6m1.png"
+  ];
+  
+
   //function for minigame 1
   const handleMiniGameOneResult = (pts, won) => {
     setMinigameOnePoints(pts);
@@ -1061,6 +1076,24 @@ const StoryGame = () => {
                   )}
                 </div>
               )}
+            </div>
+
+            {/* char img */}
+            <div className="flex flex-row justify-between">
+            <div className="">
+                <img 
+                // alt="char1"
+                src={charArray[story?.snippet[snippetIndex].charIndex1]} //"https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729013292/HopelessOpus/fedyjky3yb6fgqgslkc7.png" 
+                className="left-image w-[15rem]"  
+                 />
+              </div>
+              <div>
+                <img 
+                // alt="char2"
+                src={charArray[story?.snippet[snippetIndex].charIndex2]} //"https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729013292/HopelessOpus/fedyjky3yb6fgqgslkc7.png" 
+                className="right-image w-[15rem]"  
+                 />
+              </div>
             </div>
 
             <div

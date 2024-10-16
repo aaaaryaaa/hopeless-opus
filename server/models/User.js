@@ -152,6 +152,14 @@ const UserSchema = new Schema({
       },
     },
   },
+  minicounter: {
+    type: [Number],
+    default: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+  },
+  choiceTime: {
+    type: Date,
+    default: Date.now, // This sets the default to the current date and time
+  }
 });
 
 // Export the model

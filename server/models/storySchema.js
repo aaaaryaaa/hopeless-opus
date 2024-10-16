@@ -9,7 +9,9 @@ const storySchema = new mongoose.Schema({
   snippet: [
     {
       text: String,
-      bgIndex: Number
+      bgIndex: Number,
+      charIndex1: Number,
+      charIndex2: Number
     }
   ],
   options: [

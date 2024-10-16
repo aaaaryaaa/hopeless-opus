@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Import toast styles
 import BaseUrl from "../BaseUrl";
 
 export default function Register() {
@@ -32,31 +34,31 @@ export default function Register() {
     try {
       const response = await axios.post(`${BaseUrl}/api/auth/register`, {
         teamId,
-        teamLeader: {
-          name: teamLeader_name,
-          email: teamLeader_email,
-          phone: teamLeader_phone,
-          registrationNumber: teamLeader_registrationNumber,
-          institute: teamLeader_institute,
-          delegateId: teamLeader_delegateId,
-        },
-        player2: {
-          name: player2_name,
-          registrationNumber: player2_registrationNumber,
-          phone: player2_phone,
-          email: player2_email,
-          institute: player2_institute,
-          delegateId: player2_delegateId,
-        },
+        teamLeader_name,
+        teamLeader_email,
+        teamLeader_phone,
+        teamLeader_registrationNumber,
+        teamLeader_institute,
+        teamLeader_delegateId,
+        player2_name,
+        player2_phone,
+        player2_email,
+        player2_registrationNumber,
+        player2_institute,
+        player2_delegateId,
         password,
         confirmPassword,
       });
 
       console.log(response.data);
-      navigate("/login");
+      toast.success("Registration successful! Redirecting to login...");
+      setTimeout(() => navigate("/login"), 2000);
     } catch (error) {
       console.error(error);
-      alert("Registration failed. Please try again.");
+      const errorMessage =
+        error.response?.data?.message ||
+        "Registration failed. Please try again.";
+      toast.error(errorMessage);
     } finally {
       setIsLoading(false);
     }
@@ -64,6 +66,7 @@ export default function Register() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-black">
+      <ToastContainer />
       <div className="bg-gray-900 p-8 rounded-lg shadow-lg w-full max-w-4xl">
         <h2 className="text-3xl font-bold text-white text-center mb-6">
           Register
@@ -170,19 +173,19 @@ export default function Register() {
               type="text"
               value={player2_name}
               onChange={(e) => setPlayer2Name(e.target.value)}
-              required
+             
               className="mt-1 p-3 w-2/3 border rounded-lg"
             />
           </div>
           <div className="flex justify-between mb-4">
             <label className="block font-medium text-gray-200 w-1/3">
-              Registration Number:
+              Email:
             </label>
             <input
-              type="text"
-              value={player2_registrationNumber}
-              onChange={(e) => setPlayer2RegistrationNumber(e.target.value)}
-              required
+              type="email"
+              value={player2_email}
+              onChange={(e) => setPlayer2Email(e.target.value)}
+              
               className="mt-1 p-3 w-2/3 border rounded-lg"
             />
           </div>
@@ -194,19 +197,19 @@ export default function Register() {
               type="tel"
               value={player2_phone}
               onChange={(e) => setPlayer2Phone(e.target.value)}
-              required
+          
               className="mt-1 p-3 w-2/3 border rounded-lg"
             />
-          </div>{" "}
+          </div>
           <div className="flex justify-between mb-4">
             <label className="block font-medium text-gray-200 w-1/3">
-              Email:
+              Registration Number:
             </label>
             <input
-              type="email"
-              value={player2_email}
-              onChange={(e) => setPlayer2Email(e.target.value)}
-              required
+              type="text"
+              value={player2_registrationNumber}
+              onChange={(e) => setPlayer2RegistrationNumber(e.target.value)}
+            
               className="mt-1 p-3 w-2/3 border rounded-lg"
             />
           </div>
@@ -218,7 +221,7 @@ export default function Register() {
               type="text"
               value={player2_institute}
               onChange={(e) => setPlayer2Institute(e.target.value)}
-              required
+            
               className="mt-1 p-3 w-2/3 border rounded-lg"
             />
           </div>
@@ -230,11 +233,11 @@ export default function Register() {
               type="text"
               value={player2_delegateId}
               onChange={(e) => setPlayer2DelegateId(e.target.value)}
-              required
+           
               className="mt-1 p-3 w-2/3 border rounded-lg"
             />
           </div>
-          {/* Password Fields */}
+          {/* Password */}
           <div className="flex justify-between mb-4">
             <label className="block font-medium text-gray-200 w-1/3">
               Password:
@@ -259,12 +262,11 @@ export default function Register() {
               className="mt-1 p-3 w-2/3 border rounded-lg"
             />
           </div>
+          {/* Submit Button */}
           <button
             type="submit"
             disabled={isLoading}
-            className={`w-full ${
-              isLoading ? "bg-gray-400" : "bg-gray-600"
-            } text-white py-3 rounded-lg`}
+            className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg"
           >
             {isLoading ? "Registering..." : "Register"}
           </button>
