@@ -1084,14 +1084,14 @@ const StoryGame = () => {
                 <img 
                 // alt="char1"
                 src={charArray[story?.snippet[snippetIndex].charIndex1]} //"https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729013292/HopelessOpus/fedyjky3yb6fgqgslkc7.png" 
-                className="left-image w-[15rem]"  
+                className="left-image w-[10rem]"  
                  />
               </div>
               <div>
                 <img 
                 // alt="char2"
                 src={charArray[story?.snippet[snippetIndex].charIndex2]} //"https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729013292/HopelessOpus/fedyjky3yb6fgqgslkc7.png" 
-                className="right-image w-[15rem]"  
+                className="right-image w-[10rem]"  
                  />
               </div>
             </div>
