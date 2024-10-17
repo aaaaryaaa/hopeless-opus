@@ -50,7 +50,6 @@ export default function Register() {
         confirmPassword,
       });
 
-      console.log(response.data);
       toast.success("Registration successful! Redirecting to login...");
       setTimeout(() => navigate("/login"), 2000);
     } catch (error) {

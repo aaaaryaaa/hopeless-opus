@@ -116,44 +116,44 @@ const StoryGame = () => {
 
 
   //bgimg ka array
-  const bgarray = [
-    '',//0
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728917655/1.png', //1
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728930116/2_1_uldavh.png', //2
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921617/3_c82xob_x6kpxe.png', //3
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921635/4_ay2tal_uv9i1u.png', //4
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921639/5_v01egf_du9xqs.png', //5
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921641/6_kffzxo_aungzz.png', //6
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918610/7_cfoetn.png', //7
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728922012/8_i63knk.png', //8
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921654/9_jq7f7b_kbae5g.png', //9
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921617/10_fzpjgp_uyjc1e.png', //10
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921653/11_aljo7g_jugaqe.png', //11
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728932361/12_o_auarlv.png', //12
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921641/13_fjmu45_douwxr.jpg', //13
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728922300/14_yjbyhz_c_pad_b_gen_fill_w_1440_h_1024_lxm2vt.png', //14
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728922043/15_aoxwgf.png', //15
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728922976/16_hcbmak_arju7k.png', //16
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728922977/17_drqzlg_njpoul.png', //17
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728922649/18_twrzq6_c_pad_b_gen_fill_w_1440_h_1024_dfkpnu.png', //18
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728920787/19_l3fpqd_c_pad_b_gen_fill_w_1440_h_1024_smva4a.png', //19
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918649/20_ratvde.png', //20
-    '',//21
-    '',//22
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728932471/23_wpseh7.png', //23
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921645/24_osspg4_hkaskt.png', //24
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728920134/25_k81ope_c_pad_b_gen_fill_w_1440_h_1024_cfpgar.png', //25
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728920666/26_ne9l6b_c_pad_b_gen_fill_w_1440_h_1024_b8fusi.png', //26
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918667/27_oy5z45.png', //27
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918686/28_x9gtno.png', //28
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728920544/29_svbxaf_c_pad_b_gen_fill_w_1440_h_1024_hrvuya.png', //29
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728920337/30_bj19em_c_pad_b_gen_fill_w_1440_h_1024_ostomm.png', //30
-    '',//31
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918687/32_k6jarr.png', //32
-    '',//33
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918699/34_i9wrzd.png', //34
-    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918705/35_p4srrh.png', //35
-  ];
+  // const bgarray = [
+  //   '',//0
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728917655/1.png', //1
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728930116/2_1_uldavh.png', //2
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728921617/3_c82xob_x6kpxe.png', //3
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728921635/4_ay2tal_uv9i1u.png', //4
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728921639/5_v01egf_du9xqs.png', //5
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728921641/6_kffzxo_aungzz.png', //6
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728918610/7_cfoetn.png', //7
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728922012/8_i63knk.png', //8
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728921654/9_jq7f7b_kbae5g.png', //9
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728921617/10_fzpjgp_uyjc1e.png', //10
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728921653/11_aljo7g_jugaqe.png', //11
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728932361/12_o_auarlv.png', //12
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728921641/13_fjmu45_douwxr.jpg', //13
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728922300/14_yjbyhz_c_pad_b_gen_fill_w_1440_h_1024_lxm2vt.png', //14
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728922043/15_aoxwgf.png', //15
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728922976/16_hcbmak_arju7k.png', //16
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728922977/17_drqzlg_njpoul.png', //17
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728922649/18_twrzq6_c_pad_b_gen_fill_w_1440_h_1024_dfkpnu.png', //18
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728920787/19_l3fpqd_c_pad_b_gen_fill_w_1440_h_1024_smva4a.png', //19
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728918649/20_ratvde.png', //20
+  //   '',//21
+  //   '',//22
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728932471/23_wpseh7.png', //23
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728921645/24_osspg4_hkaskt.png', //24
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728920134/25_k81ope_c_pad_b_gen_fill_w_1440_h_1024_cfpgar.png', //25
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728920666/26_ne9l6b_c_pad_b_gen_fill_w_1440_h_1024_b8fusi.png', //26
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728918667/27_oy5z45.png', //27
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728918686/28_x9gtno.png', //28
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728920544/29_svbxaf_c_pad_b_gen_fill_w_1440_h_1024_hrvuya.png', //29
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728920337/30_bj19em_c_pad_b_gen_fill_w_1440_h_1024_ostomm.png', //30
+  //   '',//31
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728918687/32_k6jarr.png', //32
+  //   '',//33
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728918699/34_i9wrzd.png', //34
+  //   'https://res.cloudinary.com/diswj8gya/image/upload/v1728918705/35_p4srrh.png', //35
+  // ];
 
   const charArray = [
     "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090763/HopelessOpus/gt7ydwwje8vwegcr4ivc.png",
@@ -168,92 +168,120 @@ const StoryGame = () => {
     "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090746/HopelessOpus/nmbwuzhcamgc27rkl9m3.png",
     "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729093163/HopelessOpus/aeji6yhxt1r7tiylk6m1.png"
   ];
+  const bgarray = [
+     '',//0
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1728917655/1.png', //1
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1728930116/2_1_uldavh.png', //2
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1729150226/3_1_hqg6lo.png ', //3
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1729150458/Screenshot_2024-10-17_at_1.03.17_PM_jvl0tn.png ', //4
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1728921639/5_v01egf_du9xqs.png', //5
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1728921641/6_kffzxo_aungzz.png', //6
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1729150049/7_1_sfzsht.png', //7
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1729150048/8_1_lgd17v.png', //8
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1728921654/9_jq7f7b_kbae5g.png', //9
+     'https://res.cloudinary.com/dccscovqj/image/upload/v1729165907/DALL_E_2024-10-12_19.11.01_-_A_public_space_with_one_wall_featuring_a_large_glass_door_that_serves_as_the_entrance_to_a_library._The_door_has_a_modern_sleek_design_with_black_met_1_ltpz4g.png', //10
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1728921653/11_aljo7g_jugaqe.png', //11
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1728932361/12_o_auarlv.png', //12
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1728921641/13_fjmu45_douwxr.jpg', //13
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1728922300/14_yjbyhz_c_pad_b_gen_fill_w_1440_h_1024_lxm2vt.png', //14
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1728922043/15_aoxwgf.png', //15
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1729150772/17_1_fsg5dv.png ', //16
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1729150772/17_1_fsg5dv.png', //17
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1728922649/18_twrzq6_c_pad_b_gen_fill_w_1440_h_1024_dfkpnu.png', //18
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1728920787/19_l3fpqd_c_pad_b_gen_fill_w_1440_h_1024_smva4a.png', //19
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1728918649/20_ratvde.png', //20
+     '',//21
+     '',//22
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1728932471/23_wpseh7.png', //23
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1728921645/24_osspg4_hkaskt.png', //24
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1728920134/25_k81ope_c_pad_b_gen_fill_w_1440_h_1024_cfpgar.png', //25
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1728920666/26_ne9l6b_c_pad_b_gen_fill_w_1440_h_1024_b8fusi.png', //26
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1728918667/27_oy5z45.png', //27
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1728918686/28_x9gtno.png', //28
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1728920544/29_svbxaf_c_pad_b_gen_fill_w_1440_h_1024_hrvuya.png', //29
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1728920337/30_bj19em_c_pad_b_gen_fill_w_1440_h_1024_ostomm.png', //30
+     '',//31
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1728918687/32_k6jarr.png', //32
+     '',//33
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1728918699/34_i9wrzd.png', //34
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1728918705/35_p4srrh.png', //35
+     '', //36
+     '', //37
+     '', //38
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1729156239/39_1_vmuthu.png',//39
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1729157144/Stranger_1_znfkis.png', //40
+     'https://res.cloudinary.com/diswj8gya/image/upload/v1729156386/41_1_vupslq.png', //41
+    ]
   
 
   //function for minigame 1
   const handleMiniGameOneResult = (pts, won) => {
     setMinigameOnePoints(pts);
     setMinigameOneWon(won);
-    console.log(`Player got: ${pts}`);
   };
 
   const handleMiniGameTwoResult = (pts) => {
     setMinigameTwoPoints(pts); // Update the state based on the mini-game result
-    console.log(`Player got: ${pts}`);
   };
 
   const handleMiniGameThreeResult = (pts) => {
     setMinigameThreePoints(pts); // Update the state based on the mini-game result
-    console.log(`Player got: ${pts}`);
   };
 
   const handleMiniGameFourResult = (pts) => {
     setMinigameFourPoints(pts); // Update the state based on the mini-game result
-    console.log(`Player got: ${pts}`);
   };
 
   const handleMiniGameFiveResult = (pts) => {
     setMinigameFivePoints(pts); // Update the state based on the mini-game result
-    console.log(`Player got: ${pts}`);
   };
 
   const handleMiniGameSixResult = (pts, won) => {
     setMinigameSixPoints(pts); // Update the state based on the mini-game result
     setMinigameSixWon(won);
-    console.log(`Player got: ${pts}`);
   };
 
   const handleMiniGameSevenResult = (pts) => {
     setMinigameSevenPoints(pts); // Update the state based on the mini-game result
-    console.log(`Player got: ${pts}`);
   };
 
   const handleMiniGameEightResult = (pts) => {
     setMinigameEightPoints(pts); // Update the state based on the mini-game result
-    console.log(`Player got: ${pts}`);
   };
 
   const handleMiniGameNineResult = (pts) => {
     setMinigameNinePoints(pts); // Update the state based on the mini-game result
-    console.log(`Player got: ${pts}`);
   };
 
   const handleMiniGameTenResult = (pts) => {
     setMinigameTenPoints(pts); // Update the state based on the mini-game result
-    console.log(`Player got: ${pts}`);
   };
 
   const handleMiniGameElevenResult = (pts) => {
     setMinigameElevenPoints(pts); // Update the state based on the mini-game result
-    console.log(`Player got: ${pts}`);
   };
 
   const handleMiniGameFourteenResult = (pts, won) => {
     setMinigameFourteenPoints(pts);
     setMinigameFourteenWon(won);
-    console.log(`Player got: ${pts}`);
   }
 
   const handleMiniGameFifteenResult = (pts) => {
     setMinigameFifteenPoints(pts);
-    console.log(`Player got: ${pts}`);
   }
 
   const handleMiniGameSixteenResult = (pts, won) => {
     setMinigameSixteenPoints(pts);
     setMinigameSixteenWon(won);
-    console.log(`Player got: ${pts}`);
   }
 
   const handleMiniGameSeventeenResult = (pts) => {
     setMinigameSeventeenPoints(pts);
-    console.log(`Player got: ${pts}`);
   }
 
   const handleMiniGameEighteenResult = (pts, won) => {
     setMinigameEighteenPoints(pts);
     setMinigameEighteenWon(won);
-    console.log(`Player got: ${pts}`);
   }
 
   // Fetch user details only when the component mounts
@@ -274,17 +302,15 @@ const StoryGame = () => {
       }
 
       const userDetails = await response.json();
-      console.log(userDetails); // Use user details as needed
       setStoryId(userDetails.currentStoryId);
       setPoints(userDetails.points); // Assume you store points in the backend
       setMoney(userDetails.money);
       setHealth(userDetails.health);
       setRF(userDetails.rf);
       setInventory(userDetails.inventory);
-      console.log(userDetails.points);
       fetchStory(userDetails.currentStoryId);
     } catch (error) {
-      console.error("Error fetching user details:", error.message);
+      // console.error("Error fetching user details:", error.message);
       nav("/storyerror");
     }
   }
@@ -300,10 +326,8 @@ const StoryGame = () => {
       const response = await fetch(`${BaseUrl}/api/story/${storyId}`);
       const data = await response.json();
       setStory(data);
-      console.log(data);
       if (data.options.length === 0) {
         setGameNo(data.minigame);
-        console.log(`game: ${gameNo}`);
       } else {
         setGameNo(0);
       }
@@ -313,7 +337,7 @@ const StoryGame = () => {
       }
       setSnippetIndex(0); // Reset the snippet index to 0 when a new story is fetched
     } catch (error) {
-      console.error("Error fetching story:", error);
+      // console.error("Error fetching story:", error);
     } finally {
       setLoading(false);
     }
@@ -354,9 +378,7 @@ const StoryGame = () => {
       }
 
       const data = await response.json();
-      console.log("Story and points updated successfully:", data);
     } catch (error) {
-      console.error("Error updating story and points:", error);
     }
   };
 
@@ -383,7 +405,6 @@ const StoryGame = () => {
       }
 
       const userDetails = await response.json();
-      console.log(userDetails); // Use user details as needed
       setStoryId(userDetails.currentStoryId);
 
       const firstTwoDigits1 = userDetails.currentStoryId.slice(0, 2);
@@ -396,10 +417,7 @@ const StoryGame = () => {
         const updatedHealth = health + optionHealth;
         const updatedMoney = money + optionMoney;
         const updatedRF = rf + optionRF;
-        console.log(updatedPoints, points, optionPoints);
-        console.log(updatedHealth, health, optionHealth);
-        console.log(updatedMoney, money, optionMoney);
-        console.log(updatedRF, rf, optionRF);
+        
         setPoints(updatedPoints); // Update the UI with new points
         setHealth(updatedHealth);
         setMoney(updatedMoney);
@@ -411,7 +429,6 @@ const StoryGame = () => {
         inv.sword.value = optionInventory.sword;
         inv.pickaxe.value = optionInventory.pickaxe;
         inv.axe.value = optionInventory.axe;
-        console.log(inv, optionInventory);
         setInventory(inv);
         fetchStory(nextStoryId); // Fetch the new story
         updateCurrentStoryIdAndPoints(
@@ -424,7 +441,7 @@ const StoryGame = () => {
         ); // Update the story ID and points in the backend
       }
     } catch (error) {
-      console.error("Error fetching user details:", error.message);
+      // console.error("Error fetching user details:", error.message);
     }
   };
 
@@ -444,7 +461,6 @@ const StoryGame = () => {
       }
 
       const userDetails = await response.json();
-      console.log(userDetails); // Use user details as needed
       setStoryId(userDetails.currentStoryId);
 
       if (gameNo === 1) {
@@ -453,10 +469,9 @@ const StoryGame = () => {
         const updatedHealth = health;
         const updatedMoney = money;
         const updatedRF = rf;
-        console.log(updatedPoints, points);
-        console.log(updatedHealth, health);
-        console.log(updatedMoney, money);
-        console.log(updatedRF, rf);
+        
+        
+        
         setPoints(updatedPoints); // Update the UI with new points
         setHealth(updatedHealth);
         setMoney(updatedMoney);
@@ -489,10 +504,9 @@ const StoryGame = () => {
         const updatedHealth = health;
         const updatedMoney = money;
         const updatedRF = rf;
-        console.log(updatedPoints, points);
-        console.log(updatedHealth, health);
-        console.log(updatedMoney, money);
-        console.log(updatedRF, rf);
+        
+        
+        
         setPoints(updatedPoints); // Update the UI with new points
         setHealth(updatedHealth);
         setMoney(updatedMoney);
@@ -518,10 +532,9 @@ const StoryGame = () => {
         const updatedHealth = health;
         const updatedMoney = money;
         const updatedRF = rf;
-        console.log(updatedPoints, points);
-        console.log(updatedHealth, health);
-        console.log(updatedMoney, money);
-        console.log(updatedRF, rf);
+        
+        
+        
         setPoints(updatedPoints); // Update the UI with new points
         setHealth(updatedHealth);
         setMoney(updatedMoney);
@@ -545,10 +558,9 @@ const StoryGame = () => {
         const updatedHealth = health;
         const updatedMoney = money;
         const updatedRF = rf;
-        console.log(updatedPoints, points);
-        console.log(updatedHealth, health);
-        console.log(updatedMoney, money);
-        console.log(updatedRF, rf);
+        
+        
+        
         setPoints(updatedPoints); // Update the UI with new points
         setHealth(updatedHealth);
         setMoney(updatedMoney);
@@ -572,10 +584,9 @@ const StoryGame = () => {
         const updatedHealth = health;
         const updatedMoney = money;
         const updatedRF = rf;
-        console.log(updatedPoints, points);
-        console.log(updatedHealth, health);
-        console.log(updatedMoney, money);
-        console.log(updatedRF, rf);
+        
+        
+        
         setPoints(updatedPoints); // Update the UI with new points
         setHealth(updatedHealth);
         setMoney(updatedMoney);
@@ -600,10 +611,9 @@ const StoryGame = () => {
         const updatedHealth = health;
         const updatedMoney = money;
         const updatedRF = rf;
-        console.log(updatedPoints, points);
-        console.log(updatedHealth, health);
-        console.log(updatedMoney, money);
-        console.log(updatedRF, rf);
+        
+        
+        
         setPoints(updatedPoints); // Update the UI with new points
         setHealth(updatedHealth);
         setMoney(updatedMoney);
@@ -627,10 +637,9 @@ const StoryGame = () => {
         const updatedHealth = health;
         const updatedMoney = money;
         const updatedRF = rf;
-        console.log(updatedPoints, points);
-        console.log(updatedHealth, health);
-        console.log(updatedMoney, money);
-        console.log(updatedRF, rf);
+        
+        
+        
         setPoints(updatedPoints); // Update the UI with new points
         setHealth(updatedHealth);
         setMoney(updatedMoney);
@@ -654,10 +663,9 @@ const StoryGame = () => {
         const updatedHealth = health;
         const updatedMoney = money;
         const updatedRF = rf;
-        console.log(updatedPoints, points);
-        console.log(updatedHealth, health);
-        console.log(updatedMoney, money);
-        console.log(updatedRF, rf);
+        
+        
+        
         setPoints(updatedPoints); // Update the UI with new points
         setHealth(updatedHealth);
         setMoney(updatedMoney);
@@ -681,10 +689,9 @@ const StoryGame = () => {
         const updatedHealth = health;
         const updatedMoney = money;
         const updatedRF = rf;
-        console.log(updatedPoints, points);
-        console.log(updatedHealth, health);
-        console.log(updatedMoney, money);
-        console.log(updatedRF, rf);
+        
+        
+        
         setPoints(updatedPoints); // Update the UI with new points
         setHealth(updatedHealth);
         setMoney(updatedMoney);
@@ -708,10 +715,9 @@ const StoryGame = () => {
         const updatedHealth = health;
         const updatedMoney = money;
         const updatedRF = rf;
-        console.log(updatedPoints, points);
-        console.log(updatedHealth, health);
-        console.log(updatedMoney, money);
-        console.log(updatedRF, rf);
+        
+        
+        
         setPoints(updatedPoints); // Update the UI with new points
         setHealth(updatedHealth);
         setMoney(updatedMoney);
@@ -736,10 +742,9 @@ const StoryGame = () => {
         const updatedHealth = health;
         const updatedMoney = money;
         const updatedRF = rf;
-        console.log(updatedPoints, points);
-        console.log(updatedHealth, health);
-        console.log(updatedMoney, money);
-        console.log(updatedRF, rf);
+        
+        
+        
         setPoints(updatedPoints); // Update the UI with new points
         setHealth(updatedHealth);
         setMoney(updatedMoney);
@@ -763,10 +768,9 @@ const StoryGame = () => {
         const updatedHealth = health;
         const updatedMoney = money;
         const updatedRF = rf;
-        console.log(updatedPoints, points);
-        console.log(updatedHealth, health);
-        console.log(updatedMoney, money);
-        console.log(updatedRF, rf);
+        
+        
+        
         setPoints(updatedPoints); // Update the UI with new points
         setHealth(updatedHealth);
         setMoney(updatedMoney);
@@ -785,10 +789,9 @@ const StoryGame = () => {
         const updatedHealth = health;
         const updatedMoney = money;
         const updatedRF = rf;
-        console.log(updatedPoints, points);
-        console.log(updatedHealth, health);
-        console.log(updatedMoney, money);
-        console.log(updatedRF, rf);
+        
+        
+        
         setPoints(updatedPoints); // Update the UI with new points
         setHealth(updatedHealth);
         setMoney(updatedMoney);
@@ -812,10 +815,9 @@ const StoryGame = () => {
         const updatedHealth = health;
         const updatedMoney = money;
         const updatedRF = rf;
-        console.log(updatedPoints, points);
-        console.log(updatedHealth, health);
-        console.log(updatedMoney, money);
-        console.log(updatedRF, rf);
+        
+        
+        
         setPoints(updatedPoints); // Update the UI with new points
         setHealth(updatedHealth);
         setMoney(updatedMoney);
@@ -834,10 +836,9 @@ const StoryGame = () => {
         const updatedHealth = health;
         const updatedMoney = money;
         const updatedRF = rf;
-        console.log(updatedPoints, points);
-        console.log(updatedHealth, health);
-        console.log(updatedMoney, money);
-        console.log(updatedRF, rf);
+        
+        
+        
         setPoints(updatedPoints); // Update the UI with new points
         setHealth(updatedHealth);
         setMoney(updatedMoney);
@@ -856,7 +857,7 @@ const StoryGame = () => {
       }
       
     } catch (error) {
-      console.error("Error fetching user details:", error.message);
+      // console.error("Error fetching user details:", error.message);
     }
   };
 
@@ -979,7 +980,7 @@ const StoryGame = () => {
               )}
               {gameDialogue && gameNo === 11 && <Minigame11 />}  
                 
-              {gameDialogue && (
+              {gameDialogue && gameNo === 18 &&(
                 <Minigame18 gameResult={handleMiniGameEighteenResult}/>  //Switch Game and 11 is Row Boat game
               )}
 
@@ -1113,12 +1114,6 @@ const StoryGame = () => {
                 ))} */}
 
 
-{/* <SequentialTypewriter
-  lines={story.snippet[snippetIndex].text.split("\n")} // Split the text into lines
-  typingSpeed={100} // Adjust typing speed if necessary
-  delayBetweenLines={500} // Delay between lines
-  onComplete={() => console.log('All lines displayed!')} // Optional callback
-/> */}
 
               {/* <p>{story.snippet[snippetIndex].text}</p> */}
               {story.snippet[snippetIndex].text
