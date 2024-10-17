@@ -115,7 +115,8 @@ const MazeGame = ({ gameResult }) => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-transparent">
-      <div className="text-center bg-transparent rounded-lg shadow-lg p-6 w-80 transition-transform hover:scale-105 mt-28">
+      <div className="text-center bg-gray-800/70 backdrop-blur-md rounded-lg shadow-lg p-6 w-80 mt-28"
+      style={{ background: 'rgba(75, 85, 99, 0.7)', backdropFilter: 'blur(10px)' }} >
         <h1 className="text-2xl pb-5">Maze Game</h1>
         {!gameStarted && !gameOver && (
           <button

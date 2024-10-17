@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Dino.css';
 
-function Minigame15({gameResult}) {
+function Minigame15({ gameResult }) {
   const [isJumping, setIsJumping] = useState(false);
   const [dinoPosition, setDinoPosition] = useState(0);
   const [obstaclePosition, setObstaclePosition] = useState(1000);
@@ -83,32 +83,47 @@ function Minigame15({gameResult}) {
   };
 
   return (
-    <div className="h-[40%] mb-[20rem] flex justify-center">
+    <div className="relative w-full h-screen flex flex-col items-center justify-center bg-transparent pb-[-30em ]">
+      {/* Black background should be visible behind the game only when running */}
+      {startGame && !gameOver && (
+        <div
+          className="absolute inset-0 bg-black"
+          style={{
+            width: '100%',
+            height: '100%',
+          }}
+        />
+      )}
+
+      {/* Score in the center, but at the top */}
+      <div className="absolute mt-40 top-10 text-white text-2xl z-10">
+        {startGame && !gameOver && `Score: ${score}`}
+      </div>
+
       {startGame && !gameOver ? (
-        <>
-          <div 
+        <div className="relative mt-20 ml-[-8em] z-10">
+          <img
             className="dino" 
             ref={dinoRef} 
-            style={{ bottom: `${dinoPosition}px` }}>
-          </div>
-          <div 
+            src='https://res.cloudinary.com/diswj8gya/image/upload/v1729122976/dino_rqzcd2.png'
+            style={{ bottom: `${dinoPosition}px`, position: 'relative' }}
+          />
+          <img 
             className="obstacle" 
-            style={{ left: `${obstaclePosition}px` }}>
-          </div>
-          <div className="score">
-            Score: {score}
-          </div>
-        </>
+            src='https://res.cloudinary.com/diswj8gya/image/upload/v1729123092/cacac_srlfcs.png'
+            style={{ left: `${obstaclePosition}px`, position: 'absolute', bottom: '0px' }}
+          />
+        </div>
       ) : gameOver ? (
-        <>
-          <div className="game-over">
-            <h2>Game Over!</h2>
-            <p>Your Score: {score}</p>
-            <button onClick={handleRetry}>Retry</button>
-          </div>
-        </>
+        <div className="game-over bg-black p-4 rounded-lg text-white z-10">
+          <h2>Game Over!</h2>
+          <p>Your Score: {score}</p>
+          <button className="bg-gray-700 p-2 rounded mt-4" onClick={handleRetry}>
+            Retry
+          </button>
+        </div>
       ) : (
-        <button className="start-btn" onClick={() => setStartGame(true)}>
+        <button className="start-btn bg-black text-white p-4 rounded-lg" onClick={() => setStartGame(true)}>
           Start Game
         </button>
       )}

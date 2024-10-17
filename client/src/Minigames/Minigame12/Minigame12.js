@@ -137,7 +137,7 @@ const Minigame12 = ({ gameResult }) => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-transparent">
-      <div className="text-center bg-transparent rounded-lg shadow-lg p-6 w-80 transition-transform hover:scale-105 mt-28">
+      <div className="text-center bg-black backdrop-blur-md rounded-lg shadow-lg p-6 w-100 mt-28" >
         <h1 className="text-2xl pb-2 underline underline-offset-1">Maze Game</h1>
         <h1 className="text-sm pb-5">The Creature is After you!</h1>
         {!gameStarted && !gameOver && (

@@ -96,6 +96,10 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     height: '100vh',
+    backgroundColor: "rgba(75, 85, 99, 0.7)", 
+    backdropFilter: "blur(10px)",
+    borderRadius: "12px",
+    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
   },
   question: {
     fontSize: '24px',

@@ -41,7 +41,7 @@ const MathematicalDroplets = ({ gameResult }) => {
   const [speed, setSpeed] = useState(1); // Speed starts at 1 and can increase over time
   const [score, setScore] = useState(0);
   const [isGameOver, setIsGameOver] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(60); // 60 seconds game timer
+  const [timeLeft, setTimeLeft] = useState(15); // 60 seconds game timer
   const [usedPositions, setUsedPositions] = useState([]); // To track used horizontal positions
   const [hasStarted, setHasStarted] = useState(false); // State to track if the game has started
 
@@ -166,7 +166,7 @@ const MathematicalDroplets = ({ gameResult }) => {
     setSpeed(1); // Reset speed
     setScore(0); // Reset score
     setIsGameOver(false); // Reset game over state
-    setTimeLeft(60); // Reset timer
+    setTimeLeft(15); // Reset timer
     setUsedPositions([]); // Clear used positions
     setHasStarted(true); // Set the game to started
     addNewQuestion(); // Start the first question immediately

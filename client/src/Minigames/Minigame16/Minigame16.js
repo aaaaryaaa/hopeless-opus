@@ -184,7 +184,7 @@ const EmojiGame = () => {
   };
 
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full overflow-hidden bg-black">
       <div
         ref={textContainerRef}
         className="relative lg:h-[100vh] h-[100vh] cursor-default overflow-hidden"

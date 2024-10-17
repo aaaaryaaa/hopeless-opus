@@ -144,13 +144,13 @@ int main() {
   return (
     <>
       <div style={{ padding: '20px', paddingTop: "5px" }}>
-        <h1 className='text-center'>C Code Debugger Game</h1>
-        <h2>Score: {score}</h2>
+        <h1 className='text-center bg-black ml-auto mr-auto w-80 mb-0 shadow-lg rounded-lg p-3'>C Code Debugger Game</h1>
+        <h2 className=''>Score: {score}</h2>
         <CodeEditor code={code} setCode={setCode} disabled={isQuestionCompleted} />
-        <button className="hover:bg-white hover:text-black rounded-lg m-1 p-1" onClick={runDebugger} disabled={isQuestionCompleted}>Run Code</button>
-        <button className="hover:bg-white hover:text-black rounded-lg m-1 p-1" onClick={nextQuestion} disabled={!isQuestionCompleted}>Next Question</button>
+        <button className="bg-black text-white hover:bg-white hover:text-black rounded-lg m-1 p-3" onClick={runDebugger} disabled={isQuestionCompleted}>Run Code</button>
+        <button className="bg-black text-white hover:bg-white hover:text-black rounded-lg m-1 p-3" onClick={nextQuestion} disabled={!isQuestionCompleted}>Next Question</button>
         <Output output={output} />
-        {feedback && <h3>{feedback}</h3>}
+        {feedback && <h3 className='bg-black text-white p-3 opacity-80  '>{feedback}</h3>}
       </div>
     </>
   );

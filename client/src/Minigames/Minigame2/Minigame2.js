@@ -116,7 +116,8 @@ function Minigame2({ gameResult }) {
   };
 
   return (
-    <div className="h-full bg-black flex flex-col items-center mt-auto mb-auto p-10 justify-center">
+    <div className="h-full w-[50%] bg-gray-700/70 ml-auto mr-auto backdrop-blur-md shadow-lg rounded-lg flex flex-col items-center mt-auto mb-auto p-10 justify-center"
+    style={{ background: 'rgba(75, 85, 99, 0.7)', backdropFilter: 'blur(10px)' }}>
       <h1 className="text-3xl font-bold mb-4">Memory Matching Game</h1>
 
       {!hasStarted ? (

@@ -92,11 +92,11 @@ const Game = ({ gameResult }) => {
   const arraysEqual = (a1, a2) => JSON.stringify(a1) === JSON.stringify(a2);
 
   return (
-    <div className="p-20">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white">
       {/* Game not started yet */}
       {!hasStarted && !gameOver ? (
-        <div className="flex flex-col items-center justify-center pt-10">
-          <h1 className="text-3xl font-bold mb-4 mt-[-20em]">Ready to Play?</h1>
+        <div className="flex flex-col items-center">
+          <h1 className="text-3xl font-bold mb-4">Ready to Play?</h1>
           <button
             onClick={handleStart}
             className="bg-red-500 hover:bg-red-800 text-white font-bold py-2 px-4 rounded"
@@ -106,7 +106,7 @@ const Game = ({ gameResult }) => {
         </div>
       ) : gameOver ? (
         // Game over screen when the time runs out
-        <div className="flex flex-col items-center justify-center h-screen">
+        <div className="flex flex-col items-center">
           <h1 className="text-4xl font-bold text-red-600">Game Over!</h1>
           <p className="text-xl mt-4">Time's up. The monster caught you!</p>
           <p className="text-2xl mt-4">Final Score: {score}</p>
@@ -122,6 +122,7 @@ const Game = ({ gameResult }) => {
       )}
     </div>
   );
+  
 };
 
 export default Game;
