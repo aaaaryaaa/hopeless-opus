@@ -1,1629 +1,3064 @@
 {
-    "teams": [
+  "teams": [
       {
-        "team_id": "1",
-        "delegate_ids": ["10", "20"]
+          "team_id": "13502",
+          "delegate_ids": [
+              "10137",
+              "10716"
+          ]
       },
       {
-        "team_id": "2",
-        "delegate_ids": ["30", "40"]
+          "team_id": "13206",
+          "delegate_ids": [
+              "13092",
+              "13242"
+          ]
       },
       {
-        "team_id": "3",
-        "delegate_ids": ["50", "60"]
+          "team_id": "13116",
+          "delegate_ids": [
+              "12178",
+              "10832"
+          ]
       },
       {
-        "team_id": "4",
-        "delegate_ids": ["70", "80"]
-      },  
+          "team_id": "10988",
+          "delegate_ids": [
+              "10627",
+              "10635"
+          ]
+      },
+      {
+          "team_id": "12411",
+          "delegate_ids": [
+              "10516",
+              "12174"
+          ]
+      },
+      {
+          "team_id": "10917",
+          "delegate_ids": [
+              "11286",
+              "12291"
+          ]
+      },
+      {
+          "team_id": "12196",
+          "delegate_ids": [
+              "11568",
+              "13074"
+          ]
+      },
+      {
+          "team_id": "11381",
+          "delegate_ids": [
+              "12202",
+              "11005"
+          ]
+      },
+      {
+          "team_id": "13049",
+          "delegate_ids": [
+              "12499"
+          ]
+      },
+      {
+          "team_id": "12215",
+          "delegate_ids": [
+              "11448",
+              "13115"
+          ]
+      },
+      {
+          "team_id": "12811",
+          "delegate_ids": [
+              "10133",
+              "10027"
+          ]
+      },
+      {
+          "team_id": "10345",
+          "delegate_ids": [
+              "10129",
+              "10076"
+          ]
+      },
+      {
+          "team_id": "10808",
+          "delegate_ids": [
+              "10553",
+              "10021"
+          ]
+      },
+      {
+          "team_id": "12026",
+          "delegate_ids": [
+              "13119",
+              "11122"
+          ]
+      },
+      {
+          "team_id": "11590",
+          "delegate_ids": [
+              "11120",
+              "11578"
+          ]
+      },
+      {
+          "team_id": "12852",
+          "delegate_ids": [
+              "11718"
+          ]
+      },
+      {
+          "team_id": "13328",
+          "delegate_ids": [
+              "13453",
+              "10882"
+          ]
+      },
+      {
+          "team_id": "12784",
+          "delegate_ids": [
+              "12673",
+              "10848"
+          ]
+      },
+      {
+          "team_id": "12886",
+          "delegate_ids": [
+              "10471",
+              "10262"
+          ]
+      },
+      {
+          "team_id": "11504",
+          "delegate_ids": [
+              "12205",
+              "11906"
+          ]
+      },
+      {
+          "team_id": "10390",
+          "delegate_ids": [
+              "11085",
+              "10787"
+          ]
+      },
+      {
+          "team_id": "10958",
+          "delegate_ids": [
+              "10593",
+              "10196"
+          ]
+      },
+      {
+          "team_id": "10287",
+          "delegate_ids": [
+              "10501",
+              "11107"
+          ]
+      },
+      {
+          "team_id": "10475",
+          "delegate_ids": [
+              "11114",
+              "11431"
+          ]
+      },
+      {
+          "team_id": "11826",
+          "delegate_ids": [
+              "10250",
+              "11659"
+          ]
+      },
+      {
+          "team_id": "11906",
+          "delegate_ids": [
+              "12846"
+          ]
+      },
+      {
+          "team_id": "12467",
+          "delegate_ids": [
+              "10652"
+          ]
+      },
+      {
+          "team_id": "11769",
+          "delegate_ids": [
+              "10871",
+              "10746"
+          ]
+      },
+      {
+          "team_id": "10892",
+          "delegate_ids": [
+              "11262",
+              "11260"
+          ]
+      },
+      {
+          "team_id": "13496",
+          "delegate_ids": [
+              "13621"
+          ]
+      },
+      {
+          "team_id": "13478",
+          "delegate_ids": [
+              "11171"
+          ]
+      },
+      {
+          "team_id": "13228",
+          "delegate_ids": [
+              "12440",
+              "11806"
+          ]
+      },
+      {
+          "team_id": "12785",
+          "delegate_ids": [
+              "11305",
+              "12486"
+          ]
+      },
+      {
+          "team_id": "13193",
+          "delegate_ids": [
+              "13015"
+          ]
+      },
+      {
+          "team_id": "12253",
+          "delegate_ids": [
+              "10977"
+          ]
+      },
+      {
+          "team_id": "13474",
+          "delegate_ids": [
+              "10130",
+              "12482"
+          ]
+      },
+      {
+          "team_id": "12116",
+          "delegate_ids": [
+              "12868",
+              "13146"
+          ]
+      },
+      {
+          "team_id": "13419",
+          "delegate_ids": [
+              "11919",
+              "11407"
+          ]
+      },
+      {
+          "team_id": "12955",
+          "delegate_ids": [
+              "11526",
+              "11528"
+          ]
+      },
+      {
+          "team_id": "12072",
+          "delegate_ids": [
+              "12906",
+              "10161"
+          ]
+      },
+      {
+          "team_id": "10841",
+          "delegate_ids": [
+              "11876",
+              "11161"
+          ]
+      },
+      {
+          "team_id": "10015",
+          "delegate_ids": [
+              "10125",
+              "10088"
+          ]
+      },
+      {
+          "team_id": "12847",
+          "delegate_ids": [
+              "11267",
+              "11048"
+          ]
+      },
+      {
+          "team_id": "11026",
+          "delegate_ids": [
+              "10134",
+              "10152"
+          ]
+      },
+      {
+          "team_id": "13012",
+          "delegate_ids": [
+              "10454",
+              "12852"
+          ]
+      },
+      {
+          "team_id": "13449",
+          "delegate_ids": [
+              "11625"
+          ]
+      },
+      {
+          "team_id": "10760",
+          "delegate_ids": [
+              "12148",
+              "11756"
+          ]
+      },
+      {
+          "team_id": "10118",
+          "delegate_ids": [
+              "10717",
+              "10685"
+          ]
+      },
+      {
+          "team_id": "12948",
+          "delegate_ids": [
+              "10410",
+              "13520"
+          ]
+      },
+      {
+          "team_id": "13068",
+          "delegate_ids": [
+              "10761",
+              "13509"
+          ]
+      },
+      {
+          "team_id": "13439",
+          "delegate_ids": [
+              "11490"
+          ]
+      },
+      {
+          "team_id": "13297",
+          "delegate_ids": [
+              "10582"
+          ]
+      },
+      {
+          "team_id": "11321",
+          "delegate_ids": [
+              "12600",
+              "10457"
+          ]
+      },
+      {
+          "team_id": "13413",
+          "delegate_ids": [
+              "13006",
+              "10224"
+          ]
+      },
+      {
+          "team_id": "12155",
+          "delegate_ids": [
+              "10610"
+          ]
+      },
+      {
+          "team_id": "10311",
+          "delegate_ids": [
+              "11183",
+              "10757"
+          ]
+      },
       {
-        "team_id": "10308",
-        "delegate_ids": ["11150", "11147"]
+          "team_id": "11980",
+          "delegate_ids": [
+              "10038",
+              "10599"
+          ]
       },
       {
-        "team_id": "11618",
-        "delegate_ids": ["11609"]
+          "team_id": "11218",
+          "delegate_ids": [
+              "11699",
+              "11042"
+          ]
       },
       {
-        "team_id": "10798",
-        "delegate_ids": ["10643", "10389"]
+          "team_id": "12883",
+          "delegate_ids": [
+              "10792",
+              "11128"
+          ]
       },
       {
-        "team_id": "11450",
-        "delegate_ids": ["12728", "12709"]
+          "team_id": "12358",
+          "delegate_ids": [
+              "12377",
+              "12665"
+          ]
       },
       {
-        "team_id": "10826",
-        "delegate_ids": ["10585", "10559"]
+          "team_id": "13029",
+          "delegate_ids": [
+              "10254",
+              "14023"
+          ]
       },
       {
-        "team_id": "10440",
-        "delegate_ids": ["10994", "11373"]
+          "team_id": "10116",
+          "delegate_ids": [
+              "10168",
+              "10170"
+          ]
       },
       {
-        "team_id": "10608",
-        "delegate_ids": ["11435", "11368"]
+          "team_id": "13184",
+          "delegate_ids": [
+              "10438"
+          ]
       },
       {
-        "team_id": "12385",
-        "delegate_ids": ["11131"]
+          "team_id": "13075",
+          "delegate_ids": [
+              "13216"
+          ]
       },
       {
-        "team_id": "10015",
-        "delegate_ids": ["10125", "10088"]
+          "team_id": "11181",
+          "delegate_ids": [
+              "12435",
+              "10974"
+          ]
       },
       {
-        "team_id": "13001",
-        "delegate_ids": ["11759"]
+          "team_id": "13129",
+          "delegate_ids": [
+              "10396",
+              "13066"
+          ]
       },
       {
-        "team_id": "12947",
-        "delegate_ids": ["13314", "11129"]
+          "team_id": "12369",
+          "delegate_ids": [
+              "12181"
+          ]
       },
       {
-        "team_id": "10663",
-        "delegate_ids": ["11539", "11026"]
+          "team_id": "13111",
+          "delegate_ids": [
+              "11097",
+              "12896"
+          ]
       },
       {
-        "team_id": "12808",
-        "delegate_ids": ["10511", "12747"]
+          "team_id": "11051",
+          "delegate_ids": [
+              "10412",
+              "10304"
+          ]
       },
       {
-        "team_id": "12711",
-        "delegate_ids": ["12517", "10184"]
+          "team_id": "10624",
+          "delegate_ids": [
+              "13602",
+              "11430"
+          ]
       },
       {
-        "team_id": "10669",
-        "delegate_ids": ["10316", "10147"]
+          "team_id": "13229",
+          "delegate_ids": [
+              "13788",
+              "13757"
+          ]
       },
       {
-        "team_id": "10849",
-        "delegate_ids": ["11826", "11136"]
+          "team_id": "11342",
+          "delegate_ids": [
+              "11023",
+              "11070"
+          ]
       },
       {
-        "team_id": "13119",
-        "delegate_ids": ["10908", "10474"]
+          "team_id": "12264",
+          "delegate_ids": [
+              "11281",
+              "13271"
+          ]
       },
       {
-        "team_id": "12239",
-        "delegate_ids": ["13274", "12797"]
+          "team_id": "13238",
+          "delegate_ids": [
+              "14222",
+              "14107"
+          ]
       },
       {
-        "team_id": "10727",
-        "delegate_ids": ["10941"]
+          "team_id": "11855",
+          "delegate_ids": [
+              "13967",
+              "11965"
+          ]
       },
       {
-        "team_id": "12702",
-        "delegate_ids": ["12501"]
+          "team_id": "11545",
+          "delegate_ids": [
+              "10913",
+              "11529"
+          ]
       },
       {
-        "team_id": "11737",
-        "delegate_ids": ["12312", "11383"]
+          "team_id": "12104",
+          "delegate_ids": [
+              "11321",
+              "10912"
+          ]
       },
       {
-        "team_id": "12873",
-        "delegate_ids": ["11279"]
+          "team_id": "12370",
+          "delegate_ids": [
+              "10743",
+              "12210"
+          ]
       },
       {
-        "team_id": "12074",
-        "delegate_ids": ["13123", "12005"]
+          "team_id": "10236",
+          "delegate_ids": [
+              "10791",
+              "10503"
+          ]
       },
       {
-        "team_id": "11790",
-        "delegate_ids": ["11389", "12575"]
+          "team_id": "10660",
+          "delegate_ids": [
+              "10334",
+              "11602"
+          ]
       },
       {
-        "team_id": "13064",
-        "delegate_ids": ["11056", "13025"]
+          "team_id": "11983",
+          "delegate_ids": [
+              "13096",
+              "11632"
+          ]
       },
       {
-        "team_id": "10306",
-        "delegate_ids": ["11134", "11044"]
+          "team_id": "11586",
+          "delegate_ids": [
+              "12830",
+              "11334"
+          ]
       },
       {
-        "team_id": "11760",
-        "delegate_ids": ["12982", "11263"]
+          "team_id": "13435",
+          "delegate_ids": [
+              "10151"
+          ]
       },
       {
-        "team_id": "11791",
-        "delegate_ids": ["13052", "12999"]
+          "team_id": "12681",
+          "delegate_ids": [
+              "14005",
+              "10899"
+          ]
       },
       {
-        "team_id": "13010",
-        "delegate_ids": ["11831", "10395"]
+          "team_id": "12300",
+          "delegate_ids": [
+              "12962",
+              "10268"
+          ]
       },
       {
-        "team_id": "10783",
-        "delegate_ids": ["11517", "11553"]
+          "team_id": "10554",
+          "delegate_ids": [
+              "10758",
+              "10988"
+          ]
       },
       {
-        "team_id": "10889",
-        "delegate_ids": ["10681", "10734"]
+          "team_id": "12624",
+          "delegate_ids": [
+              "13196",
+              "11784"
+          ]
       },
       {
-        "team_id": "11457",
-        "delegate_ids": ["10489"]
+          "team_id": "12877",
+          "delegate_ids": [
+              "11118",
+              "11137"
+          ]
       },
       {
-        "team_id": "10445",
-        "delegate_ids": ["10947", "10695"]
+          "team_id": "10709",
+          "delegate_ids": [
+              "10111"
+          ]
       },
       {
-        "team_id": "13167",
-        "delegate_ids": ["11589", "10937"]
+          "team_id": "11387",
+          "delegate_ids": [
+              "11652"
+          ]
       },
       {
-        "team_id": "10232",
-        "delegate_ids": ["10081", "10073"]
+          "team_id": "13505",
+          "delegate_ids": [
+              "14097"
+          ]
       },
       {
-        "team_id": "10028",
-        "delegate_ids": ["10218"]
+          "team_id": "13002",
+          "delegate_ids": [
+              "12060"
+          ]
       },
       {
-        "team_id": "10129",
-        "delegate_ids": ["10069", "10705"]
+          "team_id": "10160",
+          "delegate_ids": [
+              "10648",
+              "10814"
+          ]
       },
       {
-        "team_id": "10424",
-        "delegate_ids": ["11586", "10549"]
+          "team_id": "13189",
+          "delegate_ids": [
+              "13245",
+              "14064"
+          ]
       },
       {
-        "team_id": "12801",
-        "delegate_ids": ["13618"]
+          "team_id": "12505",
+          "delegate_ids": [
+              "13027",
+              "11416"
+          ]
       },
       {
-        "team_id": "13153",
-        "delegate_ids": ["12897", "11463"]
+          "team_id": "10275",
+          "delegate_ids": [
+              "10498",
+              "11022"
+          ]
       },
       {
-        "team_id": "10759",
-        "delegate_ids": ["10554", "10465"]
+          "team_id": "11608",
+          "delegate_ids": [
+              "12850",
+              "10208"
+          ]
       },
       {
-        "team_id": "13205",
-        "delegate_ids": ["13039", "10686"]
+          "team_id": "12679",
+          "delegate_ids": [
+              "11933",
+              "11138"
+          ]
       },
       {
-        "team_id": "13158",
-        "delegate_ids": ["10371"]
+          "team_id": "12667",
+          "delegate_ids": [
+              "11396"
+          ]
       },
       {
-        "team_id": "11209",
-        "delegate_ids": ["11870"]
+          "team_id": "10423",
+          "delegate_ids": [
+              "11366",
+              "10866"
+          ]
       },
       {
-        "team_id": "11326",
-        "delegate_ids": ["12152", "11257"]
+          "team_id": "12148",
+          "delegate_ids": [
+              "11542",
+              "12367"
+          ]
       },
       {
-        "team_id": "13303",
-        "delegate_ids": ["10339"]
+          "team_id": "13426",
+          "delegate_ids": [
+              "10256",
+              "10313"
+          ]
       },
       {
-        "team_id": "13260",
-        "delegate_ids": ["11682", "12726"]
+          "team_id": "13133",
+          "delegate_ids": [
+              "13225",
+              "12518"
+          ]
       },
       {
-        "team_id": "11834",
-        "delegate_ids": ["12723", "12242"]
+          "team_id": "10190",
+          "delegate_ids": [
+              "10132",
+              "10444"
+          ]
       },
       {
-        "team_id": "11315",
-        "delegate_ids": ["10842"]
+          "team_id": "13331",
+          "delegate_ids": [
+              "12636"
+          ]
       },
       {
-        "team_id": "12690",
-        "delegate_ids": ["12791"]
+          "team_id": "11915",
+          "delegate_ids": [
+              "11460"
+          ]
       },
       {
-        "team_id": "10900",
-        "delegate_ids": ["12197"]
+          "team_id": "11124",
+          "delegate_ids": [
+              "10879",
+              "10881"
+          ]
       },
       {
-        "team_id": "10499",
-        "delegate_ids": ["11057", "11012"]
+          "team_id": "11651",
+          "delegate_ids": [
+              "10998",
+              "10983"
+          ]
       },
       {
-        "team_id": "11866",
-        "delegate_ids": ["12332", "10495"]
+          "team_id": "12677",
+          "delegate_ids": [
+              "13590",
+              "11447"
+          ]
       },
       {
-        "team_id": "11443",
-        "delegate_ids": ["10329", "10251"]
+          "team_id": "13261",
+          "delegate_ids": [
+              "10353"
+          ]
       },
       {
-        "team_id": "12756",
-        "delegate_ids": ["10753"]
+          "team_id": "11902",
+          "delegate_ids": [
+              "12548"
+          ]
       },
       {
-        "team_id": "10785",
-        "delegate_ids": ["10509", "10625"]
+          "team_id": "12849",
+          "delegate_ids": [
+              "11909"
+          ]
       },
       {
-        "team_id": "11224",
-        "delegate_ids": ["11301"]
+          "team_id": "12977",
+          "delegate_ids": [
+              "13963"
+          ]
       },
       {
-        "team_id": "10587",
-        "delegate_ids": ["10299", "10577"]
+          "team_id": "12832",
+          "delegate_ids": [
+              "12311"
+          ]
       },
       {
-        "team_id": "12227",
-        "delegate_ids": ["12988", "12689"]
+          "team_id": "12608",
+          "delegate_ids": [
+              "12112",
+              "10512"
+          ]
       },
       {
-        "team_id": "13128",
-        "delegate_ids": ["11127"]
+          "team_id": "13165",
+          "delegate_ids": [
+              "11313"
+          ]
       },
       {
-        "team_id": "13287",
-        "delegate_ids": ["13078"]
+          "team_id": "12700",
+          "delegate_ids": [
+              "10059",
+              "13255"
+          ]
       },
       {
-        "team_id": "12426",
-        "delegate_ids": ["12656", "11439"]
+          "team_id": "12975",
+          "delegate_ids": [
+              "11635",
+              "11622"
+          ]
       },
       {
-        "team_id": "12809",
-        "delegate_ids": ["11394", "10358"]
+          "team_id": "12828",
+          "delegate_ids": [
+              "12701"
+          ]
       },
       {
-        "team_id": "11205",
-        "delegate_ids": ["11043", "11045"]
+          "team_id": "11900",
+          "delegate_ids": [
+              "10594"
+          ]
       },
       {
-        "team_id": "11107",
-        "delegate_ids": ["12585", "10427"]
+          "team_id": "11225",
+          "delegate_ids": [
+              "10709"
+          ]
       },
       {
-        "team_id": "10438",
-        "delegate_ids": ["11450", "11084"]
+          "team_id": "12099",
+          "delegate_ids": [
+              "12654"
+          ]
       },
       {
-        "team_id": "10435",
-        "delegate_ids": ["12530", "10540"]
+          "team_id": "13124",
+          "delegate_ids": [
+              "13863"
+          ]
       },
       {
-        "team_id": "10715",
-        "delegate_ids": ["10715", "10569"]
+          "team_id": "11204",
+          "delegate_ids": [
+              "11944",
+              "12640"
+          ]
       },
       {
-        "team_id": "13300",
-        "delegate_ids": ["11871"]
+          "team_id": "11653",
+          "delegate_ids": [
+              "11030",
+              "10566"
+          ]
       },
       {
-        "team_id": "12035",
-        "delegate_ids": ["13125"]
+          "team_id": "13254",
+          "delegate_ids": [
+              "11225",
+              "14123"
+          ]
       },
       {
-        "team_id": "12067",
-        "delegate_ids": ["10123"]
+          "team_id": "10543",
+          "delegate_ids": [
+              "10108",
+              "10112"
+          ]
       },
       {
-        "team_id": "12800",
-        "delegate_ids": ["10058", "13643"]
+          "team_id": "12630",
+          "delegate_ids": [
+              "12424"
+          ]
       },
       {
-        "team_id": "12142",
-        "delegate_ids": ["13142"]
+          "team_id": "10588",
+          "delegate_ids": [
+              "10115",
+              "10300"
+          ]
       },
       {
-        "team_id": "10662",
-        "delegate_ids": ["11269", "10428"]
+          "team_id": "13212",
+          "delegate_ids": [
+              "12295",
+              "12307"
+          ]
       },
       {
-        "team_id": "12686",
-        "delegate_ids": ["11182"]
+          "team_id": "10633",
+          "delegate_ids": [
+              "11113",
+              "11283"
+          ]
       },
       {
-        "team_id": "13255",
-        "delegate_ids": ["13674", "11248"]
+          "team_id": "11402",
+          "delegate_ids": [
+              "11574"
+          ]
       },
       {
-        "team_id": "13140",
-        "delegate_ids": ["12882", "12692"]
+          "team_id": "10939",
+          "delegate_ids": [
+              "11282",
+              "10445"
+          ]
       },
       {
-        "team_id": "12004",
-        "delegate_ids": ["11316", "10306"]
+          "team_id": "10023",
+          "delegate_ids": [
+              "10903",
+              "10150"
+          ]
       },
       {
-        "team_id": "12003",
-        "delegate_ids": ["11086", "12700"]
+          "team_id": "12246",
+          "delegate_ids": [
+              "13554",
+              "13106"
+          ]
       },
       {
-        "team_id": "12408",
-        "delegate_ids": ["10811", "10546"]
+          "team_id": "12643",
+          "delegate_ids": [
+              "11166",
+              "11684"
+          ]
       },
       {
-        "team_id": "11614",
-        "delegate_ids": ["11190", "10922"]
+          "team_id": "13170",
+          "delegate_ids": [
+              "12511",
+              "14088"
+          ]
       },
       {
-        "team_id": "11977",
-        "delegate_ids": ["12685", "10846"]
+          "team_id": "12646",
+          "delegate_ids": [
+              "10727",
+              "10733"
+          ]
       },
       {
-        "team_id": "13305",
-        "delegate_ids": ["12597"]
+          "team_id": "12791",
+          "delegate_ids": [
+              "10162"
+          ]
       },
       {
-        "team_id": "11957",
-        "delegate_ids": ["12948", "11421"]
+          "team_id": "12610",
+          "delegate_ids": [
+              "11038"
+          ]
       },
       {
-        "team_id": "11473",
-        "delegate_ids": ["12702", "10738"]
+          "team_id": "12586",
+          "delegate_ids": [
+              "12899"
+          ]
       },
       {
-        "team_id": "11313",
-        "delegate_ids": ["12041", "11264"]
+          "team_id": "10320",
+          "delegate_ids": [
+              "10524",
+              "10653"
+          ]
       },
       {
-        "team_id": "12965",
-        "delegate_ids": ["11455", "10830"]
+          "team_id": "13102",
+          "delegate_ids": [
+              "14046",
+              "11772"
+          ]
       },
       {
-        "team_id": "12144",
-        "delegate_ids": ["10515", "10632"]
+          "team_id": "13266",
+          "delegate_ids": [
+              "11785"
+          ]
       },
       {
-        "team_id": "10751",
-        "delegate_ids": ["10143", "10008"]
+          "team_id": "10039",
+          "delegate_ids": [
+              "10025",
+              "10098"
+          ]
       },
       {
-        "team_id": "11676",
-        "delegate_ids": ["11318"]
+          "team_id": "12760",
+          "delegate_ids": [
+              "12398",
+              "13233"
+          ]
       },
       {
-        "team_id": "12293",
-        "delegate_ids": ["13153"]
+          "team_id": "10147",
+          "delegate_ids": [
+              "10767",
+              "10765"
+          ]
       },
       {
-        "team_id": "11938",
-        "delegate_ids": ["12822", "12860"]
+          "team_id": "13440",
+          "delegate_ids": [
+              "13286"
+          ]
       },
       {
-        "team_id": "13304",
-        "delegate_ids": ["11432", "10521"]
+          "team_id": "12841",
+          "delegate_ids": [
+              "12284",
+              "11715"
+          ]
       },
       {
-        "team_id": "12806",
-        "delegate_ids": ["13639", "13648"]
+          "team_id": "12023",
+          "delegate_ids": [
+              "11205"
+          ]
       },
       {
-        "team_id": "12429",
-        "delegate_ids": ["11144", "13278"]
+          "team_id": "12921",
+          "delegate_ids": [
+              "13955"
+          ]
       },
       {
-        "team_id": "13061",
-        "delegate_ids": ["12594"]
+          "team_id": "13242",
+          "delegate_ids": [
+              "11552"
+          ]
       },
       {
-        "team_id": "10902",
-        "delegate_ids": ["11813", "11815"]
+          "team_id": "13056",
+          "delegate_ids": [
+              "12272",
+              "12289"
+          ]
       },
       {
-        "team_id": "12723",
-        "delegate_ids": ["10527", "13737"]
+          "team_id": "11183",
+          "delegate_ids": [
+              "12140",
+              "12159"
+          ]
       },
       {
-        "team_id": "11145",
-        "delegate_ids": ["12382"]
+          "team_id": "12771",
+          "delegate_ids": [
+              "12251",
+              "10346"
+          ]
       },
       {
-        "team_id": "13242",
-        "delegate_ids": ["11552"]
+          "team_id": "12429",
+          "delegate_ids": [
+              "11144",
+              "13278"
+          ]
       },
       {
-        "team_id": "13056",
-        "delegate_ids": ["12272", "12289"]
+          "team_id": "13304",
+          "delegate_ids": [
+              "11432",
+              "10521"
+          ]
       },
       {
-        "team_id": "10845",
-        "delegate_ids": ["10561", "11345"]
+          "team_id": "13341",
+          "delegate_ids": [
+              "11191",
+              "11196"
+          ]
       },
       {
-        "team_id": "12771",
-        "delegate_ids": ["12251", "10346"]
+          "team_id": "13138",
+          "delegate_ids": [
+              "10911",
+              "10067"
+          ]
       },
       {
-        "team_id": "11183",
-        "delegate_ids": ["12140", "12159"]
+          "team_id": "13142",
+          "delegate_ids": [
+              "13813",
+              "12619"
+          ]
       },
       {
-        "team_id": "12810",
-        "delegate_ids": ["11748"]
+          "team_id": "11721",
+          "delegate_ids": [
+              "11667",
+              "11672"
+          ]
       },
       {
-        "team_id": "12921",
-        "delegate_ids": ["13955"]
+          "team_id": "10202",
+          "delegate_ids": [
+              "10126",
+              "10164"
+          ]
       },
       {
-        "team_id": "12418",
-        "delegate_ids": ["11868", "11864"]
+          "team_id": "13145",
+          "delegate_ids": [
+              "12496",
+              "13979"
+          ]
       },
       {
-        "team_id": "13065",
-        "delegate_ids": ["14062", "11095"]
+          "team_id": "13316",
+          "delegate_ids": [
+              "13887"
+          ]
       },
       {
-        "team_id": "12841",
-        "delegate_ids": ["11715"]
+          "team_id": "11926",
+          "delegate_ids": [
+              "10661"
+          ]
       },
       {
-        "team_id": "10685",
-        "delegate_ids": ["13226", "10836"]
+          "team_id": "12495",
+          "delegate_ids": [
+              "12252",
+              "10884"
+          ]
       },
       {
-        "team_id": "10052",
-        "delegate_ids": ["11453", "10064"]
+          "team_id": "13437",
+          "delegate_ids": [
+              "10755"
+          ]
       },
       {
-        "team_id": "12222",
-        "delegate_ids": ["11619"]
+          "team_id": "12404",
+          "delegate_ids": [
+              "10310"
+          ]
       },
       {
-        "team_id": "12023",
-        "delegate_ids": ["11205"]
+          "team_id": "13504",
+          "delegate_ids": [
+              "14220"
+          ]
       },
       {
-        "team_id": "13290",
-        "delegate_ids": ["10706"]
+          "team_id": "12287",
+          "delegate_ids": [
+              "10993"
+          ]
       },
       {
-        "team_id": "13218",
-        "delegate_ids": ["12195", "12889"]
+          "team_id": "12731",
+          "delegate_ids": [
+              "10478",
+              "10493"
+          ]
       },
       {
-        "team_id": "12760",
-        "delegate_ids": ["12398", "13233"]
+          "team_id": "11426",
+          "delegate_ids": [
+              "11425",
+              "11433"
+          ]
       },
       {
-        "team_id": "13191",
-        "delegate_ids": ["12021", "11614"]
+          "team_id": "11149",
+          "delegate_ids": [
+              "12180",
+              "10374"
+          ]
       },
       {
-        "team_id": "12539",
-        "delegate_ids": ["10619", "10453"]
+          "team_id": "12156",
+          "delegate_ids": [
+              "13208"
+          ]
       },
       {
-        "team_id": "11673",
-        "delegate_ids": ["10883"]
+          "team_id": "12425",
+          "delegate_ids": [
+              "12436",
+              "10629"
+          ]
       },
       {
-        "team_id": "10502",
-        "delegate_ids": ["10019"]
+          "team_id": "11899",
+          "delegate_ids": [
+              "11330"
+          ]
       },
       {
-        "team_id": "10147",
-        "delegate_ids": ["10767", "10765"]
+          "team_id": "11621",
+          "delegate_ids": [
+              "11576"
+          ]
       },
       {
-        "team_id": "12726",
-        "delegate_ids": ["13183"]
+          "team_id": "11691",
+          "delegate_ids": [
+              "11115"
+          ]
       },
       {
-        "team_id": "11725",
-        "delegate_ids": ["10308", "10496"]
+          "team_id": "13173",
+          "delegate_ids": [
+              "12325",
+              "10368"
+          ]
       },
       {
-        "team_id": "10704",
-        "delegate_ids": ["11437"]
+          "team_id": "12271",
+          "delegate_ids": [
+              "10398",
+              "10689"
+          ]
       },
       {
-        "team_id": "13170",
-        "delegate_ids": ["12511", "14088"]
+          "team_id": "11241",
+          "delegate_ids": [
+              "12327",
+              "10534"
+          ]
       },
       {
-        "team_id": "12646",
-        "delegate_ids": ["10727", "10733"]
+          "team_id": "13323",
+          "delegate_ids": [
+              "11991",
+              "10023"
+          ]
       },
       {
-        "team_id": "13102",
-        "delegate_ids": ["14046", "11772"]
+          "team_id": "11326",
+          "delegate_ids": [
+              "12152",
+              "11257"
+          ]
       },
       {
-        "team_id": "13266",
-        "delegate_ids": ["11785"]
+          "team_id": "10424",
+          "delegate_ids": [
+              "11586",
+              "10549"
+          ]
       },
       {
-        "team_id": "13091",
-        "delegate_ids": ["10319"]
+          "team_id": "13441",
+          "delegate_ids": [
+              "12247",
+              "13903"
+          ]
       },
       {
-        "team_id": "12791",
-        "delegate_ids": ["10162"]
+          "team_id": "13153",
+          "delegate_ids": [
+              "12897",
+              "11463"
+          ]
       },
       {
-        "team_id": "12610",
-        "delegate_ids": ["11038"]
+          "team_id": "13487",
+          "delegate_ids": [
+              "10861",
+              "13038"
+          ]
       },
       {
-        "team_id": "12586",
-        "delegate_ids": ["12899"]
+          "team_id": "10028",
+          "delegate_ids": [
+              "10218"
+          ]
       },
       {
-        "team_id": "12030",
-        "delegate_ids": ["10872"]
+          "team_id": "10889",
+          "delegate_ids": [
+              "10681",
+              "10734"
+          ]
       },
       {
-        "team_id": "11958",
-        "delegate_ids": ["12928", "13047"]
+          "team_id": "13167",
+          "delegate_ids": [
+              "11589",
+              "10937"
+          ]
       },
       {
-        "team_id": "11402",
-        "delegate_ids": ["11574"]
+          "team_id": "10232",
+          "delegate_ids": [
+              "10081",
+              "10073"
+          ]
       },
       {
-        "team_id": "12643",
-        "delegate_ids": ["11166", "11684"]
+          "team_id": "10783",
+          "delegate_ids": [
+              "11517",
+              "11553"
+          ]
       },
       {
-        "team_id": "12194",
-        "delegate_ids": ["10649", "11293"]
+          "team_id": "11737",
+          "delegate_ids": [
+              "12312",
+              "11383"
+          ]
       },
       {
-        "team_id": "12246",
-        "delegate_ids": ["13554", "13106"]
+          "team_id": "12873",
+          "delegate_ids": [
+              "11279"
+          ]
       },
       {
-        "team_id": "10939",
-        "delegate_ids": ["11282", "10445"]
+          "team_id": "13064",
+          "delegate_ids": [
+              "11056",
+              "13025"
+          ]
       },
       {
-        "team_id": "10588",
-        "delegate_ids": ["10115", "10300"]
+          "team_id": "10306",
+          "delegate_ids": [
+              "11134",
+              "11044"
+          ]
       },
       {
-        "team_id": "10320",
-        "delegate_ids": ["10524", "10653"]
+          "team_id": "12808",
+          "delegate_ids": [
+              "10511",
+              "12747"
+          ]
       },
       {
-        "team_id": "10023",
-        "delegate_ids": ["10903", "10150"]
+          "team_id": "12711",
+          "delegate_ids": [
+              "12517",
+              "10184"
+          ]
       },
       {
-        "team_id": "10039",
-        "delegate_ids": ["10025", "10098"]
+          "team_id": "10727",
+          "delegate_ids": [
+              "10941"
+          ]
       },
       {
-        "team_id": "10633",
-        "delegate_ids": ["11113", "11283"]
+          "team_id": "10849",
+          "delegate_ids": [
+              "11826",
+              "11136"
+          ]
       },
       {
-        "team_id": "11431",
-        "delegate_ids": ["10764", "11771"]
+          "team_id": "12239",
+          "delegate_ids": [
+              "13274",
+              "12797"
+          ]
       },
       {
-        "team_id": "13212",
-        "delegate_ids": ["12295", "12307"]
+          "team_id": "12947",
+          "delegate_ids": [
+              "13314",
+              "11129"
+          ]
       },
       {
-        "team_id": "10083",
-        "delegate_ids": ["10211"]
+          "team_id": "10663",
+          "delegate_ids": [
+              "11539",
+              "11026"
+          ]
       },
       {
-        "team_id": "13173",
-        "delegate_ids": ["12325", "10368"]
+          "team_id": "13001",
+          "delegate_ids": [
+              "11759"
+          ]
       },
       {
-        "team_id": "12783",
-        "delegate_ids": ["11180"]
+          "team_id": "10798",
+          "delegate_ids": [
+              "10643",
+              "10389"
+          ]
       },
       {
-        "team_id": "12096",
-        "delegate_ids": ["12704", "12807"]
+          "team_id": "11450",
+          "delegate_ids": [
+              "12728",
+              "12709"
+          ]
       },
       {
-        "team_id": "12844",
-        "delegate_ids": ["11563", "12631"]
+          "team_id": "10826",
+          "delegate_ids": [
+              "10585",
+              "10559"
+          ]
       },
       {
-        "team_id": "12271",
-        "delegate_ids": ["10398", "10689"]
+          "team_id": "13479",
+          "delegate_ids": [
+              "13032"
+          ]
       },
       {
-        "team_id": "10733",
-        "delegate_ids": ["10104", "10311"]
+          "team_id": "10440",
+          "delegate_ids": [
+              "10994",
+              "11373"
+          ]
       },
       {
-        "team_id": "13169",
-        "delegate_ids": ["14087"]
+          "team_id": "10308",
+          "delegate_ids": [
+              "11150",
+              "11147"
+          ]
       },
       {
-        "team_id": "12425",
-        "delegate_ids": ["12436", "10629"]
+          "team_id": "12965",
+          "delegate_ids": [
+              "11455",
+              "10830"
+          ]
       },
       {
-        "team_id": "11241",
-        "delegate_ids": ["12327", "10534"]
+          "team_id": "11473",
+          "delegate_ids": [
+              "12702",
+              "10738"
+          ]
       },
       {
-        "team_id": "10376",
-        "delegate_ids": ["10229", "10240"]
+          "team_id": "10751",
+          "delegate_ids": [
+              "10143",
+              "10008"
+          ]
       },
       {
-        "team_id": "12156",
-        "delegate_ids": ["13208"]
+          "team_id": "11676",
+          "delegate_ids": [
+              "11318"
+          ]
       },
       {
-        "team_id": "11909",
-        "delegate_ids": ["12652"]
+          "team_id": "12293",
+          "delegate_ids": [
+              "13153"
+          ]
       },
       {
-        "team_id": "11691",
-        "delegate_ids": ["11115"]
+          "team_id": "13445",
+          "delegate_ids": [
+              "13131",
+              "12754"
+          ]
       },
       {
-        "team_id": "11899",
-        "delegate_ids": ["11330"]
+          "team_id": "10902",
+          "delegate_ids": [
+              "11813",
+              "11815"
+          ]
       },
       {
-        "team_id": "13103",
-        "delegate_ids": ["10971"]
+          "team_id": "13255",
+          "delegate_ids": [
+              "13674",
+              "11248"
+          ]
       },
       {
-        "team_id": "11621",
-        "delegate_ids": ["11576"]
+          "team_id": "12686",
+          "delegate_ids": [
+              "11182"
+          ]
       },
       {
-        "team_id": "12731",
-        "delegate_ids": ["10478", "10493"]
+          "team_id": "12408",
+          "delegate_ids": [
+              "10811",
+              "10546"
+          ]
       },
       {
-        "team_id": "11612",
-        "delegate_ids": ["10236"]
+          "team_id": "13140",
+          "delegate_ids": [
+              "12882",
+              "12692"
+          ]
       },
       {
-        "team_id": "11426",
-        "delegate_ids": ["11425", "11433"]
+          "team_id": "12035",
+          "delegate_ids": [
+              "13125"
+          ]
       },
       {
-        "team_id": "11149",
-        "delegate_ids": ["12180", "10374"]
+          "team_id": "12800",
+          "delegate_ids": [
+              "10058",
+              "13643"
+          ]
       },
       {
-        "team_id": "11797",
-        "delegate_ids": ["10448", "12359"]
+          "team_id": "12142",
+          "delegate_ids": [
+              "13142"
+          ]
       },
       {
-        "team_id": "12946",
-        "delegate_ids": ["10725"]
+          "team_id": "10438",
+          "delegate_ids": [
+              "11450",
+              "11084"
+          ]
       },
       {
-        "team_id": "10488",
-        "delegate_ids": ["11441", "11090"]
+          "team_id": "12809",
+          "delegate_ids": [
+              "11394",
+              "10358"
+          ]
       },
       {
-        "team_id": "12404",
-        "delegate_ids": ["10310"]
+          "team_id": "11205",
+          "delegate_ids": [
+              "11043",
+              "11045"
+          ]
       },
       {
-        "team_id": "12287",
-        "delegate_ids": ["10993"]
+          "team_id": "10715",
+          "delegate_ids": [
+              "10715",
+              "10569"
+          ]
       },
       {
-        "team_id": "12891",
-        "delegate_ids": ["13980", "13754"]
+          "team_id": "10435",
+          "delegate_ids": [
+              "12530",
+              "10540"
+          ]
       },
       {
-        "team_id": "11926",
-        "delegate_ids": ["10661"]
+          "team_id": "12227",
+          "delegate_ids": [
+              "12988",
+              "12689"
+          ]
       },
       {
-        "team_id": "13145",
-        "delegate_ids": ["12496", "13979"]
+          "team_id": "13287",
+          "delegate_ids": [
+              "12275",
+              "13078"
+          ]
       },
       {
-        "team_id": "13311",
-        "delegate_ids": ["13250"]
+          "team_id": "12426",
+          "delegate_ids": [
+              "12656",
+              "11439"
+          ]
       },
       {
-        "team_id": "12495",
-        "delegate_ids": ["12252", "10884"]
+          "team_id": "13128",
+          "delegate_ids": [
+              "11127"
+          ]
       },
       {
-        "team_id": "10202",
-        "delegate_ids": ["10126", "10164"]
+          "team_id": "10499",
+          "delegate_ids": [
+              "11057",
+              "11012"
+          ]
       },
       {
-        "team_id": "13160",
-        "delegate_ids": ["12418"]
+          "team_id": "11866",
+          "delegate_ids": [
+              "12332",
+              "10495"
+          ]
       },
       {
-        "team_id": "12440",
-        "delegate_ids": ["13437"]
+          "team_id": "10785",
+          "delegate_ids": [
+              "10509",
+              "10625"
+          ]
       },
       {
-        "team_id": "10912",
-        "delegate_ids": ["10044"]
+          "team_id": "13492",
+          "delegate_ids": [
+              "10862"
+          ]
       },
       {
-        "team_id": "11721",
-        "delegate_ids": ["11667", "11672"]
+          "team_id": "10587",
+          "delegate_ids": [
+              "10299",
+              "10577"
+          ]
       },
       {
-        "team_id": "12309",
-        "delegate_ids": ["12360", "13302"]
+          "team_id": "10900",
+          "delegate_ids": [
+              "12197"
+          ]
       },
       {
-        "team_id": "10333",
-        "delegate_ids": ["11228", "11227"]
+          "team_id": "12756",
+          "delegate_ids": [
+              "10753"
+          ]
       },
       {
-        "team_id": "12694",
-        "delegate_ids": ["12768", "11213"]
+          "team_id": "11834",
+          "delegate_ids": [
+              "12723",
+              "12242"
+          ]
       },
       {
-        "team_id": "13138",
-        "delegate_ids": ["10911", "10067"]
+          "team_id": "12690",
+          "delegate_ids": [
+              "12791"
+          ]
       },
       {
-        "team_id": "11971",
-        "delegate_ids": ["13088", "13077"]
+          "team_id": "12997",
+          "delegate_ids": [
+              "11481"
+          ]
       },
       {
-        "team_id": "12022",
-        "delegate_ids": ["13099", "13122"]
+          "team_id": "13414",
+          "delegate_ids": [
+              "13653"
+          ]
       },
       {
-        "team_id": "13142",
-        "delegate_ids": ["13813", "12619"]
+          "team_id": "12278",
+          "delegate_ids": [
+              "10541",
+              "12653"
+          ]
       },
       {
-        "team_id": "12907",
-        "delegate_ids": ["11762"]
+          "team_id": "10886",
+          "delegate_ids": [
+              "12196"
+          ]
       },
       {
-        "team_id": "13002",
-        "delegate_ids": ["12060"]
+          "team_id": "13503",
+          "delegate_ids": [
+              "10315"
+          ]
       },
       {
-        "team_id": "13189",
-        "delegate_ids": ["13245", "14064"]
+          "team_id": "10253",
+          "delegate_ids": [
+              "11067",
+              "11116"
+          ]
       },
       {
-        "team_id": "13107",
-        "delegate_ids": ["11770", "10411"]
+          "team_id": "13264",
+          "delegate_ids": [
+              "14134",
+              "10766"
+          ]
       },
       {
-        "team_id": "12185",
-        "delegate_ids": ["12470", "11164"]
+          "team_id": "12993",
+          "delegate_ids": [
+              "11869"
+          ]
       },
       {
-        "team_id": "12505",
-        "delegate_ids": ["13027", "11416"]
+          "team_id": "13081",
+          "delegate_ids": [
+              "12438",
+              "11853"
+          ]
       },
       {
-        "team_id": "11608",
-        "delegate_ids": ["12850", "10208"]
+          "team_id": "13284",
+          "delegate_ids": [
+              "10113",
+              "10109"
+          ]
       },
       {
-        "team_id": "11404",
-        "delegate_ids": ["11598", "11467"]
+          "team_id": "11302",
+          "delegate_ids": [
+              "11594",
+              "10403"
+          ]
       },
       {
-        "team_id": "11202",
-        "delegate_ids": ["12222"]
+          "team_id": "10596",
+          "delegate_ids": [
+              "10850",
+              "10818"
+          ]
       },
       {
-        "team_id": "10275",
-        "delegate_ids": ["10498", "11022"]
+          "team_id": "10762",
+          "delegate_ids": [
+              "11303",
+              "10563"
+          ]
       },
       {
-        "team_id": "10160",
-        "delegate_ids": ["10648", "10814"]
+          "team_id": "11146",
+          "delegate_ids": [
+              "10973",
+              "11273"
+          ]
       },
       {
-        "team_id": "10101",
-        "delegate_ids": ["10118", "10018"]
+          "team_id": "11772",
+          "delegate_ids": [
+              "12780",
+              "11627"
+          ]
       },
       {
-        "team_id": "11387",
-        "delegate_ids": ["11652"]
+          "team_id": "10634",
+          "delegate_ids": [
+              "10420"
+          ]
       },
       {
-        "team_id": "10709",
-        "delegate_ids": ["10111"]
+          "team_id": "13210",
+          "delegate_ids": [
+              "10074",
+              "10324"
+          ]
       },
       {
-        "team_id": "12877",
-        "delegate_ids": ["11118", "11137"]
+          "team_id": "13161",
+          "delegate_ids": [
+              "11565"
+          ]
       },
       {
-        "team_id": "12624",
-        "delegate_ids": ["13196", "11784"]
+          "team_id": "13152",
+          "delegate_ids": [
+              "13642",
+              "10505"
+          ]
       },
       {
-        "team_id": "12916",
-        "delegate_ids": ["10932", "11696"]
+          "team_id": "12718",
+          "delegate_ids": [
+              "10956"
+          ]
       },
       {
-        "team_id": "11586",
-        "delegate_ids": ["12830", "11334"]
+          "team_id": "10312",
+          "delegate_ids": [
+              "11178",
+              "11155"
+          ]
       },
       {
-        "team_id": "10766",
-        "delegate_ids": ["11781", "10528"]
+          "team_id": "13187",
+          "delegate_ids": [
+              "12828"
+          ]
       },
       {
-        "team_id": "13244",
-        "delegate_ids": ["10868", "14104"]
+          "team_id": "13495",
+          "delegate_ids": [
+              "12358"
+          ]
       },
       {
-        "team_id": "13069",
-        "delegate_ids": ["11187", "10785"]
+          "team_id": "10511",
+          "delegate_ids": [
+              "10105",
+              "10045"
+          ]
       },
       {
-        "team_id": "12300",
-        "delegate_ids": ["12962", "10268"]
+          "team_id": "10360",
+          "delegate_ids": [
+              "11280"
+          ]
       },
       {
-        "team_id": "13306",
-        "delegate_ids": ["13973"]
+          "team_id": "13457",
+          "delegate_ids": [
+              "11644",
+              "11646"
+          ]
       },
       {
-        "team_id": "12681",
-        "delegate_ids": ["14005", "10899"]
+          "team_id": "13037",
+          "delegate_ids": [
+              "13927",
+              "13969"
+          ]
       },
       {
-        "team_id": "11983",
-        "delegate_ids": ["13096", "11632"]
+          "team_id": "11543",
+          "delegate_ids": [
+              "10622"
+          ]
       },
       {
-        "team_id": "12370",
-        "delegate_ids": ["10743", "12210"]
+          "team_id": "11424",
+          "delegate_ids": [
+              "12706",
+              "12491"
+          ]
       },
       {
-        "team_id": "11545",
-        "delegate_ids": ["10913", "11529"]
+          "team_id": "12978",
+          "delegate_ids": [
+              "10873"
+          ]
       },
       {
-        "team_id": "12104",
-        "delegate_ids": ["11321", "10912"]
+          "team_id": "13186",
+          "delegate_ids": [
+              "11866",
+              "11461"
+          ]
       },
       {
-        "team_id": "11546",
-        "delegate_ids": ["10915"]
+          "team_id": "10209",
+          "delegate_ids": [
+              "11707",
+              "10068"
+          ]
       },
       {
-        "team_id": "12282",
-        "delegate_ids": ["10466"]
+          "team_id": "12822",
+          "delegate_ids": [
+              "13070",
+              "13084"
+          ]
       },
       {
-        "team_id": "10660",
-        "delegate_ids": ["10334", "11602"]
+          "team_id": "13182",
+          "delegate_ids": [
+              "10997",
+              "11751"
+          ]
       },
       {
-        "team_id": "10554",
-        "delegate_ids": ["10758", "10988"]
+          "team_id": "11159",
+          "delegate_ids": [
+              "11377"
+          ]
       },
       {
-        "team_id": "10338",
-        "delegate_ids": ["11229"]
+          "team_id": "12347",
+          "delegate_ids": [
+              "13270",
+              "10782"
+          ]
       },
       {
-        "team_id": "10236",
-        "delegate_ids": ["10791", "10503"]
+          "team_id": "13114",
+          "delegate_ids": [
+              "10419"
+          ]
       },
       {
-        "team_id": "13229",
-        "delegate_ids": ["13788", "13757"]
+          "team_id": "12662",
+          "delegate_ids": [
+              "11798",
+              "10995"
+          ]
       },
       {
-        "team_id": "13225",
-        "delegate_ids": ["11364"]
+          "team_id": "12705",
+          "delegate_ids": [
+              "13443"
+          ]
       },
       {
-        "team_id": "13238",
-        "delegate_ids": ["14107"]
+          "team_id": "10484",
+          "delegate_ids": [
+              "10241"
+          ]
       },
       {
-        "team_id": "11855",
-        "delegate_ids": ["13967", "11965"]
+          "team_id": "11622",
+          "delegate_ids": [
+              "12769"
+          ]
       },
       {
-        "team_id": "12198",
-        "delegate_ids": ["13263", "10276"]
+          "team_id": "13334",
+          "delegate_ids": [
+              "11953"
+          ]
       },
       {
-        "team_id": "12264",
-        "delegate_ids": ["11281", "13271"]
+          "team_id": "11207",
+          "delegate_ids": [
+              "12641",
+              "11041"
+          ]
       },
       {
-        "team_id": "10624",
-        "delegate_ids": ["13602", "11430"]
+          "team_id": "10717",
+          "delegate_ids": [
+              "10372",
+              "10732"
+          ]
       },
       {
-        "team_id": "11342",
-        "delegate_ids": ["11023", "11070"]
+          "team_id": "13489",
+          "delegate_ids": [
+              "10330"
+          ]
       },
       {
-        "team_id": "11377",
-        "delegate_ids": ["10328", "10327"]
+          "team_id": "13494",
+          "delegate_ids": [
+              "10944",
+              "12323"
+          ]
       },
       {
-        "team_id": "12382",
-        "delegate_ids": ["10387", "10163"]
+          "team_id": "12038",
+          "delegate_ids": [
+              "12635"
+          ]
       },
       {
-        "team_id": "11010",
-        "delegate_ids": ["12492"]
+          "team_id": "11982",
+          "delegate_ids": [
+              "12598",
+              "10628"
+          ]
       },
       {
-        "team_id": "12618",
-        "delegate_ids": ["10468", "12859"]
+          "team_id": "11863",
+          "delegate_ids": [
+              "11242",
+              "12139"
+          ]
       },
       {
-        "team_id": "12476",
-        "delegate_ids": ["10382", "10365"]
+          "team_id": "13163",
+          "delegate_ids": [
+              "10704",
+              "11623"
+          ]
       },
       {
-        "team_id": "10631",
-        "delegate_ids": ["10533", "10492"]
+          "team_id": "13250",
+          "delegate_ids": [
+              "13579"
+          ]
       },
       {
-        "team_id": "11204",
-        "delegate_ids": ["11944", "12640"]
+          "team_id": "10471",
+          "delegate_ids": [
+              "10429",
+              "10078"
+          ]
       },
       {
-        "team_id": "11653",
-        "delegate_ids": ["11030", "10566"]
+          "team_id": "13411",
+          "delegate_ids": [
+              "10225",
+              "13660"
+          ]
       },
       {
-        "team_id": "13124",
-        "delegate_ids": ["13863"]
+          "team_id": "13035",
+          "delegate_ids": [
+              "12588",
+              "14021"
+          ]
       },
       {
-        "team_id": "10543",
-        "delegate_ids": ["10108", "10112"]
+          "team_id": "10730",
+          "delegate_ids": [
+              "10756",
+              "11702"
+          ]
       },
       {
-        "team_id": "12630",
-        "delegate_ids": ["12424"]
+          "team_id": "12990",
+          "delegate_ids": [
+              "10266",
+              "11931"
+          ]
       },
       {
-        "team_id": "13254",
-        "delegate_ids": ["11225", "14123"]
+          "team_id": "12929",
+          "delegate_ids": [
+              "10724"
+          ]
       },
       {
-        "team_id": "12817",
-        "delegate_ids": ["13880", "10742"]
+          "team_id": "12213",
+          "delegate_ids": [
+              "13114",
+              "12894"
+          ]
       },
       {
-        "team_id": "12099",
-        "delegate_ids": ["12654"]
+          "team_id": "13072",
+          "delegate_ids": [
+              "10037",
+              "10921"
+          ]
       },
       {
-        "team_id": "10860",
-        "delegate_ids": ["11974", "10747"]
+          "team_id": "13171",
+          "delegate_ids": [
+              "11181",
+              "10567"
+          ]
       },
       {
-        "team_id": "13214",
-        "delegate_ids": ["11796"]
+          "team_id": "13484",
+          "delegate_ids": [
+              "10773"
+          ]
       },
       {
-        "team_id": "12511",
-        "delegate_ids": ["13162", "12363"]
+          "team_id": "13279",
+          "delegate_ids": [
+              "14143",
+              "14135"
+          ]
       },
       {
-        "team_id": "10719",
-        "delegate_ids": ["11678", "10077"]
+          "team_id": "13313",
+          "delegate_ids": [
+              "14168"
+          ]
       },
       {
-        "team_id": "11447",
-        "delegate_ids": ["10462", "10296"]
+          "team_id": "11646",
+          "delegate_ids": [
+              "12861"
+          ]
       },
       {
-        "team_id": "13165",
-        "delegate_ids": ["11313"]
+          "team_id": "10586",
+          "delegate_ids": [
+              "10317"
+          ]
       },
       {
-        "team_id": "12700",
-        "delegate_ids": ["10059", "13255"]
+          "team_id": "10631",
+          "delegate_ids": [
+              "10533",
+              "10492"
+          ]
       },
       {
-        "team_id": "12608",
-        "delegate_ids": ["12112", "10512"]
+          "team_id": "12382",
+          "delegate_ids": [
+              "10387",
+              "10163"
+          ]
       },
       {
-        "team_id": "12975",
-        "delegate_ids": ["11635", "11622"]
+          "team_id": "11010",
+          "delegate_ids": [
+              "10971",
+              "12492"
+          ]
       },
       {
-        "team_id": "12857",
-        "delegate_ids": ["11712"]
+          "team_id": "12618",
+          "delegate_ids": [
+              "10468",
+              "12859"
+          ]
       },
       {
-        "team_id": "12828",
-        "delegate_ids": ["12701"]
+          "team_id": "12476",
+          "delegate_ids": [
+              "10382",
+              "10365"
+          ]
       },
       {
-        "team_id": "12849",
-        "delegate_ids": ["11909"]
+          "team_id": "13225",
+          "delegate_ids": [
+              "11170",
+              "11364"
+          ]
       },
       {
-        "team_id": "12114",
-        "delegate_ids": ["11241", "12170"]
+          "team_id": "11377",
+          "delegate_ids": [
+              "10328",
+              "10327"
+          ]
       },
       {
-        "team_id": "11913",
-        "delegate_ids": ["13058", "13053"]
+          "team_id": "12198",
+          "delegate_ids": [
+              "13263",
+              "10276"
+          ]
       },
       {
-        "team_id": "11902",
-        "delegate_ids": ["12548"]
+          "team_id": "13421",
+          "delegate_ids": [
+              "12974",
+              "12793"
+          ]
       },
       {
-        "team_id": "13219",
-        "delegate_ids": ["12900", "12898"]
+          "team_id": "10338",
+          "delegate_ids": [
+              "11235",
+              "11229"
+          ]
       },
       {
-        "team_id": "12977",
-        "delegate_ids": ["13963"]
+          "team_id": "13306",
+          "delegate_ids": [
+              "13973"
+          ]
       },
       {
-        "team_id": "12832",
-        "delegate_ids": ["12311"]
+          "team_id": "13244",
+          "delegate_ids": [
+              "10868",
+              "14104"
+          ]
       },
       {
-        "team_id": "11400",
-        "delegate_ids": ["11615", "11033"]
+          "team_id": "13069",
+          "delegate_ids": [
+              "11187",
+              "10785"
+          ]
       },
       {
-        "team_id": "11900",
-        "delegate_ids": ["10594"]
+          "team_id": "10766",
+          "delegate_ids": [
+              "11781",
+              "10528"
+          ]
       },
       {
-        "team_id": "11651",
-        "delegate_ids": ["10998", "10983"]
+          "team_id": "11546",
+          "delegate_ids": [
+              "10915"
+          ]
       },
       {
-        "team_id": "11915",
-        "delegate_ids": ["11460"]
+          "team_id": "10078",
+          "delegate_ids": [
+              "10399",
+              "10301"
+          ]
       },
       {
-        "team_id": "11516",
-        "delegate_ids": ["10801", "11649"]
+          "team_id": "13443",
+          "delegate_ids": [
+              "11564"
+          ]
       },
       {
-        "team_id": "13261",
-        "delegate_ids": ["10353"]
+          "team_id": "12916",
+          "delegate_ids": [
+              "10932",
+              "11696"
+          ]
       },
       {
-        "team_id": "12677",
-        "delegate_ids": ["13590", "11447"]
+          "team_id": "13327",
+          "delegate_ids": [
+              "14209",
+              "13186"
+          ]
       },
       {
-        "team_id": "12885",
-        "delegate_ids": ["13033", "10621"]
+          "team_id": "11404",
+          "delegate_ids": [
+              "11598",
+              "11467"
+          ]
       },
       {
-        "team_id": "11124",
-        "delegate_ids": ["10879", "10881"]
+          "team_id": "11202",
+          "delegate_ids": [
+              "12222"
+          ]
       },
       {
-        "team_id": "13133",
-        "delegate_ids": ["13225", "12518"]
+          "team_id": "10101",
+          "delegate_ids": [
+              "10118",
+              "10018"
+          ]
       },
       {
-        "team_id": "11225",
-        "delegate_ids": ["10709"]
+          "team_id": "12907",
+          "delegate_ids": [
+              "11762"
+          ]
       },
       {
-        "team_id": "10899",
-        "delegate_ids": ["12129", "10576"]
+          "team_id": "13107",
+          "delegate_ids": [
+              "11770",
+              "10411"
+          ]
       },
       {
-        "team_id": "10675",
-        "delegate_ids": ["10847"]
+          "team_id": "12185",
+          "delegate_ids": [
+              "12470",
+              "11164"
+          ]
       },
       {
-        "team_id": "10190",
-        "delegate_ids": ["10132", "10444"]
+          "team_id": "12398",
+          "delegate_ids": [
+              "13297"
+          ]
       },
       {
-        "team_id": "10423",
-        "delegate_ids": ["11366", "10866"]
+          "team_id": "13007",
+          "delegate_ids": [
+              "14133",
+              "10575"
+          ]
       },
       {
-        "team_id": "12871",
-        "delegate_ids": ["13896", "10989"]
+          "team_id": "13420",
+          "delegate_ids": [
+              "10650",
+              "10072"
+          ]
       },
       {
-        "team_id": "12148",
-        "delegate_ids": ["11542", "12367"]
+          "team_id": "12871",
+          "delegate_ids": [
+              "13896",
+              "10989"
+          ]
       },
       {
-        "team_id": "11011",
-        "delegate_ids": ["10719"]
+          "team_id": "12375",
+          "delegate_ids": [
+              "10807"
+          ]
       },
       {
-        "team_id": "12375",
-        "delegate_ids": ["10807"]
+          "team_id": "11011",
+          "delegate_ids": [
+              "10719"
+          ]
       },
       {
-        "team_id": "13007",
-        "delegate_ids": ["10575"]
+          "team_id": "11400",
+          "delegate_ids": [
+              "11615",
+              "11033"
+          ]
       },
       {
-        "team_id": "12398",
-        "delegate_ids": ["13297"]
+          "team_id": "10675",
+          "delegate_ids": [
+              "10847"
+          ]
       },
       {
-        "team_id": "12679",
-        "delegate_ids": ["11933", "11138"]
+          "team_id": "12885",
+          "delegate_ids": [
+              "13033",
+              "10621"
+          ]
       },
       {
-        "team_id": "12667",
-        "delegate_ids": ["11396"]
+          "team_id": "13219",
+          "delegate_ids": [
+              "12900",
+              "12898"
+          ]
       },
       {
-        "team_id": "13228",
-        "delegate_ids": ["12440", "11806"]
+          "team_id": "11447",
+          "delegate_ids": [
+              "10462",
+              "10296"
+          ]
       },
       {
-        "team_id": "12347",
-        "delegate_ids": ["13270", "10782"]
+          "team_id": "11516",
+          "delegate_ids": [
+              "10801",
+              "11649"
+          ]
       },
       {
-        "team_id": "13182",
-        "delegate_ids": ["10997", "11751"]
+          "team_id": "10719",
+          "delegate_ids": [
+              "11678",
+              "10077"
+          ]
       },
       {
-        "team_id": "12785",
-        "delegate_ids": ["11305", "12486"]
+          "team_id": "12114",
+          "delegate_ids": [
+              "11241",
+              "12170"
+          ]
       },
       {
-        "team_id": "12705",
-        "delegate_ids": ["13443"]
+          "team_id": "12857",
+          "delegate_ids": [
+              "13894",
+              "11712"
+          ]
       },
       {
-        "team_id": "11159",
-        "delegate_ids": ["11377"]
+          "team_id": "11913",
+          "delegate_ids": [
+              "13058",
+              "13053"
+          ]
       },
       {
-        "team_id": "13193",
-        "delegate_ids": ["13015"]
+          "team_id": "10899",
+          "delegate_ids": [
+              "12129",
+              "10576"
+          ]
       },
       {
-        "team_id": "13114",
-        "delegate_ids": ["10419"]
+          "team_id": "13490",
+          "delegate_ids": [
+              "10473"
+          ]
       },
       {
-        "team_id": "12978",
-        "delegate_ids": ["10873"]
+          "team_id": "13214",
+          "delegate_ids": [
+              "11796"
+          ]
       },
       {
-        "team_id": "12467",
-        "delegate_ids": ["10652"]
+          "team_id": "13476",
+          "delegate_ids": [
+              "12539"
+          ]
       },
       {
-        "team_id": "11826",
-        "delegate_ids": ["10250", "11659"]
+          "team_id": "12511",
+          "delegate_ids": [
+              "13162",
+              "12363"
+          ]
       },
       {
-        "team_id": "12662",
-        "delegate_ids": ["11798", "10995"]
+          "team_id": "10860",
+          "delegate_ids": [
+              "11974",
+              "10747"
+          ]
       },
       {
-        "team_id": "12253",
-        "delegate_ids": ["10977"]
+          "team_id": "12817",
+          "delegate_ids": [
+              "13880",
+              "10742"
+          ]
       },
       {
-        "team_id": "12822",
-        "delegate_ids": ["13070", "13084"]
+          "team_id": "11431",
+          "delegate_ids": [
+              "10764",
+              "11771"
+          ]
       },
       {
-        "team_id": "13186",
-        "delegate_ids": ["11866", "11461"]
+          "team_id": "10083",
+          "delegate_ids": [
+              "10211"
+          ]
       },
       {
-        "team_id": "12116",
-        "delegate_ids": ["12868", "13146"]
+          "team_id": "12030",
+          "delegate_ids": [
+              "10872"
+          ]
       },
       {
-        "team_id": "11906",
-        "delegate_ids": ["12846"]
+          "team_id": "12194",
+          "delegate_ids": [
+              "10649",
+              "11293"
+          ]
       },
       {
-        "team_id": "11769",
-        "delegate_ids": ["10871", "10746"]
+          "team_id": "11725",
+          "delegate_ids": [
+              "10308",
+              "10496"
+          ]
       },
       {
-        "team_id": "10209",
-        "delegate_ids": ["11707", "10068"]
+          "team_id": "10704",
+          "delegate_ids": [
+              "11437"
+          ]
       },
       {
-        "team_id": "11424",
-        "delegate_ids": ["12706", "12491"]
+          "team_id": "13498",
+          "delegate_ids": [
+              "14074",
+              "14061"
+          ]
       },
       {
-        "team_id": "10892",
-        "delegate_ids": ["11262", "11260"]
+          "team_id": "11958",
+          "delegate_ids": [
+              "12928",
+              "13047"
+          ]
       },
       {
-        "team_id": "10958",
-        "delegate_ids": ["10593", "10196"]
+          "team_id": "13091",
+          "delegate_ids": [
+              "10502",
+              "10319"
+          ]
       },
       {
-        "team_id": "11543",
-        "delegate_ids": ["10622"]
+          "team_id": "11673",
+          "delegate_ids": [
+              "10883"
+          ]
       },
       {
-        "team_id": "13037",
-        "delegate_ids": ["13927", "13969"]
+          "team_id": "10502",
+          "delegate_ids": [
+              "10019"
+          ]
       },
       {
-        "team_id": "10841",
-        "delegate_ids": ["11876", "11161"]
+          "team_id": "12726",
+          "delegate_ids": [
+              "10271",
+              "13183"
+          ]
       },
       {
-        "team_id": "13152",
-        "delegate_ids": ["13642", "10505"]
+          "team_id": "10685",
+          "delegate_ids": [
+              "13226",
+              "10836"
+          ]
       },
       {
-        "team_id": "12852",
-        "delegate_ids": ["11718"]
+          "team_id": "10052",
+          "delegate_ids": [
+              "11453",
+              "10064"
+          ]
       },
       {
-        "team_id": "13210",
-        "delegate_ids": ["10074", "10324"]
+          "team_id": "12222",
+          "delegate_ids": [
+              "11619"
+          ]
       },
       {
-        "team_id": "13187",
-        "delegate_ids": ["12828"]
+          "team_id": "13290",
+          "delegate_ids": [
+              "10706"
+          ]
       },
       {
-        "team_id": "11504",
-        "delegate_ids": ["12205", "11906"]
+          "team_id": "13191",
+          "delegate_ids": [
+              "12021",
+              "11614"
+          ]
       },
       {
-        "team_id": "13161",
-        "delegate_ids": ["11565"]
+          "team_id": "13218",
+          "delegate_ids": [
+              "12195",
+              "12889"
+          ]
       },
       {
-        "team_id": "12784",
-        "delegate_ids": ["12673", "10848"]
+          "team_id": "13436",
+          "delegate_ids": [
+              "10293"
+          ]
       },
       {
-        "team_id": "12886",
-        "delegate_ids": ["10471", "10262"]
+          "team_id": "12539",
+          "delegate_ids": [
+              "10619",
+              "10453"
+          ]
       },
       {
-        "team_id": "12718",
-        "delegate_ids": ["10956"]
+          "team_id": "12418",
+          "delegate_ids": [
+              "11868",
+              "11864"
+          ]
       },
       {
-        "team_id": "12026",
-        "delegate_ids": ["13119", "11122"]
+          "team_id": "12810",
+          "delegate_ids": [
+              "11748"
+          ]
       },
       {
-        "team_id": "11590",
-        "delegate_ids": ["11120", "11578"]
+          "team_id": "13065",
+          "delegate_ids": [
+              "14062",
+              "11095"
+          ]
       },
       {
-        "team_id": "11772",
-        "delegate_ids": ["12780", "11627"]
+          "team_id": "10845",
+          "delegate_ids": [
+              "10561",
+              "11345"
+          ]
       },
       {
-        "team_id": "10762",
-        "delegate_ids": ["11303", "10563"]
+          "team_id": "11145",
+          "delegate_ids": [
+              "12382"
+          ]
       },
       {
-        "team_id": "11146",
-        "delegate_ids": ["10973", "11273"]
+          "team_id": "13424",
+          "delegate_ids": [
+              "10138",
+              "10702"
+          ]
       },
       {
-        "team_id": "10808",
-        "delegate_ids": ["10553", "10021"]
+          "team_id": "12806",
+          "delegate_ids": [
+              "13639",
+              "13648"
+          ]
       },
       {
-        "team_id": "10345",
-        "delegate_ids": ["10129", "10076"]
+          "team_id": "12723",
+          "delegate_ids": [
+              "10527",
+              "13737"
+          ]
       },
       {
-        "team_id": "10634",
-        "delegate_ids": ["10420"]
+          "team_id": "13061",
+          "delegate_ids": [
+              "12594"
+          ]
       },
       {
-        "team_id": "10596",
-        "delegate_ids": ["10850", "10818"]
+          "team_id": "12022",
+          "delegate_ids": [
+              "13099",
+              "13122"
+          ]
       },
       {
-        "team_id": "12811",
-        "delegate_ids": ["10027"]
+          "team_id": "11971",
+          "delegate_ids": [
+              "13088",
+              "13077"
+          ]
       },
       {
-        "team_id": "10511",
-        "delegate_ids": ["10105", "10045"]
+          "team_id": "13472",
+          "delegate_ids": [
+              "12498"
+          ]
       },
       {
-        "team_id": "10475",
-        "delegate_ids": ["11114", "11431"]
+          "team_id": "10912",
+          "delegate_ids": [
+              "10044"
+          ]
       },
       {
-        "team_id": "10390",
-        "delegate_ids": ["11085", "10787"]
+          "team_id": "10333",
+          "delegate_ids": [
+              "11228",
+              "11227"
+          ]
       },
       {
-        "team_id": "10360",
-        "delegate_ids": ["11280"]
+          "team_id": "12694",
+          "delegate_ids": [
+              "12768",
+              "11213"
+          ]
       },
       {
-        "team_id": "13264",
-        "delegate_ids": ["14134", "10766"]
+          "team_id": "12309",
+          "delegate_ids": [
+              "12360",
+              "13302"
+          ]
       },
       {
-        "team_id": "13049",
-        "delegate_ids": ["12499"]
+          "team_id": "13160",
+          "delegate_ids": [
+              "12418"
+          ]
       },
       {
-        "team_id": "12993",
-        "delegate_ids": ["11869"]
+          "team_id": "12440",
+          "delegate_ids": [
+              "13437"
+          ]
       },
       {
-        "team_id": "12196",
-        "delegate_ids": ["11568", "13074"]
+          "team_id": "13311",
+          "delegate_ids": [
+              "13250"
+          ]
       },
       {
-        "team_id": "13081",
-        "delegate_ids": ["12438", "11853"]
+          "team_id": "12946",
+          "delegate_ids": [
+              "10725"
+          ]
       },
       {
-        "team_id": "13284",
-        "delegate_ids": ["10109"]
+          "team_id": "13455",
+          "delegate_ids": [
+              "10466",
+              "12742"
+          ]
       },
       {
-        "team_id": "10253",
-        "delegate_ids": ["11067", "11116"]
+          "team_id": "12891",
+          "delegate_ids": [
+              "13980",
+              "13754"
+          ]
       },
       {
-        "team_id": "12215",
-        "delegate_ids": ["11448", "13115"]
+          "team_id": "13318",
+          "delegate_ids": [
+              "10458"
+          ]
       },
       {
-        "team_id": "11381",
-        "delegate_ids": ["12202", "11005"]
+          "team_id": "11797",
+          "delegate_ids": [
+              "10448",
+              "12359"
+          ]
       },
       {
-        "team_id": "12278",
-        "delegate_ids": ["10541", "12653"]
+          "team_id": "11612",
+          "delegate_ids": [
+              "10236"
+          ]
       },
       {
-        "team_id": "13206",
-        "delegate_ids": ["13092", "13242"]
+          "team_id": "10488",
+          "delegate_ids": [
+              "11441",
+              "11090"
+          ]
       },
       {
-        "team_id": "13116",
-        "delegate_ids": ["12178", "10832"]
+          "team_id": "11909",
+          "delegate_ids": [
+              "12652"
+          ]
       },
       {
-        "team_id": "12997",
-        "delegate_ids": ["11481"]
+          "team_id": "13326",
+          "delegate_ids": [
+              "13100"
+          ]
       },
       {
-        "team_id": "11302",
-        "delegate_ids": ["11594", "10403"]
+          "team_id": "12783",
+          "delegate_ids": [
+              "11180"
+          ]
       },
       {
-        "team_id": "10988",
-        "delegate_ids": ["10627", "10635"]
+          "team_id": "12096",
+          "delegate_ids": [
+              "12704",
+              "12807"
+          ]
       },
       {
-        "team_id": "12411",
-        "delegate_ids": ["10516", "12174"]
+          "team_id": "10733",
+          "delegate_ids": [
+              "10104",
+              "10311"
+          ]
       },
       {
-        "team_id": "10917",
-        "delegate_ids": ["11286", "12291"]
+          "team_id": "13169",
+          "delegate_ids": [
+              "14087"
+          ]
       },
       {
-        "team_id": "12369",
-        "delegate_ids": ["12181"]
+          "team_id": "12844",
+          "delegate_ids": [
+              "11563",
+              "12631"
+          ]
       },
       {
-        "team_id": "13129",
-        "delegate_ids": ["10396", "13066"]
+          "team_id": "10376",
+          "delegate_ids": [
+              "10229",
+              "10240"
+          ]
       },
       {
-        "team_id": "10886",
-        "delegate_ids": ["12196"]
+          "team_id": "11209",
+          "delegate_ids": [
+              "11870"
+          ]
       },
       {
-        "team_id": "10484",
-        "delegate_ids": ["10241"]
+          "team_id": "13205",
+          "delegate_ids": [
+              "13039",
+              "10686"
+          ]
       },
       {
-        "team_id": "10586",
-        "delegate_ids": ["10317"]
+          "team_id": "13158",
+          "delegate_ids": [
+              "10371"
+          ]
       },
       {
-        "team_id": "13111",
-        "delegate_ids": ["11097", "12896"]
+          "team_id": "13303",
+          "delegate_ids": [
+              "10339"
+          ]
       },
       {
-        "team_id": "11051",
-        "delegate_ids": ["10412", "10304"]
+          "team_id": "13260",
+          "delegate_ids": [
+              "11682",
+              "12726"
+          ]
       },
       {
-        "team_id": "11646",
-        "delegate_ids": ["12861"]
+          "team_id": "13493",
+          "delegate_ids": [
+              "10572",
+              "10517"
+          ]
       },
       {
-        "team_id": "10287",
-        "delegate_ids": ["10501", "11107"]
+          "team_id": "10129",
+          "delegate_ids": [
+              "10069",
+              "10705"
+          ]
       },
       {
-        "team_id": "10116",
-        "delegate_ids": ["10168", "10170"]
+          "team_id": "10759",
+          "delegate_ids": [
+              "10554",
+              "10465"
+          ]
       },
       {
-        "team_id": "10078",
-        "delegate_ids": ["10399", "10301"]
+          "team_id": "12801",
+          "delegate_ids": [
+              "13618"
+          ]
       },
       {
-        "team_id": "11181",
-        "delegate_ids": ["12435", "10974"]
+          "team_id": "11457",
+          "delegate_ids": [
+              "10489"
+          ]
       },
       {
-        "team_id": "10312",
-        "delegate_ids": ["11178", "11155"]
+          "team_id": "13480",
+          "delegate_ids": [
+              "13478"
+          ]
       },
       {
-        "team_id": "13184",
-        "delegate_ids": ["10438"]
+          "team_id": "10445",
+          "delegate_ids": [
+              "10947",
+              "10695"
+          ]
       },
       {
-        "team_id": "13279",
-        "delegate_ids": ["14143", "14135"]
+          "team_id": "11791",
+          "delegate_ids": [
+              "13052",
+              "12999"
+          ]
       },
       {
-        "team_id": "13075",
-        "delegate_ids": ["13216"]
+          "team_id": "13346",
+          "delegate_ids": [
+              "11689",
+              "14116"
+          ]
       },
       {
-        "team_id": "12883",
-        "delegate_ids": ["10792", "11128"]
+          "team_id": "13010",
+          "delegate_ids": [
+              "11831",
+              "10395"
+          ]
       },
       {
-        "team_id": "13171",
-        "delegate_ids": ["11181", "10567"]
+          "team_id": "11760",
+          "delegate_ids": [
+              "12982",
+              "11263"
+          ]
       },
       {
-        "team_id": "12358",
-        "delegate_ids": ["12377", "12665"]
+          "team_id": "12702",
+          "delegate_ids": [
+              "12501"
+          ]
       },
       {
-        "team_id": "11980",
-        "delegate_ids": ["10038", "10599"]
+          "team_id": "12074",
+          "delegate_ids": [
+              "13123",
+              "12005"
+          ]
       },
       {
-        "team_id": "11218",
-        "delegate_ids": ["11699", "11042"]
+          "team_id": "11790",
+          "delegate_ids": [
+              "11389",
+              "12575"
+          ]
       },
       {
-        "team_id": "13029",
-        "delegate_ids": ["14023"]
+          "team_id": "10669",
+          "delegate_ids": [
+              "10316",
+              "10147"
+          ]
       },
       {
-        "team_id": "12929",
-        "delegate_ids": ["10724"]
+          "team_id": "13119",
+          "delegate_ids": [
+              "10908",
+              "10474"
+          ]
       },
       {
-        "team_id": "11321",
-        "delegate_ids": ["12600", "10457"]
+          "team_id": "13317",
+          "delegate_ids": [
+              "11769",
+              "11640"
+          ]
       },
       {
-        "team_id": "10311",
-        "delegate_ids": ["11183", "10757"]
+          "team_id": "11618",
+          "delegate_ids": [
+              "11608",
+              "11609"
+          ]
       },
       {
-        "team_id": "12213",
-        "delegate_ids": ["13114", "12894"]
+          "team_id": "10608",
+          "delegate_ids": [
+              "11435",
+              "11368"
+          ]
       },
       {
-        "team_id": "13072",
-        "delegate_ids": ["10037", "10921"]
+          "team_id": "12385",
+          "delegate_ids": [
+              "11131"
+          ]
       },
       {
-        "team_id": "12254",
-        "delegate_ids": ["12247"]
+          "team_id": "13477",
+          "delegate_ids": [
+              "10066"
+          ]
       },
       {
-        "team_id": "12948",
-        "delegate_ids": ["10410", "13520"]
+          "team_id": "11313",
+          "delegate_ids": [
+              "12041",
+              "11264"
+          ]
       },
       {
-        "team_id": "12155",
-        "delegate_ids": ["10610"]
+          "team_id": "12144",
+          "delegate_ids": [
+              "10515",
+              "10632"
+          ]
       },
       {
-        "team_id": "10730",
-        "delegate_ids": ["10756", "11702"]
+          "team_id": "11957",
+          "delegate_ids": [
+              "12948",
+              "11421"
+          ]
       },
       {
-        "team_id": "13297",
-        "delegate_ids": ["10582"]
+          "team_id": "13320",
+          "delegate_ids": [
+              "12513"
+          ]
       },
       {
-        "team_id": "10118",
-        "delegate_ids": ["10717", "10685"]
+          "team_id": "13470",
+          "delegate_ids": [
+              "13682",
+              "13770"
+          ]
       },
       {
-        "team_id": "13068",
-        "delegate_ids": ["10761", "13509"]
+          "team_id": "11938",
+          "delegate_ids": [
+              "12822",
+              "12860"
+          ]
       },
       {
-        "team_id": "12990",
-        "delegate_ids": ["10266", "11931"]
+          "team_id": "13488",
+          "delegate_ids": [
+              "14242",
+              "12811"
+          ]
       },
       {
-        "team_id": "13012",
-        "delegate_ids": ["10454", "12852"]
+          "team_id": "13305",
+          "delegate_ids": [
+              "10022",
+              "12597"
+          ]
       },
       {
-        "team_id": "13035",
-        "delegate_ids": ["12588", "14021"]
+          "team_id": "13469",
+          "delegate_ids": [
+              "11573",
+              "11252"
+          ]
       },
       {
-        "team_id": "10471",
-        "delegate_ids": ["10429", "10078"]
+          "team_id": "11977",
+          "delegate_ids": [
+              "12685",
+              "10846"
+          ]
       },
       {
-        "team_id": "10760",
-        "delegate_ids": ["11756"]
+          "team_id": "12004",
+          "delegate_ids": [
+              "11316",
+              "10306"
+          ]
       },
       {
-        "team_id": "13163",
-        "delegate_ids": ["10704", "11623"]
+          "team_id": "10662",
+          "delegate_ids": [
+              "11269",
+              "10428"
+          ]
       },
       {
-        "team_id": "12038",
-        "delegate_ids": ["12635"]
+          "team_id": "13412",
+          "delegate_ids": [
+              "13652"
+          ]
       },
       {
-        "team_id": "12847",
-        "delegate_ids": ["11267", "11048"]
+          "team_id": "12003",
+          "delegate_ids": [
+              "11086",
+              "12700"
+          ]
       },
       {
-        "team_id": "11982",
-        "delegate_ids": ["12598", "10628"]
+          "team_id": "11614",
+          "delegate_ids": [
+              "11190",
+              "10922"
+          ]
       },
       {
-        "team_id": "11863",
-        "delegate_ids": ["11242", "12139"]
+          "team_id": "12067",
+          "delegate_ids": [
+              "10123"
+          ]
       },
       {
-        "team_id": "13250",
-        "delegate_ids": ["13579"]
+          "team_id": "11107",
+          "delegate_ids": [
+              "12585",
+              "10427"
+          ]
       },
       {
-        "team_id": "12072",
-        "delegate_ids": ["12906", "10161"]
+          "team_id": "13333",
+          "delegate_ids": [
+              "11371",
+              "13127"
+          ]
       },
       {
-        "team_id": "11026",
-        "delegate_ids": ["10134", "10152"]
+          "team_id": "13300",
+          "delegate_ids": [
+              "11871"
+          ]
       },
       {
-        "team_id": "11622",
-        "delegate_ids": ["12769"]
+          "team_id": "13428",
+          "delegate_ids": [
+              "10223",
+              "10667"
+          ]
       },
       {
-        "team_id": "12955",
-        "delegate_ids": ["11526", "11528"]
+          "team_id": "11224",
+          "delegate_ids": [
+              "11301"
+          ]
       },
       {
-        "team_id": "11207",
-        "delegate_ids": ["12641", "11041"]
+          "team_id": "11443",
+          "delegate_ids": [
+              "10329",
+              "10251"
+          ]
       },
       {
-        "team_id": "10717",
-        "delegate_ids": ["10372", "10732"]
+          "team_id": "11315",
+          "delegate_ids": [
+              "10842"
+          ]
       }
-    ]
-  }
-  
+  ]
+}

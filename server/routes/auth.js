@@ -67,18 +67,18 @@ router.post("/register", async (req, res) => {
 
   try {
     // Check if the team leader or player 2 already exists
-    const existingUser = await User.findOne({
-      $or: [
-        { "teamLeader.delegateId": teamLeader_delegateId },
-        { "player2.delegateId": player2_delegateId },
-      ],
-    });
+    // const existingUser = await User.findOne({
+    //   $or: [
+    //     { "teamLeader.delegateId": teamLeader_delegateId },
+    //     { "player2.delegateId": player2_delegateId },
+    //   ],
+    // });
 
-    if (existingUser) {
-      return res
-        .status(400)
-        .json({ message: "User with this delegate ID already exists" });
-    }
+    // if (existingUser) {
+    //   return res
+    //     .status(400)
+    //     .json({ message: "User with this delegate ID already exists" });
+    // }
 
     // Create a new user object
     const newUser = new User({
