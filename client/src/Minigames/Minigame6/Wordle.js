@@ -202,7 +202,7 @@ const Wordle = ({ gameResult }) => {
   };
 
   return (
-    <div className="wordle">
+    <div className="wordle backdrop-blur-md w-80 bg-gray-800 bg-opacity-50 p-4 rounded-lg">
       <h1>Wordle Game</h1>
       <form onSubmit={handleSubmit}>
         <input
@@ -221,6 +221,7 @@ const Wordle = ({ gameResult }) => {
       <p>Points: {points}</p>
     </div>
   );
+  
 };
 
 export default Wordle;

@@ -2,7 +2,7 @@
 .game-container {
     width: 80%;
     height: 80%;
-    background-color: rgb(39, 39, 39);
+    background-color: black;
     overflow: hidden;
     position: relative;
     display: flex;
@@ -15,7 +15,7 @@
   .dino {
     width: 50px;
     height: 50px;
-    background-color: green;
+    
     position: absolute;
     bottom: 0;
     left: 50px;
@@ -24,7 +24,7 @@
   .obstacle {
     width: 50px;
     height: 50px;
-    background-color: red;
+  
     position: absolute;
     bottom: 0;
   }
@@ -41,7 +41,7 @@
   .start-btn, .retry-btn {
     font-size: 20px;
     padding: 15px 30px;
-    background-color: #4CAF50;
+    background-color: black;
     color: white;
     border: none;
     border-radius: 5px;
@@ -50,7 +50,8 @@
   }
   
   .start-btn:hover, .retry-btn:hover {
-    background-color: #225725;
+    background-color: white;
+    color: black;
   }
   
   .game-over {
@@ -67,6 +68,7 @@
     font-size: 36px;
     color: white;
     margin-bottom: 20px;
+    background-color: black;
   }
   
   .game-over p {

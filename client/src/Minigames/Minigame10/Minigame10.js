@@ -138,7 +138,7 @@ const Minigame10 = ({gameResult}) => {
           ))}
       </div>
       <div className="score-container">
-        <h2>Score: {score}</h2> {/* Display score */}
+        <h2 className="p-4 pr-8">Score: {score}</h2> {/* Display score */}
       </div>
     </div>
   );

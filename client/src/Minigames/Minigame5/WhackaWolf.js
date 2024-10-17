@@ -74,6 +74,10 @@ function WhackaWolf({ gameResult }) {
     };
 
     return (
+        <div
+                className="p-8 bg-gray-700/70 backdrop-blur-md shadow-lg rounded-lg w-full mx-auto"
+                style={{ background: 'rgba(75, 85, 99, 0.7)', backdropFilter: 'blur(10px)' }}
+            >
         <div className="text-center m-5">
             <h1>Whack-a-Wolf</h1>
             <div className="mb-5">
@@ -123,6 +127,7 @@ function WhackaWolf({ gameResult }) {
                 )}
             </div>
         </div>
+        </div >
     );
 }
 

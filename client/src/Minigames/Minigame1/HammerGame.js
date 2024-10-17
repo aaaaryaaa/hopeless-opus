@@ -88,7 +88,7 @@ const HammerGame = ({ gameResult }) => {
                             }}
                             disabled={gameOver}
                         >
-                            {gameOver && rowIndex === hammerPosition.row && colIndex === hammerPosition.col
+                            {gameOver && rowIndex === hammerPosition.row && colIndex === colIndex
                                 ? "🔨"
                                 : ""}
                         </button>
@@ -99,19 +99,35 @@ const HammerGame = ({ gameResult }) => {
     };
 
     return (
-        <div style={{ textAlign: "center", marginTop: "10px", marginBottom: "90px" }}>
-            <h1>Hammer Guessing Game</h1>
-            <p>{message}</p>
-            {/* Fixed height container to prevent shifting */}
-            <div style={{ height: "350px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                {renderGrid()}
-            </div>
-            {gameOver && (
-                <div>
-                    <h2>{playerWon ? "You Win!" : "Game Over"}</h2>
-                    <button onClick={resetGame}>Play Again</button>
+        <div>
+            <div
+                className="p-8 bg-gray-700/70 backdrop-blur-md shadow-lg rounded-lg max-w-md w-full mx-auto"
+                style={{ background: 'rgba(75, 85, 99, 0.7)', backdropFilter: 'blur(10px)' }}
+            >
+                <div style={{ textAlign: "center", marginTop: "10px", marginBottom: "30px" }}>
+                    <h1 className="text-3xl font-bold text-white">Hammer Guessing Game</h1>
+                    <p className="text-white mt-4">{message}</p>
+
+                    {/* Fixed height container to prevent shifting */}
+                    <div style={{ height: "350px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                        {renderGrid()}
+                    </div>
+
+                    {gameOver && (
+                        <div>
+                            <h2 className="text-2xl font-bold text-white mt-4">
+                                {playerWon ? "You Win!" : "Game Over"}
+                            </h2>
+                            <button
+                                onClick={resetGame}
+                                className="mt-6 px-4 py-2 bg-gray-800 text-white rounded-lg shadow-md hover:bg-gray-600"
+                            >
+                                Play Again
+                            </button>
+                        </div>
+                    )}
                 </div>
-            )}
+            </div>
         </div>
     );
 };

@@ -19,15 +19,16 @@ const Info = () => {
     { name: 'Tanvi', role: 'OC-WEBDEV', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728827522/Tanvi_yev0hs.jpg", stats: "75% Debugging" },
     { name: 'Nikhil', role: 'OC-WEBDEV', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728827513/Nikhil_l8mnl0.jpg", stats: "99% Fifa" },
     { name: 'Vignesh', role: 'OC-WEBDEV', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728829011/Vignesh_fhjadz.jpg", stats: "200% Hopeless" },
-    { name: 'Aditya', role: 'OC-STORY', image: ima, stats: "99% Beard" },
-    { name: 'Arkadeep', role: 'OC-STORY', image: ima, stats: "50% Laughing" },
-    { name: 'Saksham', role: 'OC-STORY', image: ima, stats: "66% Hindi" },
-    { name: 'Shivam', role: 'OC-STORY', image: ima, stats: "100% Veg" },
+    { name: 'Aditya', role: 'OC-STORY', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1729118744/Aditya_qmzrc7.jpg", stats: "99% Beard" },
+    { name: 'Arkadeep', role: 'OC-STORY', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1729120270/arko_ggiebo.jpg", stats: "50% Laughing" },
+    { name: 'Saksham', role: 'OC-STORY', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1729118744/Saksham_foists.jpg", stats: "66% Hindi" },
+    { name: 'Shivam', role: 'OC-STORY', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1729118744/Shivam_wsbvin.jpg", stats: "100% Veg" },
     { name: 'Sara', role: 'OC-STORY', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728827515/Sara_sat2pl.jpg", stats: "40% Chart" },
     { name: 'Yosha', role: 'OC-DESIGN', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728849765/Yosha_byho0t.jpg", stats: "55% Oranges" },
     { name: 'Riddhi', role: 'OC-DESIGN', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728827521/Riddhi_crba0c.jpg", stats: "100% Riddhi" },
     { name: 'Vidhi', role: 'OC-DESIGN', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728827522/Vidhi_boxfyu.jpg", stats: "88% Missing" },
-    { name: 'Urja', role: 'OC-DESIGN', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728844443/Urja_k6mlww.jpg", stats: "90% Hardworker" }
+    { name: 'Urja', role: 'OC-DESIGN', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728844443/Urja_k6mlww.jpg", stats: "90% Hardworker" },
+    { name: 'Anshita', role: 'OC-DESIGN', image: ima, stats: "50% Headphones" }
 
   ];
 

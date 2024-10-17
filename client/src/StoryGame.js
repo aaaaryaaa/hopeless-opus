@@ -979,7 +979,7 @@ const StoryGame = () => {
               )}
               {gameDialogue && gameNo === 11 && <Minigame11 />}  
                 
-              {gameDialogue && gameNo === 18 && (
+              {gameDialogue && (
                 <Minigame18 gameResult={handleMiniGameEighteenResult}/>  //Switch Game and 11 is Row Boat game
               )}
 

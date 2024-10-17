@@ -64,7 +64,8 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white p-10 flex flex-col items-center">
+    <div className="min-h-screen bg-gray-800/70 backdrop-blur-md text-white p-10 flex flex-col items-center"
+    style={{ background: 'rgba(75, 85, 99, 0.7)', backdropFilter: 'blur(10px)' }}>
       <h1 className="text-4xl font-bold mb-10">Crafting Table</h1>
       <h2 className="text-sm font-bold mb-10">Click on ingredient to place it and blank option to remove it</h2>
       
@@ -74,7 +75,7 @@ function App() {
         {selectedIngredients.map((ingredient, idx) => (
           <div
             key={idx}
-            className="w-20 h-20 border border-gray-500 flex items-center justify-center cursor-pointer"
+            className="w-20 h-20 border border-white flex items-center justify-center cursor-pointer"
             onClick={() => placeIngredientInSlot(idx)} // Place ingredient on click
           >
             {ingredient !== 'blank' ? (
