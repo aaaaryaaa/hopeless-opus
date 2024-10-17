@@ -41,7 +41,7 @@ const Leaderboard = () => {
           <thead className="bg-gray-700 text-left">
             <tr>
               <th className="py-4 px-6">Rank</th>
-              <th className="py-4 px-6">Team ID</th>
+              {/*<th className="py-4 px-6">Team ID</th>*/}
               <th className="py-4 px-6">Team Leader</th>
               <th className="py-4 px-6">Points</th>
               <th className="py-4 px-6">Money</th>
@@ -62,7 +62,7 @@ const Leaderboard = () => {
                 } hover:bg-gray-600 border-b border-gray-700`}
               >
                 <td className="py-3 px-6">{user.rank || index + 1}</td>
-                <td className="py-3 px-6">{user.teamId}</td>
+                {/*<td className="py-3 px-6">{user.teamId}</td>*/}
                 <td className="py-3 px-6">{user.teamLeader.name}</td>
                 <td className="py-3 px-6">{user.points}</td>
                 <td className="py-3 px-6">₹{user.money}</td>

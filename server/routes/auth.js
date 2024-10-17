@@ -48,22 +48,22 @@ router.post("/register", async (req, res) => {
   }
 
   // Validate against enrollment data
-  const team = enrollmentData.find((team) => team.team_id === teamId);
+  // const team = enrollmentData.find((team) => team.team_id === teamId);
 
   // Log only the specific team and its delegate IDs
-  if (team) {
-    console.log(`Checking Team ID: ${teamId}`);
-    console.log(`Delegate IDs: ${team.delegate_ids}`);
-  } else {
-    console.log(`No team found with ID: ${teamId}`);
-  }
+  // if (team) {
+  //   console.log(`Checking Team ID: ${teamId}`);
+  //   console.log(`Delegate IDs: ${team.delegate_ids}`);
+  // } else {
+  //   console.log(`No team found with ID: ${teamId}`);
+  // }
 
-  const isValidDelegateId =
-    team && team.delegate_ids.includes(teamLeader_delegateId);
+  // const isValidDelegateId =
+  //   team && team.delegate_ids.includes(teamLeader_delegateId);
 
-  if (!isValidDelegateId) {
-    return res.status(400).json({ message: "Invalid delegate ID or team ID." });
-  }
+  // if (!isValidDelegateId) {
+  //   return res.status(400).json({ message: "Invalid delegate ID or team ID." });
+  // }
 
   try {
     // Check if the team leader or player 2 already exists
