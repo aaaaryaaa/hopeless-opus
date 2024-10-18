@@ -24,10 +24,10 @@ const Info = () => {
     { name: 'Saksham', role: 'OC-STORY', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1729118744/Saksham_foists.jpg", stats: "66% Hindi" },
     { name: 'Sara', role: 'OC-STORY', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728827515/Sara_sat2pl.jpg", stats: "40% Chaat" },
     { name: 'Shivam', role: 'OC-STORY', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1729118744/Shivam_wsbvin.jpg", stats: "100% Veg" },
-    // { name: 'Anshita', role: 'OC-DESIGN', image: ima, stats: "50% Headphones" },
+    { name: 'Anshita', role: 'OC-DESIGN', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1729167108/anshita_gxvzdv.jpg", stats: "50% Headphones" },
     { name: 'Riddhi', role: 'OC-DESIGN', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1729161379/ridi_e6oylv.jpg", stats: "50% Late" },
     { name: 'Urja', role: 'OC-DESIGN', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728844443/Urja_k6mlww.jpg", stats: "90% Hardworker" },
-    { name: 'Vidhi', role: 'OC-DESIGN', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728827522/Vidhi_boxfyu.jpg", stats: "88% Missing" },
+    // { name: 'Vidhi', role: 'OC-DESIGN', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728827522/Vidhi_boxfyu.jpg", stats: "88% Missing" },
     { name: 'Yosha', role: 'OC-DESIGN', image: "https://res.cloudinary.com/diswj8gya/image/upload/v1728849765/Yosha_byho0t.jpg", stats: "55% Oranges" },
     
 

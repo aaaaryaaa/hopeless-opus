@@ -86,21 +86,24 @@ const Minigame10 = ({gameResult}) => {
       if (index === currentQuestion.correctIndex) {
         setAnsweredCorrectly(true);
         setPreviousAnswers((prev) => [...prev, currentQuestion]);
-        // Keep the score the same since the player got it right
-
+  
         setTimeout(() => {
-          setCurrentRow(currentRow + 1);
+          // Check if the next row is within the bounds of the questions array
+          if (currentRow + 1 < questions.length) {
+            setCurrentRow(currentRow + 1);
+          }
           setAnsweredCorrectly(null);
         }, 1000);
       } else {
         setAnsweredCorrectly(false);
         setScore((prev) => Math.max(prev - 10, 0)); // Deduct points for wrong answer
         gameResult(Math.max(score - 10, 0));
-
+  
         setTimeout(() => setAnsweredCorrectly(null), 1000);
       }
     }
   };
+  
 
   return (
     <div className="game-container">

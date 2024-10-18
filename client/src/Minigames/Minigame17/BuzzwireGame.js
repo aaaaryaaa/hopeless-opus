@@ -9,6 +9,7 @@ const BuzzwireGame = ({gameResult}) => {
   const [winMessage, setWinMessage] = useState("");
   const [mouseFlag, setMouseFlag] = useState(0);
   const [gameDone, setGameDone] = useState(false);
+  const [closeGame, setCloseGame] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -31,7 +32,7 @@ const BuzzwireGame = ({gameResult}) => {
       if (x > 10) {
         if (mouseFlag === 0) {
           alert(
-            "Place mouse at beginning of pipe and hit Enter!! Don't click OK!"
+            "Place mouse at the very beginning of pipe (as close to the edge) and hit Enter (on keyboard)!! Don't click OK with your mouse! You can skip if you can't figure out how to play this game XD! (Ignore if you won the game, just dont hover over the white area.)"
           );
         }
       } else if (x <= 20) {
@@ -59,7 +60,7 @@ const BuzzwireGame = ({gameResult}) => {
         if (pixelData[3] === 255) {
           setGameOver(true);
           alert(
-            "Game Over! You touched the boundary. Please restart the game."
+            "Game Over! You touched the boundary. Please restart the game. (Ignore if you won the game, just dont hover over the white area.)"
           );
           resetGame(); // Automatically reset the game on game over
         }
@@ -73,10 +74,11 @@ const BuzzwireGame = ({gameResult}) => {
         // Check if the user wins (reaches the end of the pipe)
         if (x >= 1340) {
           setWinMessage(
-            "You Win! Congratulations on successfully traversing the pipe!"
+            "You Win! Congratulations on successfully traversing the pipe! (Don't hover over the white area anymore)"
           );
-          alert("You Win! Congratulations on successfully traversing the pipe! You finish minigame.");
-          gameResult(200);
+          alert("You Win! Congratulations on successfully traversing the pipe! You finish minigame. (Don't hover over the white area anymore)");
+          gameResult(400);
+          setCloseGame(true);
           setGameStarted(false); // Reset game state
         }
       };
@@ -113,8 +115,8 @@ const BuzzwireGame = ({gameResult}) => {
       )} */}
       <canvas
         ref={canvasRef}
-        width={1400}
-        height={700}
+        width={!closeGame ? "1400" : "0"}
+        height={!closeGame ? "700" : "0"}
         className="border-4 border-gray-700 bg-white relative"
       ></canvas>
 
