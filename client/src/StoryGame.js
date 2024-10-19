@@ -105,6 +105,7 @@ const StoryGame = () => {
   const [minigameNinePoints, setMinigameNinePoints] = useState(0);
   const [minigameTenPoints, setMinigameTenPoints] = useState(0);
   const [minigameElevenPoints, setMinigameElevenPoints] = useState(0);
+  const [minigameTwelvePoints, setMinigameTwelvePoints] = useState(0);
   const [minigameFourteenWon, setMinigameFourteenWon] = useState(false);
   const [minigameFourteenPoints, setMinigameFourteenPoints] = useState(0);
   const [minigameFifteenPoints, setMinigameFifteenPoints] = useState(0);
@@ -156,62 +157,149 @@ const StoryGame = () => {
   // ];
 
   const charArray = [
-    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090763/HopelessOpus/gt7ydwwje8vwegcr4ivc.png",
-    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729013292/HopelessOpus/fedyjky3yb6fgqgslkc7.png",
-    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090708/HopelessOpus/ga5d8f0tvww8argx3ztb.png",
-    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090775/HopelessOpus/b9vfp0obwsuj3nuvl5hk.png",
-    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090782/HopelessOpus/q0vnzeekssuubsqduvc9.png",
-    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090774/HopelessOpus/mny9ouu6urkqcime9rl6.png",
-    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729089986/HopelessOpus/d4ceocqtigimm9p1rlv2.png",
-    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729089984/HopelessOpus/ufybinz2ekqzdppdm7wl.png",
-    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090015/HopelessOpus/wfkv25xxjara1bxqtjvv.png",
-    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090746/HopelessOpus/nmbwuzhcamgc27rkl9m3.png",
-    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729093163/HopelessOpus/aeji6yhxt1r7tiylk6m1.png"
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090763/HopelessOpus/gt7ydwwje8vwegcr4ivc.png", //0
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729013292/HopelessOpus/fedyjky3yb6fgqgslkc7.png", //1
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090708/HopelessOpus/ga5d8f0tvww8argx3ztb.png", //2
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090775/HopelessOpus/b9vfp0obwsuj3nuvl5hk.png", //3
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090782/HopelessOpus/q0vnzeekssuubsqduvc9.png", //4
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090774/HopelessOpus/mny9ouu6urkqcime9rl6.png", //5
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729089986/HopelessOpus/d4ceocqtigimm9p1rlv2.png", //6
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729089984/HopelessOpus/ufybinz2ekqzdppdm7wl.png", //7
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090015/HopelessOpus/wfkv25xxjara1bxqtjvv.png", //8
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090746/HopelessOpus/nmbwuzhcamgc27rkl9m3.png", //9
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729093163/HopelessOpus/aeji6yhxt1r7tiylk6m1.png", //10
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729274140/MainChar1Old_ok4qx3.png", //11
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729274155/MainChar2Old_ava8gx.png", //12
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729274140/MainChar1Old_ok4qx3.png", //13
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729274155/MainChar2Old_ava8gx.png" //14
   ];
+  // const bgarray = [
+  //    '',//0
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1728917655/1.png', //1
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1728930116/2_1_uldavh.png', //2
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1729150226/3_1_hqg6lo.png ', //3
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1729150458/Screenshot_2024-10-17_at_1.03.17_PM_jvl0tn.png ', //4
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921639/5_v01egf_du9xqs.png', //5
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921641/6_kffzxo_aungzz.png', //6
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1729150049/7_1_sfzsht.png', //7
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1729150048/8_1_lgd17v.png', //8
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921654/9_jq7f7b_kbae5g.png', //9
+  //    'https://res.cloudinary.com/dccscovqj/image/upload/v1729165907/DALL_E_2024-10-12_19.11.01_-_A_public_space_with_one_wall_featuring_a_large_glass_door_that_serves_as_the_entrance_to_a_library._The_door_has_a_modern_sleek_design_with_black_met_1_ltpz4g.png', //10
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921653/11_aljo7g_jugaqe.png', //11
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1728932361/12_o_auarlv.png', //12
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921641/13_fjmu45_douwxr.jpg', //13
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1728922300/14_yjbyhz_c_pad_b_gen_fill_w_1440_h_1024_lxm2vt.png', //14
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1728922043/15_aoxwgf.png', //15
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1729150772/17_1_fsg5dv.png ', //16
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1729150772/17_1_fsg5dv.png', //17
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1728922649/18_twrzq6_c_pad_b_gen_fill_w_1440_h_1024_dfkpnu.png', //18
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1728920787/19_l3fpqd_c_pad_b_gen_fill_w_1440_h_1024_smva4a.png', //19
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918649/20_ratvde.png', //20
+  //    '',//21
+  //    '',//22
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1728932471/23_wpseh7.png', //23
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921645/24_osspg4_hkaskt.png', //24
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1728920134/25_k81ope_c_pad_b_gen_fill_w_1440_h_1024_cfpgar.png', //25
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1728920666/26_ne9l6b_c_pad_b_gen_fill_w_1440_h_1024_b8fusi.png', //26
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918667/27_oy5z45.png', //27
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918686/28_x9gtno.png', //28
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1728920544/29_svbxaf_c_pad_b_gen_fill_w_1440_h_1024_hrvuya.png', //29
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1728920337/30_bj19em_c_pad_b_gen_fill_w_1440_h_1024_ostomm.png', //30
+  //    '',//31
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918687/32_k6jarr.png', //32
+  //    '',//33
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918699/34_i9wrzd.png', //34
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918705/35_p4srrh.png', //35
+  //    '', //36
+  //    '', //37
+  //    '', //38
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1729156239/39_1_vmuthu.png',//39
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1729157144/Stranger_1_znfkis.png', //40
+  //    'https://res.cloudinary.com/diswj8gya/image/upload/v1729156386/41_1_vupslq.png', //41
+  //   ]
+
   const bgarray = [
-     '',//0
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1728917655/1.png', //1
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1728930116/2_1_uldavh.png', //2
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1729150226/3_1_hqg6lo.png ', //3
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1729150458/Screenshot_2024-10-17_at_1.03.17_PM_jvl0tn.png ', //4
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1728921639/5_v01egf_du9xqs.png', //5
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1728921641/6_kffzxo_aungzz.png', //6
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1729150049/7_1_sfzsht.png', //7
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1729150048/8_1_lgd17v.png', //8
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1728921654/9_jq7f7b_kbae5g.png', //9
-     'https://res.cloudinary.com/dccscovqj/image/upload/v1729165907/DALL_E_2024-10-12_19.11.01_-_A_public_space_with_one_wall_featuring_a_large_glass_door_that_serves_as_the_entrance_to_a_library._The_door_has_a_modern_sleek_design_with_black_met_1_ltpz4g.png', //10
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1728921653/11_aljo7g_jugaqe.png', //11
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1728932361/12_o_auarlv.png', //12
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1728921641/13_fjmu45_douwxr.jpg', //13
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1728922300/14_yjbyhz_c_pad_b_gen_fill_w_1440_h_1024_lxm2vt.png', //14
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1728922043/15_aoxwgf.png', //15
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1729150772/17_1_fsg5dv.png ', //16
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1729150772/17_1_fsg5dv.png', //17
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1728922649/18_twrzq6_c_pad_b_gen_fill_w_1440_h_1024_dfkpnu.png', //18
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1728920787/19_l3fpqd_c_pad_b_gen_fill_w_1440_h_1024_smva4a.png', //19
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1728918649/20_ratvde.png', //20
-     '',//21
-     '',//22
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1728932471/23_wpseh7.png', //23
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1728921645/24_osspg4_hkaskt.png', //24
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1728920134/25_k81ope_c_pad_b_gen_fill_w_1440_h_1024_cfpgar.png', //25
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1728920666/26_ne9l6b_c_pad_b_gen_fill_w_1440_h_1024_b8fusi.png', //26
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1728918667/27_oy5z45.png', //27
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1728918686/28_x9gtno.png', //28
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1728920544/29_svbxaf_c_pad_b_gen_fill_w_1440_h_1024_hrvuya.png', //29
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1728920337/30_bj19em_c_pad_b_gen_fill_w_1440_h_1024_ostomm.png', //30
-     '',//31
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1728918687/32_k6jarr.png', //32
-     '',//33
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1728918699/34_i9wrzd.png', //34
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1728918705/35_p4srrh.png', //35
-     '', //36
-     '', //37
-     '', //38
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1729156239/39_1_vmuthu.png',//39
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1729157144/Stranger_1_znfkis.png', //40
-     'https://res.cloudinary.com/diswj8gya/image/upload/v1729156386/41_1_vupslq.png', //41
-    ]
+    '',//0
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728917655/1.png', //1
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728930116/2_1_uldavh.png', //2
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729150226/3_1_hqg6lo.png ', //3
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729150458/Screenshot_2024-10-17_at_1.03.17_PM_jvl0tn.png ', //4
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921639/5_v01egf_du9xqs.png', //5
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921641/6_kffzxo_aungzz.png', //6
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729150049/7_1_sfzsht.png', //7
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729150048/8_1_lgd17v.png', //8
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921654/9_jq7f7b_kbae5g.png', //9
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921617/10_fzpjgp_uyjc1e.png', //10
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921653/11_aljo7g_jugaqe.png', //11
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728932361/12_o_auarlv.png', //12
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921641/13_fjmu45_douwxr.jpg', //13
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728922300/14_yjbyhz_c_pad_b_gen_fill_w_1440_h_1024_lxm2vt.png', //14
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728922043/15_aoxwgf.png', //15
+    ' https://res.cloudinary.com/diswj8gya/image/upload/v1729150772/17_1_fsg5dv.png ', //16
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729150772/17_1_fsg5dv.png', //17
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728922649/18_twrzq6_c_pad_b_gen_fill_w_1440_h_1024_dfkpnu.png', //18
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728920787/19_l3fpqd_c_pad_b_gen_fill_w_1440_h_1024_smva4a.png', //19
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918649/20_ratvde.png', //20
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729259168/21_b0vgyx.png',  //21
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729259644/22_1_dbx3q8.png', //22
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728932471/23_wpseh7.png', //23
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728921645/24_osspg4_hkaskt.png', //24
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728920134/25_k81ope_c_pad_b_gen_fill_w_1440_h_1024_cfpgar.png', //25
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728920666/26_ne9l6b_c_pad_b_gen_fill_w_1440_h_1024_b8fusi.png', //26
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918667/27_oy5z45.png', //27
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918686/28_x9gtno.png', //28
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728920544/29_svbxaf_c_pad_b_gen_fill_w_1440_h_1024_hrvuya.png', //29
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728920337/30_bj19em_c_pad_b_gen_fill_w_1440_h_1024_ostomm.png', //30
+    '',//31
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918687/32_k6jarr.png', //32
+    '',//33
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918699/34_i9wrzd.png', //34
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918705/35_p4srrh.png', //35
+    '',//36
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729261327/37_sypnop.png' , //37
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729261432/38_v5xu5n.png', //38
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729156239/39_1_vmuthu.png', //39
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729157144/Stranger_1_znfkis.png', //40
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729156386/41_1_vupslq.png', //41
+    '',//42
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729261549/43_hcnwot.png', //43
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729261552/44_gtx8ls.png', //44
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729261551/45_lazugr.png', //45
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729261582/46_gulg9v.png', //46
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729262120/47_xu4lwr.png', //47
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729261583/48_ucqxku.png', //48
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729262398/49_nkbdrx.png', //49
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729262519/50_arhb3c.png', //50
+    '', //51
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729261591/52_g21yht.png', //52
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729263325/Screenshot_2024-10-18_at_8.22.19_PM_eavkmc.png', //53
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729263520/54_uxshtb.png', //54
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729266437/55_wl32qt.png', //55
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729270724/56_2_1_f6nump.png', //56
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729270679/57_1_oxs2ca.jpg', //57
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729261600/58_egnpwk.png', //58
+    '', //59
+    '', //60
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729261598/61_oxpdhx.png', //61
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729261600/62_i3ndue.png', //62
+    '', //63
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729267719/64_i6y3yn.jpg', //64
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729267484/65_a3xzqp.png', //65
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729267598/66_emvwgy.png', //66
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729267945/67_drrrge.jpg', //67
+    '', //68
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729268205/69_pyx2dx.jpg', //69
+    '', //70
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729261611/71_xf8qh0.png', //71
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729261617/72_we5cuz.png', //72
+    '', //73
+    '', //74
+    '', //75
+    '', //76
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729270280/77_1_yub64g.png', //77
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729270342/78_vhzenz.png', //78
+    'https://res.cloudinary.com/diswj8gya/image/upload/v1729270242/79_1_spkkym.png', //79
+    ];
   
 
   //function for minigame 1
@@ -260,6 +348,10 @@ const StoryGame = () => {
   const handleMiniGameElevenResult = (pts) => {
     setMinigameElevenPoints(pts); // Update the state based on the mini-game result
   };
+
+  const handleMiniGameTwelveResult = (pts) => {
+    setMinigameTwelvePoints(pts);
+  }
 
   const handleMiniGameFourteenResult = (pts, won) => {
     setMinigameFourteenPoints(pts);
@@ -370,6 +462,7 @@ const StoryGame = () => {
           money: newMoney,
           rf: newRF,
           inventory: inv,
+          choiceTime: new Date().toISOString()
         }),
       });
 
@@ -736,6 +829,60 @@ const StoryGame = () => {
           ); // Update the story ID and points in the backend
       }
 
+      if (gameNo === 11) {
+        if (points === null) setPoints(0);
+        const updatedPoints = points + minigameElevenPoints; // Add option points to current points
+        const updatedHealth = health;
+        const updatedMoney = money;
+        const updatedRF = rf;
+        
+        
+        
+        setPoints(updatedPoints); // Update the UI with new points
+        setHealth(updatedHealth);
+        setMoney(updatedMoney);
+        setRF(updatedRF);
+        const inv = inventory;
+
+        if (gameDialogue && gameNo === 11)
+          fetchStory('3801');
+          updateCurrentStoryIdAndPoints(
+            '3801',
+            updatedPoints,
+            updatedHealth,
+            updatedMoney,
+            updatedRF,
+            inv
+          ); // Update the story ID and points in the backend
+      }
+
+      if (gameNo === 12) {
+        if (points === null) setPoints(0);
+        const updatedPoints = points + minigameTwelvePoints; // Add option points to current points
+        const updatedHealth = health;
+        const updatedMoney = money;
+        const updatedRF = rf;
+        
+        
+        
+        setPoints(updatedPoints); // Update the UI with new points
+        setHealth(updatedHealth);
+        setMoney(updatedMoney);
+        setRF(updatedRF);
+        const inv = inventory;
+
+        if (gameDialogue && gameNo === 12)
+          fetchStory('3702');
+          updateCurrentStoryIdAndPoints(
+            '3702',
+            updatedPoints,
+            updatedHealth,
+            updatedMoney,
+            updatedRF,
+            inv
+          ); // Update the story ID and points in the backend
+      }
+
       if (gameNo === 14) {
         if (points === null) setPoints(0);
         const updatedPoints = points + minigameFourteenPoints; // Add option points to current points
@@ -915,7 +1062,7 @@ const StoryGame = () => {
                 <Minigame5 gameResult={handleMiniGameFiveResult} /> //WhackAWolf
               )}
               {gameDialogue && gameNo === 12 && (
-                <Minigame12 gameResult={handleMiniGameOneResult} /> //Jungle Maze
+                <Minigame12 gameResult={handleMiniGameTwelveResult} /> //Jungle Maze
               )}
               {gameDialogue&& gameNo === 13 && (
                 <Minigame13 gameResult={handleMiniGameOneResult} /> //Crafting Table
@@ -978,10 +1125,11 @@ const StoryGame = () => {
                   <Minigame10 gameResult={handleMiniGameTenResult} />
                 </div> //Tile Game
               )}
-              {gameDialogue && gameNo === 11 && <Minigame11 />}  
+              {gameDialogue && gameNo === 11 && (<Minigame11 gameResult={handleMiniGameElevenResult}/> //11 is Row Boat game
+              )}  
                 
               {gameDialogue && gameNo === 18 &&(
-                <Minigame18 gameResult={handleMiniGameEighteenResult}/>  //Switch Game and 11 is Row Boat game
+                <Minigame18 gameResult={handleMiniGameEighteenResult}/>  //Switch Game 
               )}
 
               <div
@@ -1070,7 +1218,7 @@ const StoryGame = () => {
                             margin: "1rem 0.5rem",
                           }}
                         >
-                          Will be continued in Phase 2.
+                          Will be continued in the Phase 3.
                         </button>
                       </>)}
                     </>

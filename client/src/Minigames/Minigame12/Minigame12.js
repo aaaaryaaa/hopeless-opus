@@ -33,6 +33,7 @@ const Minigame12 = ({ gameResult }) => {
         if (time > 0) return time - 1;
         clearInterval(timerId);
         setGameOver(true); // Set game over when the timer reaches 0
+        gameResult(Math.round(300/clickCount)*timeLeft);
         return 0;
       });
     }, 1000);

@@ -142,6 +142,7 @@ function Minigame11({ gameResult }) {
 
         if (elapsedTime >= gameDuration) {
           setGameCompleted(true);
+          if(!lost) gameResult(200);
         }
       }
     }, 100);
@@ -178,20 +179,7 @@ function Minigame11({ gameResult }) {
 
   return (
     <div className="gameApp flex flex-col justify-center items-center">
-      {!gameStarted && !lost && (
-        <button
-          onClick={startGame}
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 focus:ring-2 focus:ring-blue-300"
-        >
-          Start Game
-        </button>
-      )}
-
-      {lost && (
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black text-white p-6 rounded-lg z-50 shadow-2xl text-lg transition-transform duration-300 ease-in-out">
-          <p className="mb-4">You've lost the game!</p>
-        </div>
-      )}
+      
 
       <canvas
         ref={canvasRef}
@@ -206,6 +194,21 @@ function Minigame11({ gameResult }) {
       )}
       {showEndLand && (
         <div className="absolute top-0 w-[70vw] h-[16vh] bg-gradient-to-b from-yellow-700 to-blue-400 opacity-100 transition-opacity duration-700 ease-out"></div>
+      )}
+
+      {!gameStarted && !lost && (
+        <button
+          onClick={startGame}
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 focus:ring-2 focus:ring-blue-300"
+        >
+          Start Game
+        </button>
+      )}
+
+      {lost && (
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black text-white p-6 rounded-lg z-50 shadow-2xl text-lg transition-transform duration-300 ease-in-out">
+          <p className="mb-4">You've lost the game!</p>
+        </div>
       )}
 
       {/* Game over or success messages */}

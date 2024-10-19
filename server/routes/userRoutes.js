@@ -38,7 +38,7 @@ router.get("/getuser", authMiddleware, (req, res) => {
 router.get('/leaderboard', (req, res) => {
   User.find({})
     // .select('-password -inventory') // Exclude password and inventory from the response
-    .sort({ points: -1, time: 1 }) // Sort by points descending and time ascending
+    .sort({ points: -1, choiceTime: 1 }) // Sort by points descending and time ascending
     .then((users) => {
       if (!users || users.length === 0) {
         return res.status(404).json({ message: 'No users found' })
@@ -66,7 +66,7 @@ router.get("/allusers", (req, res) => {
 
 // PUT Route to update currentStoryId and points
 router.put("/updatestory", authMiddleware, (req, res) => {
-  const { currentStoryId, points, health, money, rf, inventory } = req.body;
+  const { currentStoryId, points, health, money, rf, inventory, choiceTime } = req.body;
 
   // Validate the required fields
   if (
@@ -83,7 +83,7 @@ router.put("/updatestory", authMiddleware, (req, res) => {
   // Find the user by req.userId and update currentStoryId, points, and other attributes
   User.findByIdAndUpdate(
     req.userId,
-    { currentStoryId, points, health, money, rf, inventory }, // Update the values
+    { currentStoryId, points, health, money, rf, inventory, choiceTime }, // Update the values
     { new: true, useFindAndModify: false } // Return the updated user and avoid deprecation warning
   )
     .select("-password") // Exclude password from the response

@@ -45,6 +45,7 @@ const Leaderboard = () => {
               <th className="py-4 px-6">Team Leader</th>
               <th className="py-4 px-6">Points</th>
               <th className="py-4 px-6">Money</th>
+              {/* <th className='py-4 px-6'>Time</th> */}
             </tr>
           </thead>
           <tbody>
@@ -66,6 +67,19 @@ const Leaderboard = () => {
                 <td className="py-3 px-6">{user.teamLeader.name}</td>
                 <td className="py-3 px-6">{user.points}</td>
                 <td className="py-3 px-6">₹{user.money}</td>
+                {/* <td className="py-3 px-6">{user.choiceTime}</td> */}
+                {/* <td className="py-3 px-6">
+                  {new Date(user.choiceTime).toLocaleString('en-IN', {
+                    timeZone: 'Asia/Kolkata',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: true,
+                  })}
+                </td> */}
               </tr>
             ))}
           </tbody>
