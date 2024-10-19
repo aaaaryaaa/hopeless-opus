@@ -79,7 +79,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
                 <li className="relative flex flex-col items-center text-center py-2 px-3 my-1 font-medium rounded-md cursor-pointer transition-colors">
                     <span className="text-sm">Inventory</span>
                     <ul className="space-y-2 mt-2">
-                    {Object.entries(data.inventory).some(([_, item]) => item.value) ? (
+                    {/* {Object.entries(data.inventory).some(([_, item]) => item.value) ? (
                         Object.entries(data.inventory).map(([key, item], index) =>
                         item.value ? (
                             // <li key={index} className="text-sm">
@@ -96,7 +96,13 @@ export default function Sidebar({ isOpen, setIsOpen }) {
                         )
                     ) : (
                         <li className="text-sm text-gray-400">No items</li>
-                    )}
+                    )} */}
+                    <p className="text-sm cursor-pointer text-blue-700 hover:text-blue-400 transition-colors" onClick={() => navi('/script')}>
+                      Script
+                    </p>
+                    <p className="text-sm cursor-pointer text-blue-700 hover:text-blue-400 transition-colors" onClick={() => navi('/journal')}>
+                      Journal
+                    </p>
                     </ul>
                 </li>
             </ul>
