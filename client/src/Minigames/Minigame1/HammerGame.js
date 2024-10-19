@@ -88,7 +88,7 @@ const HammerGame = ({ gameResult }) => {
                             }}
                             disabled={gameOver}
                         >
-                            {gameOver && rowIndex === hammerPosition.row && colIndex === colIndex
+                            {gameOver && rowIndex === hammerPosition.row && colIndex === hammerPosition.col
                                 ? "🔨"
                                 : ""}
                         </button>

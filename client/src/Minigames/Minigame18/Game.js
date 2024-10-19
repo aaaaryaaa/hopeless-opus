@@ -17,6 +17,7 @@ const Game = ({ gameResult }) => {
   const [timer, setTimer] = useState(ROUND_TIME);
   const [gameOver, setGameOver] = useState(false);
   const [hasStarted, setHasStarted] = useState(false); // New state for start button
+  const [wonGame, setWonGame] = useState(false);
 
   // Generate combinations on game start
   useEffect(() => {
@@ -72,7 +73,7 @@ const Game = ({ gameResult }) => {
       setMoves(0);
       setTimer(ROUND_TIME);
     } else {
-      // alert(`Game Over! Your score: ${score}`);
+      alert(`Game Over! Your score: ${score}`);
       gameResult(score, true);
       resetGame();
     }
