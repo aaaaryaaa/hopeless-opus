@@ -143,6 +143,7 @@ function Minigame11({ gameResult }) {
         if (elapsedTime >= gameDuration) {
           setGameCompleted(true);
           if(!lost) gameResult(200);
+          gameResult(0);
         }
       }
     }, 100);

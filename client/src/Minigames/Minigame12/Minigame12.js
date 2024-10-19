@@ -33,7 +33,6 @@ const Minigame12 = ({ gameResult }) => {
         if (time > 0) return time - 1;
         clearInterval(timerId);
         setGameOver(true); // Set game over when the timer reaches 0
-        gameResult(Math.round(300/clickCount)*timeLeft);
         return 0;
       });
     }, 1000);
@@ -86,7 +85,7 @@ const Minigame12 = ({ gameResult }) => {
       if (x === 19 && y === 19) { // Win point at (19, 19) for 20x20 maze
         setWin(true);
         setGameOver(true);
-        gameResult(100 * timeLeft);
+        gameResult(400);
       }
 
       // Toggle walls dynamically after the player moves
