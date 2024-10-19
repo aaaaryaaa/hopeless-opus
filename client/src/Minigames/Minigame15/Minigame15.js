@@ -66,7 +66,7 @@ function Minigame15({ gameResult }) {
       setGameOver(true);
       setStartGame(false); // Stop the game after collision
     } else if (!gameOver && startGame) {
-      setScore(score + 1);
+      setScore(Math.min(score + 1, 1000));
       gameResult(score + 1);
     }
   }, [obstaclePosition, dinoPosition, gameOver, startGame]);
