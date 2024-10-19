@@ -735,9 +735,9 @@ const StoryGame = () => {
               ); // Update the story ID and points in the backend
             }
             else{
-              fetchStory('4402');
+              fetchStory('4404');
               updateCurrentStoryIdAndPoints(
-                '4402',
+                '4404',
                 updatedPoints,
                 updatedHealth,
                 updatedMoney,
