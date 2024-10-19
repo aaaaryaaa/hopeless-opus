@@ -711,7 +711,7 @@ const StoryGame = () => {
         const inv = inventory;
 
         if (gameDialogue && gameNo === 3)
-          if(storyId===4403){
+          if(storyId===4303){
             fetchStory('4503')
             updateCurrentStoryIdAndPoints(
               '4503',

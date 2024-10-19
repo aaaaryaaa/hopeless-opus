@@ -118,7 +118,6 @@ const MathematicalDroplets = ({ gameResult }) => {
 
         if (gameOver) {
           setIsGameOver(true);
-          gameResult(5 * score);
         }
 
         return newPositions;
@@ -137,6 +136,7 @@ const MathematicalDroplets = ({ gameResult }) => {
       if (parseInt(value) === q.correctAnswer) {
         // Correct answer found
         setScore((prev) => prev + 1);
+        gameResult((score+1)*10);
         setDropletPositions((prev) => ({ ...prev, [q.id]: -100 })); // Move the correct droplet off-screen (pop effect)
 
         // Remove the popped question from the list
