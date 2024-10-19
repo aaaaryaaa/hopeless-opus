@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const QuizGame = () => {
+const QuizGame = ({gameResult}) => {
   const [questionIndex, setQuestionIndex] = useState('initial');
   const [gameOver, setGameOver] = useState(false);
   const [message, setMessage] = useState("");
@@ -67,6 +67,7 @@ const QuizGame = () => {
     if (currentQuestion.correct && !currentQuestion.correct.includes(choiceIndex)) {
       setMessage(currentQuestion.onWrongChoice || "Wrong choice! Game Over.");
       setGameOver(true);
+      gameResult(-100, false);
     } else {
       const nextQuestion = currentQuestion.next instanceof Array
         ? currentQuestion.next[choiceIndex]
@@ -78,6 +79,7 @@ const QuizGame = () => {
       } else {
         setMessage(currentQuestion.onComplete || "You have convinced the officier! Good Work");
         setGameOver(true);
+        gameResult(200, true);
       }
     }
   };
