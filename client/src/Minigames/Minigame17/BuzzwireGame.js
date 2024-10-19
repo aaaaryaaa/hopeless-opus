@@ -32,7 +32,7 @@ const BuzzwireGame = ({gameResult}) => {
       if (x > 10) {
         if (mouseFlag === 0) {
           alert(
-            "Place mouse at the very beginning of pipe (as close to the edge) and hit Enter (on keyboard)!! Don't click OK with your mouse! You can skip if you can't figure out how to play this game XD! (Ignore if you won the game, just dont hover over the white area.)"
+            "[Disclaimer: Ctrl and - if the game is too zoomed out for you.] Place mouse at the very beginning of pipe (as close to the edge) and hit Enter (on keyboard)!! Don't click OK with your mouse! You can skip if you can't figure out how to play this game XD! (Ignore if you won the game, just dont hover over the white area.)"
           );
         }
       } else if (x <= 20) {
