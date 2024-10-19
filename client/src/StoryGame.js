@@ -21,6 +21,7 @@ import Minigame17 from "./Minigames/Minigame17/Minigame17";
 import Minigame18 from "./Minigames/Minigame18/Game";
 import Minigame19 from "./Minigames/Minigame19/VideoComponent"
 import Minigame21 from "./Minigames/Minigame21/App";
+import Minigame22 from "./Minigames/Minigame22/MazeGame"
 import Typewriter from 'typewriter-effect';
 
 // const SequentialTypewriter = ({
@@ -120,6 +121,8 @@ const StoryGame = () => {
   const [minigameEighteenPoints, setMinigameEighteenPoints] = useState(0);
   const [minigameTwentyOneWon, setMinigameTwentyOneWon] = useState(false);
   const [minigameTwentyOnePoints, setMinigameTwentyOnePoints] = useState(0);
+  const [minigameTwentyTwoWon, setMinigameTwentyTwoWon] = useState(false);
+  const [minigameTwentyTwoPoints, setMinigameTwentyTwoPoints] = useState(0);
 
 
   //bgimg ka array
@@ -452,6 +455,11 @@ const StoryGame = () => {
     setMinigameTwentyOneWon(won);
   }
 
+  const handleMiniGameTwentyTwoResult = (pts, won) => {
+    setMinigameTwentyTwoPoints(pts);
+    setMinigameTwentyTwoWon(won);
+  }
+
   // Fetch user details only when the component mounts
   async function fetchUserDetails() {
     const token = localStorage.getItem("token"); // Get the token from localStorage
@@ -735,7 +743,7 @@ const StoryGame = () => {
               ); // Update the story ID and points in the backend
             }
             else{
-              fetchStory('4404');
+              fetchStory('4405');
               updateCurrentStoryIdAndPoints(
                 '4404',
                 updatedPoints,
@@ -746,6 +754,34 @@ const StoryGame = () => {
               ); // Update the story ID and points in the backend
             }
           }
+      }
+
+      if (gameNo === 22) {
+        if (points === null) setPoints(0);
+        const updatedPoints = points + minigameTwentyTwoPoints; // Add option points to current points
+        const updatedHealth = health;
+        const updatedMoney = money;
+        const updatedRF = rf;
+        
+        
+        
+        setPoints(updatedPoints); // Update the UI with new points
+        setHealth(updatedHealth);
+        setMoney(updatedMoney);
+        setRF(updatedRF);
+        const inv = inventory;
+
+        if (gameDialogue && gameNo === 22)
+            fetchStory('4503')
+            updateCurrentStoryIdAndPoints(
+              '4503',
+              updatedPoints,
+              updatedHealth,
+              updatedMoney,
+              updatedRF,
+              inv
+            ); // Update the story ID and points in the backend
+          
       }
 
       if (gameNo === 4) {
@@ -1283,6 +1319,10 @@ const StoryGame = () => {
               {gameDialogue && gameNo === 18 &&(
                 <Minigame18 gameResult={handleMiniGameEighteenResult}/>  //Switch Game 
               )}
+
+              {gameDialogue && gameNo === 22 &&(
+                <Minigame22 gameResult={handleMiniGameTwentyTwoResult}/>  //Switch Game 
+              )}  
 
               {gameDialogue && gameNo === 19 &&(
                 <Minigame19/>  //video Game 
