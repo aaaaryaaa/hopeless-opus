@@ -51,6 +51,30 @@ router.get('/leaderboard', (req, res) => {
     .catch((err) => res.status(500).json({ error: err.message }))
 })
 
+router.get('/leaderboardnew', (req, res) => {
+  User.find({})
+    .select('-password -inventory') // Exclude sensitive fields
+    .then((users) => {
+      if (!users || users.length === 0) {
+        return res.status(404).json({ message: 'No users found' });
+      }
+
+      // Calculate score for each user as the sum of money and points
+      const leaderboard = users.map(user => {
+        const score = user.points + user.money; // Add money and points to get the score
+        return { ...user.toObject(), score }; // Include score in the user object
+      });
+
+      // Sort the leaderboard by score in descending order
+      leaderboard.sort((a, b) => b.score - a.score);
+
+      res.json(leaderboard); // Return the sorted leaderboard
+    })
+    .catch((err) => res.status(500).json({ error: err.message }));
+});
+
+
+
 // Route to get all users (No authentication required)
 router.get("/allusers", (req, res) => {
   User.find({})
