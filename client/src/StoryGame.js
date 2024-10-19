@@ -19,6 +19,7 @@ import Minigame15 from "./Minigames/Minigame15/Minigame15";
 import Minigame16 from "./Minigames/Minigame16/Minigame16";
 import Minigame17 from "./Minigames/Minigame17/Minigame17";
 import Minigame18 from "./Minigames/Minigame18/Game";
+import Minigame19 from "./Minigames/Minigame19/VideoComponent"
 import Minigame21 from "./Minigames/Minigame21/App";
 import Typewriter from 'typewriter-effect';
 
@@ -680,7 +681,7 @@ const StoryGame = () => {
         setMoney(updatedMoney);
         setRF(updatedRF);
         const inv = inventory;
-        const nextStory = 9997;
+        const nextStory = 4601;
         fetchStory(nextStory);
 
         if (gameDialogue && gameNo === 2)
@@ -734,9 +735,9 @@ const StoryGame = () => {
               ); // Update the story ID and points in the backend
             }
             else{
-              fetchStory('4503');
+              fetchStory('4402');
               updateCurrentStoryIdAndPoints(
-                '4503',
+                '4402',
                 updatedPoints,
                 updatedHealth,
                 updatedMoney,
@@ -1283,6 +1284,10 @@ const StoryGame = () => {
                 <Minigame18 gameResult={handleMiniGameEighteenResult}/>  //Switch Game 
               )}
 
+              {gameDialogue && gameNo === 19 &&(
+                <Minigame19/>  //video Game 
+              )}  
+
               {gameDialogue && gameNo === 21 &&(
                 <Minigame21 gameResult={handleMiniGameTwentyOneResult}/>  //utkarsh Game 
               )}
@@ -1361,7 +1366,7 @@ const StoryGame = () => {
                           }}
                           onClick={handleGameNext}
                         >
-                          Finish Minigame
+                          {gameNo!==19 ? (<>Finish Minigame</>) : (<>End of Game.</>)}
                         </button>
                       </>): (<>
                         <button
@@ -1373,7 +1378,7 @@ const StoryGame = () => {
                             margin: "1rem 0.5rem",
                           }}
                         >
-                          Will be continued in the Phase 3.
+                          End of Game.
                         </button>
                       </>)}
                     </>
