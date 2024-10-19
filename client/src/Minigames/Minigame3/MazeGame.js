@@ -69,7 +69,7 @@ const MazeGame = ({ gameResult }) => {
       if (x === 9 && y === 9) {
         setWin(true);
         setGameOver(true);
-        gameResult(100 * timeLeft);
+        gameResult(100 * timeLeft, true);
       }
     }
   };

@@ -8,7 +8,7 @@ import diamondImage from './diamond.png';
 import stoneImage from './stone.png';
 import blankImage from './blank.png'; // An empty image representing blank
 
-function App() {
+function App({ gameResult }) {
   // Ingredient options with their respective images
   const ingredients = [
     { name: 'blank', image: blankImage },
@@ -51,6 +51,7 @@ function App() {
 
     if (weapon) {
       setCraftedWeapon(weapon);
+      gameResult(200);
       setSelectedIngredients(Array(9).fill('blank')); // Clear the grid after crafting
     } else {
       alert('Invalid combination!');
