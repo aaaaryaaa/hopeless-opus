@@ -261,7 +261,7 @@ const StoryGame = () => {
    'https://res.cloudinary.com/diswj8gya/image/upload/v1729156239/39_1_vmuthu.png', //39
    'https://res.cloudinary.com/diswj8gya/image/upload/v1729157144/Stranger_1_znfkis.png', //40
    'https://res.cloudinary.com/diswj8gya/image/upload/v1729156386/41_1_vupslq.png', //41
-   '',//42
+   'res.cloudinary.com/diswj8gya/image/upload/c_fill,w_1440,h_1024/v1729330103/42_ehozvi.png',//42
    'https://res.cloudinary.com/diswj8gya/image/upload/v1729261549/43_hcnwot.png', //43
    'https://res.cloudinary.com/diswj8gya/image/upload/v1729261552/44_gtx8ls.png', //44
    'https://res.cloudinary.com/diswj8gya/image/upload/v1729261551/45_lazugr.png', //45
