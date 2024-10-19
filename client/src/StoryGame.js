@@ -252,18 +252,18 @@ const StoryGame = () => {
    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918686/28_x9gtno.png', //28
    'https://res.cloudinary.com/diswj8gya/image/upload/v1728920544/29_svbxaf_c_pad_b_gen_fill_w_1440_h_1024_hrvuya.png', //29
    'https://res.cloudinary.com/diswj8gya/image/upload/v1728920337/30_bj19em_c_pad_b_gen_fill_w_1440_h_1024_ostomm.png', //30
-   '',//31
+   '', //31
    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918687/32_k6jarr.png', //32
    'https://res.cloudinary.com/diswj8gya/image/upload/v1729284448/33_1_suoj60.png', //33
    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918699/34_i9wrzd.png', //34
    'https://res.cloudinary.com/diswj8gya/image/upload/v1728918705/35_p4srrh.png', //35
-   '',//36
+   '', //36
    'https://res.cloudinary.com/diswj8gya/image/upload/v1729261327/37_sypnop.png' , //37
    'https://res.cloudinary.com/diswj8gya/image/upload/v1729261432/38_v5xu5n.png', //38
    'https://res.cloudinary.com/diswj8gya/image/upload/v1729156239/39_1_vmuthu.png', //39
    'https://res.cloudinary.com/diswj8gya/image/upload/v1729157144/Stranger_1_znfkis.png', //40
    'https://res.cloudinary.com/diswj8gya/image/upload/v1729156386/41_1_vupslq.png', //41
-   'https://res.cloudinary.com/diswj8gya/image/upload/v1729331656/WhatsApp_Image_2024-10-19_at_15.21.40_uq8uho.jpg',//42
+   'https://res.cloudinary.com/diswj8gya/image/upload/v1729330103/42_ehozvi.png', //42
    'https://res.cloudinary.com/diswj8gya/image/upload/v1729261549/43_hcnwot.png', //43
    'https://res.cloudinary.com/diswj8gya/image/upload/v1729261552/44_gtx8ls.png', //44
    'https://res.cloudinary.com/diswj8gya/image/upload/v1729261551/45_lazugr.png', //45
@@ -291,7 +291,7 @@ const StoryGame = () => {
    'https://res.cloudinary.com/diswj8gya/image/upload/v1729267945/67_drrrge.jpg', //67
    ' https://res.cloudinary.com/diswj8gya/image/upload/v1729285545/68_i0qq8q.png', //68
    'https://res.cloudinary.com/diswj8gya/image/upload/v1729268205/69_pyx2dx.jpg', //69
-   ' https://res.cloudinary.com/diswj8gya/image/upload/v1729285615/70_a7mbns.png', //70
+   'https://res.cloudinary.com/diswj8gya/image/upload/v1729330845/70_final_burbgp.png', //70
    'https://res.cloudinary.com/diswj8gya/image/upload/v1729261611/71_xf8qh0.png', //71
    'https://res.cloudinary.com/diswj8gya/image/upload/v1729261617/72_we5cuz.png', //72
    'https://res.cloudinary.com/diswj8gya/image/upload/v1729283383/73_1_ovyeyk.png', //73
@@ -301,7 +301,67 @@ const StoryGame = () => {
    'https://res.cloudinary.com/diswj8gya/image/upload/v1729270280/77_1_yub64g.png', //77
    'https://res.cloudinary.com/diswj8gya/image/upload/v1729270342/78_vhzenz.png', //78
    'https://res.cloudinary.com/diswj8gya/image/upload/v1729270242/79_1_spkkym.png', //79
-   ]
+   ' https://res.cloudinary.com/diswj8gya/image/upload/v1729325834/80_xxc66b.png', //80
+   ' https://res.cloudinary.com/diswj8gya/image/upload/v1729325854/81_oep6yr.png', //81
+   ' https://res.cloudinary.com/diswj8gya/image/upload/v1729325852/82_jjbb8z.png', //82
+   ' https://res.cloudinary.com/diswj8gya/image/upload/v1729325849/83_agoydk.png', //83
+   ' https://res.cloudinary.com/diswj8gya/image/upload/v1729325873/84_rktgje.png', //84
+   ' https://res.cloudinary.com/diswj8gya/image/upload/v1729327560/85_q3ywpg.png', //85
+   ' https://res.cloudinary.com/diswj8gya/image/upload/v1729325885/86_pgksiu.png', //86
+   ' https://res.cloudinary.com/diswj8gya/image/upload/v1729325874/87_jej2ai.png', //87
+   ' https://res.cloudinary.com/diswj8gya/image/upload/v1729327964/88_1_i6ppnr.png', //88
+   ' https://res.cloudinary.com/diswj8gya/image/upload/v1729328359/Screenshot_2024-10-19_at_2.27.09_PM_jsdzns.png', //89
+   ' https://res.cloudinary.com/diswj8gya/image/upload/v1729327046/90_s4tj6w.png', //90
+   ' https://res.cloudinary.com/diswj8gya/image/upload/v1729325882/91_1_gnza37.png', //91
+   ' https://res.cloudinary.com/diswj8gya/image/upload/v1729328615/Screenshot_2024-10-19_at_2.31.47_PM_n5aaxn.png', //92
+   ' https://res.cloudinary.com/diswj8gya/image/upload/v1729325890/93_arntlp.png', //93
+   ' https://res.cloudinary.com/diswj8gya/image/upload/v1729325893/94_mzvxsc.png', //94
+   ' https://res.cloudinary.com/diswj8gya/image/upload/v1729328807/95_u6rtk3.png', //95
+   ' https://res.cloudinary.com/diswj8gya/image/upload/v1729328930/96_xjaqi6.png', //96
+   ' https://res.cloudinary.com/diswj8gya/image/upload/v1729326914/97_rn54fj.png', //97
+   'https://res.cloudinary.com/diswj8gya/image/upload/t_14401024/v1729325954/98_paenev.png', //98
+   ' https://res.cloudinary.com/diswj8gya/image/upload/v1729326836/99_zeekjy.png', //99
+   ' https://res.cloudinary.com/diswj8gya/image/upload/v1729325903/100_fm5ugx.png', //100
+   'https://res.cloudinary.com/diswj8gya/image/upload/t_14401024/v1729326243/101_r1g1lm.png', //101
+   'https://res.cloudinary.com/diswj8gya/image/upload/v1729325975/102_jzuyuu.png', //102
+   'https://res.cloudinary.com/diswj8gya/image/upload/v1729325975/103_v2bmm9.png', //103
+   ' https://res.cloudinary.com/diswj8gya/image/upload/v1729330774/104_1_vegbqn.png', //104
+   '', //105
+   'https://res.cloudinary.com/diswj8gya/image/upload/v1729339451/106_wacw0y.png', //106
+   'https://res.cloudinary.com/diswj8gya/image/upload/v1729336685/107_ifnkbf.png', //107
+   'https://res.cloudinary.com/diswj8gya/image/upload/v1729336898/108_tfryuq.png', //108
+   'https://res.cloudinary.com/diswj8gya/image/upload/v1729337285/109_wqoojk.png', //109 
+   'https://res.cloudinary.com/diswj8gya/image/upload/v1729337811/110_cx3xaf.png', //110
+   'https://res.cloudinary.com/diswj8gya/image/upload/v1729339365/111_vepvjk.png', //111
+   '', //112
+   '', //113
+   'https://res.cloudinary.com/diswj8gya/image/upload/v1729337891/133_lsqeuy.png', //114
+   '', //115
+   '', //116
+   '', //117
+   '', //118
+   '', //119
+   '', //120
+   '', //121
+   '', //122
+   '', //123
+   '', //124
+   '', //125
+   '', //126
+   '', //127
+   '', //128
+   '', //129
+   'https://res.cloudinary.com/diswj8gya/image/upload/v1729337429/130_wo2asb.png', //130
+   'https://res.cloudinary.com/diswj8gya/image/upload/v1729337667/131_dleqpx.png', //131
+   'https://res.cloudinary.com/diswj8gya/image/upload/v1729338342/132_pp2px1.png', //132
+   'https://res.cloudinary.com/diswj8gya/image/upload/v1729337891/133_lsqeuy.png', //133
+   'https://res.cloudinary.com/diswj8gya/image/upload/v1729338810/134_nrpoiy.png', //134
+   'https://res.cloudinary.com/diswj8gya/image/upload/v1729338444/135_kfn58x.png', //135
+   'https://res.cloudinary.com/diswj8gya/image/upload/v1729339150/136_zkp9pn.png', //136
+   'https://res.cloudinary.com/diswj8gya/image/upload/v1729338642/137_vpyjwn.png', //137
+   'https://res.cloudinary.com/diswj8gya/image/upload/v1729338190/138_ajwqmf.png', //138
+   'https://res.cloudinary.com/diswj8gya/image/upload/v1729338920/139_qv9uer.png', //139
+   ];
   
 
   //function for minigame 1
