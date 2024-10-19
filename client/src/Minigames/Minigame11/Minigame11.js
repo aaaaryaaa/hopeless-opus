@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import boat from "./boat.png";
 import stone from "./stone.png";
 
-const initialObstacleGenerationInterval = 400; // Faster obstacle generation
+const initialObstacleGenerationInterval = 500; // Faster obstacle generation
 const gameDuration = 60000; // 1 minute
 const stopObstacleGenerationTime = 52000; // 52 seconds
 const fadeOutStartTime = 0; // Start fading out the land at the beginning
