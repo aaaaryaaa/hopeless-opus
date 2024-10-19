@@ -72,6 +72,7 @@ function Minigame2({ gameResult }) {
         )
       );
       setScore((prevScore) => prevScore + 10); // Add 10 points for a match
+      gameResult(score+10);
       resetCards();
     } else {
       setTimeout(() => {

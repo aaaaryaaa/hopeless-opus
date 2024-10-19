@@ -169,7 +169,7 @@ const StoryGame = () => {
     "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729089984/HopelessOpus/ufybinz2ekqzdppdm7wl.png", //7
     "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090015/HopelessOpus/wfkv25xxjara1bxqtjvv.png", //8
     "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729090746/HopelessOpus/nmbwuzhcamgc27rkl9m3.png", //9
-    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729093163/HopelessOpus/aeji6yhxt1r7tiylk6m1.png", //10
+    "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729287233/Creature_ivjtms.png", //10
     "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729274140/MainChar1Old_ok4qx3.png", //11
     "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729274155/MainChar2Old_ava8gx.png", //12
     "https://res.cloudinary.com/dsdjrs7uv/image/upload/v1729274140/MainChar1Old_ok4qx3.png", //13
@@ -726,9 +726,9 @@ const StoryGame = () => {
               ); // Update the story ID and points in the backend
             }
             else{
-              fetchStory('4402');
+              fetchStory('4403');
               updateCurrentStoryIdAndPoints(
-                '4402',
+                '4403',
                 updatedPoints,
                 updatedHealth,
                 updatedMoney,
