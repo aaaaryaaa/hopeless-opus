@@ -102,7 +102,7 @@ export default function Login() {
           </button>
 
           {/* Sign-up Redirect */}
-          {/* <p className="text-center text-gray-200">
+          <p className="text-center text-gray-200">
             Don&apos;t have an account?{" "}
             <button
               type="button"
@@ -111,7 +111,7 @@ export default function Login() {
             >
               Register
             </button>
-          </p> */}
+          </p>
         </form>
       </div>
     </div>
