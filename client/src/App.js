@@ -32,7 +32,7 @@ function App() {
           <Route path="/play" element={<Play />} />
           <Route path="/about" element={<Info />} />
           <Route path="/contact" element={<Contact />} />
-          {/* <Route path="/register" element={<Register />} /> */}
+          <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="*" element={<NotFoundPage />} />

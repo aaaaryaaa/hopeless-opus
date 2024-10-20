@@ -44,7 +44,7 @@ const Nav = () => {
             <li><button onClick={() => navigate("/about")}>About</button></li>
             <li><button onClick={() => navigate("/contact")}>Contact</button></li>
             <li><button onClick={() => navigate("/leaderboard")}>Leaderboard</button></li>
-            <li><button onClick={() => navigate("/register")}>Register</button></li>
+            {/* <li><button onClick={() => navigate("/register")}>Register</button></li> */}
             {localStorage.getItem("token")===null && (<li><button onClick={() => navigate("/login")}>Login</button></li>)}
           </ul>
         </div> 
