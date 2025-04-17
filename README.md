@@ -71,7 +71,6 @@ Visit [http://localhost:3000](http://localhost:3000) in your browser.
 ### Backend
 - RESTful APIs built with **Node.js** and **Express.js**.
 - **MongoDB** for scalable database management.
-- Real-time updates powered by **Socket.IO**.
 
 ### Frontend
 - Responsive UI built with **React.js**.
