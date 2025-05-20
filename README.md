@@ -1,6 +1,6 @@
 # Hopeless Opus 🎮📜
 
-Welcome to **Hopeless Opus**, a story-based game platform that combines dynamic narratives with an engaging multiplayer experience! Dive into an immersive world where your choices shape the story, and join over **600+ players** on this thrilling adventure.
+Welcome to **Hopeless Opus**, a story-based game platform with engaging dynamic narratives! Dive into an immersive world where your choices shape the story, and join over **600+ players** on this thrilling adventure.
 
 ![Hopeless Opus Banner](https://via.placeholder.com/800x200?text=Hopeless+Opus+-+Adventure+Awaits) <!-- Replace with an actual banner image URL -->
 
